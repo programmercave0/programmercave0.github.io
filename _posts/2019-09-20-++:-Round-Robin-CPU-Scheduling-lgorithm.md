@@ -24,8 +24,7 @@ Here is the C++ implementation
 
 scheduling.h
 
-{% highlight cpp %}
-
+```cpp
 #ifndef SCHEDULING_H_
 #define SCHEDULING_H_
 
@@ -76,9 +75,7 @@ class Scheduler
 };
 
 #endif
-
-{% endhighlight %}
-
+```
 scheduling.cpp
 ```cpp
 #include <iostream>
