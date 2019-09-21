@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C++: Tic Tac Toe
+title: "C++: Tic Tac Toe"
 tags:  [C++, Algorithm, Games]
 date: 2018-04-05
 ---
