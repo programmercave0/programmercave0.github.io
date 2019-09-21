@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "C++: Round Robin CPU Scheduling Algorithm"
+tags:  C++, Algorithm, Operating System
 date: 2019-09-20
 ---
 
