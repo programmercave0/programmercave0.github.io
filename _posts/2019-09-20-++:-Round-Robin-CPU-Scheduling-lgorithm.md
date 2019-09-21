@@ -23,7 +23,9 @@ Turnaround time and waiting time are calculated using these formulas.
 Here is the C++ implementation    
 
 scheduling.h
-{% highlight c++ %}
+
+{% highlight cpp %}
+
 #ifndef SCHEDULING_H_
 #define SCHEDULING_H_
 
@@ -74,6 +76,7 @@ class Scheduler
 };
 
 #endif
+
 {% endhighlight %}
 
 scheduling.cpp
