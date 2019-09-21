@@ -9,7 +9,7 @@ The **Bellman–Ford** algorithm is an algorithm that computes shortest paths fr
 
 It solves the single-source shortest-paths problem in the general case in which edge weights may be negative.
 
-It runs in time *O(|V|.|E|)* where *|V|* is number of vertices and *|E|* is number of edges.
+It runs in time _O(|V|.|E|)_ where _|V|_ is number of vertices and _|E|_ is number of edges.
 
 Here, we have used ```std::map``` to store vertices and their associated weight.
 
