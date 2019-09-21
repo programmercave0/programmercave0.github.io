@@ -18,6 +18,7 @@ Data members and member functions which are common to all scheduling algorithm a
 
 Turnaround time and waiting time are calculated using these formulas. 
      `turnAroundTime = endTime - arrivalTime`
+     
      `waitingTime = turnAroundTime - burstTime`
      
 Here is the C++ implementation    
