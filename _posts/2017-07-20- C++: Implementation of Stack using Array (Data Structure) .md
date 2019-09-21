@@ -17,7 +17,7 @@ Stack:
 
 ➧ S.top= -1 means stack contains no element and is empty.
 
-![Stack]({{ site.url }}/assets/stack2.png)
+![Stack]({{ site.url }}/assets/stack2.PNG)
 
 C++ Implementation
 
