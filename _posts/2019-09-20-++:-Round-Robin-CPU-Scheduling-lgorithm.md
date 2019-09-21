@@ -12,7 +12,7 @@ To schedule processes fairly, a round-robin scheduler generally employs time-sha
 
 Round-robin algorithm is a pre-emptive algorithm as the scheduler forces the process out of the CPU once the time quota expires. [Wikipedia](https://en.wikipedia.org/wiki/Round-robin_scheduling)
 
-Here we have used some features of C++11. (Algorithm Library)[https://en.cppreference.com/w/cpp/algorithm] will help to understand them.
+Here we have used some features of C++11. [Algorithm Library](https://en.cppreference.com/w/cpp/algorithm) will help to understand them.
 
 Data members and member functions which are common to all scheduling algorithm are declared in `scheduling.h` and member functions are declared in `scheduling.cpp` . `virtual` keyword is used before `calcEndTime()` because each scheduling algorithm has different algorithm to calculate end time.
 
@@ -23,7 +23,7 @@ Turnaround time and waiting time are calculated using these formulas.
 Here is the C++ implementation    
 
 scheduling.h
-```cpp
+{% highlight c++ %}
 #ifndef SCHEDULING_H_
 #define SCHEDULING_H_
 
@@ -74,7 +74,8 @@ class Scheduler
 };
 
 #endif
-```
+{% endhighlight %}
+
 scheduling.cpp
 ```cpp
 #include <iostream>
