@@ -43,4 +43,5 @@ int main()
 ```
 
 Output
+
 ![Output]({{ site.url }}/assets/PrimeFactorsOut.png)
