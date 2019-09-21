@@ -16,7 +16,7 @@ Adavantages:
 ➧ Items can be added or removed from the middle of list. 
 ➧ Backtracking is possible in two way linked list.
 
-![Single Linked List]({{ site.url }}/assets/ll1.png)
+![Single Linked List]({{ site.url }}/assets/ll1.PNG)
 
 C++ Implementation
 
