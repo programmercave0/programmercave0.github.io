@@ -40,3 +40,7 @@ int main()
 
 }
 ```
+
+Output
+
+![Output]({{ site.url }}/assets/collatzOut.png)
