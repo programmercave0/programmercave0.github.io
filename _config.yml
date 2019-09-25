@@ -1,5 +1,12 @@
 name: ProgrammerCave
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-
-theme: jekyll-theme-slate
+plugins:
+  - jekyll-seo-tag
+url: https://programmercave.github.io/
+social:
+  name: ProgrammerCave
+  links: 
+    - https://www.facebook.com/programmercave/
+    - https://www.instagram.com/programmercave/
+    - https://t.me/programmercave
