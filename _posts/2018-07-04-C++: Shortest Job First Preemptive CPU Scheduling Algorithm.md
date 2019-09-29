@@ -269,6 +269,10 @@ int main()
 
 You can compile with this command in Linux `g++ -std=c++11 shortestjobfirst.cpp scheduling.cpp`
 
+Output
+
+![output]({{ site.url }}/assets/sjfp.png)
+
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
