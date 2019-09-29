@@ -242,6 +242,10 @@ int main()
 
 You can compile with this command in Linux `g++ -std=c++11 roundrobin.cpp scheduling.cpp`  
 
+Output
+
+![Output]({{ site.url }}/assets/roundrobin.png)
+
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
