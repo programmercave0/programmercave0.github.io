@@ -149,6 +149,10 @@ You may also like:
 
 [C++: Singly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
 
+[C++: Remove all adjacent duplicates from String using Stack](https://programmercave.github.io/blog/2018/02/12/C++-Remove-all-adjacent-duplicates-from-String-using-Stack)
+
+[C++: Implementation of Stack using Array (Data Structure)](https://programmercave.github.io/blog/2017/07/20/C++-Implementation-of-Stack-using-Array-(Data-Structure))
+
 
 
 
