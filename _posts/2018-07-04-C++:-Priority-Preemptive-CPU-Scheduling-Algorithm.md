@@ -262,6 +262,10 @@ int main()
 
 You can compile with this command in Linux `g++ -std=c++11 priority.cpp scheduling.cpp`
 
+Output
+
+![Output]({{ site.url }}/assets/priority.png)
+
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
