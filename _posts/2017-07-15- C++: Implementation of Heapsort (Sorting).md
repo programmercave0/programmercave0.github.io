@@ -79,4 +79,15 @@ C++ Implementation
 }
 ```
 
+ <input type="hidden" name="IL_IN_ARTICLE"> 
+You may also like
 
+[C++: Selection sort using STL](https://programmercave.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)
+
+[C++: Implementation of Merge Sort](https://programmercave.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
+
+[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
+
+[C++: Implementation of Quicksort (Sorting)](https://programmercave.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
+
+[C++: Maximum Priority Queue](https://programmercave.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
