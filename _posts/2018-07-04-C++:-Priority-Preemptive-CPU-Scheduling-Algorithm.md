@@ -261,3 +261,14 @@ int main()
 ```
 
 You can compile with this command in Linux `g++ -std=c++11 priority.cpp scheduling.cpp`
+
+
+ <input type="hidden" name="IL_IN_ARTICLE"> 
+You may also like
+
+[C++: Round Robin CPU Scheduling Algorithm](https://programmercave.github.io/blog/2018/07/05/C++-Round-Robin-CPU-Scheduling-lgorithm)
+
+[C++: Shortest Job First Preemptive CPU Scheduling Algorithm](https://programmercave.github.io/blog/2018/07/04/C++-Shortest-Job-First-Preemptive-CPU-Scheduling-Algorithm)
+
+
+
