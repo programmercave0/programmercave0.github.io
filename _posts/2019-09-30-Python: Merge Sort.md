@@ -7,7 +7,7 @@ date: 2019-09-30
 
 **Merge Sort** algorithm closely follows the divide-and-conquer paradigm.
 
-**Divide:** Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.<br/r>
+**Divide:** Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.<br/>
 **Conquer:** Sort the two subsequences recursively using merge sort.<br/>
 **Combine:** Merge the two sorted subsequences to produce the sorted answer.<br/>
 
