@@ -50,9 +50,9 @@ def max_heapify(thelist, lst_size: int, idx: int):
         max_heapify(thelist, lst_size, curr_idx)
   ```
   
-  The `heapsort` function, which runs in O(n lg n) time, sorts an array in place.
+The `heapsort` function, which runs in O(n lg n) time, sorts an array in place.
   
-  ```python
+```python
   def heap_sort(thelist):
     """
     Heap sort Algorithm
@@ -69,16 +69,16 @@ def max_heapify(thelist, lst_size: int, idx: int):
         for curr_idx in range(len(thelist) -1, 0, -1): #loop from higher index to lower index
             thelist[curr_idx], thelist[0] = thelist[0], thelist[curr_idx] #swapping
             max_heapify(thelist, curr_idx, 0)
-    ```
+```
+ 
+ Operation of `heapsort`
     
-    Operation of `heapsort`
+ ![useful image]({{ site.url }}/assets/pythonheapsort3.png)
     
-    ![useful image]({{ site.url }}/assets/pythonheapsort3.png)
+ Python Implementation
     
-    Python Implementation
-    
-    ```python
-    def get_input():
+```python
+   def get_input():
     """
     get input from user
     """
@@ -89,7 +89,7 @@ def max_heapify(thelist, lst_size: int, idx: int):
         print("Please enter a list of integers only, seperated by a space!!")
     return elements
 
-def max_heapify(thelist, lst_size: int, idx: int):
+   def max_heapify(thelist, lst_size: int, idx: int):
     """
     Building maximum heap at index passed as argument
     """
