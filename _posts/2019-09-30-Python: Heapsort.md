@@ -77,8 +77,8 @@ The `heapsort` function, which runs in O(n lg n) time, sorts an array in place.
     
  Python Implementation
     
-```python
-   def get_input():
+```
+def get_input():
     """
     get input from user
     """
@@ -89,7 +89,7 @@ The `heapsort` function, which runs in O(n lg n) time, sorts an array in place.
         print("Please enter a list of integers only, seperated by a space!!")
     return elements
 
-   def max_heapify(thelist, lst_size: int, idx: int):
+def max_heapify(thelist, lst_size: int, idx: int):
     """
     Building maximum heap at index passed as argument
     """
