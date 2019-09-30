@@ -81,7 +81,7 @@ def merge(thelist, start_idx: int, mid_idx: int, last_idx: int):
         merge(thelist, start_idx, mid_idx, last_idx)
    ```
    
-For large enough inputs, merge sort, with its \theta(n lg n) running time, outperforms insertion sort, whose running time is \theta(n<sup>2</sup>), in the worst case.
+For large enough inputs, merge sort, with its &theta;(n lg n) running time, outperforms insertion sort, whose running time is &theta;(n<sup>2</sup>), in the worst case.
 
 Python Implementation
 
