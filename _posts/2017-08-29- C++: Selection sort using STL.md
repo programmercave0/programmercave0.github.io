@@ -204,17 +204,16 @@ Output
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Implementation of Merge Sort](https://programmercave.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
-
-[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
-
-[C++: Implementation of Quicksort (Sorting)](https://programmercave.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
-
-[C++: Implementation of Heapsort (Sorting)](https://programmercave.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))
-
-[C++: Maximum Priority Queue](https://programmercave.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
-
-[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
-
+[C++: Implementation of Merge Sort](https://programmercave.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
+[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[C++: Implementation of Quicksort (Sorting)](https://programmercave.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
+[C++: Implementation of Heapsort (Sorting)](https://programmercave.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
+[C++: Maximum Priority Queue](https://programmercave.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)<br/>
+[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[Python: Selection sort](https://programmercave.github.io/blog/2019/09/30/Python-Selection-sort)<br/>
+[Python: Quicksort](https://programmercave.github.io/blog/2019/09/30/Python-Quicksort)<br/>
+[Python: Merge Sort](https://programmercave.github.io/blog/2019/09/30/Python-Merge-Sort)<br/>
+[Python: Insertion Sort](https://programmercave.github.io/blog/2019/09/30/Python-Insertion-Sort)<br/>
+[Python: Heapsort](https://programmercave.github.io/blog/2019/09/30/Python-Heapsort)<br/>
 
 
