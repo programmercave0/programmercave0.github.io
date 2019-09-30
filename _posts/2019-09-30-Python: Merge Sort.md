@@ -7,9 +7,9 @@ date: 2019-09-30
 
 **Merge Sort** algorithm closely follows the divide-and-conquer paradigm.
 
-**Divide:** Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.
-**Conquer:** Sort the two subsequences recursively using merge sort.
-**Combine:** Merge the two sorted subsequences to produce the sorted answer.
+**Divide:** Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.</br>
+**Conquer:** Sort the two subsequences recursively using merge sort.</br>
+**Combine:** Merge the two sorted subsequences to produce the sorted answer.</br>
 
 We merge by calling function `merge(thelist, start_idx: int, mid_idx: int, last_idx: int)`. It assumes that the subarrays `left_lst` and `right_lst` are sorted and merge them to form a single sorted array.
 
