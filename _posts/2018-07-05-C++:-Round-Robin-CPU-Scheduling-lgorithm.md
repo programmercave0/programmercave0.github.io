@@ -12,6 +12,7 @@ The name of the algorithm comes from the round-robin principle known from other 
 To schedule processes fairly, a round-robin scheduler generally employs time-sharing, giving each job a time slot or quantum (its allowance of CPU time), and interrupting the job if it is not completed by then. The job is resumed next time a time slot is assigned to that process. If the process terminates or changes its state to waiting during its attributed time quantum, the scheduler selects the first process in the ready queue to execute. In the absence of time-sharing, or if the quanta were large relative to the sizes of the jobs, a process that produced large jobs would be favoured over other processes.
 
 Round-robin algorithm is a pre-emptive algorithm as the scheduler forces the process out of the CPU once the time quota expires. [Wikipedia](https://en.wikipedia.org/wiki/Round-robin_scheduling)
+{% include revenuehits_ads.html %}
 
 Here we have used some features of C++11. [Algorithm Library](https://en.cppreference.com/w/cpp/algorithm) will help to understand them.
 
