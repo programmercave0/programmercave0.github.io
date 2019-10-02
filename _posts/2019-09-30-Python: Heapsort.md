@@ -71,6 +71,8 @@ The `heapsort` function, which runs in O(n lg n) time, sorts an array in place.
             max_heapify(thelist, curr_idx, 0)
 ```
  
+ <input type="hidden" name="IL_IN_ARTICLE"> 
+ 
  Operation of `heapsort`
     
  ![useful image]({{ site.url }}/assets/pythonheapsort3.png)
