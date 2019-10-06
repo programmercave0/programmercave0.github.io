@@ -86,6 +86,7 @@ Output
  
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
+<br/>
 [Python: Selection sort](https://programmercave0.github.io/blog/2019/09/30/Python-Selection-sort)<br/>
 [Python: Merge Sort](https://programmercave0.github.io/blog/2019/09/30/Python-Merge-Sort)<br/>
 [Python: Insertion Sort](https://programmercave0.github.io/blog/2019/09/30/Python-Insertion-Sort)<br/>
