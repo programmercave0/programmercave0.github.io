@@ -6,7 +6,7 @@ markdown: redcarpet
 permalink: /blog/:year/:month/:day/:title
 plugins:
   - jekyll-seo-tag
-url: https://programmercave.github.io/
+url: https://programmercave0.github.io/
 footer-links:
   dribbble:
   email:
