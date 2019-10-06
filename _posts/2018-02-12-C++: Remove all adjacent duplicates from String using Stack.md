@@ -156,6 +156,6 @@ int main()
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
+[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave0.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
 
-[C++: Implementation of Stack using Array (Data Structure)](https://programmercave.github.io/blog/2017/07/20/C++-Implementation-of-Stack-using-Array-(Data-Structure))
+[C++: Implementation of Stack using Array (Data Structure)](https://programmercave0.github.io/blog/2017/07/20/C++-Implementation-of-Stack-using-Array-(Data-Structure))
