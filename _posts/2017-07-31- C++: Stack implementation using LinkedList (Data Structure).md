@@ -33,7 +33,17 @@ class Stack
         Node *next;
         Node(T val):data(val),next(nullptr) {}
     };
-    Node *head; int top;
+    Node *head; int top;[C++: Selection sort using STL](https://programmercave00.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)
+
+[C++: Implementation of Merge Sort](https://programmercave00.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
+
+[C++: Insertion Sort using STL (Sorting)](https://programmercave00.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
+
+[C++: Implementation of Quicksort (Sorting)](https://programmercave00.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
+
+[C++: Implementation of Heapsort (Sorting)](https://programmercave00.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))
+
+[C++: Maximum Priority Queue](https://programmercave00.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
 
  public:
    Stack()
@@ -127,32 +137,31 @@ int main()
 Remember to use `delete` to delete a node to avoid memory leak.
 
 You may also like:
-[C++: Move all Even numbers before Odd numbers in Singly Linked List (Using STL)](https://programmercave.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))
+[C++: Move all Even numbers before Odd numbers in Singly Linked List (Using STL)](https://programmercave0.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))
 
-[C++: Merge two sorted Linked List (in-place)](https://programmercave.github.io/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))
+[C++: Merge two sorted Linked List (in-place)](https://programmercave0.github.io/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))
 
-[C++: Split Singly Circular Linked List program](https://programmercave.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)
+[C++: Split Singly Circular Linked List program](https://programmercave0.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)
 
-[C++: Doubly Circular Linked List program](https://programmercave.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)
+[C++: Doubly Circular Linked List program](https://programmercave0.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)
 
-[C++: Reverse the Linked List (Iterative Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
+[C++: Reverse the Linked List (Iterative Method) program](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
 
-[C++:Reverse the Linked List (Recursive Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)
+[C++:Reverse the Linked List (Recursive Method) program](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)
 
-[C++: Linked List containing Loop (Floyd Cycle finding Algorithm) program](https://programmercave.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)
+[C++: Linked List containing Loop (Floyd Cycle finding Algorithm) program](https://programmercave0.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)
 
-[C++: Swapping Node Links in Linked List](https://programmercave.github.io/blog/2017/08/23/C++-Swapping-Node-Links-in-Linked-List)
+[C++: Swapping Node Links in Linked List](https://programmercave0.github.io/blog/2017/08/23/C++-Swapping-Node-Links-in-Linked-List)
 
-[C++: Queue implementation using Linked List (Data Structure)](https://programmercave.github.io/blog/2017/08/01/C++-Queue-implementation-using-Linked-List-(Data-Structure))
+[C++: Queue implementation using Linked List (Data Structure)](https://programmercave0.github.io/blog/2017/08/01/C++-Queue-implementation-using-Linked-List-(Data-Structure))
 
-[C++: Doubly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
+[C++: Doubly Linked List using Template (Data Structure)](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
 
-[C++: Singly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
+[C++: Singly Linked List using Template (Data Structure)](https://programmercave0.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
 
-[C++: Remove all adjacent duplicates from String using Stack](https://programmercave.github.io/blog/2018/02/12/C++-Remove-all-adjacent-duplicates-from-String-using-Stack)
+[C++: Remove all adjacent duplicates from String using Stack](https://programmercave0.github.io/blog/2018/02/12/C++-Remove-all-adjacent-duplicates-from-String-using-Stack)
 
-[C++: Implementation of Stack using Array (Data Structure)](https://programmercave.github.io/blog/2017/07/20/C++-Implementation-of-Stack-using-Array-(Data-Structure))
-
+[C++: Implementation of Stack using Array (Data Structure)](https://programmercave0.github.io/blog/2017/07/20/C++-Implementation-of-Stack-using-Array-(Data-Structure))
 
 
 
