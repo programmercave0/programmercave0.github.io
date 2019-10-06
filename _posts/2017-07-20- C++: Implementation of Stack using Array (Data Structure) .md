@@ -90,9 +90,9 @@ int main()
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Remove all adjacent duplicates from String using Stack](https://programmercave.github.io/blog/2018/02/12/C++-Remove-all-adjacent-duplicates-from-String-using-Stack)
+[C++: Remove all adjacent duplicates from String using Stack](https://programmercave0.github.io/blog/2018/02/12/C++-Remove-all-adjacent-duplicates-from-String-using-Stack)
 
-[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
+[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave0.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
 
 
 
