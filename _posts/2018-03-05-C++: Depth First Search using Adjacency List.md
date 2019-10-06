@@ -136,12 +136,12 @@ int main()
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Dijkstra's Algorithm using STL](https://programmercave.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
+[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
 
-[C++: Bellman Ford Algorithm using STL](https://programmercave.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
+[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
 
-[C++: Breadth First Search using Adjacency List](https://programmercave.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)
+[C++: Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)
 
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
+[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
 
-[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
+[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
