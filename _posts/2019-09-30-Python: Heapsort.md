@@ -150,17 +150,17 @@ Output:
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
-[Python: Selection sort](https://programmercave.github.io/blog/2019/09/30/Python-Selection-sort)<br/>
-[Python: Quicksort](https://programmercave.github.io/blog/2019/09/30/Python-Quicksort)<br/>
-[Python: Merge Sort](https://programmercave.github.io/blog/2019/09/30/Python-Merge-Sort)<br/>
-[Python: Insertion Sort](https://programmercave.github.io/blog/2019/09/30/Python-Insertion-Sort)<br/>
-[C++: Implementation of Merge Sort](https://programmercave.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
-[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
-[C++: Implementation of Quicksort (Sorting)](https://programmercave.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
-[C++: Maximum Priority Queue](https://programmercave.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)<br/>
-[C++: Insertion Sort using STL (Sorting)](https://programmercave.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
-[C++: Selection sort using STL](https://programmercave.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
-[C++: Implementation of Heapsort (Sorting)](https://programmercave.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
+[Python: Selection sort](https://programmercave0.github.io/blog/2019/09/30/Python-Selection-sort)<br/>
+[Python: Quicksort](https://programmercave0.github.io/blog/2019/09/30/Python-Quicksort)<br/>
+[Python: Merge Sort](https://programmercave0.github.io/blog/2019/09/30/Python-Merge-Sort)<br/>
+[Python: Insertion Sort](https://programmercave0.github.io/blog/2019/09/30/Python-Insertion-Sort)<br/>
+[C++: Implementation of Merge Sort](https://programmercave0.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
+[C++: Insertion Sort using STL (Sorting)](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[C++: Implementation of Quicksort (Sorting)](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
+[C++: Maximum Priority Queue](https://programmercave0.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)<br/>
+[C++: Insertion Sort using STL (Sorting)](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[C++: Selection sort using STL](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
+[C++: Implementation of Heapsort (Sorting)](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
 
     
   
