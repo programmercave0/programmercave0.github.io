@@ -250,9 +250,9 @@ Output
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Priority Preemptive CPU Scheduling Algorithm](https://programmercave.github.io/blog/2018/07/04/C++-Priority-Preemptive-CPU-Scheduling-Algorithm)
+[C++: Priority Preemptive CPU Scheduling Algorithm](https://programmercave0.github.io/blog/2018/07/04/C++-Priority-Preemptive-CPU-Scheduling-Algorithm)
 
-[C++: Shortest Job First Preemptive CPU Scheduling Algorithm](https://programmercave.github.io/blog/2018/07/04/C++-Shortest-Job-First-Preemptive-CPU-Scheduling-Algorithm)
+[C++: Shortest Job First Preemptive CPU Scheduling Algorithm](https://programmercave0.github.io/blog/2018/07/04/C++-Shortest-Job-First-Preemptive-CPU-Scheduling-Algorithm)
 
 
 
