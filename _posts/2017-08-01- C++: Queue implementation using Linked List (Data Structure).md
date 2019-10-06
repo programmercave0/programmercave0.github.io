@@ -114,27 +114,17 @@ int main()
 ```
 
 You may also like:
-[C++: Move all Even numbers before Odd numbers in Singly Linked List (Using STL)](https://programmercave.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))
+[C++: Selection sort using STL](https://programmercave00.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)
 
-[C++: Merge two sorted Linked List (in-place)](https://programmercave.github.io/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))
+[C++: Implementation of Merge Sort](https://programmercave00.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
 
-[C++: Split Singly Circular Linked List program](https://programmercave.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)
+[C++: Insertion Sort using STL (Sorting)](https://programmercave00.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
 
-[C++: Doubly Circular Linked List program](https://programmercave.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)
+[C++: Implementation of Quicksort (Sorting)](https://programmercave00.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
 
-[C++: Reverse the Linked List (Iterative Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
+[C++: Implementation of Heapsort (Sorting)](https://programmercave00.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))
 
-[C++:Reverse the Linked List (Recursive Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)
-
-[C++: Linked List containing Loop (Floyd Cycle finding Algorithm) program](https://programmercave.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)
-
-[C++: Swapping Node Links in Linked List](https://programmercave.github.io/blog/2017/08/23/C++-Swapping-Node-Links-in-Linked-List)
-
-[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
-
-[C++: Doubly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
-
-[C++: Singly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
+[C++: Maximum Priority Queue](https://programmercave00.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
 
 
 
