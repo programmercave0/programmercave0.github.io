@@ -200,27 +200,28 @@ Output
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Move all Even numbers before Odd numbers in Singly Linked List (Using STL)](https://programmercave.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))
 
-[C++: Split Singly Circular Linked List program](https://programmercave.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)
+[C++: Move all Even numbers before Odd numbers in Singly Linked List (Using STL)](https://programmercave0.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))
 
-[C++: Doubly Circular Linked List program](https://programmercave.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)
+[C++: Split Singly Circular Linked List program](https://programmercave0.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)
 
-[C++: Reverse the Linked List (Iterative Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
+[C++: Doubly Circular Linked List program](https://programmercave0.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)
 
-[C++:Reverse the Linked List (Recursive Method) program](https://programmercave.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)
+[C++: Reverse the Linked List (Iterative Method) program](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
 
-[C++: Linked List containing Loop (Floyd Cycle finding Algorithm) program](https://programmercave.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)
+[C++:Reverse the Linked List (Recursive Method) program](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)
 
-[C++: Swapping Node Links in Linked List](https://programmercave.github.io/blog/2017/08/23/C++-Swapping-Node-Links-in-Linked-List)
+[C++: Linked List containing Loop (Floyd Cycle finding Algorithm) program](https://programmercave0.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)
 
-[C++: Queue implementation using Linked List (Data Structure)](https://programmercave.github.io/blog/2017/08/01/C++-Queue-implementation-using-Linked-List-(Data-Structure))
+[C++: Swapping Node Links in Linked List](https://programmercave0.github.io/blog/2017/08/23/C++-Swapping-Node-Links-in-Linked-List)
 
-[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
+[C++: Queue implementation using Linked List (Data Structure)](https://programmercave0.github.io/blog/2017/08/01/C++-Queue-implementation-using-Linked-List-(Data-Structure))
 
-[C++: Doubly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
+[C++: Stack implementation using LinkedList (Data Structure)](https://programmercave0.github.io/blog/2017/07/31/C++-Stack-implementation-using-LinkedList-(Data-Structure))
 
-[C++: Singly Linked List using Template (Data Structure)](https://programmercave.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
+[C++: Doubly Linked List using Template (Data Structure)](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
+
+[C++: Singly Linked List using Template (Data Structure)](https://programmercave0.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
 
 
 
