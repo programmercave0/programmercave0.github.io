@@ -1,10 +1,20 @@
 name: ProgrammerCave
 description: Programming related stuff
+keywords: Programming competitive code coding C++ Python C Java Algorithm Data Structure
+language: "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: false
 permalink: /blog/:year/:month/:day/:title
 plugins:
   - jekyll-seo-tag
+  - jekyll-mentions
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  
 url: https://programmercave0.github.io/
 footer-links:
   dribbble:
@@ -52,7 +62,7 @@ google_analytics: UA-102581341-3
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed
 
 # Use the following plug-ins
 gems:
