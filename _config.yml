@@ -15,6 +15,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   
+ comments:
+    facebook:
+      appid : 389979625280769
+      num_posts : 10
+      colorscheme: "light"
+      order_by : "reverse_time"
+  
+  
 url: https://programmercave0.github.io/
 footer-links:
   dribbble:
