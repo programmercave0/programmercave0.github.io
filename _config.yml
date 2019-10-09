@@ -17,10 +17,10 @@ plugins:
   
 comments:
   facebook:
-    appid : 389979625280769
-    num_posts : 10
+    appid: 389979625280769
+    num_posts: 10
     colorscheme: "light"
-    order_by : "reverse_time"
+    order_by: "reverse_time"
   
   
 url: https://programmercave0.github.io/
