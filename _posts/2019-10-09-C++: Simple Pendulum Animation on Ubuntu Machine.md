@@ -122,6 +122,8 @@ int main()
 
 Compile it with the command `g++ simplependulum.cpp -o simplependulum -lgraph`
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Loe_KassCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Reference:
 
 [https://en.wikipedia.org/wiki/Pendulum](https://en.wikipedia.org/wiki/Pendulum)<br/>
