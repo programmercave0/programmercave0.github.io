@@ -38,7 +38,7 @@ Period of oscillation:
 
 C++ Implementation
 
-``cpp
+```cpp
 #include <iostream>
 #include <cmath>
 #include <graphics.h>
