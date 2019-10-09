@@ -125,7 +125,7 @@ Compile it with the command `g++ simplependulum.cpp -o simplependulum -lgraph`
 Reference:
 
 [https://en.wikipedia.org/wiki/Pendulum](https://en.wikipedia.org/wiki/Pendulum)<br/>
-[https://www.cs.colorado.edu/~main/bgi/doc/initgraph.html(https://www.cs.colorado.edu/~main/bgi/doc/initgraph.html)<br/>
+[https://www.cs.colorado.edu/~main/bgi/doc/initgraph.html](https://www.cs.colorado.edu/~main/bgi/doc/initgraph.html)<br/>
 [https://www.myphysicslab.com/pendulum/pendulum-en.html](https://www.myphysicslab.com/pendulum/pendulum-en.html) 
   
 
