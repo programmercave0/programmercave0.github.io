@@ -2,11 +2,10 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<p class="meta">{{ page.date | date_to_string | {{ post.tags | sort | join: ", " }} }}</p>
 
 <div class="post">
   {% include revenuehits_ads.html %}
-  {{ post.tags | sort | join: ", " }}
   {{ content }}
    <input type="hidden" name="IL_IN_ARTICLE"> 
   {% include infolinks_ads.html %}
