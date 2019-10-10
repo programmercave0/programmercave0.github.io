@@ -52,7 +52,9 @@ ul.posts li { list-style: none; }
     background:#2c2c2c;
     overflow-x: auto;
     overflow-y: auto;
-    white-space:nowrap
+    white-space:nowrap;
+    width: 100%;
+    display: block;
     ... /* etc. */
 }
 
