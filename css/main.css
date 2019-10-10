@@ -5,9 +5,10 @@ a { text-decoration: none; color: blue; }
     color: blue;
 }*/
 /* A link that has been visited */
+/*
 a:visited {
     color: gray;
-}
+}*/
 /* A link that is hovered on */
 a:hover {
     color: black;
