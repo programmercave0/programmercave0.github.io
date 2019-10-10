@@ -51,8 +51,8 @@ ul.posts li { list-style: none; }
     color:#dfdfbf;
     background:#2c2c2c;
     width: 70%;
-    height: 500px;
-    overflow-y: auto;
+    height: 900px;
+    overflow-y: hidden;
     overflow-x: hidden;
     ... /* etc. */
 }
