@@ -50,8 +50,8 @@ ul.posts li { list-style: none; }
     font-size:20;
     color:#dfdfbf;
     background:#2c2c2c;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
     white-space:nowrap
     ... /* etc. */
 }
