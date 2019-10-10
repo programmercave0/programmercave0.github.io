@@ -57,7 +57,7 @@ To use `graphics.h`on Ubuntu platform we need to compile and install `libgraph`.
   
 Now we can use `graphics.h` library after adding following lines to the code.
     ```
-    int gd = DETECT, gm; <br/>
+    int gd = DETECT, gm; 
     initgraph(&gd, &gm, NULL);
     ```
   
