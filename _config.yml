@@ -14,6 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-paginate
   
 comments:
   facebook:
@@ -24,20 +25,34 @@ comments:
   
   
 url: https://programmercave0.github.io/
-footer-links:
-  dribbble:
-  email:
+social-network-links:
+  #dribbble:
+  #email:
   facebook: programmercave
-  flickr:
+  #flickr:
   github: programmercave
   instagram: programmercave
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
+  #linkedin:
+  #pinterest:
+  rss: true # just type anything here for a working RSS icon
   twitter: programmercave
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+  telegram: true
+  #stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  #youtube: # channel/<your_long_string> or user/<user-name>
+  #googleplus: # anything in your profile username that comes after plus.google.com/
+  
+  
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+  reddit: true
+  whatsapp: true
+  telegram: true
+  
+# Character used to separate site title and description in HTML document title
+# and RSS feed title
+title-separator: "-"
 
 #
 # This file contains configuration flags to customize your site
@@ -67,6 +82,15 @@ google_analytics: UA-102581341-3
 #
 # !! You don't need to change any of the configuration flags below !!
 
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    values:
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+
+# Use tags index page and make tags on each post clickable
+link-tags: true
 
 # Set the Sass partials directory, as we're using @imports
 sass:
