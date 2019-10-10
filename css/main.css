@@ -50,11 +50,7 @@ ul.posts li { list-style: none; }
     font-size:20;
     color:#dfdfbf;
     background:#2c2c2c;
-    overflow-x: auto;
-    overflow-y: auto;
-    width: 100%;
-    display: block;
-    ... /* etc. */
+   ... /* etc. */
 }
 
 .highlight .comment { color:#7a987a;}
