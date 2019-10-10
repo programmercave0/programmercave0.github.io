@@ -48,8 +48,8 @@ ul.posts li { list-style: none; }
 .highlight {
     font-family:Consolas;
     font-size:13;
-    color:#000000;
-    background:#D3D3D3;
+    color:#dfdfbf;
+    background:#2c2c2c;
     ... /* etc. */
 }
 
