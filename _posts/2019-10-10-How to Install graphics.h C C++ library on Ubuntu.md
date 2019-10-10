@@ -56,10 +56,10 @@ To use `graphics.h`on Ubuntu platform we need to compile and install `libgraph`.
      ```
   
 Now we can use `graphics.h` library after adding following lines to the code.
-    ```
+
     int gd = DETECT, gm; 
     initgraph(&gd, &gm, NULL);
-    ```
+   
   
 Here is a program of [Simple Pendulum Animation on Ubuntu](https://programmercave0.github.io//blog/2019/10/09/C++-Simple-Pendulum-Animation-on-Ubuntu-Machine).  
     
