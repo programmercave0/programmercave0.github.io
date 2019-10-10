@@ -1,7 +1,22 @@
 body { margin: 60px auto; width: 70%; }
 
 a { text-decoration: none; color: #999; }
-a:hover { text-decoration: underline; }
+a:link {
+    color: blue;
+}
+/* A link that has been visited */
+a:visited {
+    color: gray;
+}
+/* A link that is hovered on */
+a:hover {
+    color: black;
+     text-decoration: underline;
+}
+/* A link that is selected */
+a:active {
+    color: blue;
+}
 
 p, ul { font-size: 1.5em; line-height: 1.4em; color: #333; }
 
@@ -29,18 +44,4 @@ ul.posts li { list-style: none; }
 .cv .download { float: right; font-size: .8em; text-transform: uppercase; }
 */
 
-a:link {
-    color: blue;
-}
-/* A link that has been visited */
-a:visited {
-    color: gray;
-}
-/* A link that is hovered on */
-a:hover {
-    color: black;
-}
-/* A link that is selected */
-a:active {
-    color: blue;
-}
+
