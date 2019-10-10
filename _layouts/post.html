@@ -2,7 +2,11 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string | {{ post.tags | sort | join: ", " }} }}</p>
+<p class="meta">{{ page.date | date_to_string }} 
+  {% if post.tags.size > 0 %}
+  Tag{% if post.tags.size > 1 %}s{% endif %}:
+  {{ post.tags | sort | join: ", " }}
+{% endif %}</p>
 
 <div class="post">
   {% include revenuehits_ads.html %}
