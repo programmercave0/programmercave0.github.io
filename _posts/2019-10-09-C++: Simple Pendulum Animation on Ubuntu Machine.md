@@ -9,6 +9,8 @@ Here is the code to animate simple pendulum on Ubuntu Machine.
 
 We have to add `#include <graphics.h>` header file.
 
+If you want to install C/C++ `graphic.h` header file on Ubuntu you can visit this post. [How to Install graphics.h C/C++ library on Ubuntu]({{ site.url }}/blog/2019/10/10/How-to-Install-graphics.h-C-C++-library-on-Ubuntu)
+
 We have to also write 
   int gd = DETECT, gm;
   initgraph(&gd, &gm, NULL);
