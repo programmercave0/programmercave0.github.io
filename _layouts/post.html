@@ -6,6 +6,7 @@ layout: default
 
 <div class="post">
   {% include revenuehits_ads.html %}
+  {{ post.tags | sort | join: ", " }}
   {{ content }}
    <input type="hidden" name="IL_IN_ARTICLE"> 
   {% include infolinks_ads.html %}
