@@ -22,7 +22,7 @@ Result after excution of `heap_sort()` is
 
 C++ Implementation
 
-```cpp
+~~~cpp
 #include <iostream>
 
  void max_heapify(int arr[], int i, int si)
@@ -77,7 +77,7 @@ C++ Implementation
  }
     return 0;
 }
-```
+~~~
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
