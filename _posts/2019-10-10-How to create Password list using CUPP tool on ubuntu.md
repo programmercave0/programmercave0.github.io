@@ -27,7 +27,7 @@ You can view the available options using this command:
 ![Options]({{ site.url }}/assets/cupp.png)
 
 Before starting you should gather enough information about the victim so that chance of password in the list increases.
-
+<input type="hidden" name="IL_IN_ARTICLE"> 
 To start tool in interactive mode write this command and enter details.
   ```
   python3 cupp.py -i
