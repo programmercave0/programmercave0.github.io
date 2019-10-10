@@ -12,14 +12,14 @@ CUPP(Common User Passwords Profiler) is python based free and open source tool w
 **Requirements**<br/>
 To run CUPP install Python3 on your Ubuntu.
 
-**Quickstart**
+**Quickstart**<br/>
 Clone [cupp](https://github.com/Mebus/cupp) repository from Github using this command:
   ```
   git clone https://github.com/Mebus/cupp.git
   cd cupp
   ```
   
-**Options**
+**Options**<br/>
 You can view the available options using this command:
   ```
   python3 cupp.py -h
