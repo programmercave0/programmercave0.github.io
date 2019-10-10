@@ -48,16 +48,16 @@ To use `graphics.h`on Ubuntu platform we need to compile and install `libgraph`.
 3. Download `libgraph` from [here](download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz) and extract `libgraph-1.0.2.tar.gz` file.    
  <input type="hidden" name="IL_IN_ARTICLE"> 
 4. Go to the extracted folder and run following commands.
-    ```
-    ./configure
-    make
-    sudo make install
-    sudo cp /usr/local/lib/libgraph.* /usr/lib
-    ```
+     ```
+     ./configure
+     make
+     sudo make install
+     sudo cp /usr/local/lib/libgraph.* /usr/lib
+     ```
   
 Now we can use `graphics.h` library after adding following lines to the code.
     ```
-    int gd = DETECT, gm; 
+    int gd = DETECT, gm; <br/>
     initgraph(&gd, &gm, NULL);
     ```
   
