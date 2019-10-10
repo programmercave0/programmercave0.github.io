@@ -5,7 +5,7 @@ tags:  [Graphics, C++, Ubuntu, Linux, HowTo]
 date: 2019-10-10
 ---
 
-In this post we are going to install `graphics.h` library on Ubuntu and to use it with `gcc` or `g++` compiler. `graphics.h` provides access to a simple graphics library that makes it possible to draw lines, rectangles, ovals, arcs, polygons, images, and strings on a graphical window. To know about functions in `graphic.h` `D3D3D3` library in C/C++ visit [here](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1126/materials/cppdoc/graphics.html).
+In this post we are going to install `graphics.h` library on Ubuntu and to use it with `gcc` or `g++` compiler. `graphics.h` provides access to a simple graphics library that makes it possible to draw lines, rectangles, ovals, arcs, polygons, images, and strings on a graphical window. To know about functions in `graphic.h` library in C/C++ visit [here](https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1126/materials/cppdoc/graphics.html).
 
 To use `graphics.h`on Ubuntu platform we need to compile and install `libgraph`. [libgraph](https://savannah.nongnu.org/projects/libgraph/) is an implementation of the TurboC graphics API (`graphics.h`) on GNU/Linux using SDL.
 
