@@ -73,3 +73,9 @@ ul.posts li { list-style: none; }
         width: 600px;
     }
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
