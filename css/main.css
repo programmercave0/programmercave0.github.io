@@ -70,6 +70,7 @@ ul.posts li { list-style: none; }
   position: fixed;
   height: 100%;
   overflow: auto;
+  left: 0;
 }
 
 /* Sidebar links */
