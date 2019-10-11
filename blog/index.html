@@ -9,4 +9,7 @@ title: ProgrammerCave's Posts
 	  {% for post in site.posts %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
+		{% include amazon_affiliate_laptops.html %}<br/>
+	{% include amazon_affiliate_books.html %}<br/>{% include amazon_affiliate_books.html %}<br/>
+  {% include amazon_affiliate_laptops.html %}<br/>
 	</ul>
