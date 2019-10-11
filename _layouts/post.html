@@ -5,14 +5,17 @@ layout: default
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
-  {% include revenuehits_ads.html %}
+  {% include revenuehits_ads.html %}<br/>
   {{ content }}
+  <br/>
    <input type="hidden" name="IL_IN_ARTICLE"> 
+  <br/>
   {% include infolinks_ads.html %}
-  {% include share.html %}
-  {% include amazon_affiliate_books.html %}
-  {% include amazon_affiliate_laptops.html %}
-  {% include comments.html %}
+  <br/>
+  {% include share.html %}<br/>
+  {% include amazon_affiliate_books.html %}<br/>
+  {% include amazon_affiliate_laptops.html %}<br/>
+  {% include comments.html %}<br/>
   
   <!--RevenueHits Referrel-->
 </div>
