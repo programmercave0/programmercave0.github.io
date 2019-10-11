@@ -50,6 +50,8 @@ ul.posts li { list-style: none; }
     font-size:20;
     color:#dfdfbf;
     background:#2c2c2c;
+    overflow: auto;
+    white-space: nowrap;
    ... /* etc. */
 }
 
@@ -61,16 +63,5 @@ ul.posts li { list-style: none; }
 .highlight .cppType { color:#8acccf; }
 ... /* etc. */
 
-/* The side navigation menu */
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  left: 0;
-}
-
+/
 
