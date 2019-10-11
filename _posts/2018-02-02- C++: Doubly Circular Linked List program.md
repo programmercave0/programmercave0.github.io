@@ -11,7 +11,7 @@ And in Circular Linked List the last node contains the address of the first node
 
 Here, in Doubly Circular Linked List the last node contains the address of first node and first node contains the address of the last node. 
 
-![Doubly Linked List]({{ site.url }}/assets/DLL.png)
+![Doubly Linked List]({{ site.url }}/assets/DLL.png){:class="img-responsive"}
 
 In C++ implementation of this program we have also copy constructor, move constructor, copy assignment operator, move assignment operator and destructor.
 
