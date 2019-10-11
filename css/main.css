@@ -3,15 +3,15 @@ body { margin: 70px auto; width: 50%; }
 .container {
   width: 900px;
 }
-section,
-aside {
+section-left,
+section-right {
   margin: 10px;
 }
-section {
+section-left {
   float: left;
   width: 340px;
 }
-aside {
+section-right {
   float: right;
   width: 158px;
 }
