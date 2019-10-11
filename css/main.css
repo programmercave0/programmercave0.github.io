@@ -1,4 +1,4 @@
-html, body { margin: 70px auto; width: 50%; }
+body { margin: 70px auto; width: 50%; }
 
 a { text-decoration: none; color: blue; }
 /*a:link {
@@ -71,7 +71,7 @@ ul.posts li { list-style: none; }
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-html, body { margin: 20px auto; width: 100%; }
+    body { margin: 20px auto; width: 100%; }
     
     p, ul { font-size: 22; line-height: 1.4em; color: #333; }
 
@@ -95,7 +95,7 @@ ul.posts li { list-style: none; }
 @media only screen
 and (min-width : 321px) {
 /* Styles */
-    html, body { margin: 20px auto; width: 100%; }
+    body { margin: 20px auto; width: 100%; }
     
     p, ul { font-size: 22; line-height: 1.4em; color: #333; }
 
@@ -120,7 +120,7 @@ ul.posts li { list-style: none; }
 @media only screen
 and (max-width : 320px) {
 /* Styles */
-    html, body { margin: 20px auto; width: 100%; }
+  body { margin: 20px auto; width: 100%; }
     
     p, ul { font-size: 22; line-height: 1.4em; color: #333; }
 
