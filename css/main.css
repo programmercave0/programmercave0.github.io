@@ -52,7 +52,6 @@ ul.posts li { list-style: none; }
     background:#2c2c2c;
     overflow-x: scroll;
     overflow-y: scroll;
-    height: 500px;
    ... /* etc. */
 }
 
