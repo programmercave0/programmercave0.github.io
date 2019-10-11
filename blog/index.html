@@ -1,15 +1,23 @@
 ---
 layout: default
-title: ProgrammerCave's Posts
+title: Categories
 ---
 	<h1>{{ page.title }}</h1>
 
-	<ul class="posts">
+	<div id="archives">
+{% for category in site.tags %}
+  <div class="archive-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <div id="#{{ category_name | slugize }}"></div>
+    <p></p>
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-		{% include amazon_affiliate_laptops.html %}<br/>
-	{% include amazon_affiliate_books.html %}<br/>{% include amazon_affiliate_books.html %}<br/>
-  {% include amazon_affiliate_laptops.html %}<br/>
-	</ul>
+    <h3 class="category-head">{{ category_name }}</h3>
+    <a name="{{ category_name | slugize }}"></a>
+    {% for post in site.tags[category_name] %}
+    <article class="archive-item">
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+    </article>
+    {% endfor %}
+  </div>
+{% endfor %}
+</div>
