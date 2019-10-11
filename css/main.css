@@ -1,17 +1,18 @@
-body { margin: 50px auto; width: 100%; }
+body {  width: 100%; }
 
 .container {
+  margin: 50px auto;
   width: 900px;
 }
-left-section,
-right-section {
+.left-section,
+.right-section {
   margin: 10px;
 }
-left-section {
+.left-section {
   float: left;
   width: 340px;
 }
-right-section {
+.right-section {
   float: right;
   width: 158px;
 }
