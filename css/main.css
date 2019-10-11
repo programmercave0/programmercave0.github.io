@@ -52,7 +52,7 @@ ul.posts li { list-style: none; }
     background:#2c2c2c;
     white-space: nowrap;
     overflow-x: scroll;
-    overflow-y: auto;
+    overflow-y: hidden;
    ... /* etc. */
 }
 
