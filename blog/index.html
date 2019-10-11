@@ -6,6 +6,6 @@ title: Categories
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
 	 {% for post in site.tags[tag] %}
-		{{ post.title }}
+		<a href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
 	{% endfor %}
 {% endfor %}
