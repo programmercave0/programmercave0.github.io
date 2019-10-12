@@ -7,20 +7,20 @@ date: 2019-10-12
 
 **Great Indian Festival** sale on Amazon.com starts from **13<sup>th</sup> Oct to 17<sup>th</sup> Oct**. Products have heavy discounts and cashback offers. There is 10% Instant Discount + Bonus Offer on *ICICI Bank Credit and Debit Cards*.
 
-![cover]({{ site.url }}/assets/amazon.png){:class="img-responsive"}
+![cover]({{ site.url }}/assets/amazon.jpg){:class="img-responsive"}
 
 Here is the top 10 Laptop deals on Amazon.com Great Indian Festival Sale 2019.
 
 1. [HP Pavilion x360](https://amzn.to/2pf43yK) Price: 74,990.00 INR
-   | Processor | 8th Gen Intel Core i7-8550U processor, 1.8GHz base processor speed |
-   |-----------|--------------------------------------------------------------------|
-   | OS | Pre-loaded Windows 10 Home with lifetime validity |
-   | Memeory | 8GB DDR4 RAM |
-   | Storage | 1TB HDD |
-   | Graphics | NVIDIA GeForce MX130 4GB Graphics |
-   | Display | 14-inch FHD (1920 x 1080) |
-   | Ports | 1 HDMI, 2 USB 3.0, 1 USB Type C, 1 SD card reader, 1 Audio-output ,Without CD-drive |
-   | Other Features | Fingerprint Reader, Inking Pen |
+| Processor | 8th Gen Intel Core i7-8550U processor, 1.8GHz base processor speed |
+|-----------|--------------------------------------------------------------------|
+| OS | Pre-loaded Windows 10 Home with lifetime validity |
+| Memeory | 8GB DDR4 RAM |
+| Storage | 1TB HDD |
+| Graphics | NVIDIA GeForce MX130 4GB Graphics |
+| Display | 14-inch FHD (1920 x 1080) |
+| Ports | 1 HDMI, 2 USB 3.0, 1 USB Type C, 1 SD card reader, 1 Audio-output ,Without CD-drive |
+| Other Features | Fingerprint Reader, Inking Pen |
 
    **CHECK ON AMAZON** ![CHECK ON AMAZON](https://amzn.to/2pf43yK){:class="img-responsive"}
 
