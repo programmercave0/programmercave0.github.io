@@ -144,7 +144,7 @@ Here is the top 10 Laptop deals on Amazon.com Great Indian Festival Sale 2019.
    | Ports |1 Type-A USB 3.1 Gen 2, 1 Type-C USB 3.1 Gen 2, 2 Type-A USB 3.1 Gen1 1 RJ45, 1 HDMI, Without CD drive |
    | Cooling System | Anti-Dust Self-Cleaning Tunnels, 83 Fans Blades, 0.1mm Ultraslim Fins, 5 Pipes CPU/GPU/VRM |
    |Keyboard | Per-Key RGB Lighting, N-key rollover |
-   | Other Features | 2 speakers with Smart AMP technology, Array Microphone, Intel 802.11ac (2x2) Gigabit Wi-Fi, Without Webcam |
+   | Other Features | 2 speakers with Smart AMP technology, Array Microphone, Intel 802.11ac (2x2) Gigabit Wi-Fi, Without Webcam|
    
    **CHECK ON AMAZON** ![CHECK ON AMAZON](https://amzn.to/32aUIXq){:class="img-responsive"}
 
