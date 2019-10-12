@@ -16,8 +16,6 @@ Result after execution of `build_max_heap()` function is
 
 `heap_sort` function: Its running time is O(n lg n).
 
-<br/>{% include adsterra.html %}<br/>
-
 Result after excution of `heap_sort()` is
 
 ![Heapsort]({{ site.url }}/assets/Heapsort2.PNG)
