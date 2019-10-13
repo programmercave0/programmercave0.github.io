@@ -22,6 +22,7 @@ Here we are going to see about x*86* Processor. 8086 CPU was the first x*86* pro
  <br/><input type="hidden" name="IL_IN_ARTICLE"> <br/>
 **General Purpose Registers (GPR)**<br/>
 The 8 General Purpose Registers are:<br/>
+
 1. Accumulator register (*AX*): In this register intermediate arithmetic and logic results are stored. <br/>
 2. Counter register (*CX*): It is used as counter in shift/rotate instructions and loops.<br/>
 3. Data register (*DX*): It is used in I/O operations and arithematic operations.<br/>
@@ -51,6 +52,7 @@ The order in which they are listed is the same order that is used in a push-to-s
 
 
 **Segment Register**<br/>
+
 Segment registers are basically *pointer* which points to a location where data is stored or code execution begins.<br/>
 The 6 Segment Registers are: <br/>
 1. Stack Segment (*SS*): It is a pointer to the stack.<br/>
