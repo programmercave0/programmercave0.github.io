@@ -8,8 +8,7 @@ date: 2019-10-13
 
 In computing, a processor or processing unit is an electronic circuit which performs operations on some external data source, usually memory or some other data stream. The term is frequently used to refer to the central processor (central processing unit) in a system. The Principal components of a CPU include the arithmetic logic unit (ALU) that performs arithmetic and logic operations, processor registers that supply operands to the ALU and store the results of ALU operations, and a control unit that orchestrates the fetching (from memory) and execution of instructions by directing the coordinated operations of the ALU, registers and other components. 
 
-![Basic CPU Diagram]({{ site.url }}/assets/basicCPU.png){:class="img-responsive"}
-	Basic CPU Diagram
+![Basic CPU Diagram]({{ site.url }}/assets/basicCPU.png){:class="img-responsive"} 
 
 Registers are like internal variable for the processor. Registers have small amount of storage but they are very fast. It is very time consuming to store immediate calculation results in main memory. The distance between the processor and main memory is far enough for the signal to take a significant time to get there. To get past this issue there are small amounts of memory stored inside the processor itself, these are called registers.
 
@@ -42,8 +41,8 @@ The order in which they are listed is the same order that is used in a push-to-s
 *AX*, *CX* are 16-bit notations. Here are 32 bit and 64 bit notations.
 
 |---
-| Register  |  Accumulator  |  Counter  |  Data  |  Base  |  Stack Pointer  |  Stack Base Pointer  |  Source  |  Destination |
-| - | - | - | - | - | - | - | -
+| Register | Accumulator | Counter | Data | Base | Stack Pointer | Stack Base Pointer | Source |  Destination |
+|-|-|-|-|-|-|-|-
 | 16-bit | AX | CX | DX | BX | SP | BP | SI | DI |
 |---
 | 32-bit | EAX | ECX | EDX | EBX | ESP | EBP | ESI | EDI |
