@@ -2,15 +2,7 @@
 layout: default
 ---
 
-
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }} 
-{% assign ttags = page.tags | join:',' %}
-	{% assign rawtags = rawtags | append:ttags %}
-{% endfor %}
-{% assign rawtags = rawtags | sort %}
-</p>
-
+<p class="meta">{{ page.date | date_to_string }} </p>
 <div class="post">
   {% include ylix_ads.html %}<br/>
   
