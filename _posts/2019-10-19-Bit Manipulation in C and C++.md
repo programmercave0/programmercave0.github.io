@@ -7,7 +7,7 @@ date: 2019-10-19
 
 All data in computer is represented in binary i.e. in 0 or 1. Computers or machines do not understand our languages, they understand bits. Generally programmer do not care about operations at the bit level. But sometimes a programmer has to dive in a deeper level and work on bits.
 
-#Bits representation
+# Bits representation
 In programming, an n bit integer is stored as a binary number that consists of n bits. So a 32-bit integer consists of 32 bits and 64 bit integer consists of 64 bits. In C++ programming language int data type is 16-bit, 32-bit and 64-bit type. [see here](https://en.cppreference.com/w/cpp/language/types)
 
 Here is the bit representation of 32 bit int number 10:<br/>
@@ -31,7 +31,7 @@ std::cout << b << "\n"; /* 4294967286 */
 
 In a signed representation, the next number after `2<sup>n – 1</sup> – 1` is `-2<sup>n</sup> – 1`, and in an unsigned representation, the next number after `2<sup>n</sup> – 1` is `0`.
 
-#Bit Operations
+# Bit Operations
 
 ![Operations]({{ site.url }}/assets/bitmtable2.png){:class="img-responsive"}
 
@@ -40,10 +40,10 @@ We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `
 
 `x<<k` corresponds to multiplying `x` by `2<sup>k</sup>`, and `x>>k` corresponds to dividing `x` by `2<sup>k</sup>` rounded down to an integer.
 
-#Common Bit Tasks
+# Common Bit Tasks
 
 **Binary representation of _unsigned int_:**
-```
+	```
 	void binary(unsigned int num)
 	{
 		for(int i = 256; i > 0; i = i/2) {
@@ -54,36 +54,36 @@ We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `
 		}
 		std::cout << std::endl;
 	}
-```
+	```
 
 **Setting Bit at *position*:**
-```
+	```
 	int set_bit(int num, int position)
 	{
 		int mask = 1 << position;
 		return num | mask;
 	}
-```
+	```
  <br/><input type="hidden" name="IL_IN_ARTICLE"> <br/>
 **Getting Bit at *position*:**
-```
+	```
 	bool get_bit(int num, int position)
 	{
 		bool bit = num & (1 << position);
 		return bit;
 	}
-```
+	```
 
 **Clearing Bit at *position*:**
-```
+	```
 	int clear_bit(int num, int position)
 	{
 		int mask = 1 << position;
 		return num & ~mask;
 	}
-```
+	```
 
-#Representing Sets
+# Representing Sets
 
 Bits representation of an integer are 0-indexed and the index starts from right side i.e. least significant bit. So we can represent every subset of the set `{0, 1, 2, ..., n-1}` as an *n* bit integer and whose bits indicate which element belongs to the subset. If bit at index 3 is 1 and at index 4 is 0 in binary representation of a number, then 3 belongs to the subset and 4  does not belong to the subset.
 
@@ -92,7 +92,7 @@ For a 32-bit integer, the set is {0, 1, 2,..., 31} and the subset is {1, 3, 4, 8
 and decimal representation is 2<sup>8</sup> + 2<sup>4</sup> + 2<sup>3</sup> + 2<sup>1</sup> = 282.
 
 Code to form subset and add elements to it:
-```
+	```
 	int add_elements_to_subset()
 	{
 		int subset = 0;
@@ -102,10 +102,10 @@ Code to form subset and add elements to it:
 		subset = subset | (1 << 8);
 		return subset;
 	}
-```
+	```
 
 Code to print elements of the subset:
-```
+	```
 	void printing_subset(int subset)
 	{
 		for (int i = 0; i < 32; i++) 
@@ -113,9 +113,9 @@ Code to print elements of the subset:
 			if (subset & (1 << i)) std::cout << i << " ";
 		}
 	}
-```
+	```
 
-#Additional functions
+# Additional functions
 
 The g++ compiler provides the following functions for counting bits:
 	•` __builtin_clz(x)`: the number of zeros at the beginning of the number
