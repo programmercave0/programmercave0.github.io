@@ -19,7 +19,7 @@ In C++, `int` is either *signed* or *unsigned* and so a bit representation is ei
 
 In a signed representation, first bit represents the sign of a number (0 for positive and 1 for negative), and remaining n-1 bits contains the magnitude of the number.
  <br/><input type="hidden" name="IL_IN_ARTICLE"> <br/>
-There is a connection between a signed and an unsigned representation. A signed number `-x` equals an unsigned number `2<sup>n</sup> – x`.
+There is a connection between a signed and an unsigned representation. A signed number `-x` equals an unsigned number 2<sup>n</sup> – x.<br/>
   -x (signed) = 2<sup>n</sup> - x (unsigned)
 
 ```
@@ -29,16 +29,16 @@ std::cout << a << "\n"; /* -10 */
 std::cout << b << "\n"; /* 4294967286 */
 ```
 
-In a signed representation, the next number after `2<sup>n – 1</sup> – 1` is `-2<sup>n</sup> – 1`, and in an unsigned representation, the next number after `2<sup>n</sup> – 1` is `0`.
+In a signed representation, the next number after 2<sup>n – 1</sup> – 1 is -2<sup>n</sup> – 1, and in an unsigned representation, the next number after 2<sup>n</sup> – 1 is `0`.
 
 # Bit Operations
 
 ![Operations]({{ site.url }}/assets/bitmtable2.png){:class="img-responsive"}
 
 
-We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `x` is even and if `x & 1 = 1` then `x` is odd. We can also say that, `x` is divisible by `2<sup>k</sup>` exactly when `x & (2<sup>k</sup> – 1) = 0`.
+We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `x` is even and if `x & 1 = 1` then `x` is odd. We can also say that, `x` is divisible by 2<sup>k</sup> exactly when x & (2<sup>k</sup> – 1) = 0.
 
-`x<<k` corresponds to multiplying `x` by `2<sup>k</sup>`, and `x>>k` corresponds to dividing `x` by `2<sup>k</sup>` rounded down to an integer.
+`x<<k` corresponds to multiplying `x` by 2<sup>k</sup>, and `x>>k` corresponds to dividing `x` by 2<sup>k</sup> rounded down to an integer.
 
 # Common Bit Tasks
 
