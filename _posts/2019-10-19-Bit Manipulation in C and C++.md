@@ -2,10 +2,7 @@
 ---
 layout: post
 title: "Bit Manipulation in C and C++"
-tags:  
-    - C++
-    - Competitive Programming
-    - Bitmasking
+tags: [C++, Competitive Programming, Bitmasking]
 date: 2019-10-19
 ---
 
