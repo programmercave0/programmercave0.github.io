@@ -5,10 +5,9 @@ tags:  [C++, Competitive Programming, Bitmasking]
 date: 2019-10-19
 ---
 
-#
 All data in computer is represented in binary i.e. in 0 or 1. Computers or machines do not understand our languages, they understand bits. Generally programmer do not care about operations at the bit level. But sometimes a programmer has to dive in a deeper level and work on bits.
 
-# Bits representation
+**Bits representation**
 In programming, an n bit integer is stored as a binary number that consists of n bits. So a 32-bit integer consists of 32 bits and 64 bit integer consists of 64 bits. In C++ programming language int data type is 16-bit, 32-bit and 64-bit type. [see here](https://en.cppreference.com/w/cpp/language/types)
 
 Here is the bit representation of 32 bit int number 10:<br/>
@@ -32,7 +31,7 @@ std::cout << b << "\n"; /* 4294967286 */
 
 In a signed representation, the next number after 2<sup>n – 1</sup> – 1 is -2<sup>n</sup> – 1, and in an unsigned representation, the next number after 2<sup>n</sup> – 1 is `0`.
 
-# Bit Operations
+**Bit Operations**
 
 ![Operations]({{ site.url }}/assets/bitmtable2.png){:class="img-responsive"}
 
@@ -41,7 +40,7 @@ We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `
 
 `x<<k` corresponds to multiplying `x` by 2<sup>k</sup>, and `x>>k` corresponds to dividing `x` by 2<sup>k</sup> rounded down to an integer.
 
-# Common Bit Tasks
+**Common Bit Tasks**
 
 **Binary representation of _unsigned int_:**
 ```
@@ -83,7 +82,7 @@ int clear_bit(int num, int position)
 }
 ```
 
-# Representing Sets
+**Representing Sets**
 
 Bits representation of an integer are 0-indexed and the index starts from right side i.e. least significant bit. So we can represent every subset of the set `{0, 1, 2, ..., n-1}` as an *n* bit integer and whose bits indicate which element belongs to the subset. If bit at index 3 is 1 and at index 4 is 0 in binary representation of a number, then 3 belongs to the subset and 4  does not belong to the subset.
 
@@ -115,7 +114,7 @@ void printing_subset(int subset)
 }
 ```
 
-# Additional functions
+**Additional functions**
 
 The g++ compiler provides the following functions for counting bits:<br/>
 	•` __builtin_clz(x)`: the number of zeros at the beginning of the number<br/>
