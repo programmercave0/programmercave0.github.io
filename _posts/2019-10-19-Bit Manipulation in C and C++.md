@@ -116,7 +116,7 @@ void printing_subset(int subset)
 
 # Additional functions
 
-The g++ compiler provides the following functions for counting bits:
+The g++ compiler provides the following functions for counting bits:<br/>
 	•` __builtin_clz(x)`: the number of zeros at the beginning of the number<br/>
 	• `__builtin_ctz(x)`: the number of zeros at the end of the number<br/>
 	• `__builtin_popcount(x)`: the number of ones in the number<br/>
