@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Bit Manipulation in C and C++"
 tags:  [C++, Competitive Programming, Bitmasking]
