@@ -43,45 +43,44 @@ We can use & operator to check if a number is even or odd. If `x & 1 = 0` then `
 # Common Bit Tasks
 
 **Binary representation of _unsigned int_:**
-	```
-	void binary(unsigned int num)
-	{
-		for(int i = 256; i > 0; i = i/2) {
-			if(num & i) 
-				std::cout << "1 ";
-			else
-				std::cout << "0 ";
-		}
-		std::cout << std::endl;
+```
+void binary(unsigned int num)
+{
+	for(int i = 256; i > 0; i = i/2) {
+		if(num & i) 
+			std::cout << "1 ";
+		else
+			std::cout << "0 ";
 	}
-	```
+	std::cout << std::endl;
+}
+```
 
 **Setting Bit at *position*:**
-	```
-	int set_bit(int num, int position)
-	{
-		int mask = 1 << position;
-		return num | mask;
-	}
-	```
+```
+int set_bit(int num, int position)
+{
+	int mask = 1 << position;
+	return num | mask;
+}
+```
  <br/><input type="hidden" name="IL_IN_ARTICLE"> <br/>
 **Getting Bit at *position*:**
-	```
-	bool get_bit(int num, int position)
-	{
-		bool bit = num & (1 << position);
-		return bit;
-	}
-	```
-
+```
+bool get_bit(int num, int position)
+{
+	bool bit = num & (1 << position);
+	return bit;
+}
+```
 **Clearing Bit at *position*:**
-	```
-	int clear_bit(int num, int position)
-	{
-		int mask = 1 << position;
-		return num & ~mask;
-	}
-	```
+```
+int clear_bit(int num, int position)
+{
+	int mask = 1 << position;
+	return num & ~mask;
+}
+```
 
 # Representing Sets
 
@@ -92,35 +91,35 @@ For a 32-bit integer, the set is {0, 1, 2,..., 31} and the subset is {1, 3, 4, 8
 and decimal representation is 2<sup>8</sup> + 2<sup>4</sup> + 2<sup>3</sup> + 2<sup>1</sup> = 282.
 
 Code to form subset and add elements to it:
-	```
-	int add_elements_to_subset()
-	{
-		int subset = 0;
-		subset = subset | (1 << 1);
-		subset = subset | (1 << 3);
-		subset = subset | (1 << 4);
-		subset = subset | (1 << 8);
-		return subset;
-	}
-	```
+```
+int add_elements_to_subset()
+{
+	int subset = 0;
+	subset = subset | (1 << 1);
+	subset = subset | (1 << 3);
+	subset = subset | (1 << 4);
+	subset = subset | (1 << 8);
+	return subset;
+}
+```
 
 Code to print elements of the subset:
-	```
-	void printing_subset(int subset)
+```
+void printing_subset(int subset)
+{
+	for (int i = 0; i < 32; i++) 
 	{
-		for (int i = 0; i < 32; i++) 
-		{
-			if (subset & (1 << i)) std::cout << i << " ";
-		}
+		if (subset & (1 << i)) std::cout << i << " ";
 	}
-	```
+}
+```
 
 # Additional functions
 
 The g++ compiler provides the following functions for counting bits:
-	•` __builtin_clz(x)`: the number of zeros at the beginning of the number
-	• `__builtin_ctz(x)`: the number of zeros at the end of the number
-	• `__builtin_popcount(x)`: the number of ones in the number
-	• `__builtin_parity(x)`: the parity (even or odd) of the number of ones
+	•` __builtin_clz(x)`: the number of zeros at the beginning of the number<br/>
+	• `__builtin_ctz(x)`: the number of zeros at the end of the number<br/>
+	• `__builtin_popcount(x)`: the number of ones in the number<br/>
+	• `__builtin_parity(x)`: the parity (even or odd) of the number of ones<br/>
 
   
