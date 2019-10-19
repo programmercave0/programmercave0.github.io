@@ -123,3 +123,8 @@ The g++ compiler provides the following functions for counting bits:<br/>
 	• `__builtin_parity(x)`: the parity (even or odd) of the number of ones<br/>
 
   
+Get this post in [pdf format](https://www.file-up.org/uqqr7dbnhy8w)
+
+Reference: <br/>
+	Competitive Programmer’s Handbook - Antti Laaksonen
+
