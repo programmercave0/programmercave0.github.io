@@ -106,6 +106,8 @@ int main()
 
 View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/RoyandCodeStreak.cpp)
 
+Get this post in [pdf form](https://www.file-up.org/bqcqt9dxgdgp).
+
 Reference:<br/>
 [Why does the following snippet speed up the code?](https://stackoverflow.com/questions/48367983/why-does-the-following-snippet-speed-up-the-code)<br/>
 [Significance of ios_base::sync_with_stdio(false); cin.tie(NULL);](https://stackoverflow.com/questions/31162367/significance-of-ios-basesync-with-stdiofalse-cin-tienull)<br/>
