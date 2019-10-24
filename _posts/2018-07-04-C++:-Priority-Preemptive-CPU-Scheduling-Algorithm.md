@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Priority Preemptive CPU Scheduling Algorithm"
-tags:  C++, Algorithm, Operating System
+tags: [C++, Algorithm, Operating System]
 date: 2018-07-04
 ---
 
