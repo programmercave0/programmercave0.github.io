@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Collatz Conjecture Program "
-tags:  C++, Algorithm, Maths
+tags: [C++, Algorithm, Maths]
 date: 2018-04-17
 ---
 
