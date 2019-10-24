@@ -58,7 +58,7 @@ If encounter result is 0 then we have to reset count because we want a streak of
 `insert()` : It insert value in unordered_set, if it does not contain thar value.<br/>
 `count()` : It returns the number of occurence of that element in the unordered_set, which is 0 or 1.<br/>
 `max()` : It is defined in header <algorithm> and it returns the greater of the two values.<br/>
-Refer [std::max](https://en.cppreference.com/w/cpp/algorithm/max) and [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set)
+Refer [std::max] (https://en.cppreference.com/w/cpp/algorithm/max) and [std::unordered_set] (https://en.cppreference.com/w/cpp/container/unordered_set)
 
 **C++ implementation**
 
