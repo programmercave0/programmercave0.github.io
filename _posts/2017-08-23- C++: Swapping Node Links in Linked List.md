@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Swapping Node Links in Linked List"
-tags:  [C++, Algorithm, Linked List, Data Structure]
+tags:  [C++, Algorithm, Linked List, Data Structures]
 date: 2017-08-23
 ---
 
