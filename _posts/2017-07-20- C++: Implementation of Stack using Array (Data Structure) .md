@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Implementation of Stack using Array (Data Structure)"
-tags:  [C++, Algorithm, Stack, Data Structure]
+tags:  [C++, Algorithm, Stack, Data Structures]
 date: 2017-07-20
 ---
 
