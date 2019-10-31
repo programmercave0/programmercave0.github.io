@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Dijkstra's Algorithm using STL"
-tags:  [C++, Algorithm, Graph ALgorithms, Standard Tempelate Library]
+tags:  [C++, Algorithm, Graph Algorithms, Standard Tempelate Library]
 date: 2018-03-14
 ---
 
