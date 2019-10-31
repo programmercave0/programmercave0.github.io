@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Queue implementation using Linked List (Data Structure)"
-tags:  [C++, Algorithm, Linked List, Queue, Data Structure]
+tags:  [C++, Algorithm, Linked List, Queue, Data Structures]
 date: 2017-08-01
 ---
 
