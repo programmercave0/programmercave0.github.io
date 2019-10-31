@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++: Rock Paper Scissor Simple Console Implementation"
-tags:  C++, Game
+tags:  [C++, Games]
 date: 2018-06-18
 ---
 
