@@ -118,4 +118,4 @@ std::vector<bool> sieve_of_erastosthenes(int n)
 
 Reference - Competitive Programmer’s Handbook, Antti Laaksonen
 
-Get this post in [pdf](https://www.file-up.org/6hib9eu4og14)
+Get this post in pdf - [Prime Numbers and Sieve of Eratosthenes](https://www.file-up.org/6hib9eu4og14)
