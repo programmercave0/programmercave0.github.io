@@ -73,6 +73,7 @@ std::vector<int> prime_factorization(int n)
 }
 ```
 
+{% include ads.html %}<br/>
 <h1>Sieve of Eratosthenes</h1>
 
 It is an efficient algorithm to find prime numbers upto a limit (say 10,000,000).
