@@ -62,6 +62,8 @@ The 6 Segment Registers are: <br/>
 5. F Segment (*FS*). It points to more extra data ('F' comes after 'E').<br/>
 6. G Segment (*GS*). It points to still more extra data ('G' comes after 'F').<br/>
 
+
+{% include ads.html %}<br/>
 **EFLAGS Register**
 The *EFLAGS* is a 32-bit register used as a collection of bits representing Boolean values to store the results of operations and the state of the processor. <br/>
 The flags are grouped into:<br/>
