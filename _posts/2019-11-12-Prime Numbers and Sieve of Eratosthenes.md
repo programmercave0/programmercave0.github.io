@@ -7,7 +7,7 @@ date: 2019-11-12
 
 A **prime number** is an integer *n* > 1 which is only divisible by 1 and *n*(itself). For example, 2, 3, 5 are prime numbers, but 6, 8, 9 are not prime numbers.
 
-Every integer *n* > 1 can be uniquely expressed as the product of prime numbers. For example 8 = 2*2*2.
+Every integer *n* > 1 can be uniquely expressed as the product of prime numbers. For example 8 = 2 * 2 * 2.
 
 <h2>Some facts about prime numbers:</h2>
    1. Except 2, all prime numbers are odd.
