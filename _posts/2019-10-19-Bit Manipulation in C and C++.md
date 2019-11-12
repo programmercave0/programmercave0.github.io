@@ -82,6 +82,7 @@ int clear_bit(int num, int position)
 }
 ```
 
+{% include ads.html %}
 # Representing Sets
 
 Bits representation of an integer are 0-indexed and the index starts from right side i.e. least significant bit. So we can represent every subset of the set `{0, 1, 2, ..., n-1}` as an *n* bit integer and whose bits indicate which element belongs to the subset. If bit at index 3 is 1 and at index 4 is 0 in binary representation of a number, then 3 belongs to the subset and 4  does not belong to the subset.
