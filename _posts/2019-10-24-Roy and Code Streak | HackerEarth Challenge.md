@@ -61,6 +61,7 @@ If encounter result is 0 then we have to reset count because we want a streak of
     
 Refer [std::max](https://en.cppreference.com/w/cpp/algorithm/max) and [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set)
 
+{% include ads.html %}
 **C++ implementation**
 
 ```cpp
