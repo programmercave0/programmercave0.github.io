@@ -1,0 +1,5 @@
+current directory: /home/abhi/programmercave/vendor/bundle/ruby/2.3.0/gems/commonmarker-0.17.13/ext/commonmarker
+//bin/ruby -r ./siteconf20191112-3525-1e6tvux.rb extconf.rb
+sh: 1: //bin/ruby: not found
+
+extconf failed, exit code 127

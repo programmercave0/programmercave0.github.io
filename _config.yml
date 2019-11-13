@@ -60,6 +60,8 @@ share-links-active:
   reddit: true
   whatsapp: true
   telegram: true
+
+exclude: [vendor]
   
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
