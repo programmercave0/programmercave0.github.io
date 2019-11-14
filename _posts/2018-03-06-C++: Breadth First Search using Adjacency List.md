@@ -163,14 +163,20 @@ Output
 
 ![Output]({{ site.url }}/assets/BFSAdjOut.png){:class="img-responsive"}
 
+Get this post in pdf - [Breadth First Search](https://www.file-up.org/6qdpmefooxad)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
+
+
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
 
-[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
-
-[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
-
-[C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)
-
+[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
+[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
+[C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
 [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
