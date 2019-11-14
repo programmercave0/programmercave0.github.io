@@ -64,6 +64,8 @@ Variable `color` in the struct `Vertex` stores color of the given vertex and var
 
 The time complexity of Breadth First Search is *O(n+m)* where *n* is the number of vertices and *m* is the number of edges.
 
+{% include ads.html %}<br/>
+
 Here is C++ implementation of Breadth First Search using Adjacency List
 
 ```cpp
