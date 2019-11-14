@@ -1,13 +1,68 @@
 ---
 layout: post
-title: "C++: Depth First Search using Adjacency List"
+title: "Depth First Search using Adjacency List | Graph traversal"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-03-05
 ---
 
-The adjacency matrix representation is good if the graphs are dense.If the graph is sparse, the initialization of the matrix dominates the running time of the algorithm as it takes takes O(V<sup>2</sup>).
+**Depth first search** explores on a single path in a graph as long as it find undiscovered vertices. When an edge leads to the discovered vertices it backtrack to the previous vertex and explores along the edge where it find undiscovered vertices. Finally it backtracks to the source vertex from where it started. 
 
-C++ Implementation
+Initially all the vertices are white and when a vertex is discovered it becomes gray and then black when it is finished or processed.
+
+![Depth First Search]({{ site.url }}/assets/dfs.png){:class="img-responsive"}
+![Depth First Search]({{ site.url }}/assets/dfs_.png){:class="img-responsive"}
+
+First source vertex 1 is discovered so it becomes gray. Then vertex 4 is discovered. Since there are no vertex after vertex 4 on that path so vertex 4 is processed or finished and it becomes black. Then vertex 2 is discovered and so on. When vertex 3 is processed, control backtracks to the previous vertex which is 2.
+
+<h1>Implementation</h1>
+
+To store the color of the current vertex, we need a data structure.
+
+Here is the implementation of the function `depth_first_search` and `depth_first_search_visit`.
+
+```cpp
+enum Color {WHITE, GRAY, BLACK};
+   struct Vertex
+   {
+      int id;
+      Color color;
+      Vertex(int _id) : id(_id),
+                        color(Color::WHITE)
+                        {}
+   };
+
+void depth_first_search()
+{
+   for (const auto& u: vertices)
+   {
+      if (vertices[u.id].color == WHITE)
+      {
+         depth_first_search_visit(u.id);
+      }
+   }
+}
+
+void depth_first_search_visit(int u)
+{
+   vertices[u].color = GRAY;
+   std::cout << vertices[u].id <<" ";
+   const auto& v = adjacent[u].head;
+      if (vertices[v->dest_id].color == WHITE)
+      {
+         depth_first_search_visit(v->dest_id);
+      }
+   vertices[u].color = BLACK;
+}
+```
+Variable `color` in struct `Vertex` stores color for the given vertex.
+
+The time complexity of Depth First Search is *O(n+m)* where *n* is the number of vertices and *m* is the number of edges.
+
+{% include ads.html %}<br/>
+
+Here is the C++ Implementation for Depth First Search using Adjacency List
+
+**Related:** [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
 ```cpp
 #include <iostream>
@@ -133,15 +188,19 @@ int main()
 }
 ```
 
+Get this post in pdf - [Depth First Search](https://www.file-up.org/jmjjxa9mboq7)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
+
  <input type="hidden" name="IL_IN_ARTICLE"> 
-You may also like
-
-[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
-
-[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
-
-[C++: Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)
-
+You may also like<br/>
+[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
+[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
+[Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
 [C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
 
-[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
+
