@@ -1,13 +1,70 @@
 ---
 layout: post
-title: "C++: Breadth First Search using Adjacency List"
+title: "Breadth First Search using Adjacency List | Graph traversal"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-03-06
 ---
 
-Here we are going to write using adjacency list. Here we are going to use ```std::list``` which is available in Standard Template Library.
+**Breadth first search** (BFS) explores the graph level by level. First it explore every vertex that is connected to source vertex. If the vertex is discovered, it becomes gray or black. Initially all the vertices are white.
 
-C++ Implementation
+![Breadth First Search]({{ site.url }}/assets/bfs.png){:class="img-responsive"}
+
+If vertex 1 is the source vertex, then it is at level 0. Vertex 2 and 4 are at level 1 and vertex 3 and 5 are at level 2. Vertex 6 is at level 3. Thus, we can calculate the distance from source vertex to other vertex.
+
+When vertex 1 is discovered it becomes gray and when it is reached it become black. When vertex 1 is reached vertex 2 and 4 are discovered and they become gray and so on. So the vertices are white, then they become gray and then black.
+
+<h1>Implementation</h1>
+
+To store distance from the source vertex and to know if the vertex is discovered, we need a data structure to store value for the given vertex.
+
+**Related:** [C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
+
+Here is the implementation of the function `breadthFirstSearch`.
+
+```cpp
+enum Color {WHITE, GRAY, BLACK};
+enum { INFINITY = std::numeric_limits<int>::max() };
+  struct Vertex
+  {
+     int id;
+     int distance;
+     Color color;
+
+     Vertex(int _id) : id(_id),
+                       color(Color::WHITE),
+                       distance(INFINITY)
+                       {}
+  };
+
+void breadthFirstSearch(int s)
+{
+   vertices[s].color = GRAY;
+   vertices[s].distance = 0;
+   std::queue<Vertex> q;
+   q.push(vertices[s]);
+   while (!q.empty())
+   {
+      auto u = q.front();
+      q.pop();
+      for (const auto& v : adjList[u.id])
+      {
+         if (vertices[v].color == WHITE)
+         {
+            vertices[v].color = GRAY;
+            vertices[v].distance = u.distance + 1;
+            q.push(vertices[v]);
+         }
+      }
+      u.color = BLACK;
+   }
+}
+```
+
+Variable `color` in the struct `Vertex` stores color of the given vertex and variable `distance` stores distance of the vertex from the source vertex. In the function the source vertex is passed.
+
+The time complexity of Breadth First Search is *O(n+m)* where *n* is the number of vertices and *m* is the number of edges.
+
+Here is C++ implementation of Breadth First Search using Adjacency List
 
 ```cpp
 #include <iostream>
@@ -102,7 +159,7 @@ int main()
 
 Output
 
-![Output]({{ site.url }}/assets/BFSAdjOut.png)
+![Output]({{ site.url }}/assets/BFSAdjOut.png){:class="img-responsive"}
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like
@@ -112,8 +169,6 @@ You may also like
 [C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
 
 [C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)
-
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
 
 [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
