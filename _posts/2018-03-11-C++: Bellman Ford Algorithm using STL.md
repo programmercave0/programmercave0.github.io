@@ -1,23 +1,79 @@
 ---
 layout: post
-title: "C++: Bellman Ford Algorithm using STL"
+title: "Bellman Ford Algorithm | Single-Source Shortest Path"
 tags:  [C++, Algorithm, Graph Algorithms, Standard Tempelate Library]
 date: 2018-03-11
 ---
 
-The **Bellman–Ford** algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph.[wikipedia](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
+**Bellman–Ford** algorithm finds shortest path from the source vertex to all vertices in the graph. The graph can contain negative-weight edges, but it should not contain a negative-weight cycle that is reachable from the source vertex.
 
-It solves the single-source shortest-paths problem in the general case in which edge weights may be negative.
+The algorithm returns TRUE if there is no negative-weight cycle and FALSE if there is a negative-weight cycle reachable from the source vertex. If there is a negative-weight cycle that is reachable from source vertex, then no solution exists.
 
-It runs in time O(|V|.|E|) where |V| is number of vertices and |E| is number of edges.
+![Bellman-Ford]({{ site.url }}/assets/bellman.png){:class="img-responsive"}
 
-Here, we have used ```std::map``` to store vertices and their associated weight.
+In fig. (a) there is no negative-weight cycle, so Bellman Ford algorithm finds the shortest path from source if fig. (a) is in a graph whereas fig. (b) contains a negative-weight cycle therefore no solution exists.
 
-Image Source: Introduction to Algorithm
+![Bellman-Ford]({{ site.url }}/assets/bellman1.png){:class="img-responsive"}
+![Bellman-Ford]({{ site.url }}/assets/bellman2.png){:class="img-responsive"}
 
-![Bellman Algorithm]({{ site.url }}/assets/BellmanAlgo.png)
+In fig. (a) the graph is in inital configuration. All vertices were at distance infinity from source vertex *a*. Then vertices *b* and *c* are reached and their distance from vertex *a* is updated. 
 
-C++ Implementation
+In fig. (d) the sum of distance of path *a -> b -> d* is 2 + 5 = 7 whereas sum of distance of path *a -> c -> d* is 7 + (-3) = 4. Hence path *a -> c -> d* is preferred which is shown in red line. In fig. (e) red line shows shortest path from *a* to *e*.
+
+<h1>Implementation</h1>
+
+A data structure is needed to store the distance of a vertex from the source vertex.
+
+Here is the implementation of `bellman_ford` and `relax` function.
+
+```cpp
+struct Vertex
+    {
+        std::size_t id;
+        int distance = std::numeric_limits<int>::max();
+        Vertex(std::size_t id) : id(id) {}
+    };
+
+void relax(std::size_t src, std::size_t dest, int weight)
+{
+    if (vertices[dest].distance > (vertices[src].distance + weight))
+    {
+        vertices[dest].distance = (vertices[src].distance + weight);
+    }
+}
+
+bool bellman_ford(std::size_t src)
+{
+    //initialize distance of source
+    vertices[src].distance = 0;
+
+    for (int i = 0; i < vertices.size() - 1; i++)
+    {
+        for (auto it = edge_weight.begin(); it != edge_weight.end(); it++)
+        {
+            relax(it->first.first, it->first.second, it->second);
+        }
+    }
+
+    for (auto it = edge_weight.begin(); it != edge_weight.end(); it++)
+    {
+        if (vertices[it->first.second].distance
+            > (vertices[it->first.first].distance + it->second))
+           return false;
+    }
+    return true;
+}
+```
+
+{% include ads.html %}<br/>
+
+`relax` function updates the distance of the vertex from the source vertex if new calculated distance is smaller than the stored distance.
+
+The time complexity of Bellman Ford algorithm is *O(nm)* where *n* is the number of vertices and *m* is the number of edges.
+
+**Related:** [Dijkstra's Algorithm](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
+
+Here is the C++ Implementation of Bellman-Ford Algorithm
 
 ```cpp
 #include <iostream>
@@ -139,19 +195,21 @@ int main()
 
 Output
 
-![Output]({{ site.url }}/assets/BellmanOut.png)
+![Output]({{ site.url }}/assets/BellmanOut.png){:class="img-responsive"}
+
+Get this post in pdf - [Bellman Ford Algorithm](https://www.file-up.org/1i0k5ezjgq66)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
-You may also like
-
-[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
-
-[C++: Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)
-
-[C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)
-
+You may also like<br/>
+[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
+[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
 [C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
-
 [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
