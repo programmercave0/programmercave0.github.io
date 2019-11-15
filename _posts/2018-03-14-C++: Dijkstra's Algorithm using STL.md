@@ -1,26 +1,99 @@
 ---
 layout: post
-title: "C++: Dijkstra's Algorithm using STL"
+title: "Dijkstra's Algorithm | Single-Source Shortest Path"
 tags:  [C++, Algorithm, Graph Algorithms, Standard Tempelate Library]
 date: 2018-03-14
 ---
 
-**Dijkstra's algorithm** is an algorithm for finding the shortest paths between nodes in a graph.
+**Dijkstra's algorithm** finds shortest paths from the source vertex to all vertices in the graph. The condition for the algorithm is that all edge weights should be non-negative. Thus, Dijkstra’s algorithm is efficient than the Bellman-Ford algorithm because it processes each edge only once, since it knows that there are no negative-weight edges in the graph.
 
-Here we have assumed each weight is positive.
+![Dijkstra]({{ site.url }}/assets/dijkstra.png){:class="img-responsive"}
 
-The running time of Dijkstra's algorithm is lower than that of Bellman-Ford Algorithm.
+In fig. (a) there is no negative-weight cycle, so Bellman Ford algorithm finds the shortest path from source if fig. (a) is in a graph whereas fig. (b) contains a negative-weight cycle therefore no solution exists.
+
+![Dijkstra]({{ site.url }}/assets/dijkstra1.png){:class="img-responsive"}
+![Dijkstra]({{ site.url }}/assets/dijkstra2.png){:class="img-responsive"}
+
+Here the source vertex is *a*. When the vertex is selected it becomes gray and when it is processed it becomes black. 
+
+In fig. (a) vertex *a* is selected and after it is processed there are two edges to choose, one with weight 10 and one with weight 5. 
+
+In fig. (b) edge with weight 5 is selected because the weight is smaller than other edge weight and vertex *c* is selected. The shortest distance from the source vertex is also update at each vertex. 
+
+In fig, (c) distance to vertex *e* is 7 from source vertex and to vertex *d* it is 14 from source vertex. After vertex *e* is processed in fig. (d) the distance to vertex *d* is 13 from source vertex.
+
+In fig. (f) all vertices are processed and their shortest distance from source vertex is updated.
+
+At each step, Dijkstra’s algorithm selects a vertex that has not been processed yet and whose distance is as small as possible. We can say that it uses a greedy strategy.
+
+<h1>Implementation</h1>
+
+To store color, distance of a vertex a data structure is needed. An array is needed to store processed vertices and a minimum priority queue to store unprocessed vertices.
+
+Here is the implementation of `dijkstra` and `relax` function.
+
+```cpp
+enum Color {WHITE, BLACK};
+    struct Vertex
+    {
+        std::size_t id;
+        int distance = std::numeric_limits<int>::max();
+        Color color = WHITE;
+        Vertex(std::size_t id) : id(id) {}
+    };
+
+void relax(std::size_t src, std::size_t dest, int weight)
+{
+    auto& next_dist = vertices[dest].distance;
+    const auto curr_dist = vertices[src].distance + weight;
+    if (curr_dist < next_dist)
+    {
+        next_dist = curr_dist;
+        //update distance in unprocessed queue
+        unprocessed.push( std::make_pair(next_dist, dest));
+    }
+}
+
+void dijkstra(std::size_t src)
+{
+    //initialize distance of source
+    vertices[src].distance = 0;
+
+    unprocessed.push( std::make_pair(vertices[src].distance, src) );
+    while (!unprocessed.empty())
+    {
+         int curr_vertex_dist = unprocessed.top().first;
+         std::size_t curr_vertex = unprocessed.top().second;
+         unprocessed.pop();
+
+        if (vertices[curr_vertex].color == WHITE)
+        {
+            processed.push_back(curr_vertex);
+        }
+        vertices[curr_vertex].color = BLACK;
+        for (auto& ver: adj_list[curr_vertex])
+        {
+            relax(curr_vertex, ver.first, ver.second);
+        }
+    }
+}
+```
+
+`relax` function updates the distance of the destination vertex and if the new calculated distance is smaller than the stored distance, then the distance is updated and the vertex is pushed in the minimum priority queue.
+
+In the function `dijkstra` source vertex in passed as an argument. Variable `curr_vertex` stores the vertex that is nearer to the source because in minimum priority queue element having minimum value is at the top of queue. If the color of the selected vertex is `white`, then it is pushed into the processed array and then its color changes to `black`. Then all the vertices that are reachable from the selected vertex are processed.
+
+{% include ads.html %}<br/>
+
+Here is the C++ implementation of Dijkstra's Algorithm.
 
 To push vertices in a ```std::vector```, we have used ```emplace_back``` instead of ```push_back```. 
 
 For ```emplace_back``` constructor ```A (int x_arg)``` will be called. 
 And for ```push_back``` ```A (int x_arg)``` is called first and ```move A (A &&rhs)``` is called afterwards. [push_back vs emplace_back](https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back)
 
-Image Source: Introduction to Algorithm
+**Related:** [Bellman Ford Algorithm | Single-Source Shortest Path](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
 
-![Dijkstra ALgorithm]({{ site.url }}/assets/DijkstraAlgo.png)
-
-C++ Implementation
 
 ```cpp
 #include <iostream>
@@ -41,16 +114,6 @@ class Graph
         Color color = WHITE;
         Vertex(std::size_t id) : id(id) {}
     };
-
-    // struct Edge
-    // {
-    //     std::size_t from;
-    //     std::size_t to;
-    //     bool operator<(const Edge& other) const
-    //     {
-    //         return std::tie(from, to) < std::tie(other.from, other.to);
-    //     }
-    // };
 
     using pair_ = std::pair<std::size_t, int>;
     std::vector<Vertex> vertices = {};
@@ -190,23 +253,25 @@ int main()
     grp.print_distance(std::cout);
 }
 ```
+View this code on [Github](https://github.com/programmercave0/Algo-Data-Structure/blob/master/Dijkstra%20Algorithm/C%2B%2B/dijkstra.cpp)
 
 Output
 
-![Output]({{ site.url }}/assets/DijkstraOut.png)
+![Output]({{ site.url }}/assets/DijkstraOut.png){:class="img-responsive"}
+
+Get this post in pdf - [Dijkstra's Algorithm | Single-Source Shortest Path](https://www.file-up.org/ej8jaltbudbb)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
 <input type="hidden" name="IL_IN_ARTICLE"> 
-You may also like
-
-
-[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
-
-[C++: Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)
-
-[C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)
-
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
-
+You may also like<br/>
+[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
+[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
+[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)<br/>
 [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
 
