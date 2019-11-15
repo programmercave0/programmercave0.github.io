@@ -9,7 +9,7 @@ date: 2018-03-14
 
 ![Dijkstra]({{ site.url }}/assets/dijkstra.png){:class="img-responsive"}
 
-In fig. (a) there is no negative-weight cycle, so Bellman Ford algorithm finds the shortest path from source if fig. (a) is in a graph whereas fig. (b) contains a negative-weight cycle therefore no solution exists.
+In fig. (a) there is no negative-weight cycle, fig. (b) contains a negative-weight cycle 
 
 ![Dijkstra]({{ site.url }}/assets/dijkstra1.png){:class="img-responsive"}
 ![Dijkstra]({{ site.url }}/assets/dijkstra2.png){:class="img-responsive"}
@@ -259,7 +259,7 @@ Output
 
 ![Output]({{ site.url }}/assets/DijkstraOut.png){:class="img-responsive"}
 
-Get this post in pdf - [Dijkstra's Algorithm](https://www.file-up.org/ej8jaltbudbb)
+Get this post in pdf - [Dijkstra's Algorithm](https://www.file-up.org/em2k15628rez)
 
 Reference:<br/>
 [Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
