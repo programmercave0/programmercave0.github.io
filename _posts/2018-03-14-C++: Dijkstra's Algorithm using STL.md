@@ -92,7 +92,7 @@ To push vertices in a ```std::vector```, we have used ```emplace_back``` instead
 For ```emplace_back``` constructor ```A (int x_arg)``` will be called. 
 And for ```push_back``` ```A (int x_arg)``` is called first and ```move A (A &&rhs)``` is called afterwards. [push_back vs emplace_back](https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back)
 
-**Related:** [Bellman Ford Algorithm | Single-Source Shortest Path](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
+**Related:** [Bellman Ford Algorithm](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
 
 
 ```cpp
@@ -259,7 +259,7 @@ Output
 
 ![Output]({{ site.url }}/assets/DijkstraOut.png){:class="img-responsive"}
 
-Get this post in pdf - [Dijkstra's Algorithm | Single-Source Shortest Path](https://www.file-up.org/ej8jaltbudbb)
+Get this post in pdf - [Dijkstra's Algorithm](https://www.file-up.org/ej8jaltbudbb)
 
 Reference:<br/>
 [Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
