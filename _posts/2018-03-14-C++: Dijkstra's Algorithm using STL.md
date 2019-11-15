@@ -269,9 +269,9 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
 <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like<br/>
-[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
-[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)<br/>
+[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List) <br/>
+[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List) <br/>
+[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix) <br/>
 [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
 
