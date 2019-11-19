@@ -12,12 +12,6 @@ Like mergesort, **quicksort** also follows *divide-and-conquer* approach. The al
 
 In fig. (a) 4 is selected as the pivot and in fig. (b) all elements left to the 4 are smaller than it and all elements right to the 4 are greater than it and then these two subarrays are solved independently.
 
-itioning. Then its running time is 
-
-\Theta(n^2)Θ(n lg n).
-
-The version of partition algorithm I have used above is not original partitioning algorithm. The original partition algorithm was given by C.A.R. Hoare. Use it in your program.
-
 The pivot element 4 in fig. (b) ends up in the correct position in the array and so on all pivot elements ends up in the correct position.
 
 <h1>Implementation</h1>
