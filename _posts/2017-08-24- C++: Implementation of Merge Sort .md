@@ -243,4 +243,3 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 [Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
 [Quicksort](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
 [Heapsort](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
-[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
