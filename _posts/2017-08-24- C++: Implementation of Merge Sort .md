@@ -90,7 +90,7 @@ Here is the output of merge sort with generic functions.
 
 ![Mergesort]({{ site.url }}/assets/mergesortout.png){:class="img-responsive"}
 
-<h3>C++ Implementation of Merge Sort<h3>
+<h3>C++ Implementation of Merge Sort</h3>
     
  ```cpp
  #include <iostream>
