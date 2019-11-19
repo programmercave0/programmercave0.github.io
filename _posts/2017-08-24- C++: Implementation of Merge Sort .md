@@ -1,65 +1,140 @@
 ---
 layout: post
-title: "C++: Implementation of Merge Sort"
+title: "Merge Sort | C++ Implementation"
 tags:  [C++, Algorithm, Sorting]
 date: 2017-08-24
 ---
 
-**Merge sort** is a sorting algorithm which uses Divide-and-Conquer approach.
+**Merge sort** follows *divide-and-conquer* approach. It **divides** an array of *n* elements into two subarrays of *n*/2 elements each. Then it **sort** the two subarrays recursively using merge sort. And then these subarrays are **merged** to produce a single sorted array.
 
-A merge sort works as follows: 
-1. Divide the unsorted list into n sublists, each containing 1 element (a list of 1 element is considered sorted). 
+![Mergesort]({{ site.url }}/assets/mergesort.png){:class="img-responsive"}
 
-2. Repeatedly merge sublists to produce new sorted sublists until there is only 1 sublist remaining. This will be the sorted list
+If the size of the array is even then the size of subarrays is equal and if it is odd then first array has one element more than the second array. The division of array stops when subarrays contain only one element and then merging of subaarrays starts. The arrays are merged in sorted order.
 
-![Mergesort]({{ site.url }}/assets/mergesort.png)
+<h1>Implementation</h1>
 
-C++ Implementation
+Here is the generic implementation of `merge` and `merge_sort` function. It sorts array of all datatypes.
 
 ```cpp
-#include <iostream>
-#include <vector>
+template<class T>
+void merge(std::vector<T>& v, int p, int q, int r)
+{
+    int size1 = q-p+1;
+    int size2 = r-q;
+    std::vector<T> L(size1);
+    std::vector<T> R(size2);
 
+    for(int i = 0; i < size1; i++)
+    {
+        L[i] = v[p+i];
+    }
+    for(int j = 0; j < size2; j++)
+    {
+        R[j]=v[q+j+1];
+    }
+
+    int i=0,j=0;
+    int k;
+    for(k = p; k <= r && i < size1 && j < size2; k++)
+    {
+        if(L[i] <= R[j])
+        {
+            v[k] = L[i];
+            i++;
+        }
+        else
+        {
+            v[k] = R[j];
+            j++;
+        }
+    }
+    for(i = i; i < size1; ++i)
+    {
+        v[k] = L[i];
+        k++;
+    }
+
+    for(j = j; j < size2; j++)
+    {
+        v[k] = R[j];
+        k++;
+    }
+}
+```
+
+When `merge` function is called, two auxiliary vectors `L` and `R` are created. `L` is initialised with elements of left subarray and `R` is initialised with elements of right subarray. Both subarrays contain one element each. For eg. from the above fig. `L` contains 5 and `R` contains 2.
+
+{% include ads.html %}<br/>
+
+When we merge these subarrays, the smallest element from these subarray is selected and the element is entered in the input array `v` at index 0. `k` maintains the index of input array and `i` and `j` maintains the index of `L` and `R` subarrayarray respectively.
+
+If all the elements of one of the subarray are entered then remaining elements of the another subarrays are entered in the input array since all elements are greater than the last input value. This is done with the help of last two `for` loops in the above function.
+
+```cpp
+template<class T>
+void merge_sort(std::vector<T>& v, int p, int r)
+{
+    if(p < r)
+    {
+        int q = (p+r)/2;
+        merge_sort(v, p, q);
+        merge_sort(v, q+1, r);
+        merge(v, p, q, r);
+    }
+}
+```
+
+`merge_sort` recursively calls itself until `r` is smaller than or equal to `p`.
+
+Here is the output of merge sort with generic functions.
+
+![Mergesort]({{ site.url }}/assets/mergesortout.png){:class="img-responsive"}
+
+<h3>C++ Implementation of Merge Sort<h3>
+    
+ ```cpp
+ #include <iostream>
+#include <vector>
 
 template<class T>
 void merge(std::vector<T>& v, int p, int q, int r)
 {
-int size1 = q-p+1;
-int size2 = r-q;
-std::vector<T> L(size1);
-std::vector<T> R(size2);
+    int size1 = q-p+1;
+    int size2 = r-q;
+    std::vector<T> L(size1);
+    std::vector<T> R(size2);
 
-for(int i = 0; i < size1; i++)
-{
-    L[i] = v[p+i];
-}
-for(int j = 0; j < size2; j++)
-{
-    R[j]=v[q+j+1];
-}
+    for(int i = 0; i < size1; i++)
+    {
+        L[i] = v[p+i];
+    }
+    for(int j = 0; j < size2; j++)
+    {
+        R[j]=v[q+j+1];
+    }
 
-int i=0,j=0;
-int k;
-for(k = p; k <= r && i < size1 && j < size2; k++)
-{
-    if(L[i] <= R[j])
+    int i=0,j=0;
+    int k;
+    for(k = p; k <= r && i < size1 && j < size2; k++)
+    {
+        if(L[i] <= R[j])
+        {
+            v[k] = L[i];
+            i++;
+        }
+        else
+        {
+            v[k] = R[j];
+            j++;
+        }
+    }
+    for(i = i; i < size1; ++i)
     {
         v[k] = L[i];
-        i++;
+        k++;
     }
-    else
-    {
-        v[k] = R[j];
-        j++;
-    }
-}
-for(i = i; i < size1; ++i)
-{
-    v[k] = L[i];
-    k++;
-}
 
-for(j = j; j < size2; j++)
+    for(j = j; j < size2; j++)
     {
         v[k] = R[j];
         k++;
@@ -67,92 +142,105 @@ for(j = j; j < size2; j++)
 }
 
 template<class T>
-void merge_sort(std::vector<T>& v, int p, int r){
-if(p < r)
+void merge_sort(std::vector<T>& v, int p, int r)
 {
-    int q = (p+r)/2;
-    merge_sort(v, p, q);
-    merge_sort(v, q+1, r);
-    merge(v, p, q, r);
-}
+    if(p < r)
+    {
+        int q = (p+r)/2;
+        merge_sort(v, p, q);
+        merge_sort(v, q+1, r);
+        merge(v, p, q, r);
+    }
 }
 
 int main()
 {
-std::vector<int>vec;
-vec.push_back(13);
-vec.push_back(5);
-vec.push_back(7);
-vec.push_back(7);
-vec.push_back(4);
-vec.push_back(2);
-vec.push_back(10);
-int sz = vec.size();
-std::cout << "Entered array : ";
-for(int n = 0; n < sz; n++){
-    std::cout << vec[n] <<" ";
-}
-std::cout << "\n";
-std::cout << "Sorted array : ";
-merge_sort(vec, 0, sz-1);
-for(int n = 0; n < sz; n++){
-    std::cout << vec[n] << " ";
-}
-std::cout << "\n";
+    std::vector<int>vec;
+    vec.push_back(13);
+    vec.push_back(5);
+    vec.push_back(7);
+    vec.push_back(7);
+    vec.push_back(4);
+    vec.push_back(2);
+    vec.push_back(10);
+    int sz = vec.size();
+    std::cout << "Entered array : ";
+    for(int n = 0; n < sz; n++)
+    {
+        std::cout << vec[n] <<" ";
+    }
+    std::cout << "\n";
+    std::cout << "Sorted array : ";
+    merge_sort(vec, 0, sz-1);
+    for(int n = 0; n < sz; n++)
+    {
+        std::cout << vec[n] << " ";
+    }
+    std::cout << "\n\n";
 
-std::vector<char> c;
-c.push_back('d');
-c.push_back('y');
-c.push_back('h');
-c.push_back('l');
-c.push_back('e');
-c.push_back('a');
-int sz1 = c.size();
-std::cout << "Entered array : ";
-for(int n = 0; n < sz1; n++){
-    std::cout << c[n] <<" ";
-}
-std::cout << "\n";
-std::cout << "Sorted array : ";
-merge_sort(c, 0, sz1-1);
-for(int n = 0; n < sz1; n++){
-    std::cout << c[n] << " ";
-}
-std::cout << "\n";
+    std::vector<char> c;
+    c.push_back('d');
+    c.push_back('y');
+    c.push_back('h');
+    c.push_back('l');
+    c.push_back('e');
+    c.push_back('a');
+    int sz1 = c.size();
+    std::cout << "Entered array : ";
+    for(int n = 0; n < sz1; n++)
+    {
+        std::cout << c[n] <<" ";
+    }
+    std::cout << "\n";
+    std::cout << "Sorted array : ";
+    merge_sort(c, 0, sz1-1);
+    for(int n = 0; n < sz1; n++)
+    {
+        std::cout << c[n] << " ";
+    }
+    std::cout << "\n\n";
 
-std::vector<std::string> str;
-str.push_back("car");
-str.push_back("dog");
-str.push_back("apple");
-str.push_back("ball");
-str.push_back("tree");
-int sz2 = str.size();
+    std::vector<std::string> str;
+    str.push_back("car");
+    str.push_back("dog");
+    str.push_back("apple");
+    str.push_back("ball");
+    str.push_back("tree");
+    int sz2 = str.size();
 
-std::cout << "Entered array : ";
-for(int n = 0; n < sz2; n++){
-    std::cout << str[n] <<" ";
-}
-std::cout << "\n";
-std::cout << "Sorted array : ";
-merge_sort(str, 0, sz2-1);
-for(int n = 0; n < sz2; n++){
-    std::cout << str[n] << " ";
-}
-std::cout << "\n";
+    std::cout << "Entered array : ";
+    for(int n = 0; n < sz2; n++)
+    {
+        std::cout << str[n] <<" ";
+    }
+    std::cout << "\n";
+    std::cout << "Sorted array : ";
+    merge_sort(str, 0, sz2-1);
+    for(int n = 0; n < sz2; n++)
+    {
+        std::cout << str[n] << " ";
+    }
+    std::cout << "\n";
 
     return 0;
 }
 ```
 
+View this code on [Github](https://github.com/programmercave0/Algo-Data-Structure/blob/master/Merge%20Sort/C++/mergesort.cpp)
+
+Get this post in pdf - [Merge sort](https://www.file-up.org/s97zhwrq3mg7)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
+
  <input type="hidden" name="IL_IN_ARTICLE"> 
-C++: Selection sort using STL](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)
+<h3>You may also like</h3>
 
-[C++: Insertion Sort using STL (Sorting)](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
-
-[C++: Implementation of Quicksort (Sorting)](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
-
-[C++: Implementation of Heapsort (Sorting)](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))
-
-[C++: Maximum Priority Queue](https://programmercave0.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
-
-[C++: Insertion Sort using STL (Sorting)](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
+[Selection sort](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
+[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[Quicksort](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
+[Heapsort](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
+[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
