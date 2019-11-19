@@ -1,92 +1,153 @@
 ---
 layout: post
-title: "C++: Implementation of Heapsort (Sorting)"
+title: "Heapsort | C++ Implementation"
 tags:  [C++, Algorithm, Sorting]
 date: 2017-07-15
 ---
 
-`max_heapify()` function: The running time of this procedure is 
-O(lg n) and it helps to maintain the max-heap property. Max-heap property means every node other than root node must be smaller than or equal to its parent.
+**Heapsort** is implemented using *heap* data structure. Heap helps us to represent binary tree without using any *pointers*. Using heap an array can be viewed as a *binary tree* and each node of the tree stores an element of the array.
 
-`build_max_heap()` function: Its running time is O(n lg n)
+There are two kinds of binary heaps: max-heaps and min-heaps. In *max-heap*, the value stored at the parent node is greater than the value stored at its children nodes. Thus in a max-heap, root node contains the largest element. In *min-heap*, the value stored at the parent node is smaller than the value stored at its children nodes. Thus in a min-heap, root node contains the smallest element.
 
-Result after execution of `build_max_heap()` function is
+![Heapsort]({{ site.url }}/assets/binaryheap.png){:class="img-responsive"}
 
-![Heapsort]({{ site.url }}/assets/Heapsort1.PNG)
+Max-heap is used in heapsort algorithm and min-heap is used in priority queues.
 
-`heap_sort` function: Its running time is O(n lg n).
+![Heapsort]({{ site.url }}/assets/heapsort.png){:class="img-responsive"}
 
-Result after excution of `heap_sort()` is
+When `arr[i] = parent`, then `left_child = 2*i + 1` and `right_child = 2*i + 2`.
 
-![Heapsort]({{ site.url }}/assets/Heapsort2.PNG)
+<h1>Implementation</h1>
 
-C++ Implementation
+`max_heapify` maintains the max-heap property of the heap. The input array, index of the element and size of the array is passed as an argument. 
 
-~~~cpp
-#include <iostream>
+```cpp
+void max_heapify(std::vector<int>& arr, int i, int size_)
+{
+    int largest, l = (2*i) + 1, r = l + 1;
 
- void max_heapify(int arr[], int i, int si)
- {
-   int largest, l = (2*i) + 1, r = l + 1;
+    if(l < size_ && arr[l] > arr[i])
+        largest = l;
+    else
+        largest = i;
 
+    if(r < size_ && arr[r] > arr[largest])
+        largest = r;
 
-   if(l < si && arr[l] > arr[i])
-      largest = l;
-   else
-    largest = i;
-
-   if(r < si && arr[r] > arr[largest])
-    largest = r;
-
-   if(largest != i)
-   {
-      int temp = arr[i];
-      arr[i] = arr[largest];
-      arr[largest] = temp;
-      max_heapify(arr, largest, si);
-   }
-  }
-
- void build_max_heap(int arr[], int si)
- {
-   for(int i = (si/2) - 1; i >=0; i--)
-    max_heapify(arr, i, si);
- }
-
- void heap_sort(int arr[], int si)
- {
-   build_max_heap(arr, si);
-   int sz = si;
-   for(int i = si - 1;i > 0; i--)
-   {
-      int temp = arr[i];
-      arr[i]   = arr[0];
-      arr[0]   = temp;
-      sz--;
-      max_heapify(arr, 0, sz);
+    if(largest != i)
+    {
+        std::swap(arr[i], arr[largest]);
+        max_heapify(arr, largest, size_);
     }
- }
+}
+```
 
- int main()
- {
-    int a[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
-    int s = sizeof(a)/sizeof(int);
-    heap_sort(a, s);
-    for(int i = 0;i < s; i++){
-    std::cout << a[i] << " ";
- }
+If `arr[i]` is `largest`, then subtree rooted at node `i` is a max-heap and function terminates. Otherwise, `largest` stores the index of child whose value is greatest of the three elements and `arr[i]` is swapped with `arr[largest]` and thus max-heap property is satisfied at node `i`. Then `max_heapify` with node indexed by `largest` is called to satisfy max-heap property at node `largest`.
+
+`build_max_heap` produces a max-heap from an input array.
+
+```cpp
+void build_max_heap(std::vector<int>& arr)
+{
+    for(int i = (arr.size() / 2); i >= 0; i--)
+    max_heapify(arr, i, arr.size());
+}
+```
+
+![Heapsort]({{ site.url }}/assets/heapsort1.png){:class="img-responsive"}
+
+`heapsort` sorts an array in-place.
+
+```cpp
+void heap_sort(std::vector<int>& arr)
+{
+   build_max_heap(arr);
+   int sz = arr.size();
+   for(int i = arr.size() - 1; i > 0; i--)
+   {
+        std::swap(arr[0], arr[i]);
+        sz--;
+        max_heapify(arr, 0, sz);
+    }
+}
+```
+{% include ads.html %}<br/>
+
+`heapsort` starts with `build_max_heap` and now largest element of the array is at index 0. So the first value is  swapped with the last value and then the node with largest value is removed from the tree and new max-heap is created with `max_heapify`.
+
+<h3>C++ Implementation of Heapsort</h3>
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void max_heapify(std::vector<int>& arr, int i, int size_)
+{
+    int largest, l = (2*i) + 1, r = l + 1;
+
+    if(l < size_ && arr[l] > arr[i])
+        largest = l;
+    else
+        largest = i;
+
+    if(r < size_ && arr[r] > arr[largest])
+        largest = r;
+
+    if(largest != i)
+    {
+        std::swap(arr[i], arr[largest]);
+        max_heapify(arr, largest, size_);
+    }
+}
+
+void build_max_heap(std::vector<int>& arr)
+{
+    for(int i = (arr.size() / 2); i >= 0; i--)
+    max_heapify(arr, i, arr.size());
+}
+
+void heap_sort(std::vector<int>& arr)
+{
+   build_max_heap(arr);
+   int sz = arr.size();
+   for(int i = arr.size() - 1; i > 0; i--)
+   {
+        std::swap(arr[0], arr[i]);
+        sz--;
+        max_heapify(arr, 0, sz);
+    }
+}
+
+int main()
+{
+    std::vector<int> arr = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+    heap_sort(arr);
+    
+    for(int i = 0; i < arr.size(); i++)
+    {
+         std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
     return 0;
 }
-~~~
+```
+
+View this code on [Github](https://github.com/programmercave0/Algo-Data-Structure/blob/master/Heapsort/C++/heapsort.cpp)
+
+Get this post in pdf - [Heapsort](https://www.file-up.org/5etqv0d4uih4)
+
+Reference:<br/>
+[Introduction to Algorithms](https://amzn.to/2OarGBs)<br/>
+[The Algorithm Design Manual](https://amzn.to/2CH9h9Z)<br/>
+[Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
+Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
-You may also like
-[C++: Selection sort using STL](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)
+<h3>You may also like</h3>
 
-[C++: Implementation of Merge Sort](https://programmercave0.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
+[Selection sort](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
+[Merge Sort](https://programmercave0.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
+[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[Quicksort](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
 
-[C++: Insertion Sort using STL (Sorting)](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))
-
-[C++: Implementation of Quicksort (Sorting)](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))
-
-[C++: Maximum Priority Queue](https://programmercave0.github.io/blog/2017/09/04/C++-Maximum-Priority-Queue)
