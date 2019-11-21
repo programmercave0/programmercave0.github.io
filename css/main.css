@@ -55,8 +55,8 @@ ul.posts li { list-style: none; }
 .highlight {
     font-family:monospace;
     font-size:1.2em;
-    color:#dfdfbf;
-    background:#2c2c2c;
+    color:#2c2c2c;
+    background:#dfdfbf;
     overflow-x: scroll;
     overflow-y: scroll;
     height: 100%;
