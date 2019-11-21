@@ -84,6 +84,8 @@ void mergeSortedList(LinkedList<T>& ll2)
 }
 ```
 
+{% include ads.html %}<br/>
+
 <h3>C++ Implementation to Merge Sorted Linked List</h3>
 
 ```cpp
