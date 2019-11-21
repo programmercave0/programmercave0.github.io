@@ -114,3 +114,12 @@ margin-top:16px
 .item-control{
 display:none
 }
+
+@media screen and (max-width:$(feed.width + sidebar.width + 20px - 1px)){
+.sidebar-container{
+bottom:0;
+position:fixed;
+top:0;
+left:auto;
+right:0
+}
