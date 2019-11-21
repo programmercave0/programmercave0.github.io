@@ -94,6 +94,8 @@ void insert(T value)
 }
 ```
 
+{% include ads.html %}<br/>
+
 <h3>Deletion</h3>
 
 In `deleteNode` function the value is entered which is to be deleted. The function search the node containing the value using `search` function and then the node is deleted. 
