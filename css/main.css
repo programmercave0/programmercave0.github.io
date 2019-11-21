@@ -4,7 +4,15 @@ body {  margin:0 auto }
   margin: 70px; 
   width: 900px;
 }*/
-
+.container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+margin:0 auto;
+max-width:$(feed.width + sidebar.width);
+width:100%
+}
 
 a { text-decoration: none; color: blue; }
 /*a:link {
@@ -125,12 +133,4 @@ left:auto;
 right:0
 }
   
-.main_content_container{
--webkit-box-flex:0;
--webkit-flex:0 0 auto;
--ms-flex:0 0 auto;
-flex:0 0 auto;
-margin:0 auto;
-max-width:$(feed.width + sidebar.width);
-width:100%
-}
+
