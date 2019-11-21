@@ -4,15 +4,7 @@ body {  margin:0 auto }
   margin: 70px; 
   width: 900px;
 }*/
-.container{
--webkit-box-flex:0;
--webkit-flex:0 0 auto;
--ms-flex:0 0 auto;
-flex:0 0 auto;
-margin:0 auto;
-max-width:$(feed.width + sidebar.width);
-width:100%
-}
+
 
 a { text-decoration: none; color: blue; }
 /*a:link {
@@ -71,7 +63,7 @@ ul.posts li { list-style: none; }
     max-height: 500px;
    ... /* etc. */
 }
-
+/*
 .highlight .comment { color:#7a987a;}
 .highlight .keyword { color: #efc986; }
 .highlight .cppMacro { color: #bd63c5}
@@ -81,7 +73,7 @@ ul.posts li { list-style: none; }
 ... /* etc. */
 
 /
-
+*/
 table{
     border-collapse: collapse;
     border-spacing: 0;
@@ -97,26 +89,26 @@ td{
 }
 
 @media screen and (max-width:968px){
-body.item-view .post-body a[imageanchor="1"][style*="float: left;"],body.item-view .post-body a[imageanchor="1"][style*="float: right;"]{
+.container .post a[imageanchor="1"][style*="float: left;"],body.container .post a[imageanchor="1"][style*="float: right;"]{
 float:none!important;
 clear:none!important
 }
-body.item-view .post-body a[imageanchor="1"] img{
+body.container.post a[imageanchor="1"] img{
 display:block;
 height:auto;
 margin:0 auto
 }
-body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child{
+body.container .post>.separator:first-child>a[imageanchor="1"]:first-child{
 margin-top:20px
 }
-.post-body a[imageanchor]{
+.post a[imageanchor]{
 display:block
 }
-body.item-view .post-body a[imageanchor="1"]{
+body.container .post a[imageanchor="1"]{
 margin-left:0!important;
 margin-right:0!important
 }
-body.item-view .post-body a[imageanchor="1"]+a[imageanchor="1"]{
+body.container .post a[imageanchor="1"]+a[imageanchor="1"]{
 margin-top:16px
 }
 }
@@ -124,6 +116,7 @@ margin-top:16px
 display:none
 }
 
+/*
 @media screen and (max-width:$(feed.width + sidebar.width + 20px - 1px)){
 .sidebar-container{
 bottom:0;
@@ -132,5 +125,5 @@ top:0;
 left:auto;
 right:0
 }
-  
+  */
 
