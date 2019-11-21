@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Singly Linked List | C++ Implementation"
-tags:  [C++, Algorithm, Linked List]
+tags:  [C++, Algorithm, Linked List, Data Structures]
 date: 2017-07-27
 ---
 
@@ -84,6 +84,8 @@ We can also insert node at the front and make that new node as head.
 <h3>Deletion</h3>
 
 In `deleteNode` function the value is entered which is to be deleted. The function search the node containing the value using `search` function and then the node is deleted. 
+
+{% include ads.html %}<br/>
 
 If the searched node is `head` then node next to head is made head and then the searched node is deleted. The node is deleted only if the value exists means `if (node != nullptr)`.
 
