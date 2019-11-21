@@ -56,6 +56,8 @@ bool isOdd(int num)
 
 This function checks whether the entered value is odd or even.
 
+{% include ads.html %}<br/>
+
 ```cpp
 void exchangeEvenOdd()
 {
