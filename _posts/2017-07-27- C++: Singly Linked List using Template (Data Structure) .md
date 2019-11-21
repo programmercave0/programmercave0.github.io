@@ -32,6 +32,7 @@ In the above fig. Node containing 5 is head, node containing 15 is tail and its 
 The three basic operations supported by a linked list are searching, insertion and deletion.
 
 <h3>Searching</h3>
+
 In the `search` function a value is passed as an argument and its node is returned if found, otherwise a message says “No such element in the list” and `nullptr` is returned.
 
 The function starts searching from the head to the last node and passed value is matched with every node’s data item. 
@@ -55,6 +56,7 @@ struct Node *search(T n)
 ```    
    
 <h3>Insertion</h3>
+
 `insert` function insert a node with the value at the end of the linked list. If the linked list does not contain any node then the new node becomes head.
 
 ```cpp
@@ -80,6 +82,7 @@ void insert(T data)
 We can also insert node at the front and make that new node as head.
 
 <h3>Deletion</h3>
+
 In `deleteNode` function the value is entered which is to be deleted. The function search the node containing the value using `search` function and then the node is deleted. 
 
 If the searched node is `head` then node next to head is made head and then the searched node is deleted. The node is deleted only if the value exists means `if (node != nullptr)`.
