@@ -72,7 +72,7 @@ ul.posts li { list-style: none; }
 .highlight .cppType { color:#8acccf; }
 ... /* etc. */
 
-/
+
 */
 table{
     border-collapse: collapse;
@@ -88,6 +88,7 @@ td{
     border:1px solid #000000;
 }
 
+/*
 @media screen and (max-width:968px){
 .container .post a[imageanchor="1"][style*="float: left;"],body.container .post a[imageanchor="1"][style*="float: right;"]{
 float:none!important;
@@ -115,6 +116,7 @@ margin-top:16px
 .item-control{
 display:none
 }
+*/
 
 /*
 @media screen and (max-width:$(feed.width + sidebar.width + 20px - 1px)){
