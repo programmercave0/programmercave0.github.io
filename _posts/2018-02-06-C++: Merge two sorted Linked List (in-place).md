@@ -6,10 +6,11 @@ date: 2018-02-06
 ---
 
 Given two sorted Linked List, we have to merge them without using another linked list.
-  
+  ```
   List 1 : { 5, 10, 18, 25 }
   List 2 : { 6, 8, 11, 20 }
   Merged List : { 5, 6, 8, 10, 11, 18, 20, 25 }
+  ```
   
 ![Merge linked list]({{ site.url }}/assets/mergesortedlinkedlist.png){:class="img-responsive"}
 
