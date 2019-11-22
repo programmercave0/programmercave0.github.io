@@ -3,9 +3,6 @@ layout: default
 ---
 <h3>{{ page.title }}</h3>
 <p class="meta">{{ page.date | date_to_string }} </p>
-{% for tag in tags %}
-	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
-{% endfor %}
 <div class="post">
     {% include ads.html %}<br/>
     {{ content }}
