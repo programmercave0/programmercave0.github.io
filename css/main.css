@@ -5,6 +5,20 @@ body {  margin:0 auto }
   /*width: 900px;*/
 }
 
+@media (min-width: 38em) {
+  .container {
+    max-width: 32rem;
+    &.content {
+      padding-top: 6.5rem;
+    }
+  }
+}
+@media (min-width: 56em) {
+  .container {
+    max-width: 38rem;
+  }
+}
+
 
 a { text-decoration: none; color: blue; }
 /*a:link {
