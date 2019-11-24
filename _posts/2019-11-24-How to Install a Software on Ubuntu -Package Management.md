@@ -27,7 +27,7 @@ There are two types of package management tools in a package management system.
   
 {% include ads.html %}<br/>
 
-<h3>Difference between *dpkg* and *apt-get*</h3>
+<h3>Difference between dpkg and apt-get</h3>
 
 The **dpkg** tool is used to install and remove a package file. While installing if it encounters an unsatisfied dependency, it will unable to install the software or the application. It will simply list the missing dependencies. The Advanced Package Tool (**APT**), including **apt** and **apt-get** can automatically resolve these issues.
 
@@ -41,17 +41,17 @@ For eg. `apt-cache search draw.io`
 
 <h3>Installing a Package from a Repository</h3>
 
-`apt-get install package_name`
+`apt-get install package_name`<br/>
 For eg. `apt-get install draw.io`
 
 <h3>Installing a Package from a Package File</h3>
 
-`dpkg --install package_file`
+`dpkg --install package_file`<br/>
 For eg. `dpkg --install draw.io-amd64-12.2.2.deb`
 
 <h3>Removing a Package</h3>
 
-`apt-get remove package_name`
+`apt-get remove package_name`<br/>
 For eg. `apt-get remove draw.io`
 
 {% include ads.html %}<br/>
@@ -66,20 +66,20 @@ For eg. `apt-get remove draw.io`
 
 <h3>Determining if a Package is Installed</h3>
 
-`dpkg --status package_name`
+`dpkg --status package_name`<br/>
 For eg. `dpkg --status draw.io`
 
 <h3>Displaying Info About an Installed Package</h3>
 
-`apt-cache show package_name`
+`apt-cache show package_name`<br/>
 For eg. `apt-cache show draw.io`
 
 Get this post in pdf - [How to install a Software on Ubuntu](https://www.file-up.org/632tqcgzdvnv)
 
 Reference:<br/>
-[The Linux Command Line](https://amzn.to/2QIYQel)
-[https://www.oreilly.com/openbook/debian/book/appc_01.html(https://www.oreilly.com/openbook/debian/book/appc_01.html)
-[https://kali.training/topic/introduction-to-apt/](https://kali.training/topic/introduction-to-apt/)
+[The Linux Command Line](https://amzn.to/2QIYQel)<br/>
+[https://www.oreilly.com/openbook/debian/book/appc_01.html(https://www.oreilly.com/openbook/debian/book/appc_01.html)<br/>
+[https://kali.training/topic/introduction-to-apt/](https://kali.training/topic/introduction-to-apt/)<br/>
 [https://help.ubuntu.com/community/Repositories](https://help.ubuntu.com/community/Repositories)
 
 <h3>You may also like</h3>
