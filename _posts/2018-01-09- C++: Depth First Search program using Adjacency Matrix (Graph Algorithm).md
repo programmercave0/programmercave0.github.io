@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)"
+subtitle: "Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures."
+author: "Programmercave"
+header-img: "assets/dfs.png"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-01-09
 ---
