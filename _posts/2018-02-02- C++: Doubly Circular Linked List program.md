@@ -9,6 +9,10 @@ The nodes in a linked list are connected through *pointers*. Pointers represent 
 
 **Related:** [Doubly Linked List](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
 
+Here is a meme to understand Circular Linked List.
+
+![Split Linked List]({{ site.url }}/assets/cll.jpg){:class="img-responsive"}
+
 The first node of the linked list is the head and the last node is the tail. If head is NULL then the list is empty.
 
 In C++, a node can be defined using `struct`, which contain a data item and node pointers.
