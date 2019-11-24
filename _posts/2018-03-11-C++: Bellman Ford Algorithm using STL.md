@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Bellman Ford Algorithm | Single-Source Shortest Path"
+subtitle: "Bellman–Ford algorithm finds shortest path from the source vertex to all vertices in the graph. The graph can contain negative-weight edges, but it should not contain a negative-weight cycle that is reachable from the source vertex."
+author: "Programmercave"
+header-img: "assets/bellman.png"
 tags:  [C++, Algorithm, Graph Algorithms, Standard Tempelate Library]
 date: 2018-03-11
 ---
@@ -210,6 +213,4 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 You may also like<br/>
 [Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
 [Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
-[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
