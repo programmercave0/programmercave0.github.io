@@ -12,6 +12,11 @@ Input : { 2, 3, 18, 25, 5 }
 Output List 1 : { 2, 3, 18 }
 Output List 2 : { 25, 5 }
 ```
+
+Here is a meme to understand Circular Linked List
+
+![Split Linked List]({{ site.url }}/assets/cll.jpg){:class="img-responsive"}
+
 ![Split Linked List]({{ site.url }}/assets/splitsinglycircularlinkedlist.png){:class="img-responsive"}
 
 From the above fig. first we have to find middle node of the given singly circular linked list.
