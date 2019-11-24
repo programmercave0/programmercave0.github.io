@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Reverse the Linked List | C++ Implementation"
+subtitle: "There are two ways to reverse a linked list, iterative method and recursive method."
+author: "Programmercave"
+header-img: "assets/reverselinkedlist.png"
 tags:  [C++, Algorithm, Linked List, Data Structures]
 date: 2018-01-23
 ---
