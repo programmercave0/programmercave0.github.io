@@ -78,11 +78,11 @@ Get this post in pdf - [How to install a Software on Ubuntu](https://www.file-up
 
 Reference:<br/>
 [The Linux Command Line](https://amzn.to/2QIYQel)<br/>
-[https://www.oreilly.com/openbook/debian/book/appc_01.html(https://www.oreilly.com/openbook/debian/book/appc_01.html)<br/>
+[https://www.oreilly.com/openbook/debian/book/appc_01.html](https://www.oreilly.com/openbook/debi/book/appc_01.html)<br/>
 [https://kali.training/topic/introduction-to-apt/](https://kali.training/topic/introduction-to-apt/)<br/>
 [https://help.ubuntu.com/community/Repositories](https://help.ubuntu.com/community/Repositories)
 
 <h3>You may also like</h3>
-  [How to create Password list using CUPP tool on Ubuntu](https://programmercave0.github.io//blog/2019/10/10/How-to-create-Password-list-using-CUPP-tool-on-ubuntu)
+[How to create Password list using CUPP tool on Ubuntu](https://programmercave0.github.io//blog/2019/10/10/How-to-create-Password-list-using-CUPP-tool-on-ubuntu)
 
   
