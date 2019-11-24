@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "Kruskal's Algorithm | Minimum Spanning Tree"
+subtitle: "When edges connects all vertices in a graph and form a tree then it is known as *spanning tree*. While connecting edges no cycle should be formed.  A minimum spanning tree is the spanning tree whose sum of edge weights is as small as possible."
+author: "Programmercave"
+header-img: "assets/kruskal.png"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2019-11-18
 ---
 
 When edges connects all vertices in a graph and form a tree then it is known as *spanning tree*. While connecting edges no cycle should be formed.  A *minimum spanning tree* is the spanning tree whose sum of edge weights is as small as possible.
-
 
 Initially no vertices are connected to any other vertex means the spanning tree does not contain any edges, it only contain vertices. **Kruskal’s algorithm** adds an edge to the tree which has the smallest weight if it does not create a cycle.
 
