@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Finding Length of Loop in Linked List | C++ Implementation"
+subtitle: "Given a Linked List, we have to find does loop exist in Linked List and if yes, find the length of loop."
+author: "Programmercave"
+header-img: "assets/linkedlistwithloop.png"
 tags:  [C++, Algorithm, Linked List, Data Structures]
 date: 2018-01-20
 ---
