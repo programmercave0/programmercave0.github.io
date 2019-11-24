@@ -51,18 +51,23 @@ pre {
   font-size: 14px;
 }
 
-a {
-  color: #404040;
+a { text-decoration: none; color: blue; }
+/*a:link {
+    color: blue;
+}*/
+/* A link that has been visited */
+/*
+a:visited {
+    color: gray;
+}*/
+/* A link that is hovered on */
+a:hover {
+    color: black;
+     text-decoration: underline;
 }
-.post a {
-  color: #337ab7;
-}
-#aboutme a {
-  color: #337ab7;
-}
-a:hover,
-a:focus {
-  color: #0085a1;
+/* A link that is selected */
+a:active {
+    color: blue;
 }
 blockquote {
   color: #808080;
