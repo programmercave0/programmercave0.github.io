@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Singly Linked List | C++ Implementation"
+subtitle: "A node in a singly linked list contains a data item and a node pointer to the next node. In a singly linked list we can traverse only in one direction."
+author: "Programmercave"
+header-img: "assets/singlylinkedlist.png"
 tags:  [C++, Algorithm, Linked List, Data Structures]
 date: 2017-07-27
 ---
