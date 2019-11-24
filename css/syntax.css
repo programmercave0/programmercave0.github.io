@@ -4,18 +4,34 @@
 .highlighter-rouge pre code * {
   white-space: nowrap;    // this sets all children inside to nowrap
 }
-*/
+*//*
 .highlighter-rouge pre {
   overflow-x: auto;       // this sets the scrolling in x
-}
+}*/
 
 /*.highlighter-rouge pre code {
   white-space: pre;       // forces <code> to respect <pre> formatting
 }*/
-
+/*
 pre {
   border-radius: 0;
   background-color: white;
+}*/
+.highlight {
+    font-family:monospace;
+    font-size:1.3em;
+    color:#2c2c2c;
+    background:#f5f5f5;
+  padding: .25em .5em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  display: block;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 100%;
+    max-height: 500px;
+   ... /* etc. */
 }
 
 .highlight .hll { background-color: #ffc; }
