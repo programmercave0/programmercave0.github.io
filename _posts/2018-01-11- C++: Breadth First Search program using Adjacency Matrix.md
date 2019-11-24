@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "C++: Breadth First Search program using Adjacency Matrix"
+subtitle: "Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures."
+author: "Programmercave"
+header-img: "assets/bfs.png"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-01-11
 ---
