@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Merge Sort | C++ Implementation"
+subtitle: "Merge sort follows *divide-and-conquer* approach. It divides an array of n elements into two subarrays of n/2 elements each. Then it sort the two subarrays recursively using merge sort. And then these subarrays are merged to produce a single sorted array."
+author: "Programmercave"
+header-img: "assets/mergesort.png"
 tags:  [C++, Algorithm, Sorting]
 date: 2017-08-24
 ---
