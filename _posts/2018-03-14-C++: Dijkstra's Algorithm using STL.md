@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Dijkstra's Algorithm | Single-Source Shortest Path"
+subtitle: "Dijkstra's algorithm finds shortest paths from the source vertex to all vertices in the graph. The condition for the algorithm is that all edge weights should be non-negative. Thus, Dijkstra’s algorithm is efficient than the Bellman-Ford algorithm because it processes each edge only once, since it knows that there are no negative-weight edges in the graph."
+author: "Programmercave"
+header-img: "assets/dijkstra.png"
 tags:  [C++, Algorithm, Graph Algorithms, Standard Tempelate Library]
 date: 2018-03-14
 ---
@@ -271,8 +274,6 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 You may also like<br/>
 [Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List) <br/>
 [Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List) <br/>
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix) <br/>
-[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
 
 
