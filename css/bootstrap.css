@@ -43,11 +43,18 @@ audio:not([controls]) {
 template {
   display: none;
 }
-a {
-  background-color: transparent;
-}
+a { text-decoration: none; color: blue; }
+/*a:link {
+    color: blue;
+}*/
+/* A link that has been visited */
+/*
+a:visited {
+    color: gray;
+}*/
+/* A link that is hovered on */
 a:hover {
-    color: red;
+    color: black;
      text-decoration: underline;
 }
 /* A link that is selected */
