@@ -21,7 +21,27 @@
 
 {% if page.header-img %}
     <meta property="og:image" content="{{ site.url }}/{{ page.header-img }}" />
+{% else %}
+    <meta property="og:image" content="{{ site.url }}/assets/pc.jpg" />
 {% endif %}
 
 <meta property="og:description" content="{{ page.subtitle }}" />
+
+<!-- The Author meta propagates the byline in a number of social networks -->
+<meta name="author" content="Programmercave" />
+
+<meta property="og:site_name" content="{{ site.title }}" />
+
+<meta property="og:locale" content="en_US" />
+
+ <!-- Here my author and publisher tags are the same (yay self-publishing) -->
+  <meta property="article:author" content="http://facebook.com/programmercave" />
+  <!-- But if your site has its own page, this is where to put it. -->
+  <meta property="article:publisher" content="https://www.facebook.com/programmercave" />
+
+<!-- I use the page.tags property for OG tags. -->
+  {% for tag in page.tags %}
+    <meta property="article:tag" content="{{tag}}" />
+  {% endfor %}
+  
 
