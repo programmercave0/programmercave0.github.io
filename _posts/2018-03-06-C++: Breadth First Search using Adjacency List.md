@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Breadth First Search using Adjacency List | Graph traversal"
+subtitle: "Breadth first search (BFS) explores the graph level by level. First it explore every vertex that is connected to source vertex. If the vertex is discovered, it becomes gray or black. Initially all the vertices are white."
+author: "Programmercave"
+header-img: "assets/bfs.png"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-03-06
 ---
@@ -16,8 +19,6 @@ When vertex 1 is discovered it becomes gray and when it is reached it become bla
 <h1>Implementation</h1>
 
 To store distance from the source vertex and to know if the vertex is discovered, we need a data structure to store value for the given vertex.
-
-**Related:** [C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
 
 Here is the implementation of the function `breadthFirstSearch`.
 
@@ -178,5 +179,4 @@ You may also like
 [C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
 [C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
 [C++: Depth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
-[C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
