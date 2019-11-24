@@ -1,5 +1,5 @@
 site.title: ProgrammerCave
-description: Programming related stuff
+description: Implementation of basic algorithms, data structures in C++ mostly. Stuff related to Computer Science like Operating Systems, Networking. Basic hacking and exploitation stuff and some linux stuff.
 keywords: Programming competitive code coding C++ Python C Java Algorithm Data Structure
 language: "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
