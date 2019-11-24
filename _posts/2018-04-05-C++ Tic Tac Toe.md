@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "C++: Tic Tac Toe"
+subtitle: "Here is the simple C++ implementation of Tic Tac Toe. "
+author: "Programmercave"
+header-img: "assets/TTTOut1.png"
 tags:  [C++, Algorithm, Games]
 date: 2018-04-05
 ---
