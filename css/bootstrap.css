@@ -106,22 +106,7 @@ pre {
   overflow: auto;
 }
 
-.highlight {
-    font-family:monospace;
-    font-size:1.3em;
-    color:#2c2c2c;
-    background:#f5f5f5;
-  padding: .25em .5em;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  border-radius: 3px;
-  display: block;
-    overflow-x: auto;
-    overflow-y: auto;
-    height: 100%;
-    max-height: 500px;
-   ... /* etc. */
-}
+
 
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #999; } /* Comment */
@@ -192,12 +177,24 @@ pre {
 
 
 
-/* code,*/
+ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+  font-family:monospace;
+    font-size:1.3em;
+    color:#2c2c2c;
+    background:#f5f5f5;
+  padding: .25em .5em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  /*display: block;
+    overflow-x: auto;
+    overflow-y: auto;*/
+    height: 100%;
+    max-height: 500px;
+   ... /* etc. */
 }
 button,
 input,
