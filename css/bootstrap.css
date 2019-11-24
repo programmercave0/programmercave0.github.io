@@ -119,7 +119,7 @@ samp {
   margin-top: 0;
   margin-bottom: 1rem;
   border-radius: 3px;
-  /*display: block;*/
+  display: block;
    /* overflow-x: auto;
     overflow-y: auto;*/
     height: 100%;
