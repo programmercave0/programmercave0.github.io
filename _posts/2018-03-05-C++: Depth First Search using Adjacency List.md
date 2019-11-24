@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Depth First Search using Adjacency List | Graph traversal"
+subtitle: "Depth first search explores on a single path in a graph as long as it find undiscovered vertices. When an edge leads to the discovered vertices it backtrack to the previous vertex and explores along the edge where it find undiscovered vertices. Finally it backtracks to the source vertex from where it started. "
+author: "Programmercave"
+header-img: "assets/dfs.png"
 tags:  [C++, Algorithm, Graph Algorithms]
 date: 2018-03-05
 ---
@@ -61,8 +64,6 @@ The time complexity of Depth First Search is *O(n+m)* where *n* is the number of
 {% include ads.html %}<br/>
 
 Here is the C++ Implementation for Depth First Search using Adjacency List
-
-**Related:** [C++: Depth First Search program using Adjacency Matrix (Graph Algorithm)](https://programmercave0.github.io/blog/2018/01/09/C++-Depth-First-Search-program-using-Adjacency-Matrix-(Graph-Algorithm))
 
 ```cpp
 #include <iostream>
@@ -201,6 +202,5 @@ You may also like<br/>
 [C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
 [C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
 [Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
-[C++: Breadth First Search program using Adjacency Matrix](https://programmercave0.github.io/blog/2018/01/11/C++-Breadth-First-Search-program-using-Adjacency-Matrix)
 
 
