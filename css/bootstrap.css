@@ -173,7 +173,7 @@ select {
   /*overflow: auto;*/
   white-space: nowrap;
   
-  .iframe {
+  .card {
     display: inline-block;
   }
 }
@@ -184,7 +184,7 @@ select {
   overflow-x: auto;
   /*overflow: auto;*/
   
-  .iframe {
+  .card {
     flex: 0 0 auto;
     margin-right: 3px;
   }
