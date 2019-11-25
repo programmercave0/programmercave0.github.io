@@ -168,12 +168,12 @@ select {
 }
 
 .scrolling-wrapper {
-  /*overflow-x: scroll;
-  overflow-y: hidden;*/
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /*overflow: auto;*/
   white-space: nowrap;
   
-  .card {
+  .iframe {
     display: inline-block;
   }
 }
@@ -181,10 +181,10 @@ select {
 .scrolling-wrapper-flexbox {
   display: flex;
   flex-wrap: nowrap;
-  /*overflow-x: auto;*/
-  overflow: auto;
+  overflow-x: auto;
+  /*overflow: auto;*/
   
-  .card {
+  .iframe {
     flex: 0 0 auto;
     margin-right: 3px;
   }
