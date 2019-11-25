@@ -171,7 +171,7 @@ select {
   text-transform: none;
 }
 
-.scrolling-wrapper iframe{
+.scrolling-wrapper{
   overflow-x: scroll;
   overflow-y: hidden;
   /*overflow: auto;*/
