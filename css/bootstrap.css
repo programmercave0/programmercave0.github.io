@@ -13,6 +13,10 @@ body {
   margin: 0;
   padding-top: 100px
 }
+
+.container {
+  padding-top: 100px
+}
 article,
 aside,
 details,
