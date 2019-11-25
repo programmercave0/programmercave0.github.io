@@ -73,8 +73,25 @@ dfn {
 }
 h1 {
   margin: .67em 0;
-  font-size: 3em;
 }
+
+p, ul { font-size: 1.2em; color: #333; }
+
+h1, h2, h3, h4 { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
+h1 { font-size: 3em;  }
+h2 { font-size: 2.7em; }
+h3 { font-size: 2.3em; }
+h4 { font-size: 1.9em; }
+
+nav ul, footer ul { font-size: 1.5em; font-family: 'Helvetica', 'Arial', 'Sans-Serif'; padding: 0px; list-style: none; font-weight: bold; }
+nav ul li, footer ul li { display: inline; margin-right: 20px; }
+
+footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
+
+/* Blog */
+ul.posts { font-size: 1.2em; }
+ul.posts li { list-style: none; }
+
 mark {
   color: #000;
   background: #ff0;
@@ -114,7 +131,7 @@ pre {
   overflow: auto;
 }
 
- code,
+ /*code,
 kbd,
 pre,
 samp {
@@ -127,12 +144,12 @@ samp {
   margin-bottom: 1rem;
   border-radius: 3px;
   display: block;
-   /* overflow-x: auto;
-    overflow-y: auto;*/
+    overflow-x: auto;
+    overflow-y: auto;
     height: 100%;
     max-height: 500px;
-   ... /* etc. */
-}
+  
+}*/
 button,
 input,
 optgroup,
@@ -148,6 +165,44 @@ button {
 button,
 select {
   text-transform: none;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+  .card {
+    display: inline-block;
+  }
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  
+  .card {
+    flex: 0 0 auto;
+    margin-right: 3px;
+  }
+}
+
+.card {
+  border: 2px solid $red;
+  width: 150px;
+  height: 75px;
+  background: black;
+}
+
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 button,
 html input[type="button"],
