@@ -16,7 +16,7 @@ title: Home
 	        <h3>{{ post.date | date: '%Y %b' }}</h3>
 	      {% endif %}
 	    {% endunless %}
-
+	    <img src="/{% if post.header-img %}{{ post.header-img }}{% else %}{{ site.header-img }}{% endif %}">
 	    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 	  {% endfor %}
 		
