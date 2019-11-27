@@ -37,21 +37,17 @@ comments:
   
   
 url: https://programmercave0.github.io/
-social-network-links:
-  #dribbble:
-  #email:
-  facebook: programmercave
-  #flickr:
-  github: programmercave0
-  instagram: programmercave
-  #linkedin:
-  #pinterest:
-  rss: true # just type anything here for a working RSS icon
-  twitter: programmercave
-  telegram: true
-  #stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  #youtube: # channel/<your_long_string> or user/<user-name>
-  #googleplus: # anything in your profile username that comes after plus.google.com/
+
+ 
+facebook_username: "programmercave"
+  
+github_username: "programmercave0"
+instagram_username: "programmercave"
+ 
+rss: true # just type anything here for a working RSS icon
+
+telegram: true
+ 
   
   
 share-links-active:
