@@ -96,50 +96,143 @@ footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
 ul.posts { font-size: 1.2em; padding-top: 100px }
 ul.posts li { list-style: none; }
 
-.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
 
-.w3-bar-block
-.w3-dropdown-hover,.w3-bar-block 
-.w3-dropdown-click{width:100%}
+/* Social Media icons */
 
-.w3-bar-block 
-.w3-dropdown-hover 
-.w3-dropdown-content,.w3-bar-block 
-.w3-dropdown-click 
-.w3-dropdown-content{min-width:100%}
 
-.w3-bar-block 
-.w3-dropdown-hover 
-.w3-button,.w3-bar-block 
-.w3-dropdown-click 
-.w3-button{width:100%;text-align:left;padding:8px 16px}
+.fa {
+ padding: 30px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 3px;
+}
 
-.w3-bar{width:100%;overflow:hidden}
+.fa:hover {
+    opacity: 0.7;
+}
 
-.w3-center 
-.w3-bar{display:inline-block;width:auto}
+.fa-facebook {
+  background: black;
+  color: white;
+}
 
-.w3-bar 
-.w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
 
-.w3-bar 
-.w3-dropdown-hover,.w3-bar 
-.w3-dropdown-click{position:static;float:left}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
 
-.w3-bar 
-.w3-button{white-space:normal}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
 
-.w3-bar-block 
-.w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
 
-.w3-bar-block.w3-center 
-.w3-bar-item{text-align:center}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
 
-.w3-block{display:block;width:100%}
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
 
-.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
-w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-github {
+  background: black;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-telegram {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+
+.fa-home {
+  background: black;
+  color: white;
+}
 
 mark {
   color: #000;
@@ -216,45 +309,7 @@ select {
   text-transform: none;
 }
 
-.scrolling-wrapper{
-  overflow-x: scroll;
-  overflow-y: hidden;
-  /*overflow: auto;*/
-  white-space: nowrap;
-  
-  .card {
-    display: inline-block;
-  }
-}
 
-.scrolling-wrapper-flexbox {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  /*overflow: auto;*/
-  
-  .card {
-    flex: 0 0 auto;
-    margin-right: 3px;
-  }
-}
-
-.card {
-  border: 2px solid $red;
-  width: 150px;
-  height: 75px;
-  background: black;
-}
-
-.scrolling-wrapper, .scrolling-wrapper-flexbox {
-  height: 80px;
-  margin-bottom: 20px;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -313,10 +368,13 @@ optgroup {
 table {
   border-spacing: 0;
   border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
 }
 td,
 th {
-  padding: 0;
+  text-align: left;
+  padding: 3px;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
