@@ -25,7 +25,6 @@ Here are some memes on copy pasting code from Stackoverflow.
 2. When the code you copied from stackoverflows fixes everything.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme1.png){:class="img-responsive"}<br/>
-
 <br/>
 3. Thor and Thanos in Wakanda from Avengers: Infinity War. 
 
