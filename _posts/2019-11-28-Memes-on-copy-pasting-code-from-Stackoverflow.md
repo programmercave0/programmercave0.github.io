@@ -22,7 +22,7 @@ Here are some memes on copy pasting code from Stackoverflow.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme.jpg){:class="img-responsive"}<br/>
 <br/>
-2. When the code you copied from stackoverflows fixes everything.
+2. When the code you copied from stackoverflow fixes everything.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme1.png){:class="img-responsive"}<br/>
 <br/>
@@ -30,7 +30,7 @@ Here are some memes on copy pasting code from Stackoverflow.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme2.jpg){:class="img-responsive"}<br/>
 <br/>
-4. A proud moment when you ask a question on stackoverflow and it is not downvoted. If your answer get accepted ...
+4. A proud moment when you ask a question on stackoverflow and it does not get downvoted. If your answer gets accepted ...
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme3.jpg){:class="img-responsive"}<br/>
 <br/>
@@ -52,7 +52,7 @@ Here are some memes on copy pasting code from Stackoverflow.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme7.jpg){:class="img-responsive"}<br/>
 <br/>
-9. When you search for an error and there is question on that. *Perhaps the archives are incomplete*.
+9. When you search for an error and there is no question on that. *Perhaps the archives are incomplete*.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme8.jpg){:class="img-responsive"}<br/>
 <br/>
