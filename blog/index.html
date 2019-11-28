@@ -5,7 +5,8 @@ title: Tags
 
 <div class="container">
 <div class="post">
-	<h2>Tags</h2>
+	
+	{% include collecttags.html %}
 	<ul>
 	  {% assign sorted_cats = site.tags | sort %}
     {% for category in sorted_cats %}

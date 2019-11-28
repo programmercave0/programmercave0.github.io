@@ -4,7 +4,7 @@ title: "Breadth First Search using Adjacency List | Graph traversal"
 subtitle: "Breadth first search (BFS) explores the graph level by level. First it explore every vertex that is connected to source vertex. If the vertex is discovered, it becomes gray or black. Initially all the vertices are white."
 author: "Programmercave"
 header-img: "assets/bfs.png"
-tags:  [C++, Algorithm, Graph Algorithms]
+tags:  [C++, Algorithm, Graph-Algorithms]
 date: 2018-03-06
 ---
 

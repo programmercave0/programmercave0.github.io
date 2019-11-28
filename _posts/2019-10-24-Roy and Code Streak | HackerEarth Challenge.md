@@ -5,7 +5,7 @@ subtitle: "Roy is working on HackerEarth Profile. Right now he is working on Use
 One of the statistics data (Code Streak) is as follows:"
 author: "Programmercave"
 header-img: "assets/HERoy.png"
-tags:  [Data Structures, Algorithm, Competitive Programming, Hackerearth]
+tags:  [Data-Structures, Algorithm, Competitive-Programming, Hackerearth]
 date: 2019-10-24
 ---
 

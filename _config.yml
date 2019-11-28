@@ -16,6 +16,8 @@ plugins_dir:
   - jekyll-redirect-from
   - jekyll-paginate
 
+paginate: 5
+#paginate_path: '/page:num'
   
 comments:
   facebook:
@@ -48,7 +50,7 @@ rss: true # just type anything here for a working RSS icon
 
 telegram: true
  
-  
+tag_page: '/blog/index/'
   
 share-links-active:
   twitter: true

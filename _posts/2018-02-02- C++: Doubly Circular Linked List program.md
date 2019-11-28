@@ -4,7 +4,7 @@ title: "Doubly Circular Linked List | C++ Implementation"
 subtitle: "A node in a doubly circular linked list contains a data item and two node pointers, one to the previous node and one to the next node. In doubly linked list we can traverse in both direction."
 author: "Programmercave"
 header-img: "assets/circulardoublylinkedlist.png"
-tags:  [C++, Algorithm, Linked List, Data Structures]
+tags:  [C++, Algorithm, Linked-List, Data-Structures]
 date: 2018-02-02
 ---
 

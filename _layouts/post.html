@@ -33,7 +33,12 @@ layout: default
           <!--  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">-->
                 
                     <h2 style="padding-bottom: .5em;">{{ page.title }}</h2>
-                    <p class="meta">{{ page.date | date_to_string }} {{ page.author }}  </p>
+                    <span class="meta">{{ page.date | date_to_string }} {{ page.author }}  </span>
+			{% if page.tags %} | 
+  {% for tag in page.tags %}
+    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
                     <div class="post">
                         {% include ads.html %}<br/>
                         {{ content }}

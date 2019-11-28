@@ -4,7 +4,7 @@ title: "Split Singly Circular Linked List | C++ Implementation"
 subtitle: "Given a Singly Circular Linked List, we have to split it into two equal halves. If the number of nodes in the given list is odd then first list will have one node more than the second list."
 author: "Programmercave"
 header-img: "assets/splitsinglycircularlinkedlist.png"
-tags:  [C++, Algorithm, Linked List, Data Structures]
+tags:  [C++, Algorithm, Linked-List, Data-Structures]
 date: 2018-02-04
 ---
 
