@@ -50,7 +50,7 @@ rss: true # just type anything here for a working RSS icon
 
 telegram: true
  
-tag_page: '/blog/index/'
+tag_page: '/blog/'
   
 share-links-active:
   twitter: true
