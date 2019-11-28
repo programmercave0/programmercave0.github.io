@@ -5,7 +5,10 @@ layout: default
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
+	
+
     <h1 class="post-title">
+
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
@@ -19,13 +22,15 @@ layout: default
     {% endif %}
 
     <article>
-      {{ post.excerpt | markdownify }}
+      {{ post.subtitle | markdownify }}
     <article>
+<a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+
     <div class="post-more">
       {% if site.disqus_short_name %}
       <a href="{{ site.baseurl }}{{ post.url }}#disqus_thread"> <i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
       {% endif %}
-      <a href="{{ site.baseurl }}{{ post.url }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+      
     </div>
   </div>
   {% endfor %}
