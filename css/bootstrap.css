@@ -370,11 +370,12 @@ table {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #ddd;
+float: left;
 }
 td,
 th {
   text-align: left;
-  padding: 3px;
+  padding: 0px;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {

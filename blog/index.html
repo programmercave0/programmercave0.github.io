@@ -7,7 +7,7 @@ title: Tags
 <div class="post">
 	
 	{% include collecttags.html %}
-	<ul>
+	
 	  {% assign sorted_cats = site.tags | sort %}
     {% for category in sorted_cats %}
     {% assign sorted_posts = category[1] %}
@@ -37,6 +37,6 @@ title: Tags
     </ul>
     {% endfor %}
 		
-	</ul>
+	
 </div>
 </div>
