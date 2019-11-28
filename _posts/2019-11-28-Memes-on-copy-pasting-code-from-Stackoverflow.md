@@ -20,49 +20,50 @@ Here are some memes on copy pasting code from Stackoverflow.
 
 1. *I am so proud of this community.*
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme.jpg){:class="img-responsive"}<br/>
+<br/>
 2. When the code you copied from stackoverflows fixes everything.
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme1.png){:class="img-responsive"}
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme1.png){:class="img-responsive"}<br/>
 
+<br/>
 3. Thor and Thanos in Wakanda from Avengers: Infinity War. 
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme2.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme2.jpg){:class="img-responsive"}<br/>
+<br/>
 4. A proud moment when you ask a question on stackoverflow and it is not downvoted. If your answer get accepted ...
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme3.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme3.jpg){:class="img-responsive"}<br/>
+<br/>
 5. *I stole it*.
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme4.jpg){:class="img-responsive"}
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme4.jpg){:class="img-responsive"}<br/>
 
-{% include ads.html %}<br/>
-
+	{% include ads.html %}<br/><br/>
+<br/>
 6. Every programmer
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme5.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme5.jpg){:class="img-responsive"}<br/>
+<br/>
 7. *Stackoveflow is down*.God forbid!
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme6.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme6.jpg){:class="img-responsive"}<br/>
+<br/>
 8. Perfect!!!
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme7.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme7.jpg){:class="img-responsive"}<br/>
+<br/>
 9. When you search for an error and there is question on that. *Perhaps the archives are incomplete*.
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme8.jpg){:class="img-responsive"}
-
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme8.jpg){:class="img-responsive"}<br/>
+<br/>
 10. Best way to handle an exception.
 
 	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme9.jpg){:class="img-responsive"}
-
+<br/>
 11. Stackoverflow in a nutshell.
 
-	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme10.jpg){:class="img-responsive"}
+	![Stackoverflow]({{ site.url }}/assets/stackoverflow_memes/so_meme10.jpg){:class="img-responsive"}<br/><br/>
 
 {% include ads.html %}<br/>
 
@@ -73,5 +74,6 @@ Memes credit: <br/>
 Wikipedia:<br/>
 [Stack Overflow](https://en.wikipedia.org/wiki/Stack_Overflow)
 [GitHub](https://en.wikipedia.org/wiki/GitHub)
+
 
 
