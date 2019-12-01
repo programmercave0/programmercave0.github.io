@@ -110,7 +110,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/RoyandCodeStreak.cpp)
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/README.md)
 
 Get this post in [pdf form](https://www.file-up.org/bqcqt9dxgdgp).
 
