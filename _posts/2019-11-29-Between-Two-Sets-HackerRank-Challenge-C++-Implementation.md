@@ -17,7 +17,7 @@ You will be given two arrays of integers and asked to determine all integers tha
 
 These numbers are referred to as being **between the two arrays**. You must determine how many such numbers exist.
 
-For example, given the arrays `a =\[2, 6]` and `b = \[24, 36]`, there are two numbers between them: `6` and `12`. `6 % 2 = 0`, `6 % 6 = 0`, `24 % 6 = 0` and `36 % 6 = 0` for the first value. Similarly, `12 % 2 = 0`, `12 % 6 = 0` and `24 % 12 = 0`, `36 % 12 = 0`.
+For example, given the arrays `a =[2, 6]` and `b = [24, 36]`, there are two numbers between them: `6` and `12`. `6 % 2 = 0`, `6 % 6 = 0`, `24 % 6 = 0` and `36 % 6 = 0` for the first value. Similarly, `12 % 2 = 0`, `12 % 6 = 0` and `24 % 12 = 0`, `36 % 12 = 0`.
 
 Read the full problem here: [Between Two Sets](https://www.hackerrank.com/challenges/between-two-sets/problem)
 
@@ -153,7 +153,7 @@ int main()
 }
 ```
 
-View this on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/btween-two-sets-hackerrank.cpp)
+View this on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/README.md)
 
 Get this post in pdf - [Between Two Sets - HackerRank](https://www.file-up.org/f6n0nkovrrgp)
 
