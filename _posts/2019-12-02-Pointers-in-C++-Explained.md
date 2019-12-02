@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pointers in C++ Explained"
+title: "Pointers in C++"
 subtitle: "A pointer is a special type of variable which holds the address of a value. A pointer is declared using * (asterisk).A constant pointer only points to the object it was initialized to.In a pointer to a constant, the pointer can not be used to modify the value at which it points."
 author: "Programmercave"
 header-img: "assets/2019-12-02-Pointers-in-C++-Explained/ptr.png"
@@ -97,7 +97,7 @@ std::cout << *ptr << "\n"; // 5
 
 Get this post in pdf : [Pointers in C++](https://www.file-up.org/gxmotwacbs8x)
 
-Programs to have a good grasp on Pointers.
+Practice the programs to have a good grasp on Pointers.
 
 [Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io//blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
 [Merge two sorted Linked List (in-place)](https://programmercave0.github.io//blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
