@@ -97,6 +97,8 @@ std::cout << *ptr << "\n"; // 5
 
 Get this post in pdf : [Pointers in C++](https://www.file-up.org/gxmotwacbs8x)
 
+Watch [Pointers in C++ explanation in Hindi on Youtube](https://youtu.be/pQ82tDhTX5g).
+
 Practice the programs to have a good grasp on Pointers.
 
 [Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io//blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
