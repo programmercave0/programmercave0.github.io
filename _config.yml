@@ -1,5 +1,5 @@
 title: ProgrammerCave
-description: Implementation of basic algorithms, data structures in C++ mostly. Stuff related to Computer Science like Operating Systems, Networking. Basic hacking and exploitation stuff and some linux stuff.
+description: Technical blog where you can find Algorithm and Data Structures imlplementations, Competitive Programming problem Solutions, Exploitation Techniques, Linux Stuff and Computer Science Stuff.
 keywords: Programming competitive code coding C++ Python C Java Algorithm Data Structure
 language: "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
@@ -46,6 +46,9 @@ github_username: "programmercave0"
 instagram_username: "programmercave"
 telegram_username: "programmercave"
 twitter_username: "programmercave"
+medium_username: "@botman1001"
+linkedin_username: "abhishek-singh-thakur-351488147/"
+youtube_username: "UCGpGM7FBgVm7Cmuo6OrUYGQ"
  
 rss: true # just type anything here for a working RSS icon
 

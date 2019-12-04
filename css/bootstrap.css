@@ -138,6 +138,11 @@ ul.posts li { list-style: none; }
   color: white;
 }
 
+.fa-medium{
+	background: black;
+    color: white
+}
+
 .fa-instagram {
   background: #125688;
   color: white;
