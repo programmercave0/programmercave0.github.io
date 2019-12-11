@@ -3,7 +3,7 @@ layout: post
 title: "C++: Rock Paper Scissor Simple Console Implementation"
 subtitle: "Rock–paper–scissors is often used as a fair choosing method between two people, similar to coin flipping, drawing straws, or throwing dice in order to settle a dispute or make an unbiased group decision. "
 author: "Programmercave"
-tags:  [C++, Games]
+tags:  [Cpp, Games]
 date: 2018-06-18
 ---
 
