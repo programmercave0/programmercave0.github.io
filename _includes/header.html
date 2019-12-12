@@ -35,8 +35,14 @@
   gtag('config', 'UA-102581341-3');
 </script>
 
+<meta property="og:site_name" content="{{ site.title }}" />
+
 <meta property="og:title" content="{{ post.title }}" />
-<meta property="og:type" content="article" />
+{% if page.title %}
+  <meta content="article" property="og:type">
+{% else %}
+  <meta content="website" property="og:type">
+{% endif %}
 
 {% if page.header-img %}
     <meta property="og:image" content="{{ site.url }}{{ page.header-img }}" />
@@ -44,8 +50,15 @@
     <meta property="og:image" content="{{ site.url }}assets/pc1.jpg" />
 {% endif %}
 
-<meta property="og:description" content="{{ page.subtitle }}" />
+{% if page.subtitle %}
+  <meta content="{{ page.subtitle }}" property="og:description">
+{% else %}
+  <meta content="{{ site.description }}" property="og:description">
+{% endif %}
 
+{% if page.url %}
+  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+{% endif %}
 <!-- The Author meta propagates the byline in a number of social networks -->
 <meta name="author" content="Programmercave" />
 
@@ -53,7 +66,6 @@
 
 <meta property="og:locale" content="en_US" />
 
-<meta property="og:site_name" content="Programmercave" />
 
  <!-- Here my author and publisher tags are the same (yay self-publishing) -->
   <meta property="article:author" content="http://facebook.com/programmercave" />
