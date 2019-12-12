@@ -7,7 +7,7 @@ markdown: kramdown
 #kramdown:
  # syntax_highlighter_opts:
   #  disable: false
-permalink: blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title
 plugins_dir:
   - jekyll-seo-tag
   - jekyll-mentions
@@ -38,7 +38,7 @@ comments:
     order_by: "reverse_time"
   
   
-url: https://programmercave0.github.io/
+url: https://programmercave0.github.io
 
  
 facebook_username: "programmercave"
