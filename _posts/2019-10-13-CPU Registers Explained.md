@@ -3,7 +3,7 @@ layout: post
 title: "CPU Registers Explained"
 subtitle: "In computing, a processor or processing unit is an electronic circuit which performs operations on some external data source, usually memory or some other data stream. The term is frequently used to refer to the central processor (central processing unit) in a system. The Principal components of a CPU include the arithmetic logic unit (ALU) that performs arithmetic and logic operations, processor registers that supply operands to the ALU and store the results of ALU operations, and a control unit that orchestrates the fetching (from memory) and execution of instructions by directing the coordinated operations of the ALU, registers and other components. "
 author: "Programmercave"
-header-img: "assets/basicCPU.png"
+header-img: "/assets/basicCPU.png"
 tags:  [CPU-Architecture]
 date: 2019-10-13
 ---
