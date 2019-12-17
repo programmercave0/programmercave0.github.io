@@ -46,6 +46,8 @@
 
 {% if page.header-img %}
     <meta property="og:image" content="{{ site.url }}/{{ page.header-img }}" />
+    <meta property="og:image:width" content="600px" />
+    <meta property="og:image:height" content="600px" />
 {% else %}
     <meta property="og:image" content="{{ site.url }}/assets/programmerCavelogo.jpg" />
 {% endif %}
