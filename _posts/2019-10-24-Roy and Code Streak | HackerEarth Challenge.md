@@ -110,7 +110,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/README.md)
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerearth/Roy_and_Code_Streak.cpp)
 
 Get this post in [pdf form](https://www.file-up.org/bqcqt9dxgdgp).
 

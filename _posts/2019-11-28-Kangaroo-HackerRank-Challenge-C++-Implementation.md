@@ -147,7 +147,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/README.md).
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/Kangaroo.cpp).
 
 Get this post in pdf - [Kangaroo-HackerRank Challenge](https://www.file-up.org/i5ox5ezsejq7)
 

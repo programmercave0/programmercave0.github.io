@@ -122,7 +122,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/drawing_book.cpp).
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/Drawing_Book.cpp).
 
 If you have a better solution then please comment below the link to the code.
 

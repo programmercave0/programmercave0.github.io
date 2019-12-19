@@ -148,7 +148,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/circular_array_rotation.cpp).
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/Circular_Array_Rotation.cpp).
 
 
 Better solutions exist for the problem, but I tried to explain in the simplest way. If you have a better solution then please share the link to the code in the comments below.

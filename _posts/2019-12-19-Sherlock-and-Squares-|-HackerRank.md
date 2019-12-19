@@ -17,6 +17,8 @@ Watson likes to challenge Sherlock's math ability. He will provide a starting an
  
 For example, the range is *a = 24* and *b = 49*, inclusive. There are three square integers in the range: *25, 36* and *49*.
 
+Read full problem : [Sherlock and Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem).
+
 <h2>Solution : </h2>
 
 Let the integer variables `first_num` store the first number of the range and `last_num` store the last number of the range.

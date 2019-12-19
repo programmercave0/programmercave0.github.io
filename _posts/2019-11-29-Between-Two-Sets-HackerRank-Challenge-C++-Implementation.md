@@ -153,7 +153,7 @@ int main()
 }
 ```
 
-View this on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/README.md)
+View this on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/Between_two_Sets.cpp)
 
 Get this post in pdf - [Between Two Sets - HackerRank](https://www.file-up.org/f6n0nkovrrgp)
 

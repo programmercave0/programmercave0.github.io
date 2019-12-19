@@ -134,7 +134,7 @@ int main()
 }
 ```
 
-View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/migratory_birds.cpp)
+View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/Migratory_Birds.cpp)
 
 <h3>You may also like</h3>
 [Roy and Code Streak HackerEarth Challenge]({{ site.url }}/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
