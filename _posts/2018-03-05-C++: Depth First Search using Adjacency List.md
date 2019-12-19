@@ -199,8 +199,8 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like<br/>
-[C++: Dijkstra's Algorithm using STL](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
-[C++: Bellman Ford Algorithm using STL](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
-[Breadth First Search using Adjacency List](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
+[C++: Dijkstra's Algorithm using STL]({{ site.url }}/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
+[C++: Bellman Ford Algorithm using STL]({{ site.url }}/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
+[Breadth First Search using Adjacency List]({{ site.url }}/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
 
 

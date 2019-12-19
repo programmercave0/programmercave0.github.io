@@ -174,14 +174,14 @@ Reference:<br/>
 [Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
 
 You may also like:
-[Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
-[Merge two sorted Linked List (in-place)](https://programmercave0.github.io/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
-[Split Singly Circular Linked List](https://programmercave0.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
-[Doubly Circular Linked List](https://programmercave0.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)<br/>
-[Reverse the Linked List](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)<br/>
-[Finding Length of Loop in Linked List](https://programmercave0.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
-[Doubly Linked List](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))<br/>
-[Singly Linked List](https://programmercave0.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))<br/>
+[Move all Odd numbers after Even numbers in Singly Linked List]({{ site.url }}/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
+[Merge two sorted Linked List (in-place)]({{ site.url }}/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
+[Split Singly Circular Linked List]({{ site.url }}/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
+[Doubly Circular Linked List]({{ site.url }}/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)<br/>
+[Reverse the Linked List]({{ site.url }}/blog/2018/01/23/C++-Reverse-the-Linked-List-(Recursive-Method)-program)<br/>
+[Finding Length of Loop in Linked List]({{ site.url }}/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
+[Doubly Linked List]({{ site.url }}/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))<br/>
+[Singly Linked List]({{ site.url }}/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))<br/>
 
 
 

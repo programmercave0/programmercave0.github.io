@@ -19,7 +19,7 @@ Given two sorted Linked List, we have to merge them without using another linked
 
 From the above fig. we can see that merging two linked list is same as merging two sorted array in mergesort.
 
-**Related:** [Merge Sort](https://programmercave0.github.io//blog/2017/08/24/C++-Implementation-of-Merge-Sort)
+**Related:** [Merge Sort]({{ site.url }}//blog/2017/08/24/C++-Implementation-of-Merge-Sort)
 
 `node` stores the smallest element in both linked list and it will become the head of the merged linked list later.
 
@@ -278,13 +278,13 @@ Reference:<br/>
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 <h3>You may also like</h3>
-[Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
-[Split Singly Circular Linked List](https://programmercave0.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
-[Doubly Circular Linked List](https://programmercave0.github.io/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)<br/>
-[Reverse the Linked List](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
-[[Finding Length of Loop in Linked List](https://programmercave0.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
-[Doubly Linked List](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))<br/>
-[Singly Linked List](https://programmercave0.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
+[Move all Odd numbers after Even numbers in Singly Linked List]({{ site.url }}/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
+[Split Singly Circular Linked List]({{ site.url }}/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
+[Doubly Circular Linked List]({{ site.url }}/blog/2018/02/02/C++-Doubly-Circular-Linked-List-program)<br/>
+[Reverse the Linked List]({{ site.url }}/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)
+[[Finding Length of Loop in Linked List]({{ site.url }}/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
+[Doubly Linked List]({{ site.url }}/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))<br/>
+[Singly Linked List]({{ site.url }}/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
 
 
 

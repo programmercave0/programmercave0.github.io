@@ -74,7 +74,7 @@ bool bellman_ford(std::size_t src)
 
 The time complexity of Bellman Ford algorithm is *O(nm)* where *n* is the number of vertices and *m* is the number of edges.
 
-**Related:** [Dijkstra's Algorithm](https://programmercave0.github.io/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
+**Related:** [Dijkstra's Algorithm]({{ site.url }}/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)
 
 Here is the C++ Implementation of Bellman-Ford Algorithm
 
@@ -211,6 +211,6 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
  <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like<br/>
-[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
-[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
+[Breadth First Search using Adjacency List | Graph traversal]({{ site.url }}/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
+[Depth First Search using Adjacency List | Graph traversal]({{ site.url }}/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
 

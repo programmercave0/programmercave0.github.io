@@ -9,7 +9,7 @@ date: 2017-07-16
 ---
 Like mergesort, **quicksort** also follows *divide-and-conquer* approach. The algorithm selects an element as *pivot*. The input array is **divided** into two subarrays. All elements in left subarray are less than pivot and all elements in right subarray are greater than pivot. These two subarrays are **sorted** independently and then **merged** to form a single sorted array.
 
-**Related :** [Merge Sort](https://programmercave0.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
+**Related :** [Merge Sort]({{ site.url }}/blog/2017/08/24/C++-Implementation-of-Merge-Sort)
 
 ![Quicksort]({{ site.url }}/assets/quicksort.png){:class="img-responsive"}
 
@@ -117,9 +117,9 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
  <input type="hidden" name="IL_IN_ARTICLE"> 
 <h3>You may also like</h3>
 
-[Selection sort](https://programmercave0.github.io/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
-[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
-[Heapsort](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
+[Selection sort]({{ site.url }}/blog/2017/08/29/C++-Selection-sort-using-STL)<br/>
+[Insertion Sort]({{ site.url }}/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[Heapsort]({{ site.url }}/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
 
 
 

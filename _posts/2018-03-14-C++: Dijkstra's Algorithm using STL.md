@@ -95,7 +95,7 @@ To push vertices in a ```std::vector```, we have used ```emplace_back``` instead
 For ```emplace_back``` constructor ```A (int x_arg)``` will be called. 
 And for ```push_back``` ```A (int x_arg)``` is called first and ```move A (A &&rhs)``` is called afterwards. [push_back vs emplace_back](https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back)
 
-**Related:** [Bellman Ford Algorithm](https://programmercave0.github.io/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
+**Related:** [Bellman Ford Algorithm]({{ site.url }}/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)
 
 
 ```cpp
@@ -272,8 +272,8 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
 <input type="hidden" name="IL_IN_ARTICLE"> 
 You may also like<br/>
-[Breadth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List) <br/>
-[Depth First Search using Adjacency List | Graph traversal](https://programmercave0.github.io/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List) <br/>
+[Breadth First Search using Adjacency List | Graph traversal]({{ site.url }}/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List) <br/>
+[Depth First Search using Adjacency List | Graph traversal]({{ site.url }}/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List) <br/>
 
 
 

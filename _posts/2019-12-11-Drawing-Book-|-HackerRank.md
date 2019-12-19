@@ -127,5 +127,5 @@ View this code on [Github](https://github.com/programmercave0/Competitive-Progra
 If you have a better solution then please comment below the link to the code.
 
 <h3>Other Competitive Programming Problems and Solutions</h3>
-[Migratory Birds - HackerRank Challenge](https://programmercave0.github.io/blog/2019/12/01/Migratory-Birds-HackerRank-Challenge-C++-Implementation)<br/>
-[Between Two Sets - HackerRank Challenge](https://programmercave0.github.io/blog/2019/11/29/Between-Two-Sets-HackerRank-Challenge-C++-Implementation)<br/>
+[Migratory Birds - HackerRank Challenge]({{ site.url }}/blog/2019/12/01/Migratory-Birds-HackerRank-Challenge-C++-Implementation)<br/>
+[Between Two Sets - HackerRank Challenge]({{ site.url }}/blog/2019/11/29/Between-Two-Sets-HackerRank-Challenge-C++-Implementation)<br/>

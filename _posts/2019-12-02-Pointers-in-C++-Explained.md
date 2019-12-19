@@ -101,11 +101,11 @@ Watch [Pointers in C++ explanation in Hindi on Youtube](https://youtu.be/pQ82tDh
 
 Practice the programs to have a good grasp on Pointers.
 
-[Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io//blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
-[Merge two sorted Linked List (in-place)](https://programmercave0.github.io//blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
-[Split Singly Circular Linked List](https://programmercave0.github.io//blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
-[Reverse the Linked List](https://programmercave0.github.io//blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)<br/>
-[Finding Length of Loop in Linked List](https://programmercave0.github.io//blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
+[Move all Odd numbers after Even numbers in Singly Linked List]({{ site.url }}/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
+[Merge two sorted Linked List (in-place)]({{ site.url }}/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
+[Split Singly Circular Linked List]({{ site.url }}/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
+[Reverse the Linked List]({{ site.url }}/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)<br/>
+[Finding Length of Loop in Linked List]({{ site.url }}/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
 
 
 

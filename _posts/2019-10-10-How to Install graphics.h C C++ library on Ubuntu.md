@@ -63,5 +63,5 @@ Now we can use `graphics.h` library after adding following lines to the code.
     initgraph(&gd, &gm, NULL);
    
   
-Here is a program of [Simple Pendulum Animation on Ubuntu](https://programmercave0.github.io//blog/2019/10/09/C++-Simple-Pendulum-Animation-on-Ubuntu-Machine).  
+Here is a program of [Simple Pendulum Animation on Ubuntu]({{ site.url }}/blog/2019/10/09/C++-Simple-Pendulum-Animation-on-Ubuntu-Machine).  
     

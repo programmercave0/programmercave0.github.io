@@ -88,7 +88,7 @@ if ((pos1 > pos2 && speed1 > speed2) || (pos2 > pos1 && speed2 > speed1))
 {% include ads.html %}<br/>
 
 
-**Related:** [Roy and Code Streak HackerEarth Challenge](https://programmercave0.github.io/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
+**Related:** [Roy and Code Streak HackerEarth Challenge]({{ site.url }}/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
 
 <h3>C++ Implementation</h3>
 

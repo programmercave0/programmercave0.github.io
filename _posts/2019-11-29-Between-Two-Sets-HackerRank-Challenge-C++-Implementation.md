@@ -158,8 +158,8 @@ View this on [Github](https://github.com/programmercave0/Competitive-Programming
 Get this post in pdf - [Between Two Sets - HackerRank](https://www.file-up.org/f6n0nkovrrgp)
 
 <h3>You may also like</h3>
-[Kangaroo HackerRank Challenge](https://programmercave0.github.io/blog/2019/11/28/Kangaroo-HackerRank-Challenge-C++-Implementation)<br/>
-[Roy and Code Streak HackerEarth Challenge](https://programmercave0.github.io/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
+[Kangaroo HackerRank Challenge]({{ site.url }}/blog/2019/11/28/Kangaroo-HackerRank-Challenge-C++-Implementation)<br/>
+[Roy and Code Streak HackerEarth Challenge]({{ site.url }}/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
 
 
 

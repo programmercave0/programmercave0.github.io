@@ -292,10 +292,10 @@ Reference:<br/>
 Competitive Programmer’s Handbook - Antti Laaksonen<br/>
 
 <h3>You may also like</h3>
-[Dijkstra's Algorithm](https://programmercave0.github.io//blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
-[Bellman Ford Algorithm](https://programmercave0.github.io//blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
-[Breadth First Search using Adjacency List](https://programmercave0.github.io//blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
-[Depth First Search using Adjacency List](https://programmercave0.github.io//blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
+[Dijkstra's Algorithm]({{ site.url }}/blog/2018/03/14/C++-Dijkstra's-Algorithm-using-STL)<br/>
+[Bellman Ford Algorithm]({{ site.url }}/blog/2018/03/11/C++-Bellman-Ford-Algorithm-using-STL)<br/>
+[Breadth First Search using Adjacency List]({{ site.url }}/blog/2018/03/06/C++-Breadth-First-Search-using-Adjacency-List)<br/>
+[Depth First Search using Adjacency List]({{ site.url }}/blog/2018/03/05/C++-Depth-First-Search-using-Adjacency-List)<br/>
 
 
 

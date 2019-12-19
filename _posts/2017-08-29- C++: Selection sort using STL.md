@@ -149,10 +149,10 @@ Competitive Programmer’s Handbook - Antti Laaksonen<br/>
  <input type="hidden" name="IL_IN_ARTICLE"> 
 <h3>You may also like</h3>
 
-[Merge Sort](https://programmercave0.github.io/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
-[Insertion Sort](https://programmercave0.github.io/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
-[Quicksort](https://programmercave0.github.io/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
-[Heapsor](https://programmercave0.github.io/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
+[Merge Sort]({{ site.url }}/blog/2017/08/24/C++-Implementation-of-Merge-Sort)<br/>
+[Insertion Sort]({{ site.url }}/blog/2017/08/20/C++-Insertion-Sort-using-STL-(Sorting))<br/>
+[Quicksort]({{ site.url }}/blog/2017/07/16/C++-Implementation-of-Quicksort-(Sorting))<br/>
+[Heapsor]({{ site.url }}/blog/2017/07/15/C++-Implementation-of-Heapsort-(Sorting))<br/>
 
 
 

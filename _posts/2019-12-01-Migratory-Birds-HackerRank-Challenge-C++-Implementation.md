@@ -75,7 +75,7 @@ for (unsigned short i = 1; i < type_count.size(); ++i)
 }
 ```
 
-**Related:** [Kangaroo HackerRank Challenge](https://programmercave0.github.io/blog/2019/11/28/Kangaroo-HackerRank-Challenge-C++-Implementation)
+**Related:** [Kangaroo HackerRank Challenge]({{ site.url }}/blog/2019/11/28/Kangaroo-HackerRank-Challenge-C++-Implementation)
 
 <h3>C++ Implementation</h3>
 
@@ -137,7 +137,7 @@ int main()
 View this code on [Github](https://github.com/programmercave0/Competitive-Programming/blob/master/Hackerrank/migratory_birds.cpp)
 
 <h3>You may also like</h3>
-[Roy and Code Streak HackerEarth Challenge](https://programmercave0.github.io/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
+[Roy and Code Streak HackerEarth Challenge]({{ site.url }}/blog/2019/10/24/Roy-and-Code-Streak-HackerEarth-Challenge)
 
 
 

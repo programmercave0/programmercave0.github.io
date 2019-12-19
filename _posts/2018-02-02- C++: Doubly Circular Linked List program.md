@@ -10,7 +10,7 @@ date: 2018-02-02
 
 The nodes in a linked list are connected through *pointers*. Pointers represent the address of a location in a memory. The order in a linked list is determined by a pointer in each node. A `node` in a **doubly circular linked list** contains a data item and two node pointers, one to the previous node and one to the next node. In doubly linked list we can traverse in both direction.
 
-**Related:** [Doubly Linked List](https://programmercave0.github.io/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
+**Related:** [Doubly Linked List]({{ site.url }}/blog/2017/07/28/C++-Doubly-Linked-List-using-Template-(Data-Structure))
 
 Here is a meme to understand Circular Linked List.
 
@@ -412,9 +412,9 @@ Reference:<br/>
 [Data Structures and Algorithms Made Easy](https://amzn.to/2NLM0dd)<br/>
 
 <h3>may also like</h3>
-[Move all Odd numbers after Even numbers in Singly Linked List](https://programmercave0.github.io/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
-[Merge two sorted Linked List (in-place)](https://programmercave0.github.io/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
-[Split Singly Circular Linked List](https://programmercave0.github.io/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
-[Reverse the Linked List](https://programmercave0.github.io/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)<br/>
-[Finding Length of Loop in Linked List](https://programmercave0.github.io/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
-[Singly Linked List](https://programmercave0.github.io/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))
+[Move all Odd numbers after Even numbers in Singly Linked List]({{ site.url }}/blog/2018/02/08/C++-Move-all-Even-numbers-before-Odd-numbers-in-Singly-Linked-List-(Using-STL))<br/>
+[Merge two sorted Linked List (in-place)]({{ site.url }}/blog/2018/02/06/C++-Merge-two-sorted-Linked-List-(in-place))<br/>
+[Split Singly Circular Linked List]({{ site.url }}/blog/2018/02/04/C++-Split-Singly-Circular-Linked-List-program)<br/>
+[Reverse the Linked List]({{ site.url }}/blog/2018/01/23/C++-Reverse-the-Linked-List-(Iterative-Method)-program)<br/>
+[Finding Length of Loop in Linked List]({{ site.url }}/blog/2018/01/20/C++-Linked-List-containing-Loop-(Floyd-Cycle-finding-Algorithm)-program)<br/>
+[Singly Linked List]({{ site.url }}/blog/2017/07/27/C++-Singly-Linked-List-using-Template-(Data-Structure))

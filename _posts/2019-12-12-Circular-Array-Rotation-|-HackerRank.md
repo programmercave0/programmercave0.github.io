@@ -29,7 +29,7 @@ Read full problem here : [Circular Array Rotation](https://www.hackerrank.com/ch
 
 {% include ads.html %}<br/>
 
-<h1>Solution : </h1>
+<h2>Solution : </h2>
 
 `array` is the input array, integer variable `num_of_rotations` stores the number of rotations to be performed on the input array and array `indices_to_check` stores the indices to be checked after rotation.
 
@@ -154,6 +154,6 @@ View this code on [Github](https://github.com/programmercave0/Competitive-Progra
 Better solutions exist for the problem, but I tried to explain in the simplest way. If you have a better solution then please share the link to the code in the comments below.
 
 <h3>Other Competitive Programming Problems and Solutions</h3>
-[Drawing Book HackerRank Challenge](https://programmercave0.github.io//blog/2019/12/11/Drawing-Book-HackerRank)<br/>
-[Migratory Birds - HackerRank Challenge](https://programmercave0.github.io//blog/2019/12/01/Migratory-Birds-HackerRank-Challenge-C++-Implementation)<br/>
+[Drawing Book HackerRank Challenge]({{ site.url }}/blog/2019/12/11/Drawing-Book-HackerRank)<br/>
+[Migratory Birds - HackerRank Challenge]({{ site.url }}/blog/2019/12/01/Migratory-Birds-HackerRank-Challenge-C++-Implementation)<br/>
 
