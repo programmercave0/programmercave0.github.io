@@ -8,6 +8,8 @@ tags:  [Cpp, Algorithm, Data-Structure, Competitive-Programming, Hackerrank]
 date: 2019-12-19
 ---
 
+This is an easy hackerrank challenge which will help you to become good at competitive programming. There are various competitive programming websites like [CodeChef](https://www.codechef.com/), [HackerEarth](https://www.hackerearth.com/challenges/), [Codeforces](https://codeforces.com/) where you can practice coding.
+
 <h1>Problem : </h1>
 
 Watson likes to challenge Sherlock's math ability. He will provide a starting and ending value describing a range of integers. Sherlock must determine the number of *square integers* within that range, inclusive of the endpoints.
