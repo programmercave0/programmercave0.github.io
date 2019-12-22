@@ -166,4 +166,8 @@ It is given that the password is stored in the hidden file and after running com
 
 Reference : [The Linux Command Line – A Complete Introduction](https://amzn.to/2PDVmZz)
 
+### Next Posts
+
+[Bandit Level 4 to Level 9]({{ site.url }}/blog/2019/12/22/Bandit-Level-4-to-Level-9-OverTheWire)
+
 
