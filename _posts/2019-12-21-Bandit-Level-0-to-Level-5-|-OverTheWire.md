@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bandit Level 0 to Level 4 | OverTheWire"
-subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level0, Level 0 → Level 1, Level 1 → Level 2, Level 2 → Level 3, and Level 3 → Level 4."
+subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level0, Level 0 → Level 1, Level 1 → Level 2, Level 2 → Level 3, and Level 3 → Level 4. The passwords are hidden, so you have to find the passwords for next level yourself."
 author: "Programmercave"
 header-img: "/assets/Bandit-Overthewire/overthewire_poster.jpg"
 tags:  [Linux, OverTheWire-Bandit]
@@ -9,6 +9,8 @@ date: 2019-12-21
 ---
 
 Learn linux command by playing [Bandit](https://overthewire.org/wargames/bandit/) wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level0, Level 0 → Level 1, Level 1 → Level 2, Level 2 → Level 3, and Level 3 → Level 4. 
+
+The passwords are hidden, so you have to find the passwords for next level yourself.
 
 ![Bandit OverTheWire]({{ site.url }}/assets/Bandit-Overthewire/overthewire_poster.jpg){:class="img-responsive"}
 
@@ -62,7 +64,7 @@ Current working directory can be found using `pwd` command.
 
 `cat` command is used to view the content of a file, concatenate file and redirect output in terminal or a file. It can accept more than one file as an argument, so it is used to join files together. Here we are going to use `cat` to view the content of a file.
 
-Enter command `ls` to know the files and directories. There is a file *readme* in the current working directory which is */home/bandit0*. The *readme* file stores the password for level 1. The password is displayed on the terminal using command `cat readme` and the password is `boJ9jbbUNNfktd78OOpsqOltutMc3MY1` .
+Enter command `ls` to know the files and directories. There is a file *readme* in the current working directory which is */home/bandit0*. The *readme* file stores the password for level 1. The password is displayed on the terminal using command `cat readme` and the password is `****` .
 
 Exit the remote session using command `exit`.
 
@@ -84,7 +86,7 @@ ls, cd, cat, file, du, find
 
 ### Solution : 
 
-Command to connect remote host : `ssh bandit1@bandit.labs.overthewire.org -p 2220` password is  `boJ9jbbUNNfktd78OOpsqOltutMc3MY1` .
+Command to connect remote host : `ssh bandit1@bandit.labs.overthewire.org -p 2220` password is  `****` .
 
 In UNIX and Linux, a filename can start with  – (dash) or can be just – (dash). Above it is given that  the file is called – (dash).
 
@@ -95,7 +97,7 @@ So to view the content of the file - , the path to the file is prefixed with the
 cat ./-
 ```
 
-The password for the next level is `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9` .
+The password for the next level is `****` .
 
 ![Bandit Level 1 2]({{ site.url }}/assets/Bandit-Overthewire/bandit_l12_terminal.jpg){:class="img-responsive"}
 
@@ -117,7 +119,7 @@ ls, cd, cat, file, du, find
 
 ### Solution :
  
-Command to connect remote host : `ssh bandit2@bandit.labs.overthewire.org -p 2220` password is  `CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9` .
+Command to connect remote host : `ssh bandit2@bandit.labs.overthewire.org -p 2220` password is  `****` .
 
 When we run the `ls` command we find that the name of the file is *spaces in this filename* means there are spaces in the filename.
 
@@ -132,7 +134,7 @@ cat spaces\ in\ this\ filename
 
 Since in that directory there is only file we can also use *tab button*, after typing s, which writes the full name of file which starts with s.
 
-The password for the next level is `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK` .
+The password for the next level is `****` .
 
 ![Bandit Level 2 3]({{ site.url }}/assets/Bandit-Overthewire/bandit_l23_terminal.jpg){:class="img-responsive"}
 
@@ -153,13 +155,13 @@ ls, cd, cat, file, du, find
 
 ### Solution : 
 
-Command to connect remote host : `ssh bandit3@bandit.labs.overthewire.org -p 2220` password is  `UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK` .
+Command to connect remote host : `ssh bandit3@bandit.labs.overthewire.org -p 2220` password is  `****` .
 
 `cd` command is used to change our current working directory. `cd` is followed by the pathname of the desired working directory.
 
 Our current working directory is */home/bandit3* and our desired working directory is */home/bandit3/inhere* . So we can either use command `cd inhere/` or `cd /home/bandit3/inhere/`
 
-It is given that the password is stored in the hidden file and after running command `ls` we do not find any file in the directory. Files whose name starts with a period (**.**) are hidden file and command `ls -a` list all files, even those with names that begin with a period, which are normally not listed (i. e., hidden). So the name of the file is *.hidden* and command `cat .hidden` is used to see the content of the file. The password to the next level is `pIwrPrtPN36QITSp3EQaw936yaFoFgAB` .
+It is given that the password is stored in the hidden file and after running command `ls` we do not find any file in the directory. Files whose name starts with a period (**.**) are hidden file and command `ls -a` list all files, even those with names that begin with a period, which are normally not listed (i. e., hidden). So the name of the file is *.hidden* and command `cat .hidden` is used to see the content of the file. The password to the next level is `****` .
 
 ![Bandit Level 3 4]({{ site.url }}/assets/Bandit-Overthewire/bandit_l34_terminal.jpg){:class="img-responsive"}
 

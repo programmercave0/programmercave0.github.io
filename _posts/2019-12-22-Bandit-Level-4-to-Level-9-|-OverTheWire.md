@@ -1,14 +1,16 @@
 ---
 layout: post
 title: "Bandit Level 4 to Level 9 | OverTheWire"
-subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 4 → Level 5, Level 5 → Level 6, Level 6 → Level 7, Level 7 → Level 8, and Level 8 → Level 9."
+subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 4 → Level 5, Level 5 → Level 6, Level 6 → Level 7, Level 7 → Level 8, and Level 8 → Level 9. The passwords are hidden, so you have to find the passwords for next level yourself."
 author: "Programmercave"
 header-img: "/assets/Bandit-Overthewire/overthewire_poster.jpg"
 tags:  [Linux, OverTheWire-Bandit]
 date: 2019-12-22
 ---
 
-Learn linux command by playing [Bandit](https://overthewire.org/wargames/bandit/) wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 4 → Level 5, Level 5 → Level 6, Level 6 → Level 7, Level 7 → Level 8, and Level 8 → Level 9."
+Learn linux command by playing [Bandit](https://overthewire.org/wargames/bandit/) wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 4 → Level 5, Level 5 → Level 6, Level 6 → Level 7, Level 7 → Level 8, and Level 8 → Level 9.
+
+The passwords are hidden, so you have to find the passwords for next level yourself.
 
 ![Bandit OverTheWire]({{ site.url }}/assets/Bandit-Overthewire/overthewire_poster.jpg){:class="img-responsive"}
 
@@ -28,7 +30,7 @@ ls, cd, cat, file, du, find
 
 ### Solution : 
 
-Command to connect remote host : `ssh bandit4@bandit.labs.overthewire.org -p 2220` password is  `pIwrPrtPN36QITSp3EQaw936yaFoFgAB` .
+Command to connect remote host : `ssh bandit4@bandit.labs.overthewire.org -p 2220` password is  `****` .
 
 `file` command is used to determine a file’s type or what file contains.
 
@@ -56,7 +58,7 @@ The `xargs` command performs an interesting function. It accepts input from stan
 
 Command `find . -type f | xargs file` finds all the regular files in the current directory and `xargs` constructs an argument list for `file` command and then executes it.
 
-The password for the next level is `koReBOKuIDDepwhWk7jZC0RTdopnAYKh` .
+The password for the next level is `****` .
 
 ![Bandit Level 4 5]({{ site.url }}/assets/Bandit-Overthewire/bandit_l45_terminal.jpg){:class="img-responsive"}
 
@@ -81,7 +83,7 @@ ls, cd, cat, file, du, find
 
 ### Solution : 
 
-Command to connect remote host : `ssh bandit5@bandit.labs.overthewire.org -p 2220` password is  `koReBOKuIDDepwhWk7jZC0RTdopnAYKh` .
+Command to connect remote host : `ssh bandit5@bandit.labs.overthewire.org -p 2220` password is  `****` .
 
 In manual pages of `find` command it is mentioned that option `-size` is used to specify size of the file and `c` is used for bytes. `-executable` matches the executable files, so `! -executables` matches the non executable files. We then pipe this output to `xargs` command which tells the content of the file found. Command is 
 
@@ -89,7 +91,7 @@ In manual pages of `find` command it is mentioned that option `-size` is used to
 find . -type f -size 1033c ! - executable | xargs file
 ```
 
-The password for the next level is `DXjZPULLxYr17uwoI01bNLQbtFemEgo7` .
+The password for the next level is `****` .
 
 ![Bandit Level 5 6]({{ site.url }}/assets/Bandit-Overthewire/bandit_l56_terminal.jpg){:class="img-responsive"}
 
@@ -114,7 +116,7 @@ ls, cd, cat, file, du, find, grep
 
 ### Solution :
  
-Command to connect remote host : `ssh bandit6@bandit.labs.overthewire.org -p 2220` password is `DXjZPULLxYr17uwoI01bNLQbtFemEgo7` .
+Command to connect remote host : `ssh bandit6@bandit.labs.overthewire.org -p 2220` password is `****` .
 
 Since the password is stored *somewhere on the server*. Lets go to the root directory by running command `cd ..` two times.
 
@@ -137,7 +139,7 @@ So the command is :
 find -user bandit7 -group bandit6 -size 33c | xargs file
 ```
 
-The password for the next level is `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs` .
+The password for the next level is `****` .
 
 ![Bandit Level 6 7]({{ site.url }}/assets/Bandit-Overthewire/bandit_l67_terminal.jpg){:class="img-responsive"}
 
@@ -158,7 +160,7 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 ### Solution :
  
-Command to connect remote host : `ssh bandit7@bandit.labs.overthewire.org -p 2220` password is `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs` .
+Command to connect remote host : `ssh bandit7@bandit.labs.overthewire.org -p 2220` password is `****` .
 
 Here we can use `grep` program. `grep` is used to find text patterns within file. The text we have to find is *millionth* and the password for next level is next to it.
 
@@ -166,7 +168,7 @@ The command is :
 ```
 cat data.txt | grep millionth
 ```
-The password for next level is `cvX2JJa4CFALtqS87jk27qwqGhBM9plV` .
+The password for next level is `****` .
 
 ![Bandit Level 7 8]({{ site.url }}/assets/Bandit-Overthewire/bandit_l78_terminal.jpg){:class="img-responsive"}
 
@@ -187,14 +189,14 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 ### Solution :
  
-Command to connect remote host : `ssh bandit8@bandit.labs.overthewire.org -p 2220` password is `cvX2JJa4CFALtqS87jk27qwqGhBM9plV` .
+Command to connect remote host : `ssh bandit8@bandit.labs.overthewire.org -p 2220` password is `****` .
 
 We will use command `sort` to sort all texts in the file. Command `uniq` with option `u` i.e. `uniq -u` only prints unique lines. So the command is :
 ```
 sort data.txt | uniq -u
 ```
 
-and password is `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR` .
+and password is `****` .
 
 ![Bandit Level 8 9]({{ site.url }}/assets/Bandit-Overthewire/bandit_l89_terminal.jpg){:class="img-responsive"}
 
