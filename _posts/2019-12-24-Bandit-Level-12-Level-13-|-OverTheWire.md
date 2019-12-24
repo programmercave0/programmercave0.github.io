@@ -83,3 +83,8 @@ The password for the next level is `****` .
 
 Reference : [The Linux Command Line – A Complete Introduction](https://amzn.to/2PDVmZz)<br/>
 [https://linux.die.net/man/1/xxd](https://linux.die.net/man/1/xxd)
+
+### Next Post
+
+[Bandit Level 13 to Level 16]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)<br/>
+[Bandit Level 16 to Level 19]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)

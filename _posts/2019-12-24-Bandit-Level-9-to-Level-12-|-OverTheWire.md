@@ -97,10 +97,11 @@ and the password for the next level is `****` .
 Reference : [http://man7.org/linux/man-pages/man1/tr.1p.html](http://man7.org/linux/man-pages/man1/tr.1p.html)<br/>
 [https://unix.stackexchange.com/questions/19772/how-does-tr-a-z-n-za-m-work](https://unix.stackexchange.com/questions/19772/how-does-tr-a-z-n-za-m-work)
 
+### Next Post
 
-
-
-
+[Bandit Level 12 → Level 13]({{ site.url }}/blog/2019/12/24/Bandit-Level-12-Level-13-OverTheWire)<br/>
+[Bandit Level 13 to Level 16]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)<br/>
+[Bandit Level 16 to Level 19]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)
 
 
 

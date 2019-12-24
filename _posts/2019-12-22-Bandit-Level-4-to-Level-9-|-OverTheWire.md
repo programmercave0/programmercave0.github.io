@@ -203,3 +203,12 @@ and password is `****` .
 
 Reference : [http://man7.org/linux/man-pages/man1/uniq.1.html](http://man7.org/linux/man-pages/man1/uniq.1.html)<br/>
 [https://askubuntu.com/questions/915570/how-do-i-find-a-single-unique-line-in-a-file](https://askubuntu.com/questions/915570/how-do-i-find-a-single-unique-line-in-a-file)
+
+### Next Post
+
+[Bandit Level 9 to Level 12]({{ site.url }}/blog/2019/12/24/Bandit-Level-9-to-Level-12-OverTheWire)<br/>
+[Bandit Level 12 → Level 13]({{ site.url }}/blog/2019/12/24/Bandit-Level-12-Level-13-OverTheWire)<br/>
+[Bandit Level 13 to Level 16]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)<br/>
+[Bandit Level 16 to Level 19]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)
+
+

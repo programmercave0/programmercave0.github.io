@@ -109,3 +109,7 @@ and then enter password for the current level. The password for the next level i
 ![Bandit Level 15 16]({{ site.url }}/assets/Bandit-Overthewire/bandit_l1516_terminal.jpg){:class="img-responsive"}
 
 Reference : [https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html)
+
+### Next Post
+
+[Bandit Level 16 to Level 19]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)
