@@ -4,7 +4,7 @@ title: "Memes on copy pasting code from Stackoverflow"
 subtitle: "Stackoverflow was launched on 2008 by Jeff Atwood and Joel Spolsky. It is written in C#. It is owned by Stack Exchange Network. Stack Exchange Network has some good websites too. codereview.stackexchange has helped me a lot as a programmer. I am still a beginner in programming. You can visit my profile on codereview.stackexchange and see how I have improved my coding. "
 author: "Programmercave"
 header-img: "/assets/stackoverflow_memes/so_meme7.jpg"
-tags:  [Memes, Memes-Stackoverflow]
+tags:  [Memes]
 date: 2019-11-28
 ---
 
@@ -73,6 +73,11 @@ Memes credit: <br/>
 Wikipedia:<br/>
 [Stack Overflow](https://en.wikipedia.org/wiki/Stack_Overflow)
 [GitHub](https://en.wikipedia.org/wiki/GitHub)
+
+### Realted Posts:
+
+[Best Memes on Javascript]({{ site.url }}/blog/2019/12/26/Best-Memes-on-Javascript)<br/>
+[Best Memes on Microsoft Operating System Failure]({{ site.url }}/Best-Memes-on-Microsoft-Operating-System)
 
 
 
