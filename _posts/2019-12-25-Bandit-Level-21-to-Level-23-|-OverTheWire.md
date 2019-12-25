@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Bandit Level 21 to Level 23 | OverTheWire"
-subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 21 → Level 22, Level 22 → Level 23 and and Level 23 → Level 24. The passwords are hidden, so you have to find the passwords for next level yourself."
+title: "Bandit Level 21 to Level 22 | OverTheWire"
+subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 21 → Level 22 and Level 22 → Level 23. The passwords are hidden, so you have to find the passwords for next level yourself."
 author: "Programmercave"
 header-img: "/assets/Bandit-Overthewire/overthewire_poster.jpg"
 tags:  [Linux, OverTheWire-Bandit, CTF]
@@ -101,4 +101,6 @@ To see password run `cat /tmp/8ca319486bfbbc3663ea0fbe81326349` and the password
 
 ![Bandit Level 22 23]({{ site.url }}/assets/Bandit-Overthewire/bandit_l2223_terminal3.jpg){:class="img-responsive"}
 
+### Next Post
 
+[Bandit Level 23 → Level 24]({{ site.url }}/blog/2019/12/25/Bandit-Level-23-Level-24-OverTheWire)

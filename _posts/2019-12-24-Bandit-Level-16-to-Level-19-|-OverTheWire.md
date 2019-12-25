@@ -160,3 +160,10 @@ and the password for the next level is `***` .
 Reference : [https://linux.die.net/man/1/ssh](https://linux.die.net/man/1/ssh)<br/>
 [https://unix.stackexchange.com/a/21150/244874](https://unix.stackexchange.com/a/21150/244874)<br/>
 [https://serverfault.com/a/201158](https://serverfault.com/a/201158)
+
+### Next Post
+
+[Bandit Level 19 to Level 20]({{ site.url }}/blog/2019/12/25/Bandit-Level-19-to-Level-20-OverTheWire)<br/>
+[Bandit Level 21 to Level 22]({{ site.url }}/blog/2019/12/25/Bandit-Level-21-to-Level-23-OverTheWire)
+<br/>
+[Bandit Level 23 → Level 24]({{ site.url }}/blog/2019/12/25/Bandit-Level-23-Level-24-OverTheWire)

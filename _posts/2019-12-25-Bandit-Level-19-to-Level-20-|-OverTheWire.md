@@ -105,3 +105,9 @@ Here connection is also established on port 12346.
 Reference : [https://unix.stackexchange.com/a/214480/244874](https://unix.stackexchange.com/a/214480/244874)<br/>
 [https://linux.die.net/man/1/nc](https://linux.die.net/man/1/nc)<br/>
 [https://www.billycody.com/otw-wargames/bandit/bandit-level-20](https://www.billycody.com/otw-wargames/bandit/bandit-level-20)<br/>
+
+### Next Post
+
+[Bandit Level 21 to Level 22]({{ site.url }}/blog/2019/12/25/Bandit-Level-21-to-Level-23-OverTheWire)
+<br/>
+[Bandit Level 23 → Level 24]({{ site.url }}/blog/2019/12/25/Bandit-Level-23-Level-24-OverTheWire)
