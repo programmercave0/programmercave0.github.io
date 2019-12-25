@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bandit Level 16 to Level 19 | OverTheWire"
+title: "Bandit Level 16 to Level 18 | OverTheWire"
 subtitle: "Learn linux command by playing Bandit wargame. The Bandit wargame is aimed at absolute beginners. It will teach the basics needed to be able to play other wargames. Below is the solution of Level 16 → Level 17, Level 17 → Level 18 and Level 18 → Level 19. The passwords are hidden, so you have to find the passwords for next level yourself."
 author: "Programmercave"
 header-img: "/assets/Bandit-Overthewire/overthewire_poster.jpg"
@@ -16,11 +16,11 @@ The passwords are hidden, so you have to find the passwords for next level yours
 
 ### Previous Post
 
-[Bandit Level 0 to Level 4]({{ site.url }}/blog/2019/12/21/Bandit-Level-0-to-Level-5-OverTheWire)<br/>
-[Bandit Level 4 to Level 9]({{ site.url }}/blog/2019/12/22/Bandit-Level-4-to-Level-9-OverTheWire)<br/>
-[Bandit Level 9 to Level 12]({{ site.url }}/blog/2019/12/24/Bandit-Level-9-to-Level-12-OverTheWire)<br/>
+[Bandit Level 0 to Level 3]({{ site.url }}/blog/2019/12/21/Bandit-Level-0-to-Level-5-OverTheWire)<br/>
+[Bandit Level 4 to Level 8]({{ site.url }}/blog/2019/12/22/Bandit-Level-4-to-Level-9-OverTheWire)<br/>
+[Bandit Level 9 to Level 11]({{ site.url }}/blog/2019/12/24/Bandit-Level-9-to-Level-12-OverTheWire)<br/>
 [Bandit Level 12 → Level 13]({{ site.url }}/blog/2019/12/24/Bandit-Level-12-Level-13-OverTheWire)<br/>
-[Bandit Level 13 to Level 16]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)
+[Bandit Level 13 to Level 15]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)
 
 ## [Bandit Level 16 → Level 17](https://overthewire.org/wargames/bandit/bandit17.html)
 

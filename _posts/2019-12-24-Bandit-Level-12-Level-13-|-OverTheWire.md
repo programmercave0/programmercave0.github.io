@@ -16,9 +16,9 @@ The passwords are hidden, so you have to find the passwords for next level yours
 
 ### Previous Post
 
-[Bandit Level 0 to Level 4]({{ site.url }}/blog/2019/12/21/Bandit-Level-0-to-Level-5-OverTheWire)<br/>
-[Bandit Level 4 to Level 9]({{ site.url }}/blog/2019/12/22/Bandit-Level-4-to-Level-9-OverTheWire)<br/>
-[Bandit Level 9 to Level 12]({{ site.url }}/blog/2019/12/24/Bandit-Level-9-to-Level-12-OverTheWire)
+[Bandit Level 0 to Level 3]({{ site.url }}/blog/2019/12/21/Bandit-Level-0-to-Level-5-OverTheWire)<br/>
+[Bandit Level 4 to Level 8]({{ site.url }}/blog/2019/12/22/Bandit-Level-4-to-Level-9-OverTheWire)<br/>
+[Bandit Level 9 to Level 11]({{ site.url }}/blog/2019/12/24/Bandit-Level-9-to-Level-12-OverTheWire)
 
 ## [Bandit Level 12 → Level 13](https://overthewire.org/wargames/bandit/bandit13.html)
 
@@ -86,5 +86,5 @@ Reference : [The Linux Command Line – A Complete Introduction](https://amzn.to
 
 ### Next Post
 
-[Bandit Level 13 to Level 16]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)<br/>
-[Bandit Level 16 to Level 19]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)
+[Bandit Level 13 to Level 15]({{ site.url }}/blog/2019/12/24/Bandit-Level-13-to-Level-16-OverTheWire)<br/>
+[Bandit Level 16 to Level 18]({{ site.url }}/blog/2019/12/24/Bandit-Level-16-to-Level-19-OverTheWire)
