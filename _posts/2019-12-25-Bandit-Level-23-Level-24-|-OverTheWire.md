@@ -103,4 +103,11 @@ When new minute starts, file pass24file is produced with password for the next l
 Reference: [https://www.reddit.com/r/HowToHack/comments/cg3zu9/is_overthewires_bandit_level_2324_broken_spoilers/](https://www.reddit.com/r/HowToHack/comments/cg3zu9/is_overthewires_bandit_level_2324_broken_spoilers/)<br/>
 [https://www.billycody.com/otw-wargames/bandit/bandit-level-23](https://www.billycody.com/otw-wargames/bandit/bandit-level-23)
 
+### Next Post
+
+[Bandit Level 24 → Level 25]({{ site.url }}/blog/2019/12/26/Bandit-Level-24-Level-25-OverTheWire)<br/>
+[Bandit Level 25 to Level 26]({{ site.url }}/blog/2019/12/26/Bandit-Level-25-to-Level-26-OverTheWire)<br/>
+[Bandit Level 27 to Level 31]({{ site.url }}/blog/2019/12/26/Bandit-Level-27-to-Level-31-OverTheWire)<br/>
+[Bandit Level 32 → Level 33]({{ site.url }}/blog/2019/12/26/Bandit-Level-32-Level-33-OverTheWire)
+
 

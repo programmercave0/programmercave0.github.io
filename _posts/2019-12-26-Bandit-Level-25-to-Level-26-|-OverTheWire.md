@@ -120,3 +120,8 @@ and the password is `****` .
 Reference : Vim tips: [Working with external commands](https://www.linux.com/tutorials/vim-tips-working-external-commands/)<br/>
 [http://man7.org/linux/man-pages/man1/more.1.html](http://man7.org/linux/man-pages/man1/more.1.html)
 
+### Next Post
+
+[Bandit Level 27 to Level 31]({{ site.url }}/blog/2019/12/26/Bandit-Level-27-to-Level-31-OverTheWire)<br/>
+[Bandit Level 32 → Level 33]({{ site.url }}/blog/2019/12/26/Bandit-Level-32-Level-33-OverTheWire)
+

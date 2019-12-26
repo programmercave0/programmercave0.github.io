@@ -71,4 +71,10 @@ The password for the next level is `****` .
 Reference : [https://unix.stackexchange.com/questions/432904/brute-force-4-digit-pin-with-pass-using-shell-script](https://unix.stackexchange.com/questions/432904/brute-force-4-digit-pin-with-pass-using-shell-script)<br/>
 [https://skyenet.tech/brute-force-password-attacking/](https://skyenet.tech/brute-force-password-attacking/)
 
+### Next Post
+
+[Bandit Level 25 to Level 26]({{ site.url }}/blog/2019/12/26/Bandit-Level-25-to-Level-26-OverTheWire)<br/>
+[Bandit Level 27 to Level 31]({{ site.url }}/blog/2019/12/26/Bandit-Level-27-to-Level-31-OverTheWire)<br/>
+[Bandit Level 32 → Level 33]({{ site.url }}/blog/2019/12/26/Bandit-Level-32-Level-33-OverTheWire)
+
 

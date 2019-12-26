@@ -12,8 +12,6 @@ Learn linux command by playing [Bandit](https://overthewire.org/wargames/bandit/
 
 In this post we will learn about git and its terminal command.
 
-In this level we will learn how to change shell and how size of the terminal window can also help us to crack the password. 
-
 The passwords are hidden, so you have to find the passwords for next level yourself.
 
 ![Bandit OverTheWire]({{ site.url }}/assets/Bandit-Overthewire/overthewire_poster.jpg){:class="img-responsive"}
@@ -208,4 +206,6 @@ Now if add and push our file it will show us the password for next level and the
 
 ![Bandit Level 31 32]({{ site.url }}/assets/Bandit-Overthewire/bandit_l3132_terminal4.jpg){:class="img-responsive"}
 
+### Next Post
 
+[Bandit Level 32 → Level 33]({{ site.url }}/blog/2019/12/26/Bandit-Level-32-Level-33-OverTheWire)
