@@ -80,7 +80,7 @@ Now in second terminal netcat client establishes connection to the server on por
 
 Now login to a remote machine as user bandit20.
 
-Binary file *suconnect* has escalated privilege as user *bandit21*. After running command `./suconnect` it shows how to use command i.e. *Usage: ./suconnect <portnumber>*
+Binary file *suconnect* has escalated privilege as user *bandit21*. After running command `./suconnect` it shows how to use command i.e. *Usage: ./suconnect* <portnumber>
 
 It also shows “*This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back*”.
 
