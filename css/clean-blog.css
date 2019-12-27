@@ -9,6 +9,10 @@ body {
   body {
     font-size: 17px;
   }
+
+  p {
+	line-height: 1.7;
+    }
 }
 p {
   line-height: 1.8;
