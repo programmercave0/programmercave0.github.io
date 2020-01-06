@@ -73,4 +73,10 @@ After we enter *sex* as password, we are in root shell and then we can see the p
 Reference : [Chapter 9. ltrace](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/7/html/user_guide/chap-ltrace)<br/>
 [LTRACE(1)](http://man7.org/linux/man-pages/man1/ltrace.1.html)<br/>
 
+### Next Posts
+[Leviathan Level 2 → Level 3]({{ site.url }}/blog/2020/01/06/Leviathan-Level-2-3-Basic-Exploitation-Techniques)<br/>
+[Leviathan Level 3 to Level 4]({{ site.url }}/blog/2020/01/06/Leviathan-Level34-Basic-Exploitation-Techniques)<br/>
+[Leviathan Level 5 to Level 6]({{ site.url }}/blog/2020/01/06/Leviathan-Level-5-to-6-Basic-Exploitation-Techniques)<br/>
+
+### Other Wargames
 [Bandit Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-bandit) 
