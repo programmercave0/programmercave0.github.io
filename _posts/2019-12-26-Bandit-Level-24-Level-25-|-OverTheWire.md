@@ -79,5 +79,6 @@ Reference : [https://unix.stackexchange.com/questions/432904/brute-force-4-digit
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>
 
 

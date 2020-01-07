@@ -176,3 +176,4 @@ Reference : [https://linux.die.net/man/1/ssh](https://linux.die.net/man/1/ssh)<b
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>

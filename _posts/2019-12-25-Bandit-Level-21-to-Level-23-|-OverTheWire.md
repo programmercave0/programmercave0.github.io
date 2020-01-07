@@ -113,3 +113,4 @@ To see password run `cat /tmp/8ca319486bfbbc3663ea0fbe81326349` and the password
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>

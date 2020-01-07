@@ -112,5 +112,6 @@ Reference: [https://www.reddit.com/r/HowToHack/comments/cg3zu9/is_overthewires_b
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>
 
 

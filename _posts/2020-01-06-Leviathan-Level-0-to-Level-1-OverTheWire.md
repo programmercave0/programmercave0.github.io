@@ -79,4 +79,5 @@ Reference : [Chapter 9. ltrace](https://access.redhat.com/documentation/en-us/
 [Leviathan Level 5 to Level 6]({{ site.url }}/blog/2020/01/06/Leviathan-Level-5-to-6-Basic-Exploitation-Techniques)<br/>
 
 ### Other Wargames
-[Bandit Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-bandit) 
+[Bandit Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-bandit) <br/>
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>

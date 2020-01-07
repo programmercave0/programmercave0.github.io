@@ -127,4 +127,5 @@ Reference : Vim tips: [Working with external commands](https://www.linux.com/tut
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>
 

@@ -115,6 +115,7 @@ Reference : [http://man7.org/linux/man-pages/man1/tr.1p.html](http://man7.org/li
 
 ### Other Wargames
 [Leviathan Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-leviathan)<br/> 
+[Krypton Wargame from OverTheWire All Level Solutions]({{ site.url }}/blog/#overthewire-krypton)<br/>
 
 
 
