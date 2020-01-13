@@ -84,11 +84,7 @@ google_analytics: UA-102581341-3
 # !! You don't need to change any of the configuration flags below !!
 
 # Default YAML values (more information on Jekyll's site)
-defaults:
-  -
-    values:
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+
 
 # Use tags index page and make tags on each post clickable
 link-tags: true
