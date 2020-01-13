@@ -19,23 +19,7 @@ plugins_dir:
 paginate: 5
 #paginate_path: '/page:num'
   
-comments:
-  facebook:
-    appid: 389979625280769
-    profile_id: programmercave                      # For follow button or profile link
-    action: like          # Or recommend
-    share: true         # Also add a share button
-    layout: button        # Choices: standard, box_count, button_count, button
-    show_faces: false
-    colorscheme: light         # Or dark
-    kid_directed_site: false         # Is your site directed at kids under 13?
-    share_link_text: Facebook            # Text for plain-old link
-    share_link_title: Share on Facebook   # Share link title text
-    #profile_link_text:   Friend on Facebook
-    #profile_link_title:  Friend on Facebook  # Profile link title text
-    num_posts: 10
-    colorscheme: "light"
-    order_by: "reverse_time"
+comments: true
   
   
 url: https://programmercave0.github.io
