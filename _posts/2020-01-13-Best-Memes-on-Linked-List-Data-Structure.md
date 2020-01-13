@@ -50,3 +50,8 @@ Me: <br/>
 [Best Memes on Javascript]({{ site.url }}/blog/2019/12/26/Best-Memes-on-Javascript)<br/>
 
 [Linked List Programs in C++]({{ site.url }}/blog/#linked-list)
+
+### Source
+[r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/)<br/>
+[Programming Geek](https://www.facebook.com/programmercave/)<br/>
+
