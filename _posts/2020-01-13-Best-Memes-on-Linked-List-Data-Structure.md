@@ -26,7 +26,7 @@ Interviewer : How to reverse a Linked List? <br/>
 
 Me: <br/>
 
-![Linked List Data Structure Memes]({{ site.url }}/assets/Memes-Linkedlist/llmeme11.gif){:class="img-responsive"}
+<blockquote class="imgur-embed-pub" lang="en" data-id="fj4dVFa"><a href="//imgur.com/fj4dVFa">Convoy U-Turn</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ![Linked List Data Structure Memes]({{ site.url }}/assets/Memes-Linkedlist/llmeme6.jpg){:class="img-responsive"}
 
