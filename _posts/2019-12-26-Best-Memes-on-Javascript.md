@@ -28,6 +28,6 @@ Here is the collection of some of the best memes on Javascript.
 ### Realted Posts:
 
 [Memes on copy pasting code from Stackoverflow]({{ site.url }}/blog/2019/11/28/Memes-on-copy-pasting-code-from-Stackoverflow)<br/>
-[Best Memes on Microsoft Operating System Failure]({{ site.url }}/Best-Memes-on-Microsoft-Operating-System)
+[Best Memes on Windows Operating System Failure]({{ site.url }}/Best-Memes-on-Microsoft-Operating-System)
 
 
