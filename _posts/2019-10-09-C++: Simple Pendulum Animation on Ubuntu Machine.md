@@ -4,7 +4,7 @@ title: "C++: Simple Pendulum Animation on Ubuntu Machine"
 subtitle: "Here is the code to animate simple pendulum on Ubuntu Machine.
 "
 author: "Programmercave"
-tags:  [Cpp, Ubuntu, Graphics]
+tags:  [Cpp, Ubuntu, Graphics, Project]
 date: 2019-10-09
 ---
 
