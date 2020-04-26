@@ -18,6 +18,11 @@ plugins_dir:
 
 paginate: 5
 #paginate_path: '/page:num'
+
+
+gem "nokogiri", ">= 1.10.8"
+
+
   
 comments: true
   
