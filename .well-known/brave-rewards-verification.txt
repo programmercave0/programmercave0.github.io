@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: programmercave0.github.io
-Token: c6fda1ac06ee920aaa50dd0816c0aa2cd4686857843d123fb4c068072ed4bee8
