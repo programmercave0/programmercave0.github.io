@@ -55,13 +55,13 @@ This is how vector `maps` will look like -
 
 A `for` loop will be used to traverse through `maps` and `while` loop to traverse through each map.
 
-An integer variable `shortest_distance` will be initialized with the highest value an integer can store. 
+An integer variable `shortest_distance` will be initialised with the highest value an integer can store. 
 
 ```cpp
 int shortest_distance = std::numeric_limits<int>::max();
 ```
 
-An integer variable `count`, stores the distance from starting position to the treasure for each map. It is initialized with `0` when processing of a map is completed and if the value of `count` is less than value of `shortest_distance`, then `shortest_distance` is updated with the value of `count`. Means we have a new map whose distance to treasure is shortest.
+An integer variable `count`, stores the distance from starting position to the treasure for each map. It is initialised with `0` when processing of a map is completed and if the value of `count` is less than value of `shortest_distance`, then `shortest_distance` is updated with the value of `count`. Means we have a new map whose distance to treasure is shortest.
 
 For eg., after processing map at index `0`, the value of count we get is 5 which is less than the value of `shortest_distance`. So the new value of `shortest_distance` is 5.
 
@@ -78,7 +78,7 @@ if (count >= shortest_distance) //current map does not have shortest distance, s
 
 While moving up and down, the value of row is changed and while moving left and right, the value of column is changed. 
 
-So, before processing a map, integer variable `next_row` is initialized with `start_row` and `next_col` is initialized with `start_col`.
+So, before processing a map, integer variable `next_row` is initialised with `start_row` and `next_col` is initialised with `start_col`.
 
 ```cpp
 int next_row = start_row;
@@ -141,7 +141,7 @@ else if (next_col < 0 || next_col >= height) //exceeding boundary(height)
 }
 ```
 
-If we found the map with shortest distance to treasure then its index number is updated to an integer variable `index`. Initially `index` was initialized with `-1`.
+If we found the map with shortest distance to treasure then its index number is updated to an integer variable `index`. Initially `index` was initialised with `-1`.
 
 ```cpp
 if (maps[i][next_row][next_col] == 'T')//finds treasure
