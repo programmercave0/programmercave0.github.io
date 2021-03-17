@@ -53,7 +53,7 @@ This is how vector `maps` will look like -
 
 ![Dungeons and Maps CodinGame]({{ site.url }}/assets/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps1.jpg){:class="img-responsive"}
 
-A `for` loop will be used to traverse through `maps` and `while` loop to traverse through each map.
+A `for` loop will be used to traverse through 2D verctor `maps` and `while` loop to traverse through each map.
 
 An integer variable `shortest_distance` will be initialised with the highest value an integer can store. 
 
@@ -61,7 +61,7 @@ An integer variable `shortest_distance` will be initialised with the highest val
 int shortest_distance = std::numeric_limits<int>::max();
 ```
 
-An integer variable `count`, stores the distance from starting position to the treasure for each map. It is initialised with `0` when processing of a map is completed and if the value of `count` is less than value of `shortest_distance`, then `shortest_distance` is updated with the value of `count`. Means we have a new map whose distance to treasure is shortest.
+An integer variable `count`, stores the distance from starting position to the treasure for each map. It is initialised with `0`, when processing of a map is completed and if the value of `count` is less than value of `shortest_distance`, then `shortest_distance` is updated with the value of `count`. Means we have a new map whose distance to treasure is the shortest.
 
 For eg., after processing map at index `0`, the value of count we get is 5 which is less than the value of `shortest_distance`. So the new value of `shortest_distance` is 5.
 
@@ -156,7 +156,7 @@ if (maps[i][next_row][next_col] == 'T')//finds treasure
 }
 ```
 
-We will stop the processing once we finds the treasure.
+We will stop the processing once we find the treasure.
 
 {% include ads.html %}<br/>
 
