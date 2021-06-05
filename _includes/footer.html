@@ -5,28 +5,19 @@
            
 <div id="content" class="content">
 <div class="col-lg-8 col-lg-offset-4 col-md-10">
-    <h1>Recent Posts</h1>
-    <!--<ul class="category recent-posts">       -->
-        {% for post in site.posts limit:5  %}
-        {% unless post.draft %}
+    <h3>Tags</h3> 
 
-        {% if post.menutitle %}
-        {% assign title = post.menutitle %}
-        {% else %}
-        {% assign title = post.title %}
-        {% endif %}
-
-        <li>
-            <div class="article">
-                <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
-                    <header class="post-header">
-                        <span class="title"><a itemprop="name" href="{{ post.url | absolute_url }}" title="{{ title }}">{{ title }}</a></span>
-                    </header>
-                </article>
-            </div>
-        </li>
-        {% endunless %}
-        {% endfor %}
+    <p>
+    {% for tag in site.tags %}
+    <!-- Here's a hack to generate a "tag cloud" where the size of
+    the word is directly proportional to the number of posts with
+    that tag. -->
+    <a href="/blog/#{{ tag[0] | slugify }}" class="post-tag">
+        {{ tag[0] }}
+    </a>
+    {% endfor %}
+    </p>
+    </div>
 	</div>
 </ul>
 
