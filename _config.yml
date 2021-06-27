@@ -25,7 +25,6 @@ plugins:
   - jekyll-tagging-related_posts
 
 feed:
-  path: atom.xml
   tags: true
 
 author: ProgrammerCave
