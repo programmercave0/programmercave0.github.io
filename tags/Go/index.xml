@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on programmerCave</title>
+    <link>https://programmercave.com/tags/Go/</link>
+    <description>Recent content in Go on programmerCave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thread-Safe Stack Implementation in Go</title>
+      <link>https://programmercave.com/Thread-Safe-Stack-Implementation-in-Go/</link>
+      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Thread-Safe-Stack-Implementation-in-Go/</guid>
+      <description>This blog demonstrates how to implement a thread-safe stack in Go using sync.RWMutex. It ensures safe concurrent access in multi-threaded environments. Below is a detailed breakdown.
+ Key Concepts   Stack: A data structure following the Last-In-First-Out (LIFO) principle, where items are added and removed from the top.
+  Thread-Safety: Ensures multiple goroutines can perform operations on shared resources (the stack) without causing data corruption.
+  sync.RWMutex:</description>
+    </item>
+    
+    <item>
+      <title>Concurrency Patterns in Go: Fan-In and Fan-Out Pattern</title>
+      <link>https://programmercave.com/Concurrency-Patterns-in-Go-Fan-In-and-Fan-Out-Pattern/</link>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Concurrency-Patterns-in-Go-Fan-In-and-Fan-Out-Pattern/</guid>
+      <description>Concurrency is one of Go’s standout features, and two of the most popular concurrency patterns are Fan-In and Fan-Out. These patterns help manage data flow and task distribution efficiently, enabling parallelism and better resource utilization.
+ Fan-In Pattern The Fan-In pattern consolidates data from multiple input sources into a single output channel. This is particularly useful when multiple goroutines produce data that needs to be aggregated for further processing.
+How Fan-In Works  Producers: Multiple goroutines generate data independently and send it to their respective channels.</description>
+    </item>
+    
+    <item>
+      <title>Concurrency Patterns in Go: Worker Pool Pattern</title>
+      <link>https://programmercave.com/Concurrency-Patterns-in-Go-Worker-Pool-Pattern/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Concurrency-Patterns-in-Go-Worker-Pool-Pattern/</guid>
+      <description>The Worker Pool pattern is a powerful concurrency design pattern that helps process tasks efficiently using a pool of worker goroutines. Let&amp;rsquo;s explore how it works step-by-step.
+ Step 1: Defining the Job A Job is a unit of work that the worker goroutines will process. In our implementation, the Job struct contains an ID field to identify the task.
+// Job represents the task to be executed by a worker type Job struct { ID int }  Step 2: Designing the Worker Pool The WorkerPool struct manages the workers, job queue, and results channel.</description>
+    </item>
+    
+    <item>
+      <title>Interview Question: Build a Simple URL Shortener in Go</title>
+      <link>https://programmercave.com/Interview-Question-Build-a-Simple-URL-Shortener-in-Go/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Build-a-Simple-URL-Shortener-in-Go/</guid>
+      <description>In this blog post, we will build a simple URL shortener in Go. This will demonstrate how to generate short codes for long URLs, store them in memory, and retrieve the original URL from the short code. We will also ensure thread-safety for concurrent access to the in-memory store using sync.Mutex.
+This question was asked to me by Radisys for the role of Golang Developer.
+ Step 1: Data Structure for Storing URLs First, we need a place to store the URLs.</description>
+    </item>
+    
+    <item>
+      <title>Interview Question: Thread-Safe Implementation of Map in Go</title>
+      <link>https://programmercave.com/Thread-Safe-Implementation-of-Map-in-Go/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Thread-Safe-Implementation-of-Map-in-Go/</guid>
+      <description>This blog demonstrates two approaches to implement a thread-safe map in Go: using sync.Mutex and the built-in sync.Map. These techniques ensure safe concurrent access to maps in multi-threaded environments.
+This question was asked to me by Radisys for the role of Golang Developer.
+ Approach 1: SafeMap with sync.Mutex This implementation uses sync.Mutex to synchronize access to a map.
+Structure and Methods 1. SafeMap Struct Contains:
+ mu sync.Mutex: The lock to synchronize map access.</description>
+    </item>
+    
+    <item>
+      <title>Writing Unit Tests for SQL-Integrated Functions with Mock Databases in Go</title>
+      <link>https://programmercave.com/Writing-Unit-Tests-for-SQL-Integrated-Functions-with-Mock-Databases-in-Go/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Writing-Unit-Tests-for-SQL-Integrated-Functions-with-Mock-Databases-in-Go/</guid>
+      <description>Introduction Unit testing is a critical part of software development that ensures the reliability and functionality of code modules. In this blog post, we will explore unit testing for Go functions that interact with SQL or PostgreSQL databases. Specifically, we will look at how to create strong test cases for functions that execute database queries. To achieve this, we will use mocking to create a mock database environment. This approach separates our functions under test from the actual database, enabling us to carefully evaluate their logic and behavior.</description>
+    </item>
+    
+    <item>
+      <title>Step-by-Step Guide: Setting up Environment Variables in GitHub Actions for Go</title>
+      <link>https://programmercave.com/Step-by-Step-Guide-Setting-up-Environment-Variables-in-GitHub-Actions-for-Go/</link>
+      <pubDate>Thu, 03 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Step-by-Step-Guide-Setting-up-Environment-Variables-in-GitHub-Actions-for-Go/</guid>
+      <description>Introduction: GitHub Actions is a powerful platform that allows developers to automate workflows and build, test, and deploy their applications with ease. One common use case is to securely pass environment variables, such as API keys or passwords, to a Go program during the workflow execution in GitHub Actions. In this blog, we&amp;rsquo;ll walk through the process of setting up repository secrets, creating a GitHub Actions workflow, and using those secrets as environment variables in a Go program.</description>
+    </item>
+    
+    <item>
+      <title>Elevating Code Modularity: Harnessing Interfaces for Generic Types and Decoupling in Go</title>
+      <link>https://programmercave.com/Elevating-Code-Modularity-Harnessing-Interfaces-for-Generic-Types-and-Decoupling-in-Go/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Elevating-Code-Modularity-Harnessing-Interfaces-for-Generic-Types-and-Decoupling-in-Go/</guid>
+      <description>Introduction: In Go programming, interfaces serve as powerful tools for defining generic types, streamlining code, and decoupling functionality. By leveraging interfaces, you can write more efficient and flexible code that can accommodate various types without explicitly specifying each one. In the previous blog, we learned about the basics of Interfaces. This blog post will guide you through the process of using interfaces to define generic types, demonstrate how they simplify code by abstracting common behaviors and showcase how interfaces enable easy modification of functionality without impacting code that utilizes them.</description>
+    </item>
+    
+    <item>
+      <title>Unleashing the Power of Interfaces in Go: Simplifying Code Flexibility</title>
+      <link>https://programmercave.com/Unleashing-the-Power-of-Interfaces-in-Go-Simplifying-Code-Flexibility/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Unleashing-the-Power-of-Interfaces-in-Go-Simplifying-Code-Flexibility/</guid>
+      <description>Introduction: In the world of programming, flexibility is a valuable asset. It allows us to write code that can work with different types of objects, even if they have different behaviors. In Go, a powerful language, interfaces play a significant role in achieving this flexibility. In this blog post, we&amp;rsquo;ll dive into the concept of interfaces in Go, using a simple analogy and practical examples. By the end, you&amp;rsquo;ll understand how interfaces help streamline code and enhance code reusability.</description>
+    </item>
+    
+    <item>
+      <title>From Strings to Numbers: Converting Integers and Floats in Go</title>
+      <link>https://programmercave.com/From-Strings-to-Numbers-Converting-Integers-and-Floats-in-Go/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/From-Strings-to-Numbers-Converting-Integers-and-Floats-in-Go/</guid>
+      <description>Introduction: In Go, working with integer and floating-point data types is fundamental for various programming tasks. This article will explore the integer and floating-point types available in Go, along with detailed instructions on how to convert strings to integers and floats using practical examples.
+ Go Integer Data Types Go provides a variety of integer data types, each with a different range and bit size. The following integer types are available:</description>
+    </item>
+    
+    <item>
+      <title>Understanding Go: Exploring Structs and Methods</title>
+      <link>https://programmercave.com/Understanding-Go-Exploring-Structs-and-Methods/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Understanding-Go-Exploring-Structs-and-Methods/</guid>
+      <description>Introduction: Go is a statically typed, compiled programming language that offers a unique approach to object-oriented programming. Unlike languages such as C++ or Java, Go doesn&amp;rsquo;t have traditional classes. Instead, it utilizes structs and methods to achieve similar functionality. In this blog post, we&amp;rsquo;ll delve into a code snippet written in Go and explain how it works, step by step.
+Code Explanation: Let&amp;rsquo;s dissect the provided Go code snippet and understand its various components.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Kafka and Go: Reading Messages and Inserting into a Database</title>
+      <link>https://programmercave.com/Getting-Started-with-Kafka-and-Go-Reading-Messages-and-Inserting-into-a-Database/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Getting-Started-with-Kafka-and-Go-Reading-Messages-and-Inserting-into-a-Database/</guid>
+      <description>Introduction: Kafka is a popular distributed streaming platform that is used for building real-time data pipelines and streaming applications. It is designed to handle high-volume data streams in real-time and provide reliable and scalable data streaming. Kafka is used for a wide range of applications, including real-time analytics, monitoring, log aggregation, and messaging systems.
+In this blog post, we will demonstrate how to read Kafka messages in Go and store them in a PostgreSQL database.</description>
+    </item>
+    
+  </channel>
+</rss>

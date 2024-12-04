@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Given a Singly Circular Linked List, we have to split it into two equal halves. If the number of nodes in the given list is odd then first list will have one node more than the second list.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Split Singly Circular Linked List | C&#43;&#43; Implementation | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Split Singly Circular Linked List | C&#43;&#43; Implementation</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2018-02-04
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Linked-List/">Linked-List</a>, <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>
+    </div>
+  
+  <p>Given a Singly Circular Linked List, we have to split it into two equal halves. If the number of nodes in the given list is odd then first list will have one node more than the second list.</p>
+<pre tabindex="0"><code>Input : { 2, 3, 18, 25, 5 }
+Output List 1 : { 2, 3, 18 }
+Output List 2 : { 25, 5 }
+</code></pre><p>Here is a meme to understand Circular Linked List</p>
+<p><img src="/assets/images/cll.jpg" alt="Split Linked List"></p>
+<p><img src="/assets/images/splitsinglycircularlinkedlist.png" alt="Split Linked List"></p>
+<p>From the above fig. first we have to find middle node of the given singly circular linked list.</p>
+<p>Middle node can be found using <code>slow_ptr</code> and <code>fast_ptr</code>. <code>slow_ptr</code> increments by one node whereas <code>fast_ptr</code> increments by two nodes. When <code>fast_ptr-&gt;next == head</code> or <code>fast_pr-&gt;next-&gt;next == head</code> then no increment of <code>fast_ptr</code> or <code>slow_ptr</code> and <code>slow_ptr</code> is at the middle node of the list.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node <span style="color:#666">*</span><span style="color:#00f">find_middle_node</span>()
+{
+    <span style="color:#408080;font-style:italic">//slow pointer advances by 1
+</span><span style="color:#408080;font-style:italic"></span>    Node <span style="color:#666">*</span>slow_ptr <span style="color:#666">=</span> head;
+    <span style="color:#408080;font-style:italic">//fast pointer advances by 2
+</span><span style="color:#408080;font-style:italic"></span>    Node <span style="color:#666">*</span>fast_ptr <span style="color:#666">=</span> head;
+
+    <span style="color:#408080;font-style:italic">//If odd number of nodes then fast_ptr-&gt;next = head
+</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">//If even number of nodes then fast_ptr-&gt;next-&gt;next = head
+</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">while</span>(fast_ptr<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head <span style="color:#666">&amp;&amp;</span> fast_ptr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+    {
+        fast_ptr <span style="color:#666">=</span> fast_ptr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next;
+        slow_ptr <span style="color:#666">=</span> slow_ptr<span style="color:#666">-&gt;</span>next;
+    }
+    <span style="color:#008000;font-weight:bold">return</span> slow_ptr;
+}
+</code></pre></div><!-- raw HTML omitted -->
+<p>After getting middle node, the node next to middle node is the head of second ouput list. Then tail of the lists are updated so that circular list is maintained.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">split_list</span>(circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> second_half)
+{
+    Node <span style="color:#666">*</span>tail <span style="color:#666">=</span> find_tail_node();
+    Node <span style="color:#666">*</span>mid <span style="color:#666">=</span> find_middle_node();
+
+    second_half.head <span style="color:#666">=</span> mid<span style="color:#666">-&gt;</span>next;
+    tail<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> second_half.head;
+
+    mid<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> head;
+}
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00"></span>
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">circular_linked_list</span>
+{
+    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
+    {
+        T data;
+        Node <span style="color:#666">*</span> next;
+        Node(T<span style="color:#666">&amp;&amp;</span> value) <span style="color:#666">:</span> data(std<span style="color:#666">::</span>move(value)), next(<span style="color:#008000;font-weight:bold">nullptr</span>) {}
+    };
+    Node <span style="color:#666">*</span>head;
+
+  <span style="color:#008000;font-weight:bold">public</span><span style="color:#666">:</span>
+    circular_linked_list() <span style="color:#666">:</span> head(<span style="color:#008000;font-weight:bold">nullptr</span>) {}
+    <span style="color:#408080;font-style:italic">//copy constructor
+</span><span style="color:#408080;font-style:italic"></span>    circular_linked_list(<span style="color:#008000;font-weight:bold">const</span> circular_linked_list<span style="color:#666">&amp;</span> cll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>;
+    <span style="color:#408080;font-style:italic">//move constructor
+</span><span style="color:#408080;font-style:italic"></span>    circular_linked_list(circular_linked_list<span style="color:#666">&amp;&amp;</span> cll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>;
+    <span style="color:#408080;font-style:italic">//copy assignment
+</span><span style="color:#408080;font-style:italic"></span>    circular_linked_list<span style="color:#666">&amp;</span> <span style="color:#008000;font-weight:bold">operator</span><span style="color:#666">=</span>(<span style="color:#008000;font-weight:bold">const</span> circular_linked_list<span style="color:#666">&amp;</span> cll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>;
+    <span style="color:#408080;font-style:italic">//move assignment
+</span><span style="color:#408080;font-style:italic"></span>    circular_linked_list<span style="color:#666">&amp;</span> <span style="color:#008000;font-weight:bold">operator</span><span style="color:#666">=</span>(circular_linked_list<span style="color:#666">&amp;&amp;</span> cll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>;
+    <span style="color:#666">~</span>circular_linked_list();
+
+    <span style="color:#b00040">void</span> <span style="color:#00f">insert_node</span>(T<span style="color:#666">&amp;&amp;</span>);
+    <span style="color:#b00040">void</span> <span style="color:#00f">split_list</span>(circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span>);
+    <span style="color:#b00040">void</span> <span style="color:#00f">print_list</span>();
+
+  <span style="color:#008000;font-weight:bold">private</span><span style="color:#666">:</span>
+
+    Node <span style="color:#666">*</span>find_tail_node()
+    {
+        Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
+        <span style="color:#008000;font-weight:bold">while</span>(tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+        {
+            tmp <span style="color:#666">=</span> tmp<span style="color:#666">-&gt;</span>next;
+        }
+        <span style="color:#008000;font-weight:bold">return</span> tmp;
+    }
+
+    Node <span style="color:#666">*</span><span style="color:#00f">find_middle_node</span>()
+    {
+        <span style="color:#408080;font-style:italic">//slow pointer advances by 1
+</span><span style="color:#408080;font-style:italic"></span>        Node <span style="color:#666">*</span>slow_ptr <span style="color:#666">=</span> head;
+        <span style="color:#408080;font-style:italic">//fast pointer advances by 2
+</span><span style="color:#408080;font-style:italic"></span>        Node <span style="color:#666">*</span>fast_ptr <span style="color:#666">=</span> head;
+
+        <span style="color:#408080;font-style:italic">//If odd number of nodes then fast_ptr-&gt;next = head
+</span><span style="color:#408080;font-style:italic"></span>        <span style="color:#408080;font-style:italic">//If even number of nodes then fast_ptr-&gt;next-&gt;next = head
+</span><span style="color:#408080;font-style:italic"></span>        <span style="color:#008000;font-weight:bold">while</span>(fast_ptr<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head <span style="color:#666">&amp;&amp;</span> fast_ptr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+        {
+            fast_ptr <span style="color:#666">=</span> fast_ptr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next;
+            slow_ptr <span style="color:#666">=</span> slow_ptr<span style="color:#666">-&gt;</span>next;
+        }
+        <span style="color:#008000;font-weight:bold">return</span> slow_ptr;
+    }
+};
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>insert_node(T<span style="color:#666">&amp;&amp;</span> value)
+{
+    Node <span style="color:#666">*</span>node <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Node(std<span style="color:#666">::</span>move(value));
+    <span style="color:#008000;font-weight:bold">if</span>(head <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        node<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> node;
+        head <span style="color:#666">=</span> node;
+        <span style="color:#008000;font-weight:bold">return</span>;
+    }
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
+    <span style="color:#008000;font-weight:bold">while</span>(tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+    {
+        tmp <span style="color:#666">=</span> tmp<span style="color:#666">-&gt;</span>next;
+    }
+    tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> node;
+    node<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> head;
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>split_list(circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> second_half)
+{
+    Node <span style="color:#666">*</span>tail <span style="color:#666">=</span> find_tail_node();
+    Node <span style="color:#666">*</span>mid <span style="color:#666">=</span> find_middle_node();
+
+    second_half.head <span style="color:#666">=</span> mid<span style="color:#666">-&gt;</span>next;
+    tail<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> second_half.head;
+
+    mid<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> head;
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>print_list()
+{
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
+    <span style="color:#008000;font-weight:bold">while</span>(tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+    {
+        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> tmp<span style="color:#666">-&gt;</span>data <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39; &#39;</span>;
+        tmp <span style="color:#666">=</span> tmp<span style="color:#666">-&gt;</span>next;
+    }
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> tmp<span style="color:#666">-&gt;</span>data <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39;\n&#39;</span>;
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::~</span>circular_linked_list()
+{
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+    Node <span style="color:#666">*</span>tail <span style="color:#666">=</span> head;
+    <span style="color:#008000;font-weight:bold">while</span>(tail<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
+    {
+        tail <span style="color:#666">=</span> tail<span style="color:#666">-&gt;</span>next;
+    }
+    tail<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+
+    <span style="color:#008000;font-weight:bold">while</span>(head <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        tmp <span style="color:#666">=</span> head;
+        head <span style="color:#666">=</span> head<span style="color:#666">-&gt;</span>next;
+        <span style="color:#008000;font-weight:bold">delete</span> tmp;
+    }
+}
+
+<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+{
+    circular_linked_list<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> original_list;
+    original_list.insert_node(<span style="color:#666">2</span>);
+    original_list.insert_node(<span style="color:#666">3</span>);
+    original_list.insert_node(<span style="color:#666">4</span>);
+    original_list.insert_node(<span style="color:#666">1</span>);
+    original_list.insert_node(<span style="color:#666">0</span>);
+
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;The original list is : &#34;</span>;
+    original_list.print_list();
+
+    circular_linked_list<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> second_half;
+    original_list.split_list(second_half);
+
+    <span style="color:#408080;font-style:italic">//Original list becomes first half
+</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;The first half : &#34;</span>;
+    original_list.print_list();
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;The second half : &#34;</span>;
+    second_half.print_list();
+}
+</code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Algo-Data-Structure/blob/master/Linked_List/split_circular_ll.cpp">Github</a></p>
+<p>Reference:<!-- raw HTML omitted -->
+<a href="https://amzn.to/2OarGBs">Introduction to Algorithms</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2CH9h9Z">The Algorithm Design Manual</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2NLM0dd">Data Structures and Algorithms Made Easy</a><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

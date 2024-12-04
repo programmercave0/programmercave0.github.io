@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Notes on Programming paradigms from Scaler">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Programming paradigms - Procedural vs Object Oriented Programming | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Programming paradigms - Procedural vs Object Oriented Programming</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2024-06-21
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+    </div>
+  
+  <p><img src="/assets/images/LLD/programming-paradigms.jpg" alt="Programming paradigms"></p>
+<h2 id="types-of-programming-paradigms">Types of Programming paradigms</h2>
+<p><strong>Imperative:</strong></p>
+<ul>
+<li>an imperative program consists of commands for the computer to perform to change state e.g. C, Java, Python, etc.</li>
+</ul>
+<p><strong>Declarative:</strong></p>
+<ul>
+<li>focuses on what the program should accomplish without specifying all the details of how the program should achieve the result e.g. SQL, Lisp, etc.</li>
+</ul>
+<h2 id="imperative">Imperative</h2>
+<h3 id="procedural-programming">Procedural programming:</h3>
+<ul>
+<li>programming paradigm that uses a sequence of steps to solve a problem.</li>
+<li>based on the concept of the procedure call.</li>
+<li>Procedures (a type of routine or subroutine) simply contain a series of computational steps to be carried out.</li>
+<li>Any given procedure might be called at any point during a program&rsquo;s execution, including by other procedures or itself.</li>
+<li><strong>Think of all programming as managing the relationship between two fundamental concepts: state and behavior. State is the data of your program. Behavior is the logic.</strong></li>
+<li>State is held in data structures. Behavior is held in functions (also known as procedures or subroutines). A procedural application therefore passes data structures into functions to produce some output.</li>
+<li>Eg: Imagine you want to transfer some money from one account to another. These are the following steps that you would take:
+<ul>
+<li>Open the source account</li>
+<li>Withdraw the money</li>
+<li>Open the destination account</li>
+<li>Deposit the money in destination account</li>
+<li>A procedural version of this program would be:</li>
+</ul>
+</li>
+</ul>
+<h4 id="python-procedural-code">Python Procedural Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(source: <span style="color:#008000">int</span>, destination: <span style="color:#008000">int</span>, amount: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    source_account <span style="color:#666">=</span> get_account(source)
+    update_account(source_account, <span style="color:#666">-</span>amount)
+    destination_account <span style="color:#666">=</span> get_account(destination)
+    update_account(destination_account, amount)
+
+<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_account</span>(number: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000">dict</span>:
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">list</span>(<span style="color:#008000">filter</span>(<span style="color:#008000;font-weight:bold">lambda</span> account: account[<span style="color:#ba2121">&#39;number&#39;</span>] <span style="color:#666">==</span> number,accounts))[<span style="color:#666">0</span>]
+
+<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">update_account</span>(account: <span style="color:#008000">int</span>, delta: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    account[<span style="color:#ba2121">&#39;balance&#39;</span>] <span style="color:#666">+=</span> delta
+</code></pre></div><h3 id="object-oriented-programming">Object Oriented Programming</h3>
+<ul>
+<li>programming paradigm that uses objects to model real-world things and aims to implement state and behavior using objects.</li>
+<li>State and behaviour are combined into one new concept: an Object. An OO application can therefore produce some output by calling an Object, without needing to pass data structures.</li>
+<li>Advantages of OO include the potential for information hiding: if a caller needn&rsquo;t pass any data structure, then the caller needn&rsquo;t be aware of any data structure, and can therefore be completely decoupled from the data format.</li>
+</ul>
+<h4 id="abstraction">Abstraction:</h4>
+<ul>
+<li>process of hiding the implementation details of a program from the user.</li>
+</ul>
+<h6 id="advantages-of-abstraction">Advantages of Abstraction</h6>
+<ul>
+<li>used to create a boundary between the application and the client code.</li>
+<li>separate responsibilities into software entities (classes, method, etc.) that only know the required functionality of each other but not how that functionality is implemented.</li>
+<li>It allows the programmer to change the internal implementation of methods or concrete classes without hampering the interface.</li>
+<li>increase the code security as only relevant details will be provided to users.</li>
+</ul>
+<h4 id="encapsulation">Encapsulation:</h4>
+<ul>
+<li>used to hide the values or state of a structured data object inside a class,</li>
+<li>preventing direct access to them by clients in a way that could expose hidden implementation details or violate state invariance maintained by the methods.</li>
+</ul>
+<h6 id="advantages-of-encapsulation">Advantages of Encapsulation:</h6>
+<ul>
+<li><strong>Hiding Data</strong> - Users will have no idea how classes are being implemented or stored. All that users will know is that values are being passed and initialized.</li>
+<li><strong>More Flexibility</strong> - Enables you to set variables as read or write-only.</li>
+<li><strong>Easy to Reuse</strong> - With encapsulation it&rsquo;s easy to change and adapt to new requirements.</li>
+</ul>
+<h4 id="class">Class:</h4>
+<ul>
+<li>is a blueprint which you use to create objects.</li>
+</ul>
+<h4 id="object">Object:</h4>
+<ul>
+<li>is an instance of a class.</li>
+</ul>
+<h4 id="java-oop-code">Java OOP Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span> <span style="color:#666">{</span>
+    <span style="color:#008000;font-weight:bold">private</span> Integer number<span style="color:#666">;</span>
+    <span style="color:#008000;font-weight:bold">private</span> Integer balance<span style="color:#666">;</span>
+    
+    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">OopBankAccount</span><span style="color:#666">(</span>Integer number<span style="color:#666">,</span> Integer balance<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">number</span> <span style="color:#666">=</span> number<span style="color:#666">;</span>
+        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">=</span> balance<span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+    
+    <span style="color:#b00040">void</span> <span style="color:#00f">deposit</span><span style="color:#666">(</span>Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">+=</span> amount<span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+    
+    <span style="color:#b00040">void</span> <span style="color:#00f">withdraw</span><span style="color:#666">(</span>Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">+=</span> amount<span style="color:#666">;</span>
+    <span style="color:#666">}</span>
+    
+    <span style="color:#b00040">void</span> <span style="color:#00f">transfer</span><span style="color:#666">(</span>OopBankAccount destination<span style="color:#666">,</span> Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
+        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">withdraw</span><span style="color:#666">(</span>amount<span style="color:#666">);</span>
+        destination<span style="color:#666">.</span><span style="color:#7d9029">deposit</span><span style="color:#666">(</span>amount<span style="color:#666">);</span>
+    <span style="color:#666">}</span>
+<span style="color:#666">}</span>
+</code></pre></div><h4 id="python-oop-code">Python OOP Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span>:
+	<span style="color:#008000;font-weight:bold">def</span> __init__(self, balance, number):
+		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number
+		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getNumber</span>(self):
+		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__number
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setNumber</span>(self, number):
+		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number 
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getBalance</span>(self):
+		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__balance
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setBalance</span>(self, balance):
+		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">deposit</span>(self, amount):
+		self<span style="color:#666">.</span>__balance <span style="color:#666">+=</span> amount
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">withdraw</span>(self, amount):
+		self<span style="color:#666">.</span>__balance <span style="color:#666">-=</span> amount
+
+	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(self, destination, amount):
+		self<span style="color:#666">.</span>withdraw(amount)
+		destination<span style="color:#666">.</span>deposit(amount)
+</code></pre></div><h4 id="golang-code">Golang Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> BankAccount <span style="color:#008000;font-weight:bold">struct</span> {
+	AccountNumber <span style="color:#b00040">int64</span>
+	Name          <span style="color:#b00040">string</span>
+	Balance       <span style="color:#b00040">float64</span>
+}
+
+<span style="color:#008000;font-weight:bold">type</span> BankAccountOps <span style="color:#008000;font-weight:bold">interface</span> {
+	<span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>)
+	<span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>)
+	<span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>)
+	<span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+	<span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+	<span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+	<span style="color:#00f">PrintBalance</span>()
+}
+
+<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBankAccount</span>(number <span style="color:#b00040">int64</span>, name <span style="color:#b00040">string</span>, balance <span style="color:#b00040">float64</span>) <span style="color:#666">*</span>BankAccount {
+	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>BankAccount{AccountNumber: number, Name: name, Balance: balance}
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>) {
+	<span style="color:#008000;font-weight:bold">return</span> b.AccountNumber, <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>) {
+	<span style="color:#008000;font-weight:bold">return</span> b.Name, <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>) {
+	<span style="color:#008000;font-weight:bold">return</span> b.Balance, <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+	b.Balance <span style="color:#666">+=</span> amount
+	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+	b.Balance <span style="color:#666">-=</span> amount
+	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+	b.<span style="color:#00f">Withdraw</span>(amount)
+	destiantion.<span style="color:#00f">Deposit</span>(amount)
+
+	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+}
+
+<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">PrintBalance</span>() {
+	fmt.<span style="color:#00f">Println</span>(b.AccountNumber, b.Name, b.Balance)
+}
+</code></pre></div><h4 id="advantages">Advantages:</h4>
+<ul>
+<li><strong>Reusability</strong>: Through classes and objects, and inheritance of common attributes and functions.</li>
+<li><strong>Security</strong>: Hiding and protecting information through encapsulation.</li>
+<li><strong>Maintenance</strong>: Easy to make changes without affecting existing objects much.</li>
+<li><strong>Inheritance</strong>: Easy to import required functionality from libraries and customize them, thanks to inheritance.</li>
+</ul>
+<h4 id="disadvantages">Disadvantages:</h4>
+<ul>
+<li>Beforehand planning of entities that should be modeled as classes.</li>
+<li>OOPS programs are usually larger than those of other paradigms.</li>
+<li><a href="https://dev.to/efpage/what-s-wrong-with-the-gorilla-2l4j#:~:text=Joe%20Armstrong%2C%20the%20principal%20inventor,and%20the%20entire%20jungle.%22.">Banana-gorilla problem</a> - You wanted a banana but what you got was a gorilla holding the banana and the entire jungle</li>
+</ul>
+<blockquote>
+<p>These are my notes from the Low-Level Design (LLD) course I took at Scaler.</p>
+</blockquote>
+<blockquote>
+<p>Check Python, Java and Go code on <a href="https://github.com/abhiabhi0/scaler-fundamentals/tree/master/oop/code">Github Repo</a></p>
+</blockquote>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="A package file is a compressed collection of files necessary to install a software or an application. It also includes metadata about the package such as text description of package and name of dependencies the software needs.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>How to Install a Software on Ubuntu | Package Management | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>How to Install a Software on Ubuntu | Package Management</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2019-11-24
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Operating-System/">Operating-System</a>, <a href="https://programmercave.com/tags/Linux/">Linux</a>, <a href="https://programmercave.com/tags/Ubuntu/">Ubuntu</a>
+    </div>
+  
+  <p><img src="/assets/images/ubuntulogo.jpeg" alt="Range"></p>
+<p><strong>Package management</strong> facilities helps us to install and maintain software on the system. The package file for Ubuntu and other Debian based OS ends with <code>.deb</code>. <!-- raw HTML omitted -->For eg. <code>draw.io-amd64-12.2.2.deb</code></p>
+<!-- raw HTML omitted -->
+<p>A <em>package file</em> is a compressed collection of files necessary to install a software or an application. It also includes metadata about the package such as text description of package and name of dependencies the software needs.</p>
+<!-- raw HTML omitted -->
+<p>To run a progam on a system, it rely on other programs. These other programs are called <em>dependencies</em>.</p>
+<!-- raw HTML omitted -->
+<p>A <em>repository</em> is a collection of set of packages on a server. It can be accessed with package management tools like <em>apt-get</em>.</p>
+<!-- raw HTML omitted -->
+<p>There are two types of package management tools in a package management system.</p>
+<ol>
+<li>Low-level tools for eg. <code>dpkg</code></li>
+<li>High-level tools for eg. <code>apt-get</code>, <code>aptitude</code></li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The <strong>dpkg</strong> tool is used to install and remove a package file. While installing if it encounters an unsatisfied dependency, it will unable to install the software or the application. It will simply list the missing dependencies. The Advanced Package Tool (<strong>APT</strong>), including <strong>apt</strong> and <strong>apt-get</strong> can automatically resolve these issues.</p>
+<p>APT installs the latest package from an online source while dpkg installs from a package stored in our local system.</p>
+<!-- raw HTML omitted -->
+<p><code>apt-cache search search_string</code><!-- raw HTML omitted -->
+For eg. <code>apt-cache search draw.io</code></p>
+<!-- raw HTML omitted -->
+<p><code>apt-get install package_name</code><!-- raw HTML omitted -->
+For eg. <code>apt-get install draw.io</code></p>
+<!-- raw HTML omitted -->
+<p><code>dpkg --install package_file</code><!-- raw HTML omitted -->
+For eg. <code>dpkg --install draw.io-amd64-12.2.2.deb</code></p>
+<!-- raw HTML omitted -->
+<p><code>apt-get remove package_name</code><!-- raw HTML omitted -->
+For eg. <code>apt-get remove draw.io</code></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><code>apt-get update; apt-get upgrade</code></p>
+<!-- raw HTML omitted -->
+<p><code>dpkg --list</code></p>
+<!-- raw HTML omitted -->
+<p><code>dpkg --status package_name</code><!-- raw HTML omitted -->
+For eg. <code>dpkg --status draw.io</code></p>
+<!-- raw HTML omitted -->
+<p><code>apt-cache show package_name</code><!-- raw HTML omitted -->
+For eg. <code>apt-cache show draw.io</code></p>
+<p>Reference:<!-- raw HTML omitted -->
+<a href="https://amzn.to/2QIYQel">The Linux Command Line</a><!-- raw HTML omitted -->
+<a href="https://www.oreilly.com/openbook/debi/book/appc_01.html">https://www.oreilly.com/openbook/debian/book/appc_01.html</a><!-- raw HTML omitted -->
+<a href="https://kali.training/topic/introduction-to-apt/">https://kali.training/topic/introduction-to-apt/</a><!-- raw HTML omitted -->
+<a href="https://help.ubuntu.com/community/Repositories">https://help.ubuntu.com/community/Repositories</a></p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

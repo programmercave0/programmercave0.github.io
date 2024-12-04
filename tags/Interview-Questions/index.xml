@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interview-Questions on programmerCave</title>
+    <link>https://programmercave.com/tags/Interview-Questions/</link>
+    <description>Recent content in Interview-Questions on programmerCave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Build a Simple URL Shortener in Go</title>
+      <link>https://programmercave.com/Interview-Question-Build-a-Simple-URL-Shortener-in-Go/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Build-a-Simple-URL-Shortener-in-Go/</guid>
+      <description>In this blog post, we will build a simple URL shortener in Go. This will demonstrate how to generate short codes for long URLs, store them in memory, and retrieve the original URL from the short code. We will also ensure thread-safety for concurrent access to the in-memory store using sync.Mutex.
+This question was asked to me by Radisys for the role of Golang Developer.
+ Step 1: Data Structure for Storing URLs First, we need a place to store the URLs.</description>
+    </item>
+    
+    <item>
+      <title>Interview Question: Thread-Safe Implementation of Map in Go</title>
+      <link>https://programmercave.com/Thread-Safe-Implementation-of-Map-in-Go/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Thread-Safe-Implementation-of-Map-in-Go/</guid>
+      <description>This blog demonstrates two approaches to implement a thread-safe map in Go: using sync.Mutex and the built-in sync.Map. These techniques ensure safe concurrent access to maps in multi-threaded environments.
+This question was asked to me by Radisys for the role of Golang Developer.
+ Approach 1: SafeMap with sync.Mutex This implementation uses sync.Mutex to synchronize access to a map.
+Structure and Methods 1. SafeMap Struct Contains:
+ mu sync.Mutex: The lock to synchronize map access.</description>
+    </item>
+    
+  </channel>
+</rss>

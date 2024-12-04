@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Bellman–Ford algorithm finds shortest path from the source vertex to all vertices in the graph. The graph can contain negative-weight edges, but it should not contain a negative-weight cycle that is reachable from the source vertex.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Bellman Ford Algorithm | Single-Source Shortest Path | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Bellman Ford Algorithm | Single-Source Shortest Path</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2018-03-11
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Graph-Algorithms/">Graph-Algorithms</a>
+    </div>
+  
+  <p><strong>Bellman–Ford</strong> algorithm finds shortest path from the source vertex to all vertices in the graph. The graph can contain negative-weight edges, but it should not contain a negative-weight cycle that is reachable from the source vertex.</p>
+<p>The algorithm returns TRUE if there is no negative-weight cycle and FALSE if there is a negative-weight cycle reachable from the source vertex. If there is a negative-weight cycle that is reachable from source vertex, then no solution exists.</p>
+<p><img src="/assets/images/bellman.png" alt="Bellman-Ford"></p>
+<p>In fig. (a) there is no negative-weight cycle, so Bellman Ford algorithm finds the shortest path from source if fig. (a) is in a graph whereas fig. (b) contains a negative-weight cycle therefore no solution exists.</p>
+<p><img src="/assets/images/bellman1.png" alt="Bellman-Ford">
+<img src="/assets/images/bellman2.png" alt="Bellman-Ford"></p>
+<p>In fig. (a) the graph is in inital configuration. All vertices were at distance infinity from source vertex <em>a</em>. Then vertices <em>b</em> and <em>c</em> are reached and their distance from vertex <em>a</em> is updated.</p>
+<p>In fig. (d) the sum of distance of path <em>a -&gt; b -&gt; d</em> is 2 + 5 = 7 whereas sum of distance of path <em>a -&gt; c -&gt; d</em> is 7 + (-3) = 4. Hence path <em>a -&gt; c -&gt; d</em> is preferred which is shown in red line. In fig. (e) red line shows shortest path from <em>a</em> to <em>e</em>.</p>
+<!-- raw HTML omitted -->
+<p>A data structure is needed to store the distance of a vertex from the source vertex.</p>
+<p>Here is the implementation of <code>bellman_ford</code> and <code>relax</code> function.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
+    {
+        std<span style="color:#666">::</span>size_t id;
+        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
+    };
+
+<span style="color:#b00040">void</span> <span style="color:#00f">relax</span>(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+{
+    <span style="color:#008000;font-weight:bold">if</span> (vertices[dest].distance <span style="color:#666">&gt;</span> (vertices[src].distance <span style="color:#666">+</span> weight))
+    {
+        vertices[dest].distance <span style="color:#666">=</span> (vertices[src].distance <span style="color:#666">+</span> weight);
+    }
+}
+
+<span style="color:#b00040">bool</span> <span style="color:#00f">bellman_ford</span>(std<span style="color:#666">::</span>size_t src)
+{
+    <span style="color:#408080;font-style:italic">//initialize distance of source
+</span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
+
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> vertices.size() <span style="color:#666">-</span> <span style="color:#666">1</span>; i<span style="color:#666">++</span>)
+    {
+        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> edge_weight.begin(); it <span style="color:#666">!=</span> edge_weight.end(); it<span style="color:#666">++</span>)
+        {
+            relax(it<span style="color:#666">-&gt;</span>first.first, it<span style="color:#666">-&gt;</span>first.second, it<span style="color:#666">-&gt;</span>second);
+        }
+    }
+
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> edge_weight.begin(); it <span style="color:#666">!=</span> edge_weight.end(); it<span style="color:#666">++</span>)
+    {
+        <span style="color:#008000;font-weight:bold">if</span> (vertices[it<span style="color:#666">-&gt;</span>first.second].distance
+            <span style="color:#666">&gt;</span> (vertices[it<span style="color:#666">-&gt;</span>first.first].distance <span style="color:#666">+</span> it<span style="color:#666">-&gt;</span>second))
+           <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+    }
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
+}
+</code></pre></div><!-- raw HTML omitted -->
+<p><code>relax</code> function updates the distance of the vertex from the source vertex if new calculated distance is smaller than the stored distance.</p>
+<p>The time complexity of Bellman Ford algorithm is <em>O(nm)</em> where <em>n</em> is the number of vertices and <em>m</em> is the number of edges.</p>
+<p><strong>Related:</strong> <a href="/C-Dijkstras-Algorithm-using-STL">Dijkstra&rsquo;s Algorithm</a></p>
+<p>Here is the C++ Implementation of Bellman-Ford Algorithm</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;map&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00"></span>
+<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Graph</span>
+{
+
+    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
+    {
+        std<span style="color:#666">::</span>size_t id;
+        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
+    };
+    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>Vertex<span style="color:#666">&gt;</span> vertices;
+    std<span style="color:#666">::</span>map<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>pair<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>size_t, std<span style="color:#666">::</span>size_t<span style="color:#666">&gt;</span>, <span style="color:#b00040">int</span><span style="color:#666">&gt;</span> edge_weight;
+
+  <span style="color:#008000;font-weight:bold">public</span><span style="color:#666">:</span>
+    Graph(std<span style="color:#666">::</span>size_t);
+    <span style="color:#b00040">void</span> <span style="color:#00f">add_edge</span>(std<span style="color:#666">::</span>size_t, std<span style="color:#666">::</span>size_t, <span style="color:#b00040">int</span>); <span style="color:#408080;font-style:italic">//source, destination, weight
+</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#b00040">bool</span> <span style="color:#00f">bellman_ford</span>(std<span style="color:#666">::</span>size_t); <span style="color:#408080;font-style:italic">//source
+</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> distance_from_source(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span>) <span style="color:#008000;font-weight:bold">const</span>;
+
+  <span style="color:#008000;font-weight:bold">private</span><span style="color:#666">:</span>
+    <span style="color:#b00040">void</span> relax(std<span style="color:#666">::</span>size_t, std<span style="color:#666">::</span>size_t, <span style="color:#b00040">int</span>); <span style="color:#408080;font-style:italic">//source, destination, weight
+</span><span style="color:#408080;font-style:italic"></span>};
+
+Graph<span style="color:#666">::</span>Graph(std<span style="color:#666">::</span>size_t size)
+{
+    vertices.reserve(size);
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> size; i<span style="color:#666">++</span>)
+    {
+        vertices.push_back(Vertex(i));
+    }
+}
+
+<span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>add_edge(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+{
+    <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">==</span> dest)
+        <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Source and destination vertices are same&#34;</span>);
+
+    <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> src)
+        <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct source vertex&#34;</span>);
+
+    <span style="color:#008000;font-weight:bold">if</span> (dest <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> dest)
+        <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct destination vertex&#34;</span>);
+
+    <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> inserted <span style="color:#666">=</span> edge_weight.insert(std<span style="color:#666">::</span>make_pair(
+                          std<span style="color:#666">::</span>make_pair(src, dest), weight ));
+    <span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>inserted.second)
+        <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Existing edge&#34;</span>);
+}
+
+<span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>relax(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+{
+    <span style="color:#008000;font-weight:bold">if</span> (vertices[dest].distance <span style="color:#666">&gt;</span> (vertices[src].distance <span style="color:#666">+</span> weight))
+    {
+        vertices[dest].distance <span style="color:#666">=</span> (vertices[src].distance <span style="color:#666">+</span> weight);
+    }
+}
+
+<span style="color:#b00040">bool</span> Graph<span style="color:#666">::</span>bellman_ford(std<span style="color:#666">::</span>size_t src)
+{
+    <span style="color:#408080;font-style:italic">//initialize distance of source
+</span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
+
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> vertices.size() <span style="color:#666">-</span> <span style="color:#666">1</span>; i<span style="color:#666">++</span>)
+    {
+        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> edge_weight.begin(); it <span style="color:#666">!=</span> edge_weight.end(); it<span style="color:#666">++</span>)
+        {
+            relax(it<span style="color:#666">-&gt;</span>first.first, it<span style="color:#666">-&gt;</span>first.second, it<span style="color:#666">-&gt;</span>second);
+        }
+    }
+
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> edge_weight.begin(); it <span style="color:#666">!=</span> edge_weight.end(); it<span style="color:#666">++</span>)
+    {
+        <span style="color:#008000;font-weight:bold">if</span> (vertices[it<span style="color:#666">-&gt;</span>first.second].distance
+            <span style="color:#666">&gt;</span> (vertices[it<span style="color:#666">-&gt;</span>first.first].distance <span style="color:#666">+</span> it<span style="color:#666">-&gt;</span>second))
+           <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+    }
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
+}
+
+std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> Graph<span style="color:#666">::</span>distance_from_source(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> os) <span style="color:#008000;font-weight:bold">const</span>
+{
+    os <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Vertex</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">Distance from Source</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> vertices.size(); i<span style="color:#666">++</span>)
+    {
+        os <span style="color:#666">&lt;&lt;</span> vertices[i].id <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">&#34;</span> <span style="color:#666">&lt;&lt;</span> vertices[i].distance <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    }
+}
+
+
+<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+{
+    Graph grp(<span style="color:#666">5</span>);
+    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">1</span>, <span style="color:#666">6</span>);
+    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">2</span>, <span style="color:#666">7</span>);
+    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">5</span>);
+    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">4</span>, <span style="color:#666">-</span><span style="color:#666">4</span>);
+    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">8</span>);
+    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">3</span>, <span style="color:#666">-</span><span style="color:#666">3</span>);
+    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">4</span>, <span style="color:#666">9</span>);
+    grp.add_edge(<span style="color:#666">3</span>, <span style="color:#666">1</span>, <span style="color:#666">-</span><span style="color:#666">2</span>);
+    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">0</span>, <span style="color:#666">2</span>);
+    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">3</span>, <span style="color:#666">7</span>);
+
+    <span style="color:#b00040">bool</span> res <span style="color:#666">=</span> grp.bellman_ford(<span style="color:#666">0</span>);
+    <span style="color:#008000;font-weight:bold">if</span> (res <span style="color:#666">==</span> <span style="color:#008000">true</span>)
+       std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Graph contains no negative cycle </span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    <span style="color:#008000;font-weight:bold">else</span>
+       std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Graph conatins negative cycle </span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+
+    grp.distance_from_source(std<span style="color:#666">::</span>cout);
+}
+</code></pre></div><p>Output</p>
+<p><img src="/assets/images/BellmanOut.png" alt="Output"></p>
+<p>Reference:<!-- raw HTML omitted -->
+<a href="https://amzn.to/2OarGBs">Introduction to Algorithms</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2CH9h9Z">The Algorithm Design Manual</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2NLM0dd">Data Structures and Algorithms Made Easy</a><!-- raw HTML omitted -->
+Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

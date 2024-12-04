@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Notes on Low Level Design from Scaler">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Low Level Design - What and Why? | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Low Level Design - What and Why?</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2024-06-21
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+    </div>
+  
+  <p><img src="/assets/images/LLD/lld.png" alt="Low Level Design"></p>
+<h3 id="what-is-lld">What is LLD:</h3>
+<ul>
+<li>component-level design process that follows a step-by-step refinement process.</li>
+<li>used for designing data structures, required software architecture, source code and ultimately, performance algorithms.</li>
+<li>Overall, the data organization may be defined during requirement analysis and then refined during data design work.</li>
+<li>Post-build, each component is specified in detail</li>
+</ul>
+<h4 id="why-lld">Why LLD?</h4>
+<ul>
+<li>goal of LLD or a low-level design (LLD) is to give the internal logical design of the actual program code.</li>
+<li>describes the class diagrams with the methods and relations between classes and program specs.</li>
+<li>It describes the modules so that the programmer can directly code the program from the document.</li>
+<li>Ultimately, LLD has the following goals:
+<ul>
+<li>Low level implementation details of a system</li>
+<li>organization of code</li>
+<li>write good software</li>
+</ul>
+</li>
+<li>A good software is a software that is
+<ul>
+<li>easy to maintain</li>
+<li>easy to scale.</li>
+<li>easy to extend</li>
+</ul>
+</li>
+</ul>
+<h5 id="maintainability">Maintainability:</h5>
+<ul>
+<li>is a long-term aspect that describes how easily software can evolve and change, which is especially important in todayʼs agile environment.</li>
+<li>ISO 25010 states that a highly maintainable software system must possess the following qualities:
+<ul>
+<li><strong>Modularity</strong> - The product is composed of discrete components such that a change to one component has minimal impact on other components.</li>
+<li><strong>Reusability</strong> - The product makes use of assets that can be re-used in building other assets or in other systems.</li>
+<li><strong>Analyzability</strong> - The impact of an intended change on the product, diagnosis of deficiencies, causes of failures or identification of the components that need to be changed can be analyzed effectively and efficiently.</li>
+<li><strong>Modifiability</strong> - The product can be effectively and efficiently modified without introducing defects or degrading existing product quality.</li>
+<li><strong>Testability</strong> - The test criteria can be established effectively and efficiently, and the product can be tested to determine whether those criteria have been met.</li>
+</ul>
+</li>
+</ul>
+<h5 id="scalability">Scalability:</h5>
+<ul>
+<li>is an attribute of a tool or a system to increase its capacity and functionalities based on its usersʼ demand.</li>
+<li>Scalable software can remain stable while adapting to changes, upgrades, overhauls, and resource reduction.</li>
+</ul>
+<h5 id="extensibility">Extensibility:</h5>
+<ul>
+<li>is a measure of the ability to extend a system and the level of effort required to implement the extension.</li>
+<li>can be through the addition of new functionality or through modification of existing functionality.</li>
+<li>The principle provides for enhancements without impairing existing system functions</li>
+</ul>
+<blockquote>
+<p>These are my notes from the Low-Level Design (LLD) course I took at Scaler.</p>
+</blockquote>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

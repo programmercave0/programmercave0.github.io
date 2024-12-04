@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Given a Linked List, we have to find does loop exist in Linked List and if yes, find the length of loop.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>How to find the Length of Loop in Linked List | C&#43;&#43; Implementation | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>How to find the Length of Loop in Linked List | C&#43;&#43; Implementation</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2018-01-20
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Linked-List/">Linked-List</a>, <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>
+    </div>
+  
+  <p>Given a Linked List, we have to find does loop exist in Linked List and if yes, find the length of loop.</p>
+<p><img src="/assets/images/linkedlistwithloop.png" alt="Floyd Cycle Finding Algorithm"></p>
+<p>To find loop in the linked list, we need two node pointers <code>slowPtr</code> and <code>fastPtr</code> which starts from the head. <code>slowPtr</code> increments by one node while <code>fastPtr</code> increments by two nodes. If these pointers point at the same node after starting from head then loop exists. This algorithm is known as <em>Floyd Cycle Finding Algorithm</em>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node<span style="color:#666">*</span> <span style="color:#00f">doesLoopExist</span>()
+{
+    Node <span style="color:#666">*</span>slowPtr <span style="color:#666">=</span> head;
+    Node <span style="color:#666">*</span>fastPtr <span style="color:#666">=</span> head;
+
+    <span style="color:#008000;font-weight:bold">while</span>(slowPtr <span style="color:#666">&amp;&amp;</span> fastPtr <span style="color:#666">&amp;&amp;</span> fastPtr<span style="color:#666">-&gt;</span>next)
+    {
+        slowPtr <span style="color:#666">=</span> slowPtr<span style="color:#666">-&gt;</span>next;
+        fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next;
+
+        <span style="color:#008000;font-weight:bold">if</span>(slowPtr <span style="color:#666">==</span> fastPtr)
+        {
+            <span style="color:#008000;font-weight:bold">return</span> slowPtr;
+        }
+    }
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+}
+</code></pre></div><p>If loop exists then this function returns node which is pointed by <code>slowPtr</code> and <code>fastPtr</code> and if node doesn’t exist then it returns <code>nullptr</code>.</p>
+<p>To calculate length of loop, <code>fastPtr</code> start from its current node and count number of nodes until <code>slowPtr</code> is equal to <code>fastPtr</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">lengthOfLoop</span>()
+{
+    <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">0</span>;
+    <span style="color:#b00040">bool</span> loopExist <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+    Node <span style="color:#666">*</span>slowPtr <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>, <span style="color:#666">*</span>fastPtr <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+
+    slowPtr <span style="color:#666">=</span> doesLoopExist();
+    fastPtr <span style="color:#666">=</span> slowPtr;
+    <span style="color:#008000;font-weight:bold">if</span>(slowPtr <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        loopExist <span style="color:#666">=</span> <span style="color:#008000">true</span>;
+    }
+    <span style="color:#008000;font-weight:bold">else</span>
+    {
+        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+    }
+    <span style="color:#008000;font-weight:bold">if</span>(loopExist)
+    {
+        fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next;
+        count<span style="color:#666">++</span>;
+        <span style="color:#008000;font-weight:bold">while</span>(slowPtr <span style="color:#666">!=</span> fastPtr)
+        {
+            fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next;
+            count<span style="color:#666">++</span>;
+        }
+        <span style="color:#008000;font-weight:bold">return</span> count;
+    }
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+}
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00"></span>
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">LinkedList</span>
+{
+    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
+    {
+        T data;
+        Node <span style="color:#666">*</span> next;
+        Node(T value) <span style="color:#666">:</span> data(std<span style="color:#666">::</span>move(value)), next(<span style="color:#008000;font-weight:bold">nullptr</span>) {}
+    };
+    Node <span style="color:#666">*</span>head;
+
+  <span style="color:#008000;font-weight:bold">public</span><span style="color:#666">:</span>
+    LinkedList() <span style="color:#666">:</span> head(<span style="color:#008000;font-weight:bold">nullptr</span>) {}
+    LinkedList(<span style="color:#008000;font-weight:bold">const</span> LinkedList<span style="color:#666">&amp;</span> ll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>; <span style="color:#408080;font-style:italic">//copy constructor
+</span><span style="color:#408080;font-style:italic"></span>    LinkedList<span style="color:#666">&amp;</span> <span style="color:#008000;font-weight:bold">operator</span><span style="color:#666">=</span>(<span style="color:#008000;font-weight:bold">const</span> LinkedList<span style="color:#666">&amp;</span> ll) <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">delete</span>; <span style="color:#408080;font-style:italic">//copy assignment
+</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">~</span>LinkedList();
+    <span style="color:#b00040">void</span> <span style="color:#00f">insert</span>(T);
+    <span style="color:#b00040">void</span> <span style="color:#00f">createLoop</span>(<span style="color:#b00040">int</span>);
+    <span style="color:#b00040">int</span> <span style="color:#00f">lengthOfLoop</span>();
+    Node<span style="color:#666">*</span> <span style="color:#00f">doesLoopExist</span>()
+    {
+        Node <span style="color:#666">*</span>slowPtr <span style="color:#666">=</span> head;
+        Node <span style="color:#666">*</span>fastPtr <span style="color:#666">=</span> head;
+
+        <span style="color:#008000;font-weight:bold">while</span>(slowPtr <span style="color:#666">&amp;&amp;</span> fastPtr <span style="color:#666">&amp;&amp;</span> fastPtr<span style="color:#666">-&gt;</span>next)
+        {
+            slowPtr <span style="color:#666">=</span> slowPtr<span style="color:#666">-&gt;</span>next;
+            fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next<span style="color:#666">-&gt;</span>next;
+
+            <span style="color:#008000;font-weight:bold">if</span>(slowPtr <span style="color:#666">==</span> fastPtr)
+            {
+                <span style="color:#008000;font-weight:bold">return</span> slowPtr;
+            }
+        }
+        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+    }
+};
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>insert(T data)
+{
+    Node <span style="color:#666">*</span>node <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Node(std<span style="color:#666">::</span>move(data));
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
+    <span style="color:#008000;font-weight:bold">if</span>(tmp <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        head <span style="color:#666">=</span> node;
+    }
+    <span style="color:#008000;font-weight:bold">else</span>
+    {
+        <span style="color:#008000;font-weight:bold">while</span>(tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+        {
+            tmp <span style="color:#666">=</span> tmp<span style="color:#666">-&gt;</span>next;
+        }
+        tmp<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> node;
+    }
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>createLoop(<span style="color:#b00040">int</span> n)
+{
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
+    Node <span style="color:#666">*</span>tail <span style="color:#666">=</span> head;
+    <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> n<span style="color:#666">-</span><span style="color:#666">1</span>; i<span style="color:#666">++</span>)
+    {
+        tmp <span style="color:#666">=</span> tmp<span style="color:#666">-&gt;</span>next;
+    }
+
+    <span style="color:#008000;font-weight:bold">while</span>(tail<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        tail <span style="color:#666">=</span> tail<span style="color:#666">-&gt;</span>next;
+    }
+    tail<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> tmp;
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<span style="color:#b00040">int</span> LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>lengthOfLoop()
+{
+    <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">0</span>;
+    <span style="color:#b00040">bool</span> loopExist <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+    Node <span style="color:#666">*</span>slowPtr <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>, <span style="color:#666">*</span>fastPtr <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+
+    slowPtr <span style="color:#666">=</span> doesLoopExist();
+    fastPtr <span style="color:#666">=</span> slowPtr;
+    <span style="color:#008000;font-weight:bold">if</span>(slowPtr <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
+    {
+        loopExist <span style="color:#666">=</span> <span style="color:#008000">true</span>;
+    }
+    <span style="color:#008000;font-weight:bold">else</span>
+    {
+        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+    }
+    <span style="color:#008000;font-weight:bold">if</span>(loopExist)
+    {
+        fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next;
+        count<span style="color:#666">++</span>;
+        <span style="color:#008000;font-weight:bold">while</span>(slowPtr <span style="color:#666">!=</span> fastPtr)
+        {
+            fastPtr <span style="color:#666">=</span> fastPtr<span style="color:#666">-&gt;</span>next;
+            count<span style="color:#666">++</span>;
+        }
+        <span style="color:#008000;font-weight:bold">return</span> count;
+    }
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+}
+
+<span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::~</span>LinkedList()
+{
+    Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+    <span style="color:#008000;font-weight:bold">while</span>(head)
+    {
+        tmp <span style="color:#666">=</span> head;
+        head <span style="color:#666">=</span> head<span style="color:#666">-&gt;</span>next;
+        <span style="color:#008000;font-weight:bold">delete</span> tmp;
+    }
+    head <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">nullptr</span>;
+}
+
+<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+{
+    LinkedList<span style="color:#666">&lt;</span><span style="color:#b00040">char</span><span style="color:#666">&gt;</span> ll1;
+    ll1.insert(<span style="color:#ba2121">&#39;p&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;r&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;o&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;g&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;r&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;a&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;m&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;m&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;e&#39;</span>);
+    ll1.insert(<span style="color:#ba2121">&#39;r&#39;</span>);
+
+    <span style="color:#b00040">int</span> nodeNumber <span style="color:#666">=</span> <span style="color:#666">5</span>;
+    <span style="color:#408080;font-style:italic">//Node number starts from 1
+</span><span style="color:#408080;font-style:italic"></span>
+    ll1.createLoop(nodeNumber);
+    <span style="color:#b00040">bool</span> result <span style="color:#666">=</span> ll1.doesLoopExist();
+    <span style="color:#008000;font-weight:bold">if</span>(result <span style="color:#666">==</span> <span style="color:#008000">true</span>)
+    {
+        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;Loop exist in the Linked List</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    }
+    <span style="color:#008000;font-weight:bold">else</span>
+    {
+        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;Loop does not exist in the Linked List</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    }
+
+    <span style="color:#b00040">int</span> len <span style="color:#666">=</span> ll1.lengthOfLoop();
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Length of Loop is &#34;</span> <span style="color:#666">&lt;&lt;</span> len <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+
+    exit(<span style="color:#666">0</span>);
+}
+</code></pre></div><p><code>std::move</code> is used to indicate that an object t may be &ldquo;moved from&rdquo;, i.e. allowing the efficient transfer of resources from t to another object.
+It is defined in header <code>&lt;utility&gt;</code>.</p>
+<p>Reference:<!-- raw HTML omitted -->
+<a href="https://amzn.to/2OarGBs">Introduction to Algorithms</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2CH9h9Z">The Algorithm Design Manual</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2NLM0dd">Data Structures and Algorithms Made Easy</a><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

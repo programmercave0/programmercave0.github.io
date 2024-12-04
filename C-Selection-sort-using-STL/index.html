@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Selection sort is an in-place sorting algorithm. In the input array there is a sorted portion and an unsorted portion. The algorithm repeatedly finds the smallest element in the unsorted portion of the array and puts it at the end of the sorted portion of the array.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Selection sort | C&#43;&#43; Implementation | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Selection sort | C&#43;&#43; Implementation</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2017-08-29
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Sorting/">Sorting</a>
+    </div>
+  
+  <p><strong>Selection sort</strong> is an in-place sorting algorithm. In the input array there is a sorted portion and an unsorted portion. The algorithm repeatedly finds the smallest element in the unsorted portion of the array and puts it at the end of the sorted portion of the array.</p>
+<p><img src="/assets/images/selectionsort.png" alt="Selectionsort"></p>
+<p>First the algorithm finds the smallest element in the array which is 1 and it is added to the sorted array and then the algorithm finds smallest element in the remaining array and so on.</p>
+<!-- raw HTML omitted -->
+<p>Here is the implementation of <code>selection_sort</code> function.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">selection_sort</span>(<span style="color:#b00040">int</span> array[], <span style="color:#b00040">int</span> size)
+{
+    <span style="color:#b00040">int</span> start_index <span style="color:#666">=</span> <span style="color:#666">0</span>;
+    <span style="color:#008000;font-weight:bold">while</span>(start_index <span style="color:#666">&lt;</span> size)
+    {
+        <span style="color:#b00040">int</span> min_index <span style="color:#666">=</span> start_index;
+        <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index<span style="color:#666">+</span><span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> size; i<span style="color:#666">++</span>)
+        {
+            <span style="color:#008000;font-weight:bold">if</span>(array[i] <span style="color:#666">&lt;</span> array[min_index])
+            {
+                min_index <span style="color:#666">=</span> i;
+            }
+        }
+        std<span style="color:#666">::</span>swap(array[start_index], array[min_index]);
+        start_index<span style="color:#666">++</span>;
+    }
+}
+</code></pre></div><p>The above function works only for integer value. Here is the generic function which works for all data types.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> selection_sort(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> array)
+{
+    <span style="color:#008000;font-weight:bold">typedef</span> <span style="color:#008000;font-weight:bold">typename</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>iterator Itr;
+    Itr itr <span style="color:#666">=</span> array.begin();
+    <span style="color:#008000;font-weight:bold">while</span>(itr <span style="color:#666">!=</span> array.end())
+    {
+        Itr itr_min <span style="color:#666">=</span> itr;
+        <span style="color:#008000;font-weight:bold">for</span>(Itr i <span style="color:#666">=</span> itr <span style="color:#666">+</span> <span style="color:#666">1</span>; i <span style="color:#666">!=</span> array.end(); i<span style="color:#666">++</span>)
+        {
+            <span style="color:#008000;font-weight:bold">if</span>(<span style="color:#666">*</span>i <span style="color:#666">&lt;</span> <span style="color:#666">*</span>itr_min)
+            {
+                itr_min <span style="color:#666">=</span> i;
+            }
+        }
+        std<span style="color:#666">::</span>iter_swap(itr, itr_min);
+        itr<span style="color:#666">++</span>;
+    }
+}
+</code></pre></div><p>The function can take a vector of integers or vector of characters or a vector of strings, it sorts all of them. <code>itr</code> is the iterator, initially which points to the first element of the array. <code>itr_min</code> is the iterator which points to the smallest element in the range <code>[i, array.end())</code>. <code>std::iter_swap</code> method is used to swap <code>itr</code> and <code>itr_min</code> iterator and it puts the smallest element in the range, at the end of the sorted portion in the array.</p>
+<p><code>std::swap</code> swap the values whereas <code>std::iter_swap</code> swap the iterators.</p>
+<!-- raw HTML omitted -->
+<p>Here is the output after running generic function.</p>
+<p><img src="/assets/images/selectionsortout.png" alt="Selectionsort"></p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00"></span>
+<span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> selection_sort(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> array)
+{
+    <span style="color:#008000;font-weight:bold">typedef</span> <span style="color:#008000;font-weight:bold">typename</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>iterator Itr;
+    Itr itr <span style="color:#666">=</span> array.begin();
+    <span style="color:#008000;font-weight:bold">while</span>(itr <span style="color:#666">!=</span> array.end())
+    {
+        Itr itr_min <span style="color:#666">=</span> itr;
+        <span style="color:#008000;font-weight:bold">for</span>(Itr i <span style="color:#666">=</span> itr <span style="color:#666">+</span> <span style="color:#666">1</span>; i <span style="color:#666">!=</span> array.end(); i<span style="color:#666">++</span>)
+        {
+            <span style="color:#008000;font-weight:bold">if</span>(<span style="color:#666">*</span>i <span style="color:#666">&lt;</span> <span style="color:#666">*</span>itr_min)
+            {
+                itr_min <span style="color:#666">=</span> i;
+            }
+        }
+        std<span style="color:#666">::</span>iter_swap(itr, itr_min);
+        itr<span style="color:#666">++</span>;
+    }
+}
+
+<span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>
+<span style="color:#b00040">void</span> print(<span style="color:#008000;font-weight:bold">const</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> array)
+{
+    <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#008000;font-weight:bold">auto</span> itr <span style="color:#666">=</span> array.begin(); itr <span style="color:#666">!=</span> array.end(); itr<span style="color:#666">++</span>)
+    {
+       std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#666">*</span>itr <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34; &#34;</span>;
+    }
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39;\n&#39;</span>;
+}
+
+<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+{
+    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> v({<span style="color:#666">5</span>, <span style="color:#666">3</span>, <span style="color:#666">12</span>, <span style="color:#666">2</span>, <span style="color:#666">8</span>});
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Original Array :&#34;</span>;
+    print(v);
+    selection_sort(v);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;Sorted Array :&#34;</span>;
+    print(v);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39;\n&#39;</span>;
+
+    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">char</span><span style="color:#666">&gt;</span> c({<span style="color:#ba2121">&#39;t&#39;</span>, <span style="color:#ba2121">&#39;q&#39;</span>, <span style="color:#ba2121">&#39;a&#39;</span>, <span style="color:#ba2121">&#39;r&#39;</span>, <span style="color:#ba2121">&#39;p&#39;</span>});
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Original Array :&#34;</span>;
+    print(c);
+    selection_sort(c);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;Sorted Array :&#34;</span>;
+    print(c);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39;\n&#39;</span>;
+
+    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> str({<span style="color:#ba2121">&#34;code&#34;</span>, <span style="color:#ba2121">&#34;live&#34;</span>, <span style="color:#ba2121">&#34;love&#34;</span>, <span style="color:#ba2121">&#34;sing&#34;</span>, <span style="color:#ba2121">&#34;create&#34;</span>});
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Original Array :&#34;</span>;
+    print(str);
+    selection_sort(str);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;Sorted Array :&#34;</span>;
+    print(str);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#39;\n&#39;</span>;
+}
+</code></pre></div><p>Reference:<!-- raw HTML omitted -->
+<a href="https://amzn.to/2OarGBs">Introduction to Algorithms</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2CH9h9Z">The Algorithm Design Manual</a><!-- raw HTML omitted -->
+<a href="https://amzn.to/2NLM0dd">Data Structures and Algorithms Made Easy</a><!-- raw HTML omitted -->
+Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><a href="/C-Implementation-of-Merge-Sort">Merge Sort</a><!-- raw HTML omitted -->
+<a href="/C-Insertion-Sort-using-STL-Sorting">Insertion Sort</a><!-- raw HTML omitted -->
+<a href="/C-Implementation-of-Quicksort-Sorting">Quicksort</a><!-- raw HTML omitted -->
+<a href="/C-Implementation-of-Heapsort-Sorting">Heapsor</a><!-- raw HTML omitted --></p>
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

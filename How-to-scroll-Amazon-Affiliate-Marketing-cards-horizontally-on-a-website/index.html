@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="I wanted to put my amazon affiliate marketing product on website. But on smaller screens it was messing up my website’s interface. I searched on internet tried many things but no result. Then I tried it with &lt;table&gt; in html and css and it worked. Here is the code for that.
+Table with only one reow is needed and we will put products&#39; card on that row and when the table width is greater than screen’s width it will scroll horizontaly.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>How to scroll Amazon Affiliate Marketing cards horizontally on a website | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>How to scroll Amazon Affiliate Marketing cards horizontally on a website</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2019-11-27
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/HowTo/">HowTo</a>, <a href="https://programmercave.com/tags/HTML/">HTML</a>, <a href="https://programmercave.com/tags/CSS/">CSS</a>
+    </div>
+  
+  <p>I wanted to put my amazon affiliate marketing product on website. But on smaller screens it was messing up my website&rsquo;s interface. I searched on internet tried many things but no result. Then I tried it with <code>&lt;table&gt;</code> in html and css and it worked. Here is the code for that.</p>
+<p>Table with only one reow is needed and we will put products' card on that row and when the table width is greater than screen&rsquo;s width it will scroll horizontaly.</p>
+<pre tabindex="0"><code>&lt;div style=&quot;overflow-x:auto;&quot;&gt;
+ &lt;table&gt;
+    &lt;tr&gt;
+&lt;!-- Acer Aspire E15 --&gt;
+	&lt;th&gt;&lt;iframe name =&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07MK7G18V&amp;asins=B07MK7G18V&amp;linkId=2f4d4031c2429525b56637f2704b59ec&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+    
+ &lt;!-- Asus Vivobook --&gt;
+ 	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07N8CQN2F&amp;asins=B07N8CQN2F&amp;linkId=587e7b91213538f4435f5376bd0e7fa1&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+    
+ &lt;!-- Lenovo Thinkpad--&gt;
+ 	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07TCV9VB8&amp;asins=B07TCV9VB8&amp;linkId=0110e8a0b000b86dea08d41c80a1b9ec&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+    
+ &lt;!-- Dell G5 series--&gt;
+ 	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07B44TMBF&amp;asins=B07B44TMBF&amp;linkId=b11de009d21f7476ad34675e69e6fb58&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+
+&lt;!-- HP 15 --&gt;
+	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07HHS5TZT&amp;asins=B07HHS5TZT&amp;linkId=b8f4ae0b5d3cd85a3789c668c121b1a3&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+
+&lt;!-- Asus k50 --&gt;
+	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07RRQBC1S&amp;asins=B07RRQBC1S&amp;linkId=5d55270eceda8ed147ca9d0bb15c73f6&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    &lt;/iframe&gt;&lt;/th&gt;
+
+&lt;!--Dell XPS--&gt;
+	&lt;th&gt;&lt;iframe name=&quot;card&quot; style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=IN&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=0106d-21&amp;marketplace=amazon&amp;region=IN&amp;placement=B07B2X7C5C&amp;asins=B07B2X7C5C&amp;linkId=c132a6e522b50ca7158785254eb2c283&amp;show_border=true&amp;link_opens_in_new_window=true&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff&quot;&gt;
+    	&lt;/iframe&gt;&lt;/th&gt;
+     &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre><p>Now to customize table the css code.</p>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code>table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+td,
+th {
+  text-align: left;
+  padding: 3px;
+}
+</code></pre><p>You can find these codes in this repository.</p>
+<!-- raw HTML omitted -->
+<p>This is how it will look.</p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

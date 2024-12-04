@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.92.2" />
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Brie’s Drawing teacher asks her class to open their books to a page number. Brie can either start turning pages from the front of the book or from the back of the book. She always turns pages one at a time. When she opens the book, page 1 is always on the right side.When she flips page 1, she sees pages 2 and 3. Each page except the last page will always be printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is n pages long, and she wants to turn to page p, what is the minimum number of pages she will turn? She can start at the beginning or the end of the book.">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Drawing Book | HackerRank | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Drawing Book | HackerRank</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2019-12-11
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Hackerrank/">Hackerrank</a>
+    </div>
+  
+  <p>This is an easy hackerrank challenge which will help you to become good at competitive programming. There are various competitive programming websites like <a href="https://www.codechef.com/">CodeChef</a>, <a href="https://www.hackerearth.com/challenges/">HackerEarth</a>, <a href="https://codeforces.com/">Codeforces</a> where you can practice coding.</p>
+<!-- raw HTML omitted -->
+<p>Brie’s Drawing teacher asks her class to open their books to a page number. Brie can either start turning pages from the front of the book or from the back of the book. She always turns pages one at a time. When she opens the book, page <em>1</em> is always on the right side:</p>
+<p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook.jpg" alt="Drawing Book Hackerrank"></p>
+<p>When she flips page <em>1</em>, she sees pages <em>2</em> and <em>3</em>. Each page except the last page will always be printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is <em>n</em> pages long, and she wants to turn to page <em>p</em>, what is the minimum number of pages she will turn? She can start at the beginning or the end of the book.</p>
+<p>Read full problem here : <a href="https://www.hackerrank.com/challenges/drawing-book/problem">Drawing Book</a></p>
+<!-- raw HTML omitted -->
+<p>Except first (and last page if number of pages in the book is even), a reader always sees two pages where page number on left page is even and page number on right page is odd. So number of flips from the front page to any pages <em>p</em> and <em>p+1</em> is equal. Thus if <em>p</em> is even then increment <em>p</em> by 1 and calculate number of minimum number of flips to <em>p</em> from front or back of the book.</p>
+<p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook1.jpg" alt="Drawing Book Hackerrank"></p>
+<p>Here for <code>p = 2</code> and <code>p = 3</code>, number of flips from front page is <code>1</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (p <span style="color:#666">%</span> <span style="color:#666">2</span> <span style="color:#666">==</span> <span style="color:#666">0</span>)
+{
+    p <span style="color:#666">=</span> p <span style="color:#666">+</span> <span style="color:#666">1</span>;
+}
+</code></pre></div><p>Here <em>p</em> is the page that Brie’s teacher wants her to turn to.</p>
+<!-- raw HTML omitted -->
+<p>An array <code>right_page_number</code> stores the page number on the right page which is an odd number (<em>p</em> is also an odd number after increment) and an integer variable <code>page_num</code> stores the current page number which is entered in the array.</p>
+<p>To enter page numbers on right pages, a <code>for</code> loop is used and it is iterated for <code>n/2</code>  times where <em>n</em> is number of pages in the book. For eg. for <em>n = 5</em>, loop will run for <em>2</em> times (i.e. 5/2 = 2 in integer variable).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> page_num <span style="color:#666">=</span> <span style="color:#666">1</span>;
+std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> right_page_number;
+<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;=</span> n<span style="color:#666">/</span><span style="color:#666">2</span>; <span style="color:#666">++</span>i)
+{
+    right_page_number.push_back(page_num);
+    page_num <span style="color:#666">+=</span> <span style="color:#666">2</span>;
+}
+</code></pre></div><p>For the above example the array <code>right_page_number</code> is :</p>
+<p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook2.jpg" alt="Drawing Book Hackerrank"></p>
+<p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook3.jpg" alt="Drawing Book Hackerrank"></p>
+<p>The index of the array <code>right_page_number</code> tells the number of flips from the front page to the page number. For eg. number of flips from front to page number 4 (<em>p = 5</em>) is 2.</p>
+<p>The number of flips from the back of the book is <em>n/2 – index</em> of that page number in the array <code>right_page_number</code>. Here <em>n</em> is number of pages in the book. For eg. number of flips from the back to page number 2 (<em>p = 3</em>) is 2 – 1 = 1 (<em>n/2 – 1</em>).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">auto</span> index <span style="color:#666">=</span> std<span style="color:#666">::</span>find(right_page_number.begin(), right_page_number.end(), p);
+
+<span style="color:#b00040">int</span> num_of_flips_from_front <span style="color:#666">=</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
+<span style="color:#b00040">int</span> num_of_flips_from_back <span style="color:#666">=</span> (n<span style="color:#666">/</span><span style="color:#666">2</span>) <span style="">–</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
+</code></pre></div><p>The the minimum number of pages Brie must turn in order to arrive at page <em>p</em> is minimum of  <code>num_of_flips_from_front</code> and  <code>num_of_flips_from_back</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> min_flips <span style="color:#666">=</span> std<span style="color:#666">::</span>min(num_of_flips_from_front, num_of_flips_from_back);
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
+</span><span style="color:#bc7a00"></span>
+<span style="color:#b00040">int</span> <span style="color:#00f">flips_count</span>(<span style="color:#b00040">int</span> n, <span style="color:#b00040">int</span> p) 
+{
+    <span style="color:#008000;font-weight:bold">if</span> (p <span style="color:#666">%</span> <span style="color:#666">2</span> <span style="color:#666">==</span> <span style="color:#666">0</span>)
+    {
+        p <span style="color:#666">=</span> p <span style="color:#666">+</span> <span style="color:#666">1</span>;
+    }
+
+    <span style="color:#b00040">int</span> page_num <span style="color:#666">=</span> <span style="color:#666">1</span>;
+    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> right_page_number;
+    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;=</span> n<span style="color:#666">/</span><span style="color:#666">2</span>; <span style="color:#666">++</span>i)
+    {
+        right_page_number.push_back(page_num);
+        page_num <span style="color:#666">+=</span> <span style="color:#666">2</span>;
+    }
+
+    <span style="color:#008000;font-weight:bold">auto</span> index <span style="color:#666">=</span> std<span style="color:#666">::</span>find(right_page_number.begin(), right_page_number.end(), p);
+
+    <span style="color:#b00040">int</span> num_of_flips_from_front <span style="color:#666">=</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
+	<span style="color:#b00040">int</span> num_of_flips_from_back <span style="color:#666">=</span> (n<span style="color:#666">/</span><span style="color:#666">2</span>) <span style="color:#666">-</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
+
+    <span style="color:#b00040">int</span> min_flips <span style="color:#666">=</span> std<span style="color:#666">::</span>min(num_of_flips_from_front, num_of_flips_from_back);
+
+    <span style="color:#008000;font-weight:bold">return</span> min_flips;
+}
+
+<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+{
+    <span style="color:#b00040">int</span> n, p;
+    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> n; <span style="color:#408080;font-style:italic">//number of pages in the book
+</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> p; <span style="color:#408080;font-style:italic">//page to open
+</span><span style="color:#408080;font-style:italic"></span>
+    <span style="color:#b00040">int</span> result <span style="color:#666">=</span> flips_count(n, p);
+    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> result <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+}
+</code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Hackerrank/Drawing_Book.cpp">Github</a>.</p>
+<p>If you have a better solution then please comment below the link to the code.</p>
+<!-- raw HTML omitted -->
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    
+    <a href="https://programmercave.com" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2024 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>
