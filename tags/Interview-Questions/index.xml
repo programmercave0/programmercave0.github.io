@@ -6,7 +6,18 @@
     <description>Recent content in Interview-Questions on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What is Database Sharding?</title>
+      <link>https://programmercave.com/Interview-Question-What-is-Database-Sharding/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-is-Database-Sharding/</guid>
+      <description>Key Concepts of Database Sharding Definition:
+ Database sharding is the process of partitioning a large database into smaller, manageable pieces called shards. Each shard operates independently and contains a subset of the total data, allowing for parallel processing and improved query performance.  Purpose:
+ The main objective of sharding is to effectively manage large datasets. As applications grow, a single database instance may struggle with increased data volume and user demand, resulting in slower response times.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Why Go is One of the Fastest Programming Languages?</title>
       <link>https://programmercave.com/Interview-Question-Why-Go-is-One-of-the-Fastest-Programming-Languages/</link>

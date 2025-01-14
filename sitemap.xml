@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://programmercave.com/tags/DataBase/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Interview-Question-What-is-Database-Sharding/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/tags/Interview-Questions/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/post/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/tags/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://programmercave.com/tags/Go/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Interview-Question-Why-Go-is-One-of-the-Fastest-Programming-Languages/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/tags/Interview-Questions/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/post/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/</loc>
-    <lastmod>2025-01-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/tags/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Interview-Question-What-Are-the-Challenges-Faced-While-Working-with-Kafka/</loc>
@@ -103,9 +109,6 @@
   </url><url>
     <loc>https://programmercave.com/Programming-paradigms-Procedural-vs-Object-Oriented-Programming/</loc>
     <lastmod>2024-06-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/tags/DataBase/</loc>
-    <lastmod>2024-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Exploring-JSONB-in-PostgreSQL-A-Beginner-Guide-to-Storing-and-Querying-Structure-Data/</loc>
     <lastmod>2024-05-11T00:00:00+00:00</lastmod>
