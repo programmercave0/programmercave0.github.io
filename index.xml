@@ -6,7 +6,17 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: How Does Internally Indexing Work in Databases?</title>
+      <link>https://programmercave.com/Interview-Question-How-Does-Internally-Indexing-Work-in-Databases/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-How-Does-Internally-Indexing-Work-in-Databases/</guid>
+      <description>Definition of Indexing  Indexing is a technique used to improve the speed of data retrieval in databases by creating a separate data structure that maps search keys to their corresponding data locations.  Internal Structures   B-Tree Structure:
+ The most common structure for indexes, allowing sorted data and efficient searching, insertion, and deletion.  B-Tree Diagram  [Root] / \ / \ [A] [B] / \ / \ [C] [D] [E] [F]   Leaf Nodes: Store actual data pointers.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What is Database Sharding?</title>
       <link>https://programmercave.com/Interview-Question-What-is-Database-Sharding/</link>
