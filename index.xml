@@ -6,7 +6,16 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What is the difference between MySQL and PostgreSQL?</title>
+      <link>https://programmercave.com/Interview-Question-What-is-the-difference-between-MySQL-and-PostgreSQL/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-is-the-difference-between-MySQL-and-PostgreSQL/</guid>
+      <description>Database Type  MySQL: A purely relational database management system known for its simplicity and speed, making it suitable for web applications and read-heavy workloads. PostgreSQL: An object-relational database management system (ORDBMS) that supports advanced features like table inheritance and custom data types, making it versatile for complex applications.  Data Integrity and Concurrency  PostgreSQL: Strongly emphasizes data integrity with Multi-Version Concurrency Control (MVCC), allowing multiple transactions without locking the database.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Explain Slices in Golang</title>
       <link>https://programmercave.com/Interview-Question-Explain-Slices-in-Golang/</link>
