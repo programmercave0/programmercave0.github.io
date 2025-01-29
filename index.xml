@@ -6,7 +6,17 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Explain CAP Theorem</title>
+      <link>https://programmercave.com/Interview-Question-Explain-CAP-Theorem/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Explain-CAP-Theorem/</guid>
+      <description>1. What is the CAP Theorem? The CAP Theorem states that a distributed system can only guarantee two out of three properties at the same time:
+ Consistency (C): All users see the same data simultaneously. Availability (A): The system always responds to requests (even with stale data). Partition Tolerance (P): The system works even if parts of it lose communication.  Key Insight: Network partitions (e.g., server crashes, dropped messages) are unavoidable.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What is the difference between SQL and NoSQL Databases?</title>
       <link>https://programmercave.com/Interview-Question-What-is-the-difference-between-SQL-and-NoSQL-Databases/</link>

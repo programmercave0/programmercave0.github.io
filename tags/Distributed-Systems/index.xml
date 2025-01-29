@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed-Systems on programmerCave</title>
+    <link>https://programmercave.com/tags/Distributed-Systems/</link>
+    <description>Recent content in Distributed-Systems on programmerCave</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Distributed-Systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Explain CAP Theorem</title>
+      <link>https://programmercave.com/Interview-Question-Explain-CAP-Theorem/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Explain-CAP-Theorem/</guid>
+      <description>1. What is the CAP Theorem? The CAP Theorem states that a distributed system can only guarantee two out of three properties at the same time:
+ Consistency (C): All users see the same data simultaneously. Availability (A): The system always responds to requests (even with stale data). Partition Tolerance (P): The system works even if parts of it lose communication.  Key Insight: Network partitions (e.g., server crashes, dropped messages) are unavoidable.</description>
+    </item>
+    
+  </channel>
+</rss>
