@@ -6,7 +6,17 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Explain Load Balancer</title>
+      <link>https://programmercave.com/Interview-Question-Explain-Load-Balancer/</link>
+      <pubDate>Sun, 02 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Explain-Load-Balancer/</guid>
+      <description>What is a Load Balancer? A load balancer acts like a traffic cop for your application, directing incoming requests across multiple servers to prevent overload and ensure smooth performance. It’s the entry point of your system, hiding server details and optimizing traffic flow.
+ Placement: Sits at the edge of data centers (like a gatekeeper). Functionality:  Distributes traffic to servers. Proxies requests to hide server IPs (e.g., clients only see the load balancer’s IP).</description>
+    </item>
+    
     <item>
       <title>Interview Question: Explain CAP Theorem</title>
       <link>https://programmercave.com/Interview-Question-Explain-CAP-Theorem/</link>
