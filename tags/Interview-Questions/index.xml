@@ -6,7 +6,17 @@
     <description>Recent content in Interview-Questions on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Explain Consistent Hashing</title>
+      <link>https://programmercave.com/Interview-Question-Explain-Consistent-Hashing/</link>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Explain-Consistent-Hashing/</guid>
+      <description>What is Consistent Hashing? Imagine you’re distributing candy (data) among friends (servers). If a friend leaves or joins, you don’t want to reshuffle all the candy—only what’s necessary. Consistent hashing solves this problem by minimizing data movement when servers (nodes) are added or removed. It’s used by companies like Discord, Netflix, and Amazon DynamoDB to scale their systems efficiently.
+ How Consistent Hashing Works: A Step-by-Step Guide 1. The Hash Ring: A Circular Timeline Think of a hash ring as a clock face.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Explain Load Balancer</title>
       <link>https://programmercave.com/Interview-Question-Explain-Load-Balancer/</link>
