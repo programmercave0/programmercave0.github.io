@@ -21,8 +21,8 @@
   
   
   
-  <meta name="description" content="Notes on Low Level Design from Scaler">
-  <meta name="keywords" content="">
+  <meta name="description" content="Master caching concepts for your software engineering interview. Learn cache levels, challenges, solutions, and strategies like TTL, LRU, and CDN with real-world examples.">
+  <meta name="keywords" content="caching,, software, engineering, interview,, cache, levels,, CDN,, Redis,, Memcached,, cache, invalidation,, eviction, strategies,, TTL,, write-through, cache">
   <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   
@@ -40,7 +40,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
-  <title>Low Level Design - What and Why? | programmerCave</title>
+  <title>Interview Question: Explain Caching | programmerCave</title>
 </head>
 
 <body>
@@ -71,10 +71,10 @@
 
   <section class="main-content">
     
-  <h1>Low Level Design - What and Why?</h1>
+  <h1>Interview Question: Explain Caching</h1>
   <div>
     
-    <strong>Publish date: </strong>2024-06-21
+    <strong>Publish date: </strong>2025-02-06
   </div>
   
   
@@ -89,64 +89,114 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      <a href="https://programmercave.com/tags/Distributed-Systems/">Distributed-Systems</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
     </div>
   
-  <p><img src="/assets/images/LLD/lld.png" alt="Low Level Design"></p>
-<h3 id="what-is-lld">What is LLD:</h3>
+  <h1 id="caching-the-secret-sauce-for-high-performance-systems"><strong>Caching: The Secret Sauce for High-Performance Systems</strong></h1>
+<p>If you’re preparing for a software engineering interview, understanding caching is non-negotiable. Caching is a cornerstone of system design, optimizing performance by storing frequently accessed data in fast-access layers. Let’s break it down in simple terms.</p>
+<hr>
+<h2 id="what-is-caching"><strong>What is Caching?</strong></h2>
+<p>Caching stores copies of data in temporary, high-speed storage (like RAM) to reduce access times. Think of it like keeping your favorite snacks on your desk instead of walking to the kitchen every time you’re hungry—<strong>faster access, less effort</strong>.</p>
+<p><img src="/assets/images/Distributed-System/Caching.png" alt="Explain Caching"></p>
+<hr>
+<h2 id="levels-of-caching"><strong>Levels of Caching</strong></h2>
+<p>Caching operates at multiple levels to balance speed and resource usage:</p>
+<h3 id="1-browser-caching"><strong>1. Browser Caching</strong></h3>
 <ul>
-<li>component-level design process that follows a step-by-step refinement process.</li>
-<li>used for designing data structures, required software architecture, source code and ultimately, performance algorithms.</li>
-<li>Overall, the data organization may be defined during requirement analysis and then refined during data design work.</li>
-<li>Post-build, each component is specified in detail</li>
+<li><strong>What it does</strong>: Saves static assets (images, CSS, JavaScript) and DNS entries locally.</li>
+<li><strong>Why it matters</strong>: Faster page loads on revisits (e.g., your Facebook profile loads quickly after the first visit).</li>
 </ul>
-<h4 id="why-lld">Why LLD?</h4>
+<h3 id="2-content-delivery-network-cdn"><strong>2. Content Delivery Network (CDN)</strong></h3>
 <ul>
-<li>goal of LLD or a low-level design (LLD) is to give the internal logical design of the actual program code.</li>
-<li>describes the class diagrams with the methods and relations between classes and program specs.</li>
-<li>It describes the modules so that the programmer can directly code the program from the document.</li>
-<li>Ultimately, LLD has the following goals:
+<li><strong>What it does</strong>: Distutes static content (videos, images) across global servers.</li>
+<li><strong>Examples</strong>: Cloudflare, Amazon CloudFront.</li>
+<li><strong>How it works</strong>: Uses <strong>Anycast routing</strong> to direct users to the nearest server. Imagine Netflix streaming from a server in your city instead of another continent!</li>
+</ul>
+<h3 id="3-local-caching"><strong>3. Local Caching</strong></h3>
 <ul>
-<li>Low level implementation details of a system</li>
-<li>organization of code</li>
-<li>write good software</li>
+<li><strong>What it does</strong>: Stores data directly on the application server to avoid repeated database queries.</li>
+<li><strong>Example</strong>: An e-commerce app caching product details for quick access during a sale.</li>
+</ul>
+<h3 id="4-global-caching"><strong>4. Global Caching</strong></h3>
+<ul>
+<li><strong>What it does</strong>: Uses centralized in-memory stores like <strong>Redis</strong> or <strong>Memcached</strong> for shared access across servers.</li>
+<li><strong>Use case</strong>: Storing session data for a social media app’s millions of users.</li>
+</ul>
+<hr>
+<h2 id="cache-challenges-and-how-to-solve-them"><strong>Cache Challenges (And How to Solve Them)</strong></h2>
+<h3 id="challenge-1-data-staleness"><strong>Challenge 1: Data Staleness</strong></h3>
+<p>Cached data can become outdated if the database updates.<br>
+<strong>Solutions</strong>:</p>
+<ul>
+<li><strong>TTL (Time to Live)</strong>: Set an expiration time for cached data (e.g., delete cached tweets after 1 hour).</li>
+<li><strong>Write Strategies</strong>:
+<ul>
+<li><strong>Write-Through</strong>: Update cache and database simultaneously (great for consistency).</li>
+<li><strong>Write-Back</strong>: Update cache first, sync with the database later (risk of data loss but faster).</li>
+<li><strong>Write-Around</strong>: Bypass cache and update the database directly (cache updates via TTL).</li>
 </ul>
 </li>
-<li>A good software is a software that is
+</ul>
+<p><img src="/assets/images/Distributed-System/Caching-Write-Strategies.png" alt="Caching Write Strategies"></p>
+<h3 id="challenge-2-limited-cache-size"><strong>Challenge 2: Limited Cache Size</strong></h3>
+<p>Caches have finite space. When full, old data must be evicted.<br>
+<strong>Eviction Strategies</strong>: </p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>How It Works</th>
+<th>Example Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FIFO</strong></td>
+<td>Removes oldest entries</td>
+<td>Logging systems</td>
+</tr>
+<tr>
+<td><strong>LRU</strong></td>
+<td>Removes least recently used</td>
+<td>Social media feeds</td>
+</tr>
+<tr>
+<td><strong>MRU</strong></td>
+<td>Removes most recently used</td>
+<td>News apps</td>
+</tr>
+<tr>
+<td><strong>LIFO</strong></td>
+<td>Removes newest entries</td>
+<td>Undo/redo stacks</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="real-world-examples"><strong>Real-World Examples</strong></h2>
+<ol>
+<li><strong>CDN in Action</strong>: When you watch a YouTube video, it’s fetched from a server near you, not from YouTube’s main data center.</li>
+<li><strong>Redis for Sessions</strong>: Twitter uses Redis to store user sessions, enabling quick logins across devices.</li>
+</ol>
+<hr>
+<h2 id="interview-tips"><strong>Interview Tips</strong></h2>
+<ol>
+<li><strong>Memorize the Levels</strong>: Browser → CDN → Local → Global.</li>
+<li><strong>Compare Write Strategies</strong>: Use analogies like “write-through is like taking notes in pen; write-back is like using a pencil.”</li>
+<li><strong>Discuss Trade-offs</strong>: For example, LRU vs. MRU depends on the data access pattern.</li>
+</ol>
+<hr>
+<h2 id="diagram-how-caching-fits-into-a-system"><strong>Diagram: How Caching Fits Into a System</strong></h2>
+<p><img src="/assets/images/Distributed-System/Caching-Level.png" alt="Caching Level"></p>
+<hr>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>Caching is a must-know for optimizing performance in scalable systems. By mastering levels, challenges, and strategies like TTL and LRU, you’ll stand out in interviews. Practice explaining these concepts with real-world examples, and you’ll be interview-ready!</p>
+<p><strong>Need a quick recap?</strong></p>
 <ul>
-<li>easy to maintain</li>
-<li>easy to scale.</li>
-<li>easy to extend</li>
+<li><strong>Levels</strong>: Browser, CDN, Local, Global.</li>
+<li><strong>Challenges</strong>: Staleness (solve with TTL), Size (solve with eviction).</li>
+<li><strong>Write Strategies</strong>: Through, Back, Around.</li>
 </ul>
-</li>
-</ul>
-<h5 id="maintainability">Maintainability:</h5>
-<ul>
-<li>is a long-term aspect that describes how easily software can evolve and change, which is especially important in todayʼs agile environment.</li>
-<li>ISO 25010 states that a highly maintainable software system must possess the following qualities:
-<ul>
-<li><strong>Modularity</strong> - The product is composed of discrete components such that a change to one component has minimal impact on other components.</li>
-<li><strong>Reusability</strong> - The product makes use of assets that can be re-used in building other assets or in other systems.</li>
-<li><strong>Analyzability</strong> - The impact of an intended change on the product, diagnosis of deficiencies, causes of failures or identification of the components that need to be changed can be analyzed effectively and efficiently.</li>
-<li><strong>Modifiability</strong> - The product can be effectively and efficiently modified without introducing defects or degrading existing product quality.</li>
-<li><strong>Testability</strong> - The test criteria can be established effectively and efficiently, and the product can be tested to determine whether those criteria have been met.</li>
-</ul>
-</li>
-</ul>
-<h5 id="scalability">Scalability:</h5>
-<ul>
-<li>is an attribute of a tool or a system to increase its capacity and functionalities based on its usersʼ demand.</li>
-<li>Scalable software can remain stable while adapting to changes, upgrades, overhauls, and resource reduction.</li>
-</ul>
-<h5 id="extensibility">Extensibility:</h5>
-<ul>
-<li>is a measure of the ability to extend a system and the level of effort required to implement the extension.</li>
-<li>can be through the addition of new functionality or through modification of existing functionality.</li>
-<li>The principle provides for enhancements without impairing existing system functions</li>
-</ul>
-<blockquote>
-<p>These are my notes from the Low-Level Design (LLD) course I took at Scaler.</p>
-</blockquote>
 
   
   
@@ -161,7 +211,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      <a href="https://programmercave.com/tags/Distributed-Systems/">Distributed-Systems</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
     </div>
   
 

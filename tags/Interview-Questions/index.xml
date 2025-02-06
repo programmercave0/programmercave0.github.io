@@ -6,7 +6,17 @@
     <description>Recent content in Interview-Questions on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Explain Caching</title>
+      <link>https://programmercave.com/Interview-Question-Explain-Caching/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Explain-Caching/</guid>
+      <description>Caching: The Secret Sauce for High-Performance Systems If you’re preparing for a software engineering interview, understanding caching is non-negotiable. Caching is a cornerstone of system design, optimizing performance by storing frequently accessed data in fast-access layers. Let’s break it down in simple terms.
+ What is Caching? Caching stores copies of data in temporary, high-speed storage (like RAM) to reduce access times. Think of it like keeping your favorite snacks on your desk instead of walking to the kitchen every time you’re hungry—faster access, less effort.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Explain Consistent Hashing</title>
       <link>https://programmercave.com/Interview-Question-Explain-Consistent-Hashing/</link>
