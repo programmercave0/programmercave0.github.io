@@ -6,7 +6,19 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: How Microservices Communicate?</title>
+      <link>https://programmercave.com/Interview-Question-How-Microservices-Communicate/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-How-Microservices-Communicate/</guid>
+      <description>Introduction to Microservices Communication Microservices architecture involves breaking down a large application into smaller, independent services that communicate with each other to achieve overall functionality. The way these services communicate is crucial for the system&amp;rsquo;s performance, scalability, and resilience.
+Communication Patterns Between Microservices There are two main types of communication between microservices:
+ Synchronous Communication Asynchronous Communication  Let’s explore both in detail.
+Synchronous Communication In synchronous communication, one service sends a request to another service and waits for a response before proceeding.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Explain Caching</title>
       <link>https://programmercave.com/Interview-Question-Explain-Caching/</link>
