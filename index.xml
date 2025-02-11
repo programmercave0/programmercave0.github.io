@@ -6,7 +6,28 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What are Goroutines?</title>
+      <link>https://programmercave.com/Interview-Question-What-are-Goroutines/</link>
+      <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-are-Goroutines/</guid>
+      <description>Concurrency is a cornerstone of modern software engineering, and Go (Golang) makes it accessible with Goroutines. If you’re preparing for a software engineering interview, understanding Goroutines is crucial. This guide breaks down Goroutines in simple terms, complete with examples and diagrams.
+What Are Goroutines? A Goroutine is a lightweight execution thread managed by the Go runtime. Think of it as a function that runs independently and concurrently with other Goroutines.</description>
+    </item>
+    
+    <item>
+      <title>Goroutine Scheduling: Preemptive or Nonpreemptive?</title>
+      <link>https://programmercave.com/Goroutine-Scheduling-Preemptive-or-Nonpreemptive/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Goroutine-Scheduling-Preemptive-or-Nonpreemptive/</guid>
+      <description>Understanding whether Goroutines are preemptively or nonpreemptively scheduled is critical for writing efficient concurrent code. Let’s break down how Go’s runtime manages Goroutines and why this hybrid model is unique.
+Preemptive vs. Nonpreemptive Scheduling   Preemptive Scheduling:
+ The scheduler can forcefully pause a running task (e.g., an OS thread) at any time to allow other tasks to run. Common in OS-level thread scheduling. Example: A thread running a loop can be interrupted mid-execution.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What is an API Gateway?</title>
       <link>https://programmercave.com/Interview-Question-What-is-an-API-Gateway/</link>
