@@ -6,7 +6,17 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What are difference between Goroutines and Threads?</title>
+      <link>https://programmercave.com/Interview-Question-What-are-difference-between-Goroutines-and-Threads/</link>
+      <pubDate>Wed, 12 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-are-difference-between-Goroutines-and-Threads/</guid>
+      <description>If you&amp;rsquo;re preparing for a software engineering interview, it&amp;rsquo;s important to understand the difference between goroutines and threads. These two concepts are related to concurrency, which is the ability of a program to execute multiple tasks simultaneously. In this blog, we&amp;rsquo;ll break down the key differences between goroutines and threads in a simple and efficient way.
+Key Takeaways  Goroutines are managed by the Go runtime, while threads are managed by the operating system.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What are Goroutines?</title>
       <link>https://programmercave.com/Interview-Question-What-are-Goroutines/</link>
