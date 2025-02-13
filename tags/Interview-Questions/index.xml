@@ -6,7 +6,16 @@
     <description>Recent content in Interview-Questions on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Can You Explain the Lifecycle and Scheduling of a Goroutine?</title>
+      <link>https://programmercave.com/Interview-Question-Can-You-Explain-the-Lifecycle-and-Scheduling-of-a-Goroutine/</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Can-You-Explain-the-Lifecycle-and-Scheduling-of-a-Goroutine/</guid>
+      <description>Key Takeaways  Go Scheduler Components: G (Goroutine), M (Machine), P (Processor) M:N Scheduler: Maps M goroutines to N OS threads, using GOMAXPROCS threads simultaneously. Queues in Scheduler: Global Queue (checked occasionally) and Local Run Queues (per P). Work Stealing: P with an empty queue steals tasks from another P. Goroutine Lifecycle: Creation, Execution, Blocking, Unblocking, Termination. Scheduling Algorithm: Checks Local Queue → Global Queue → Work Stealing → Executes goroutine.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What are the differences between Goroutines and Threads?</title>
       <link>https://programmercave.com/Interview-Question-What-are-difference-between-Goroutines-and-Threads/</link>
