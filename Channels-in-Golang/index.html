@@ -104,6 +104,7 @@
 <li>Use Cases: Channels are used for synchronization, data transfer, pipeline creation, concurrency control, cancellation signals, and multiplexing.</li>
 </ul>
 <p><img src="/assets/images/Golang/Channels-in-Golang.png" alt="What are Channels in Golang?"></p>
+<p><a href="/Interview-Question-What-are-Goroutines/">What are Goroutines?</a></p>
 <h2 id="what-are-channels"><strong>What Are Channels?</strong></h2>
 <p>A <strong>channel</strong> is a conduit through which goroutines can send and receive values. It ensures safe communication between goroutines without the need for locks or other synchronization mechanisms.</p>
 <ul>
@@ -292,7 +293,8 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
 <span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch2:
     fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received:&#34;</span>, msg)
 }
-</code></pre></div><h2 id="memory-internals-of-channels"><strong>Memory Internals of Channels</strong></h2>
+</code></pre></div><p><a href="/Understanding-the-select-Statement-in-Go/">Understanding the select Statement in Go</a></p>
+<h2 id="memory-internals-of-channels"><strong>Memory Internals of Channels</strong></h2>
 <ul>
 <li>
 <p><strong>Reference Type</strong>: Channels are reference types, meaning that when a channel is passed to a function or assigned to another variable, both references point to the same underlying data structure. The zero value of a channel is <code>nil</code>.</p>
