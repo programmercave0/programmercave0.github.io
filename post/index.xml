@@ -6,7 +6,16 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: How Garbage Collection in Go works?</title>
+      <link>https://programmercave.com/Interview-Question-How-Garbage-Collection-in-Go-works/</link>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-How-Garbage-Collection-in-Go-works/</guid>
+      <description>Key Takeaways  Concurrent Execution: Go’s garbage collector runs in the background, minimizing pauses. Tri-Color Marking: Uses white, grey, and black labels to identify unused memory efficiently. Low Latency: Short pauses make Go ideal for real-time applications like servers. Write Barriers: Prevent accidental deletion of active objects during garbage collection. Interview-Ready: Understanding these concepts helps you answer memory management questions confidently.  What is Garbage Collection? Garbage collection (GC) is an automatic process that frees up memory used by programs.</description>
+    </item>
+    
     <item>
       <title>Memory Management in Golang</title>
       <link>https://programmercave.com/Memory-Management-in-Golang/</link>
