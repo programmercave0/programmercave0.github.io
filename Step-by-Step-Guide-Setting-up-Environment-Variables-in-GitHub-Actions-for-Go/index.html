@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -117,7 +117,7 @@
 <p>Repeat the process for any other sensitive information you need to store, like passwords or access tokens.</p>
 <h2 id="creating-the-go-program">Creating the Go Program:</h2>
 <p>For this example, let&rsquo;s assume we have a simple Go program that requires two sensitive environment variables, <code>API_KEY</code> and <code>DB_PASSWORD</code>. Create a new file named <code>main.go</code> in the root of your repository with the following content:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 
 <span style="color:#008000;font-weight:bold">import</span> (
 	<span style="color:#ba2121">&#34;fmt&#34;</span>
@@ -139,7 +139,7 @@
 <li>Inside the <code>.github</code> directory, create another directory named <code>workflows</code>.</li>
 <li>Create a new file named <code>main.yml</code> inside the <code>workflows</code> directory with the following content:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Execute Go Program<span style="color:#bbb">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#008000;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Execute Go Program<span style="color:#bbb">
 </span><span style="color:#bbb">
 </span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">on</span>:<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">push</span>:<span style="color:#bbb">

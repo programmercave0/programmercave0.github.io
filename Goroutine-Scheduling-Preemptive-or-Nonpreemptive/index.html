@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -126,7 +126,7 @@
 <li>Sleep (<code>time.Sleep</code>).</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
     <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {  
         fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Goroutine 1&#34;</span>)  
         time.<span style="color:#00f">Sleep</span>(<span style="color:#666">100</span> <span style="color:#666">*</span> time.Millisecond) <span style="color:#408080;font-style:italic">// Yield point  
@@ -142,7 +142,7 @@
 <li>This allows the scheduler to fairly allocate CPU time across all Goroutines.</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
     <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {  
         <span style="color:#008000;font-weight:bold">for</span> {  
             <span style="color:#408080;font-style:italic">// CPU-bound loop (no blocking calls)  

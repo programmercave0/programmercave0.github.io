@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -111,24 +111,24 @@
 <ol>
 <li>
 <p>First we need to add the <em>Universe</em> repository because some packages are not available in main repository.</p>
-<pre tabindex="0"><code>sudo add-apt-repository universe
+<pre><code>sudo add-apt-repository universe
 sudo apt-get update
 </code></pre></li>
 <li>
 <p>Now we will install build-essential and some additional packages.<!-- raw HTML omitted -->
 <strong>For versions prior to 18.4</strong></p>
-<pre tabindex="0"><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 \
+<pre><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 \
 guile-1.8-dev libsdl1.2debian libart-2.0-dev libaudiofile-dev \
 libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev \
 libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev \
 libslang2-dev libasound2 libasound2-dev build-essential
 </code></pre><p><strong>For 18.04</strong> we need to add repositories of <code>xenial</code> in <code>sources.list</code>.</p>
-<pre tabindex="0"><code>sudo nano /etc/apt/sources.list
+<pre><code>sudo nano /etc/apt/sources.list
 </code></pre><p>Now add these lines</p>
-<pre tabindex="0"><code>deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
+<pre><code>deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 </code></pre><p>Run <code>sudo apt-get update</code> and then install packages using</p>
-<pre tabindex="0"><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-2.0 \
+<pre><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-2.0 \
 guile-2.0-dev libsdl1.2debian libart-2.0-dev libaudiofile-dev \
 libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev \
 libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev \
@@ -140,7 +140,7 @@ libslang2-dev libasound2 libasound2-dev
 </li>
 <li>
 <p>Go to the extracted folder and run following commands.</p>
-<pre tabindex="0"><code>./configure
+<pre><code>./configure
 make
 sudo make install
 sudo cp /usr/local/lib/libgraph.* /usr/lib

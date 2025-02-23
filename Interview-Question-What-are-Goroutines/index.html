@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -102,7 +102,7 @@
 <ul>
 <li><strong>Lightweight</strong>: Goroutines use minimal memory (as low as 2KB) compared to OS threads (1-2MB).</li>
 <li><strong>Simple Syntax</strong>: Prefix a function with <code>go</code> to run it concurrently:
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">myFunction</span>() <span style="color:#408080;font-style:italic">// Runs myFunction in a new Goroutine
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">myFunction</span>() <span style="color:#408080;font-style:italic">// Runs myFunction in a new Goroutine
 </span></code></pre></div></li>
 <li><strong>Managed by Go Runtime</strong>: The runtime handles scheduling, suspension, and resumption automatically.</li>
 </ul>
@@ -149,14 +149,14 @@
 <li><strong>Join</strong>: Wait for child Goroutines to finish.</li>
 </ul>
 <p>Example without a Join Point:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
     <span style="color:#008000;font-weight:bold">go</span> fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Hello&#34;</span>) <span style="color:#408080;font-style:italic">// Fork  
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Main Goroutine exits before &#34;Hello&#34; prints  
 </span><span style="color:#408080;font-style:italic"></span>}  
 </code></pre></div><p>Here, <code>&quot;Hello&quot;</code> might never print because the main Goroutine exits too quickly.</p>
 <h2 id="fixing-race-conditions-with-syncwaitgroup">Fixing Race Conditions with sync.WaitGroup</h2>
 <p>Use <code>sync.WaitGroup</code> to create a <strong>join point</strong> and ensure Goroutines complete:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> wg sync.WaitGroup  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> wg sync.WaitGroup  
 
 <span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
     wg.<span style="color:#00f">Add</span>(<span style="color:#666">1</span>) <span style="color:#408080;font-style:italic">// Add 1 Goroutine to wait for  

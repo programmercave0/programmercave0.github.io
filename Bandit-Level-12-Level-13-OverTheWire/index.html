@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -116,19 +116,19 @@
 <p>As mentioned in question make a new directory in /tmp and rename the file.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1213_terminal1.jpg" alt="Bandit Level 12 13"></p>
 <p><code>xxd</code> program is used to make a hexdump or to do the reverse. Option <code>-r</code> convert hexdump into the binary. File <code>myfile.txt</code> is a hexdump and convert it into a binary file <code>myfile1.bin</code> using command</p>
-<pre tabindex="0"><code>xxd -r myfile.txt &gt; myfile1.bin
+<pre><code>xxd -r myfile.txt &gt; myfile1.bin
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l1213_terminal2.jpg" alt="Bandit Level 12 13"></p>
 <p>Using command <code>file myfile1.bin</code> , we found that <code>myfile1.bin</code> is a <em>gzip compressed data</em>.</p>
 <p><code>zcat</code> is a program supplied with <code>gzip</code> and is used to decompress <em>gzip compressed files</em>.</p>
-<pre tabindex="0"><code>zcat myfile1.bin &gt; myfile2
+<pre><code>zcat myfile1.bin &gt; myfile2
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l1213_terminal3.jpg" alt="Bandit Level 12 13"></p>
 <p>Again using <code>file</code> command on <code>myfile2</code>, we found that it is <em>bzip2 compressed data</em>.</p>
 <p><code>bzcat</code> program is supplied with <code>bzip2</code> and is used to decompress <em>bzip2 compressed files</em>.</p>
-<pre tabindex="0"><code>bzcat myfile2 &gt; myfile3
+<pre><code>bzcat myfile2 &gt; myfile3
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l1213_terminal4.jpg" alt="Bandit Level 12 13"></p>
 <p><code>myfile3</code> is <em>gzip compressed file</em> so use <code>zcat</code> program to decompress it in <code>myfile4</code>. <code>myfile4</code> is a POSIX tar archive.</p>
 <p><code>tar</code> program is used for archiving file and options <code>x</code> is used to extract an archive, <code>f</code> is used to specify name of the tar archive and <code>v</code> is used for more detailed listing.</p>
-<pre tabindex="0"><code>tar -xvf myfile4
+<pre><code>tar -xvf myfile4
 </code></pre><p>This command outputs file <code>data5.bin</code> which is again a <em>tar archive</em>. Again use <code>tar</code> program on <code>data5.bin</code> which outputs <code>data6.bin</code>. <code>data6.bin</code> is a <em>bzip2 compressed file</em> and use <code>bzcat</code> program to decompress it to <code>myfile7</code>.</p>
 <p><code>myfile7</code> is a <em>tar archive</em> and use tar program which outputs <code>data8.bin</code>. <code>data8.bin</code> is a <em>gzip compressed file</em> and use <code>zcat</code> to decompress it to file <code>myfile9</code>.</p>
 <p><code>myfile9</code> contains <em>ASCII text</em> and <code>cat myfile9</code> tells the password for the next level.</p>

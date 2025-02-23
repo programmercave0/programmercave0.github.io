@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -113,7 +113,7 @@
 <p>The most basic algorithm to check if a number is a prime number or not is to iterate over all positive integers less than the number, and check if any of them divide the number evenly. If none of them divide the number evenly, then the number is a prime number.</p>
 <p><img src="/assets/images/Prime-Numbers/prime_number1.png" alt="Prime Numbers"></p>
 <p>Here&rsquo;s a simple implementation of this algorithm in C++:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
     <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
     <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) {
         <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
@@ -126,7 +126,7 @@
 <p><img src="/assets/images/Prime-Numbers/prime_number2.png" alt="Prime Numbers"></p>
 <p>Let&rsquo;s consider an example where n = 16. To check if 16 is a prime number, we start by finding the square root of n, which is 4. We then iterate over all numbers from 2 to 4 and check if they divide n evenly. When a = 2, then b = 8. If <code>n % a == 0 (16 % 2 == 0)</code>, this also means <code>n % b == 0 (16 % 8 == 0)</code>. If we traverse beyond the square root of n, the values of a and b will be interchanged, and we will end up calculating what we have already calculated. Therefore, we don&rsquo;t want i &gt; sqrt(n). If we find a divisor, then we know that n is not a prime number, and we can return false. If we reach the end of the loop without finding a divisor, then we know that n is a prime number, and we can return true.</p>
 <p>Here&rsquo;s the implementation of the optimized algorithm in C++:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
     <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
     <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; i<span style="color:#666">++</span>) {
         <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;

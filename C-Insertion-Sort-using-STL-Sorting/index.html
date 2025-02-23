@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -104,7 +104,7 @@
 <p>In fig. (d) the index of <em>key</em> is 4 and value is 1. Since 1 is the smallest element in the array so far, so it is shifted to index 0.</p>
 <!-- raw HTML omitted -->
 <p>Here is the <code>insertion_sort</code> and <code>insertion_sort_stl</code> function.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insertion_sort</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> vec)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insertion_sort</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> vec)
 {
     <span style="color:#008000;font-weight:bold">for</span>(std<span style="color:#666">::</span>size_t j <span style="color:#666">=</span> <span style="color:#666">1</span>; j <span style="color:#666">&lt;</span> vec.size(); j<span style="color:#666">++</span>)
     {
@@ -120,7 +120,7 @@
     }
 }
 </code></pre></div><p>We can also use functions from C++ Standard Template Library for insertion sort.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insertion_sort_stl</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> vec)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insertion_sort_stl</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> vec)
 {
 	<span style="color:#008000;font-weight:bold">for</span>(<span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> vec.begin(); it <span style="color:#666">!=</span> vec.end(); it<span style="color:#666">++</span>)
  	{
@@ -140,7 +140,7 @@
 <p>Here is the position of elements in the array after each iteration.</p>
 <p><img src="/assets/images/insertionsort1.png" alt="Insertion Sort"></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#b00040">void</span> <span style="color:#00f">insertion_sort</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> vec)

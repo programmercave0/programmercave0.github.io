@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -104,7 +104,7 @@
 <p>For example, consider a scenario where you collect data from multiple APIs concurrently and merge the results into one stream for processing.</p>
 <hr>
 <h4 id="code-fan-in-implementation"><strong>Code: Fan-In Implementation</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">producer</span>(id <span style="color:#b00040">int</span>) <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">producer</span>(id <span style="color:#b00040">int</span>) <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span> {
 	ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
 	<span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
 		<span style="color:#008000;font-weight:bold">defer</span> <span style="color:#008000">close</span>(ch)
@@ -167,7 +167,7 @@
 <li><strong>Consumer</strong>: Reads from the merged channel and processes the data.</li>
 </ol>
 <p><strong>Output Example</strong>:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Received: 10  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Received: 10  
 Received: 11  
 Received: 12  
 Received: 20  
@@ -186,7 +186,7 @@ Received: 22
 <p>Imagine a scenario where a web scraper fetches URLs from a task queue and distributes them to multiple workers for scraping.</p>
 <hr>
 <h4 id="code-fan-out-implementation"><strong>Code: Fan-Out Implementation</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">source</span>(taskQueue <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>, numTasks <span style="color:#b00040">int</span>) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">source</span>(taskQueue <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>, numTasks <span style="color:#b00040">int</span>) {
 	<span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;=</span> numTasks; i<span style="color:#666">++</span> {
 		taskQueue <span style="color:#666">&lt;-</span> i <span style="color:#408080;font-style:italic">// Add tasks to the queue
 </span><span style="color:#408080;font-style:italic"></span>	}
@@ -244,7 +244,7 @@ Received: 22
 <li><strong>Concurrency</strong>: <code>sync.WaitGroup</code> ensures that all workers finish before results processing starts.</li>
 </ol>
 <p><strong>Output Example</strong>:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Worker 1 processing task 1  
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Worker 1 processing task 1  
 Worker 2 processing task 2  
 Worker 3 processing task 3  
 Result: 2  

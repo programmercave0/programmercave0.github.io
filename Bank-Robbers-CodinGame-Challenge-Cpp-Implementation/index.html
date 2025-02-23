@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -119,12 +119,12 @@
 <!-- raw HTML omitted -->
 <p>The good things is that the robber will continue to try untried combinations ever after he has found the correct combination. So we have to find the total number of combinations for each vault.</p>
 <p>For each vault, first <code>N</code> characters are digits from <em>0</em> to <em>9</em> and remaining <code>C-N</code> characters are vowels.</p>
-<p>For eg. C = 5 and N = 2 i.e. <strong>_ _ _ _ _</strong></p>
+<p>For eg. C = 5 and N = 2 i.e. **_ _ _ _ _**</p>
 <p>To fill first slot there are 10 ways, to fill second ways there are 10 and to fill third slot there are 10 ways. To fill fourth slot there are 5 ways and to fill fifth slot there are 5 ways.
 Thus total number of combinations = 10 * 10 * 10 * 5 * 5 = 10<!-- raw HTML omitted -->3<!-- raw HTML omitted --> * 5<!-- raw HTML omitted -->2<!-- raw HTML omitted --></p>
 <p>The formula to find the number of combinations for a vault is <code>10^N * 5^(C-N)</code>.</p>
 <p>While we enter <code>C</code> and <code>N</code> for each vault, we calculate the number of combinations for each vault and store them in an array <code>vault_time</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> vault_time(V, <span style="color:#666">0</span>);
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> vault_time(V, <span style="color:#666">0</span>);
     
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> V; <span style="color:#666">++</span>i) 
 {
@@ -137,7 +137,7 @@ Thus total number of combinations = 10 * 10 * 10 * 5 * 5 = 10<!-- raw HTML omitt
 <p><img src="/assets/images/2020-04-26-Bank-Robbers-CodinGame/CodinGame_Bank_Robbers.jpg" alt="Bank Robbers CodinGame"></p>
 <p>In the above fig. it is time taken by each vault.</p>
 <p>It is given than robbers deal with each vault in increasing order of index number. Initially all robbers are idle. So all robbers choose each vault in the increasing order of index number. For eg. if there are 3 robbers and 8 vaults then robbers choose first 3 vaults.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> robber_time(num_of_robbers, <span style="color:#666">0</span>); 
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> robber_time(num_of_robbers, <span style="color:#666">0</span>); 
 
 <span style="color:#b00040">int</span> vaults_opened <span style="color:#666">=</span> <span style="color:#666">0</span>;
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_of_robbers; <span style="color:#666">++</span>i)
@@ -147,7 +147,7 @@ Thus total number of combinations = 10 * 10 * 10 * 5 * 5 = 10<!-- raw HTML omitt
 }
 </code></pre></div><p>Now, <code>robber_time</code> stores the time each robber has spent. To proceed further, we will choose the robber who has spent less time. Robber who has spent less time means he has recently opened a vault and currently he is idle while other robbers are busy. For eg. in the above fig. at time = 300 R1 is idle while others are busy.</p>
 <p>So now everytime we will choose a robber with smallest spent time and assign him to the next vault until all vaults are opened.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (vaults_opened <span style="color:#666">&lt;</span> vault_time.size())
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (vaults_opened <span style="color:#666">&lt;</span> vault_time.size())
 {
     std<span style="color:#666">::</span>sort(robber_time.begin(), robber_time.end());
 
@@ -155,11 +155,11 @@ Thus total number of combinations = 10 * 10 * 10 * 5 * 5 = 10<!-- raw HTML omitt
     vaults_opened<span style="color:#666">++</span>;
 }
 </code></pre></div><p>To find the total time spent we have to find the robber who was last to open the vault means whose sum of total time spent to largest compared to other robbers.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">auto</span> total_time <span style="color:#666">=</span> std<span style="color:#666">::</span>max_element(robber_time.begin(), robber_time.end());
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">auto</span> total_time <span style="color:#666">=</span> std<span style="color:#666">::</span>max_element(robber_time.begin(), robber_time.end());
 </code></pre></div><p>Here <code>total_time</code> is an iterator.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;cmath&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">

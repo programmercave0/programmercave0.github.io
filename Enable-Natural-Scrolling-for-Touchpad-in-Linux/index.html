@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -133,7 +133,7 @@
 <p>After copying the file and making your changes, you may need to restart your system or your X server for the changes to take effect. You can do this by using the <code>systemctl</code> command:</p>
 <p><code>sudo systemctl restart display-manager</code></p>
 <p>To enable natural scrolling for your touchpad on OpenSuse Tumbleweed, you can add the following options to the <code>70-synaptics.conf</code> file located in the <code>/usr/share/X11/xorg.conf.d/</code> directory:</p>
-<pre tabindex="0"><code>Option &quot;VertScrollDelta&quot; &quot;-27&quot;
+<pre><code>Option &quot;VertScrollDelta&quot; &quot;-27&quot;
 Option &quot;HorizScrollDelta&quot; &quot;-27&quot;
 </code></pre><p>These options should be added under the <code>Identifier &quot;touchpad catchall&quot;</code> section of the file. The <code>VertScrollDelta</code> option controls the vertical scrolling behavior of your touchpad, while the <code>HorizScrollDelta</code> option controls the horizontal scrolling behavior. Setting these options to a negative value will cause your touchpad to scroll in the opposite direction of your finger movement, which is how natural scrolling works.</p>
 <p>To make these changes permanent, you will need to copy the <code>70-synaptics.conf</code> file to the <code>/etc/X11/xorg.conf.d/</code> directory, as described above. After copying the file and making your changes, you may need to restart your system or your X server for the changes to take effect. You can do this by using the <code>systemctl</code> command:</p>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -118,13 +118,13 @@
 <p>Ensure it has appropriate permissions by running this command:</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#666">600</span> path/to/downloaded/ssh-key
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod <span style="color:#666">600</span> path/to/downloaded/ssh-key
 </code></pre></div></li>
 <li>
 <p><strong>Connect to Your Instance</strong></p>
 <ul>
 <li>Open a terminal and connect to your Oracle instance using the SSH key saved from the setup:
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i path/to/downloaded/ssh-key ubuntu@your-instance-ip
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -i path/to/downloaded/ssh-key ubuntu@your-instance-ip
 </code></pre></div></li>
 <li>You can get <code>username</code> and <code>instance-ip</code> from the Oracle Cloud Console.
 <img src="/assets/images/Python-Telegram-Bot-Oracle/ip-instance.png" alt="ip-instance"></li>
@@ -133,25 +133,25 @@
 </ol>
 <h2 id="step-2-install-required-tools">Step 2: Install Required Tools</h2>
 <p>Once connected to your instance, update your package manager and install essential tools like Python, Git, and Nano.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt update
 sudo apt install python3-pip git nano -y
 </code></pre></div><h2 id="step-3-clone-your-bots-repository">Step 3: Clone Your Bot&rsquo;s Repository</h2>
 <p>Next, clone the GitHub repository where the bot’s code is stored and navigate into the project directory:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;repo-url&gt;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone &lt;repo-url&gt;
 <span style="color:#008000">cd</span> atmanam_viddhi_bot
 </code></pre></div><h2 id="step-4-install-dependencies">Step 4: Install Dependencies</h2>
 <p>The bot’s dependencies are managed in a <code>requirements.txt</code> file. Use pip to install them:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip3 install -r requirements.txt
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip3 install -r requirements.txt
 </code></pre></div><h2 id="step-5-add-your-bot-token">Step 5: Add Your Bot Token</h2>
 <p>Edit the <code>.env</code> file to securely store your bot token, which Telegram provides when you create your bot.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano .env
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nano .env
 </code></pre></div><p>In this file, add the following line with your bot’s unique token:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">BOT_TOKEN=your-bot-token-here
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">BOT_TOKEN=your-bot-token-here
 </code></pre></div><h2 id="step-6-configure-systemd-for-bot-service">Step 6: Configure Systemd for Bot Service</h2>
 <p>To ensure the bot runs continuously and restarts automatically if it crashes, create a Systemd service. This setup also allows you to start, stop, and monitor the bot as a service.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano /etc/systemd/system/atmanam-viddhi-bot.service
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano /etc/systemd/system/atmanam-viddhi-bot.service
 </code></pre></div><p>In this file, add the following configuration:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#008000;font-weight:bold">[Unit]</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#008000;font-weight:bold">[Unit]</span>
 <span style="color:#7d9029">Description</span><span style="color:#666">=</span><span style="color:#ba2121">Atmanam Viddhi Telegram Bot</span>
 <span style="color:#7d9029">After</span><span style="color:#666">=</span><span style="color:#ba2121">network.target</span>
 
@@ -168,7 +168,7 @@ sudo apt install python3-pip git nano -y
 <span style="color:#7d9029">WantedBy</span><span style="color:#666">=</span><span style="color:#ba2121">multi-user.target</span>
 </code></pre></div><h2 id="step-7-enable-and-start-the-bot-service">Step 7: Enable and Start the Bot Service</h2>
 <p>To apply the Systemd changes, reload the daemon, enable the service, and start it:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl daemon-reload
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl daemon-reload
 sudo systemctl <span style="color:#008000">enable</span> atmanam-viddhi-bot
 sudo systemctl start atmanam-viddhi-bot
 </code></pre></div><h2 id="key-features-of-the-bot">Key Features of the Bot</h2>

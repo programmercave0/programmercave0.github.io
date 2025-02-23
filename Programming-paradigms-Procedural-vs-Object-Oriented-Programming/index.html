@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -124,7 +124,7 @@
 </li>
 </ul>
 <h4 id="python-procedural-code">Python Procedural Code</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(source: <span style="color:#008000">int</span>, destination: <span style="color:#008000">int</span>, amount: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(source: <span style="color:#008000">int</span>, destination: <span style="color:#008000">int</span>, amount: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> None:
     source_account <span style="color:#666">=</span> get_account(source)
     update_account(source_account, <span style="color:#666">-</span>amount)
     destination_account <span style="color:#666">=</span> get_account(destination)
@@ -133,7 +133,7 @@
 <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_account</span>(number: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000">dict</span>:
     <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">list</span>(<span style="color:#008000">filter</span>(<span style="color:#008000;font-weight:bold">lambda</span> account: account[<span style="color:#ba2121">&#39;number&#39;</span>] <span style="color:#666">==</span> number,accounts))[<span style="color:#666">0</span>]
 
-<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">update_account</span>(account: <span style="color:#008000">int</span>, delta: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">update_account</span>(account: <span style="color:#008000">int</span>, delta: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> None:
     account[<span style="color:#ba2121">&#39;balance&#39;</span>] <span style="color:#666">+=</span> delta
 </code></pre></div><h3 id="object-oriented-programming">Object Oriented Programming</h3>
 <ul>
@@ -172,7 +172,7 @@
 <li>is an instance of a class.</li>
 </ul>
 <h4 id="java-oop-code">Java OOP Code</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">private</span> Integer number<span style="color:#666">;</span>
     <span style="color:#008000;font-weight:bold">private</span> Integer balance<span style="color:#666">;</span>
     
@@ -195,7 +195,7 @@
     <span style="color:#666">}</span>
 <span style="color:#666">}</span>
 </code></pre></div><h4 id="python-oop-code">Python OOP Code</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span>:
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span>:
 	<span style="color:#008000;font-weight:bold">def</span> __init__(self, balance, number):
 		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number
 		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
@@ -222,7 +222,7 @@
 		self<span style="color:#666">.</span>withdraw(amount)
 		destination<span style="color:#666">.</span>deposit(amount)
 </code></pre></div><h4 id="golang-code">Golang Code</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> BankAccount <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> BankAccount <span style="color:#008000;font-weight:bold">struct</span> {
 	AccountNumber <span style="color:#b00040">int64</span>
 	Name          <span style="color:#b00040">string</span>
 	Balance       <span style="color:#b00040">float64</span>

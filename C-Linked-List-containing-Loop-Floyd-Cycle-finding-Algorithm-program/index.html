@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -105,7 +105,7 @@
   <p>Given a Linked List, we have to find does loop exist in Linked List and if yes, find the length of loop.</p>
 <p><img src="/assets/images/linkedlistwithloop.png" alt="Floyd Cycle Finding Algorithm"></p>
 <p>To find loop in the linked list, we need two node pointers <code>slowPtr</code> and <code>fastPtr</code> which starts from the head. <code>slowPtr</code> increments by one node while <code>fastPtr</code> increments by two nodes. If these pointers point at the same node after starting from head then loop exists. This algorithm is known as <em>Floyd Cycle Finding Algorithm</em>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node<span style="color:#666">*</span> <span style="color:#00f">doesLoopExist</span>()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node<span style="color:#666">*</span> <span style="color:#00f">doesLoopExist</span>()
 {
     Node <span style="color:#666">*</span>slowPtr <span style="color:#666">=</span> head;
     Node <span style="color:#666">*</span>fastPtr <span style="color:#666">=</span> head;
@@ -124,7 +124,7 @@
 }
 </code></pre></div><p>If loop exists then this function returns node which is pointed by <code>slowPtr</code> and <code>fastPtr</code> and if node doesn’t exist then it returns <code>nullptr</code>.</p>
 <p>To calculate length of loop, <code>fastPtr</code> start from its current node and count number of nodes until <code>slowPtr</code> is equal to <code>fastPtr</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">lengthOfLoop</span>()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">lengthOfLoop</span>()
 {
     <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">0</span>;
     <span style="color:#b00040">bool</span> loopExist <span style="color:#666">=</span> <span style="color:#008000">false</span>;
@@ -155,7 +155,7 @@
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>

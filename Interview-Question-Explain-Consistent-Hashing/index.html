@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -101,7 +101,7 @@
 <h2 id="how-consistent-hashing-works-a-step-by-step-guide">How Consistent Hashing Works: A Step-by-Step Guide</h2>
 <h3 id="1-the-hash-ring-a-circular-timeline">1. The Hash Ring: A Circular Timeline</h3>
 <p>Think of a <strong>hash ring</strong> as a clock face. Both data objects (e.g., user profiles, videos) and nodes (servers) are hashed and placed on this ring.</p>
-<pre tabindex="0"><code>Example Hash Ring:
+<pre><code>Example Hash Ring:
 Node A (Position 10) → Data X (Position 15) → Node B (Position 20)  
 </code></pre><ul>
 <li><strong>Hash Function</strong>: Converts node IDs (e.g., IP addresses) and data keys (e.g., &ldquo;user_123&rdquo;) into positions on the ring (e.g., MD5, SHA-256).</li>
@@ -113,12 +113,12 @@ Node A (Position 10) → Data X (Position 15) → Node B (Position 20)
 <li><strong>Removing a Node</strong>: Its data moves to the next node clockwise.</li>
 </ul>
 <p><strong>Diagram</strong>:</p>
-<pre tabindex="0"><code>Before: [Node A] → (Data 1, Data 2) → [Node B]  
+<pre><code>Before: [Node A] → (Data 1, Data 2) → [Node B]  
 After adding Node C between A and B:  
 [Node A] → (Data 1) → [Node C] → (Data 2) → [Node B]  
 </code></pre><h3 id="3-virtual-nodes-balancing-the-load">3. Virtual Nodes: Balancing the Load</h3>
 <p>To prevent one node from becoming a <strong>hotspot</strong> (handling too much data), each physical node is assigned multiple <strong>virtual nodes</strong> on the ring.</p>
-<pre tabindex="0"><code>Physical Node A → Virtual Nodes (A1, A2, A3)  
+<pre><code>Physical Node A → Virtual Nodes (A1, A2, A3)  
 Physical Node B → Virtual Nodes (B1, B2, B3)  
 </code></pre><p>This spreads data evenly, even if some nodes are more powerful than others.</p>
 <hr>

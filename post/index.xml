@@ -6,7 +6,16 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What is the difference between new() and make() in Golang?</title>
+      <link>https://programmercave.com/Interview-Question-What-is-the-difference-between-new-and-make-in-Golang/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-is-the-difference-between-new-and-make-in-Golang/</guid>
+      <description>Key Takeaways  new() allocates memory and returns a pointer to zeroed memory (e.g., *int, *struct). make() initializes slices, maps, or channels and returns a ready-to-use value (not a pointer). Use new() for basic types (int, bool) or structs when you need a pointer. Use make() for slices, maps, or channels to avoid runtime errors like nil pointers. Both functions handle memory automatically—no manual cleanup is required.  Why Understanding new() and make() Matters in Go In Go, memory management is handled differently compared to languages like C or Java.</description>
+    </item>
+    
     <item>
       <title>Interview Question: How Garbage Collection in Go works?</title>
       <link>https://programmercave.com/Interview-Question-How-Garbage-Collection-in-Go-works/</link>

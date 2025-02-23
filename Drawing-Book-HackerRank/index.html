@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -116,7 +116,7 @@
 <p>Except first (and last page if number of pages in the book is even), a reader always sees two pages where page number on left page is even and page number on right page is odd. So number of flips from the front page to any pages <em>p</em> and <em>p+1</em> is equal. Thus if <em>p</em> is even then increment <em>p</em> by 1 and calculate number of minimum number of flips to <em>p</em> from front or back of the book.</p>
 <p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook1.jpg" alt="Drawing Book Hackerrank"></p>
 <p>Here for <code>p = 2</code> and <code>p = 3</code>, number of flips from front page is <code>1</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (p <span style="color:#666">%</span> <span style="color:#666">2</span> <span style="color:#666">==</span> <span style="color:#666">0</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (p <span style="color:#666">%</span> <span style="color:#666">2</span> <span style="color:#666">==</span> <span style="color:#666">0</span>)
 {
     p <span style="color:#666">=</span> p <span style="color:#666">+</span> <span style="color:#666">1</span>;
 }
@@ -124,7 +124,7 @@
 <!-- raw HTML omitted -->
 <p>An array <code>right_page_number</code> stores the page number on the right page which is an odd number (<em>p</em> is also an odd number after increment) and an integer variable <code>page_num</code> stores the current page number which is entered in the array.</p>
 <p>To enter page numbers on right pages, a <code>for</code> loop is used and it is iterated for <code>n/2</code>  times where <em>n</em> is number of pages in the book. For eg. for <em>n = 5</em>, loop will run for <em>2</em> times (i.e. 5/2 = 2 in integer variable).</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> page_num <span style="color:#666">=</span> <span style="color:#666">1</span>;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> page_num <span style="color:#666">=</span> <span style="color:#666">1</span>;
 std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> right_page_number;
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;=</span> n<span style="color:#666">/</span><span style="color:#666">2</span>; <span style="color:#666">++</span>i)
 {
@@ -136,15 +136,15 @@ std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><
 <p><img src="/assets/images/2019-12-11-Drawing-Book-HackerRank/HR_drawingbook3.jpg" alt="Drawing Book Hackerrank"></p>
 <p>The index of the array <code>right_page_number</code> tells the number of flips from the front page to the page number. For eg. number of flips from front to page number 4 (<em>p = 5</em>) is 2.</p>
 <p>The number of flips from the back of the book is <em>n/2 – index</em> of that page number in the array <code>right_page_number</code>. Here <em>n</em> is number of pages in the book. For eg. number of flips from the back to page number 2 (<em>p = 3</em>) is 2 – 1 = 1 (<em>n/2 – 1</em>).</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">auto</span> index <span style="color:#666">=</span> std<span style="color:#666">::</span>find(right_page_number.begin(), right_page_number.end(), p);
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">auto</span> index <span style="color:#666">=</span> std<span style="color:#666">::</span>find(right_page_number.begin(), right_page_number.end(), p);
 
 <span style="color:#b00040">int</span> num_of_flips_from_front <span style="color:#666">=</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
 <span style="color:#b00040">int</span> num_of_flips_from_back <span style="color:#666">=</span> (n<span style="color:#666">/</span><span style="color:#666">2</span>) <span style="">–</span> std<span style="color:#666">::</span>distance(right_page_number.begin(), index);
 </code></pre></div><p>The the minimum number of pages Brie must turn in order to arrive at page <em>p</em> is minimum of  <code>num_of_flips_from_front</code> and  <code>num_of_flips_from_back</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> min_flips <span style="color:#666">=</span> std<span style="color:#666">::</span>min(num_of_flips_from_front, num_of_flips_from_back);
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> min_flips <span style="color:#666">=</span> std<span style="color:#666">::</span>min(num_of_flips_from_front, num_of_flips_from_back);
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -117,7 +117,7 @@
 <li><strong>Composability</strong>: Channels are inherently more composable, making it easier to build complex concurrent workflows by connecting multiple channels.</li>
 </ul>
 <h3 id="example">Example</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">10</span>) <span style="color:#408080;font-style:italic">// Buffered channel
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">10</span>) <span style="color:#408080;font-style:italic">// Buffered channel
 </span><span style="color:#408080;font-style:italic">// Producer
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
     <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">10</span>; i<span style="color:#666">++</span> {
@@ -138,7 +138,7 @@
 <li><strong>Encapsulation</strong>: Mutexes encapsulate complexity, maintaining a simple interface for users of the struct.</li>
 </ul>
 <h3 id="example-1">Example</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Counter <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Counter <span style="color:#008000;font-weight:bold">struct</span> {
     mu    sync.Mutex
     value <span style="color:#b00040">int</span>
 }
@@ -163,7 +163,7 @@
 </ul>
 <p><a href="/Understanding-the-select-Statement-in-Go/">Understanding the select Statement in Go</a></p>
 <h3 id="example-2">Example</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
 ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
 
 <span style="color:#008000;font-weight:bold">select</span> {
@@ -183,7 +183,7 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
 <li><strong>Use <code>sync.Mutex</code> Sparingly</strong>: Use <code>sync.Mutex</code> in performance-critical sections only when necessary.</li>
 </ul>
 <h3 id="example-3">Example</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> counter <span style="color:#b00040">int</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> counter <span style="color:#b00040">int</span>
 <span style="color:#008000;font-weight:bold">var</span> mu sync.Mutex
 
 <span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">increment</span>() {

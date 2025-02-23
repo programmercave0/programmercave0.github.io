@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -120,7 +120,7 @@
 <p><strong>Example:</strong> For this demonstration, let&rsquo;s take <code>a = 48</code> and <code>b = 18</code>.</p>
 <h2 id="step-2-divide-and-find-remainder">Step 2: Divide and Find Remainder</h2>
 <p>With our chosen integers, we proceed to divide <code>a</code> by <code>b</code> and find the remainder, which we denote as <code>r</code>. The equation is as follows:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">a ÷ b = q with a remainder of r
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">a ÷ b = q with a remainder of r
 </code></pre></div><p>where <code>q</code> represents the quotient. The remainder <code>r</code> is what we will focus on in the subsequent steps.</p>
 <p><strong>Example:</strong> For our example, <code>48 ÷ 18 = 2</code> with a remainder of <code>12</code>. Hence, <code>r = 12</code>.</p>
 <h2 id="step-3-is-remainder-zero">Step 3: Is Remainder Zero?</h2>
@@ -150,7 +150,7 @@
 <h2 id="recursive-implementation-of-euclidean-algorithm">Recursive Implementation of Euclidean Algorithm</h2>
 <p>As promised, we shall now explore the recursive implementation of the Euclidean algorithm. Recursion adds an element of elegance to the already efficient algorithm, making it a delightful mathematical concept.</p>
 <p>The recursive approach to finding the GCD involves defining a function that calls itself with updated arguments until the base case is reached. The base case, as you might recall, is when the remainder becomes zero, and we return the current value of <code>b</code>, which is the GCD.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">recursive_gcd</span>(<span style="color:#b00040">int</span> a, <span style="color:#b00040">int</span> b) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">recursive_gcd</span>(<span style="color:#b00040">int</span> a, <span style="color:#b00040">int</span> b) {
     <span style="color:#008000;font-weight:bold">if</span> (b <span style="color:#666">==</span> <span style="color:#666">0</span>) {
         <span style="color:#008000;font-weight:bold">return</span> a;
     } <span style="color:#008000;font-weight:bold">else</span> {
@@ -160,7 +160,7 @@
 </code></pre></div><h2 id="iterative-implementation-of-euclidean-algorithm">Iterative Implementation of Euclidean Algorithm</h2>
 <p>Now, let us venture into the iterative version of the Euclidean algorithm. While the recursive implementation showcases the beauty of recursion, the iterative version emphasizes the algorithm&rsquo;s efficiency.</p>
 <p>In the iterative approach, we employ a <code>while</code> loop to repeatedly perform the necessary steps until the remainder becomes zero. The loop allows us to update the values of <code>a</code> and <code>b</code> efficiently, eliminating the need for recursive function calls.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">
 <span style="color:#b00040">int</span> <span style="color:#00f">iterative_gcd</span>(<span style="color:#b00040">int</span> a, <span style="color:#b00040">int</span> b) {
     <span style="color:#b00040">int</span> temp;
     <span style="color:#008000;font-weight:bold">while</span> (b <span style="color:#666">!=</span> <span style="color:#666">0</span>) {

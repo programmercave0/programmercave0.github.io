@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -113,7 +113,7 @@
 <h3 id="solution-">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit9@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Command <code>strings</code> print the sequences of printable characters in files and <code>grep =</code> will print lines with ‘=’ in it. The command is :</p>
-<pre tabindex="0"><code>strings data.txt | grep =
+<pre><code>strings data.txt | grep =
 </code></pre><p>and the password for next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l910_terminal.jpg" alt="Bandit Level 9 10"></p>
 <p>Reference : <a href="http://man7.org/linux/man-pages/man1/strings.1.html">http://man7.org/linux/man-pages/man1/strings.1.html</a></p>
@@ -126,7 +126,7 @@
 <h3 id="solution--1">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit10@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Command <code>base64</code> with option <code>-d</code> decodes the file. So the command is</p>
-<pre tabindex="0"><code>base64 -d data.txt
+<pre><code>base64 -d data.txt
 </code></pre><p>and the password is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1011_terminal.jpg" alt="Bandit Level 10 11"></p>
 <p>Reference : <a href="https://linux.die.net/man/1/base64">https://linux.die.net/man/1/base64</a></p>
@@ -139,7 +139,7 @@
 <h3 id="solution--2">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit11@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Command <code>tr</code> is used to translate character. Since characters are rotated by 13 positions means <em>a</em> becomes <em>n</em> and <em>n</em> becomes <em>a</em>, <em>b</em> becomes <em>o</em> and <em>o</em> becomes <em>b</em> and so on. The command is</p>
-<pre tabindex="0"><code>cat data.txt | tr &quot;[a-zA-Z]&quot; &quot;[n-za-mN-ZA-M]&quot;
+<pre><code>cat data.txt | tr &quot;[a-zA-Z]&quot; &quot;[n-za-mN-ZA-M]&quot;
 </code></pre><p>and the password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1112_terminal.jpg" alt="Bandit Level 11 12"></p>
 <p>Reference : <a href="http://man7.org/linux/man-pages/man1/tr.1p.html">http://man7.org/linux/man-pages/man1/tr.1p.html</a><!-- raw HTML omitted -->

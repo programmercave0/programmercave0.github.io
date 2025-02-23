@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -125,7 +125,7 @@
 <p>Lets find some information of user bandit25 and bandit26. bandit25 uses <em>/bin/sh</em> shell and bandit26 uses something <em>/usr/bin/showtext</em>.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2526_terminal2.jpg" alt="Bandit Level 25 26"></p>
 <p>Lets see what is inside the showtext file. The content is</p>
-<pre tabindex="0"><code>#!/bin/sh
+<pre><code>#!/bin/sh
 export TERM=linux
 more ~/text.txt
 exit 0
@@ -155,7 +155,7 @@ exit 0
 <p>There is a <em>bandit27-do</em> file with elevated privilege. It will help us to know the password.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2627_terminal1.jpg" alt="Bandit Level 26 27"></p>
 <p>Run command</p>
-<pre tabindex="0"><code>:! ./bandit27-do cat /etc/bandit_pass/bandit27
+<pre><code>:! ./bandit27-do cat /etc/bandit_pass/bandit27
 </code></pre><p>and the password is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2627_terminal2.jpg" alt="Bandit Level 26 27"></p>
 <p>Reference : Vim tips: <a href="https://www.linux.com/tutorials/vim-tips-working-external-commands/">Working with external commands</a><!-- raw HTML omitted -->

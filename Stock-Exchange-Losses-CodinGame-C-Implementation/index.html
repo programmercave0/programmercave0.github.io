@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -109,21 +109,21 @@
 <!-- raw HTML omitted -->
 <p>The input values are the stock prices at various times. We store these stock prices in an integer vector called <code>values</code>. The index of the vector represents the time and the element at that index is the stock price at that time.</p>
 <p>The three given test cases are:</p>
-<pre tabindex="0"><code>Input
+<pre><code>Input
 6
 3 2 4 2 1 5
 
 Output
 -3
 </code></pre><p><img src="/assets/images/2021-03-17-Stock-Exchange-Losses-CodinGame/Stock-Exchange-Losses-img1.png" alt="Stock Exchange Losses"></p>
-<pre tabindex="0"><code>Input
+<pre><code>Input
 6
 5 3 4 2 3 1
 
 Output
 -4
 </code></pre><p><img src="/assets/images/2021-03-17-Stock-Exchange-Losses-CodinGame/Stock-Exchange-Losses-img2.png" alt="Stock Exchange Losses"></p>
-<pre tabindex="0"><code>Input
+<pre><code>Input
 5
 1 2 4 4 5
 
@@ -133,7 +133,7 @@ Output
 <p>From the test cases, we can see that there is a loss only when the stock price at time <code>t2</code> is less than the stock price at time <code>t1</code> (where <code>t2</code> &gt; <code>t1</code>). Otherwise, the loss is 0.</p>
 <p>Therefore, we only need to process further when <code>values[i]</code> &gt; <code>values[j]</code>, where <code>i</code> and <code>j</code> are iterable variables in a loop. We initialize <code>i</code> to <code>0</code> and <code>j</code> to <code>i+1</code>.</p>
 <p>Before we proceed, we should initialize all the variables that we need.</p>
-<pre tabindex="0"><code>int loss = std::numeric_limits&lt;int&gt;::max();
+<pre><code>int loss = std::numeric_limits&lt;int&gt;::max();
 int maxima = std::numeric_limits&lt;int&gt;::min();
 int minima = std::numeric_limits&lt;int&gt;::max();
 int maxima_index = 0, minima_index = 0;
@@ -147,7 +147,7 @@ int maxima_index = 0, minima_index = 0;
 <p>So, we can only update value of <code>minima</code>, <code>maxima</code>, <code>minima_index</code> and <code>maxima_index</code> if conditions <code>values[i] &gt; values[j]</code> and <code>local_loss &lt; loss</code> and <code>values[i] &gt;= maxima</code> are <code>true</code>.</p>
 <p>In fig 1, from V<!-- raw HTML omitted -->1<!-- raw HTML omitted -->(<code>i = 0</code>) to V<!-- raw HTML omitted -->2<!-- raw HTML omitted -->(<code>j = 1</code>), <code>maxima</code> is 3 and <code>minima</code> is 2 and <code>loss</code> is -1. From V<!-- raw HTML omitted -->3<!-- raw HTML omitted -->(<code>i = 2</code>) to V<!-- raw HTML omitted -->4<!-- raw HTML omitted -->(<code>j = 3</code>), the <code>loss</code> becomes -2.The <code>values[i]</code>(=4) is also greater than <code>maxima</code>(=3). Thus all conditons <code>values[i] &gt; values[j]</code> and <code>local_loss &lt; loss</code> and <code>values[i] &gt;= maxima</code> are true. So <code>maxima</code> and <code>minima</code> is updated.</p>
 <p>At V<!-- raw HTML omitted -->3<!-- raw HTML omitted -->(<code>i = 2</code>) and V<!-- raw HTML omitted -->5<!-- raw HTML omitted -->(<code>j = 4</code>) again all conditions are true and new value of <code>loss</code> is calculated.</p>
-<pre tabindex="0"><code>int i = 0;
+<pre><code>int i = 0;
 int j = i+1;
 
 while (j &lt; values.size())
@@ -179,7 +179,7 @@ while (j &lt; values.size())
 <p>Since <code>minima</code> and <code>maxima</code> are also never updated, their indices remain <code>0</code>. Therefore, the loss will be <code>0</code> when we calculate it using the formula <code>loss = values[minima_index] - values[maxima_index]</code>.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

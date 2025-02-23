@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -105,7 +105,7 @@
 <!-- raw HTML omitted -->
 <p>To store distance from the source vertex and to know if the vertex is discovered, we need a data structure to store value for the given vertex.</p>
 <p>Here is the implementation of the function <code>breadthFirstSearch</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, GRAY, BLACK};
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, GRAY, BLACK};
 <span style="color:#008000;font-weight:bold">enum</span> { INFINITY <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max() };
   <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
   {
@@ -145,7 +145,7 @@
 <p>The time complexity of Breadth First Search is <em>O(n+m)</em> where <em>n</em> is the number of vertices and <em>m</em> is the number of edges.</p>
 <!-- raw HTML omitted -->
 <p>Here is C++ implementation of Breadth First Search using Adjacency List</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;queue&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;list&gt;</span><span style="color:#bc7a00">

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -112,13 +112,13 @@
 <p>Read the full problem here : <a href="https://www.hackerrank.com/challenges/migratory-birds/problem">Migratory Birds</a></p>
 <!-- raw HTML omitted -->
 <p>To solve the problem first the input array, <code>types</code> storing types of birds, must be sorted. An array <code>type_count</code> stores count of bird of each type.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(types.begin(), types.end());
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(types.begin(), types.end());
 std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span><span style="color:#666">&gt;</span> type_count(<span style="color:#666">6</span>, <span style="color:#666">0</span>);
 </code></pre></div><p>Since there are only 5 types of birds with ids 1, 2, 3, 4 and 5 so <code>type_count[0] = 0.</code></p>
 <!-- raw HTML omitted -->
 <p>We will start iteration on types from index 1 and check if id of bird at that index and id of bird at previous index is equal. If it is equal i.e. <code>types[i] == types[i-1]</code>, integer variable <code>count</code> is incremented. <code>count</code> counts the number of birds with that id(<code>type[-1]</code>).</p>
 <p>If <code>types[i]</code> is not equal to <code>types[i-1]</code> then <code>type_count</code> for id <code>types[i-1]</code> is updated with the value stored in <code>count</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">1</span>;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">1</span>;
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> types.size(); <span style="color:#666">++</span>i)
 {
     <span style="color:#008000;font-weight:bold">if</span> (types[i] <span style="color:#666">==</span> types[i<span style="color:#666">-</span><span style="color:#666">1</span>])
@@ -132,11 +132,11 @@ std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><
     }
 }
 </code></pre></div><p>When the loop is executed and we are out of the <code>for</code> loop then value stored in <code>count</code> is assigned to <code>type_count</code> at index which is equal to largest id number. This index is accessed by <code>types.back()</code> because <code>types</code> is sorted and <code>types.back()</code> returns last element which is the largest id of the birds.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">type_count[ types.back() ] <span style="color:#666">=</span> count;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">type_count[ types.back() ] <span style="color:#666">=</span> count;
 </code></pre></div><p>The program should return the id of birds which has the highest number of <code>count</code> and if two ids have same <code>count</code> then lowest id is returned. In other words, index of the highest element of <code>type_count</code> is returned and if it contains two or more occurrence of highest value then lower index of these highest value is returned.</p>
 <!-- raw HTML omitted -->
 <p>Integer variable <code>max_val</code> stores the maximum number of birds with same type and <code>min_index</code> stores the minimum index of the <code>max_val</code> in <code>type_count</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> max_val <span style="color:#666">=</span> type_count[<span style="color:#666">0</span>];
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> max_val <span style="color:#666">=</span> type_count[<span style="color:#666">0</span>];
 <span style="color:#b00040">unsigned</span> <span style="color:#b00040">short</span>  min_index <span style="color:#666">=</span> <span style="color:#666">0</span>;
 
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">unsigned</span> <span style="color:#b00040">short</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> type_count.size(); <span style="color:#666">++</span>i)
@@ -149,7 +149,7 @@ std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><
 }
 </code></pre></div><p><strong>Related:</strong> <a href="/Kangaroo-HackerRank-Challenge-C-Implementation">Kangaroo HackerRank Challenge</a></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

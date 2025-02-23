@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -113,18 +113,18 @@
 <!-- raw HTML omitted -->
 <p><img src="/assets/images/2020-04-25-Left-Rotation-HackerRank/HR_repeated_string.jpg" alt="Left Rotation HackerRank"></p>
 <p>This is a very easy problem. In the above figure we see that after two rotations, the element at index 2 is the first element in the new array. Thus after <em>d</em> rotations, the element at index <em>d</em> is the first element. And all elements after <em>d</em><!-- raw HTML omitted -->th<!-- raw HTML omitted --> elements with follow.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
 {
     rotated_array.push_back(arr[i]);
 }
 </code></pre></div><p>Now, elements from 0 to <em>d</em>-1 indices are added to the new rotated array.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
 {
     rotated_array.push_back(arr[i]);
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> left_rotation(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr, <span style="color:#b00040">int</span> rotations)

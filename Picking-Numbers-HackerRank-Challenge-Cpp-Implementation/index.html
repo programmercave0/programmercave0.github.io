@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -112,16 +112,16 @@
 <p>Read the full problem here: <a href="https://www.hackerrank.com/challenges/picking-numbers/problem">Picking Numbers</a></p>
 <!-- raw HTML omitted -->
 <p>To find the subarrays which satisfy the above conditions, the input array must be sorted. So our first statement in the function is</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(array.begin(), array.end());
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(array.begin(), array.end());
 </code></pre></div><p>Integer variable <code>result</code> will store the length of the subarray with maximum size, <code>count</code> will store the length of the subarray being processed and <code>subarray_first_element</code> will store the first element of the subarray being processed.</p>
 <p><code>result</code> is initialised with <code>0</code>, <code>subarray_first_element</code> with the first element of the array and <code>count</code> with <code>1</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> result <span style="color:#666">=</span> <span style="color:#666">0</span>;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> result <span style="color:#666">=</span> <span style="color:#666">0</span>;
 <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">1</span>;
 <span style="color:#b00040">int</span> subarray_first_element <span style="color:#666">=</span> array[<span style="color:#666">0</span>];
 </code></pre></div><p><code>count</code> is initialised with <code>1</code> because we iterate from the index 1 of the array. The element being considered is checked with <code>subarray_first_element</code> and if the condition is <code>true</code>, <code>count</code> is incremented and we have two elements in the subarray.</p>
 <p><img src="/assets/images/2020-03-28-Picking-Numbers-Hacker-Challenge/HR_picking_numbers.jpg" alt="Picking Numbers HackerRank"></p>
 <p>If the condition is <code>false</code>, <code>result</code> is updated if the <code>count</code> is greater than the <code>result</code> (or length of this subarray is greater than the previous subarray). <code>count</code> is initialised with <code>1</code> and <code>subarray_first_element</code> with <code>array[i]</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> array.size(); <span style="color:#666">++</span>i)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> array.size(); <span style="color:#666">++</span>i)
 {
 	<span style="color:#008000;font-weight:bold">if</span> (subarray_first_element <span style="color:#666">==</span> array[i] <span style="color:#666">||</span> subarray_first_element <span style="color:#666">+</span> <span style="color:#666">1</span> <span style="color:#666">==</span> array[i])
 	{
@@ -138,14 +138,14 @@
 	}
 }
 </code></pre></div><p>Once the loop is executed again we check if the <code>count</code> is greater than the <code>result</code>, because if the last two elements of the array satisfies the above conditions then the control did not enter in the else scope in the for loop and <code>result</code> is not updated with the correct <code>count</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;</span> result)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;</span> result)
 {
 	result <span style="color:#666">=</span> count;
 }
 <span style="color:#008000;font-weight:bold">return</span> result;
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

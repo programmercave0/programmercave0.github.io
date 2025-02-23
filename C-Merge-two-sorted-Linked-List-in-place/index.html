@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -103,7 +103,7 @@
     </div>
   
   <p>Given two sorted Linked List, we have to merge them without using another linked list.</p>
-<pre tabindex="0"><code>List 1 : { 5, 10, 18, 25 }
+<pre><code>List 1 : { 5, 10, 18, 25 }
 List 2 : { 6, 8, 11, 20 }
 Merged List : { 5, 6, 8, 10, 11, 18, 20, 25 }
 </code></pre><p><img src="/assets/images/mergesortedlinkedlist.png" alt="Merge linked list"></p>
@@ -112,7 +112,7 @@ Merged List : { 5, 6, 8, 10, 11, 18, 20, 25 }
 <p><code>node</code> stores the smallest element in both linked list and it will become the head of the merged linked list later.</p>
 <p><code>head1</code> and <code>head2</code> are the nodes whose data item is to be compared and node with smallest data item is added after tmp. <code>tmp</code> is always the last node in merged list.</p>
 <p>Here is <code>mergeSortedList</code> functions.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">mergeSortedList</span>(LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> ll2)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">mergeSortedList</span>(LinkedList<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> ll2)
 {
     <span style="color:#008000;font-weight:bold">if</span>(ll2.head <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
         <span style="color:#008000;font-weight:bold">return</span>;
@@ -171,7 +171,7 @@ Merged List : { 5, 6, 8, 10, 11, 18, 20, 25 }
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;cassert&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

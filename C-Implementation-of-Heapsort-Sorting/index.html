@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -106,7 +106,7 @@
 <p>When <code>arr[i] = parent</code>, then <code>left_child = 2*i + 1</code> and <code>right_child = 2*i + 2</code>.</p>
 <!-- raw HTML omitted -->
 <p><code>max_heapify</code> maintains the max-heap property of the heap. The input array, index of the element and size of the array is passed as an argument.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">max_heapify</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr, <span style="color:#b00040">int</span> i, <span style="color:#b00040">int</span> size_)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">max_heapify</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr, <span style="color:#b00040">int</span> i, <span style="color:#b00040">int</span> size_)
 {
     <span style="color:#b00040">int</span> largest, l <span style="color:#666">=</span> (<span style="color:#666">2</span><span style="color:#666">*</span>i) <span style="color:#666">+</span> <span style="color:#666">1</span>, r <span style="color:#666">=</span> l <span style="color:#666">+</span> <span style="color:#666">1</span>;
 
@@ -126,14 +126,14 @@
 }
 </code></pre></div><p>If <code>arr[i]</code> is <code>largest</code>, then subtree rooted at node <code>i</code> is a max-heap and function terminates. Otherwise, <code>largest</code> stores the index of child whose value is greatest of the three elements and <code>arr[i]</code> is swapped with <code>arr[largest]</code> and thus max-heap property is satisfied at node <code>i</code>. Then <code>max_heapify</code> with node indexed by <code>largest</code> is called to satisfy max-heap property at node <code>largest</code>.</p>
 <p><code>build_max_heap</code> produces a max-heap from an input array.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">build_max_heap</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">build_max_heap</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr)
 {
     <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#b00040">int</span> i <span style="color:#666">=</span> (arr.size() <span style="color:#666">/</span> <span style="color:#666">2</span>); i <span style="color:#666">&gt;=</span> <span style="color:#666">0</span>; i<span style="color:#666">--</span>)
     max_heapify(arr, i, arr.size());
 }
 </code></pre></div><p><img src="/assets/images/heapsort1.png" alt="Heapsort"></p>
 <p><code>heapsort</code> sorts an array in-place.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">heap_sort</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">heap_sort</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr)
 {
    build_max_heap(arr);
    <span style="color:#b00040">int</span> sz <span style="color:#666">=</span> arr.size();
@@ -147,7 +147,7 @@
 </code></pre></div><!-- raw HTML omitted -->
 <p><code>heapsort</code> starts with <code>build_max_heap</code> and now largest element of the array is at index 0. So the first value is  swapped with the last value and then the node with largest value is removed from the tree and new max-heap is created with <code>max_heapify</code>.</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

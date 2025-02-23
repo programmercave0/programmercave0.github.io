@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -115,7 +115,7 @@
 <ol>
 <li>
 <p>Initialize three integer variables: <code>current_earning</code>, <code>final_count</code>, and <code>local_count</code>. <code>current_earning</code> should be set to the first element of the <code>earnings</code> vector, <code>final_count</code> should be set to 1, and <code>local_count</code> should be set to 1.</p>
-<pre tabindex="0"><code>int current_earning = earnings[0]; // stores highest earning of non-decreasing subsegment
+<pre><code>int current_earning = earnings[0]; // stores highest earning of non-decreasing subsegment
 int final_count = 1; // stores length of longest non-decreasing subsegment
 int local_count = 1; // stores length of current subsegment in process
 </code></pre><p>``</p>
@@ -125,26 +125,26 @@ int local_count = 1; // stores length of current subsegment in process
 <p>a. If <code>earnings[i] &gt; current_earning</code>, increment <code>local_count</code> by 1 and set <code>current_earning</code> to <code>earnings[i]</code>.</p>
 <p>b. If <code>earnings[i] &lt;= current_earning</code>, set <code>local_count</code> to 1 and set <code>current_earning</code> to <code>earnings[i]</code>.</p>
 <p>c. If <code>local_count &gt; final_count</code>, set <code>final_count</code> to <code>local_count</code>.</p>
-<pre tabindex="0"><code>for (int i = 1; i &lt; n; i++) 
+<pre><code>for (int i = 1; i &lt; n; i++) 
 {
-	if (earnings[i] &gt; current_earning) 
-	{
-  		// if current earning is greater than previous earning, increment local count by 1
-  		local_count++;
-  		current_earning = earnings[i];
-	} 
-	else 
-	{
-  		// if current earning is not greater than previous earning, reset local count to 1
-  		local_count = 1;
-  		current_earning = earnings[i];
-	}
+    if (earnings[i] &gt; current_earning) 
+    {
+        // if current earning is greater than previous earning, increment local count by 1
+        local_count++;
+        current_earning = earnings[i];
+    } 
+    else 
+    {
+        // if current earning is not greater than previous earning, reset local count to 1
+        local_count = 1;
+        current_earning = earnings[i];
+    }
 
-	// update final count if local count is greater than final count
-	if (local_count &gt; final_count) 
-	{
-  		final_count = local_count;
-	}
+    // update final count if local count is greater than final count
+    if (local_count &gt; final_count) 
+    {
+        final_count = local_count;
+    }
 }
 </code></pre><p>``</p>
 </li>
@@ -154,7 +154,7 @@ int local_count = 1; // stores length of current subsegment in process
 </li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#b00040">int</span> <span style="color:#00f">main</span>()

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -103,7 +103,7 @@
 <p>First the algorithm finds the smallest element in the array which is 1 and it is added to the sorted array and then the algorithm finds smallest element in the remaining array and so on.</p>
 <!-- raw HTML omitted -->
 <p>Here is the implementation of <code>selection_sort</code> function.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">selection_sort</span>(<span style="color:#b00040">int</span> array[], <span style="color:#b00040">int</span> size)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">selection_sort</span>(<span style="color:#b00040">int</span> array[], <span style="color:#b00040">int</span> size)
 {
     <span style="color:#b00040">int</span> start_index <span style="color:#666">=</span> <span style="color:#666">0</span>;
     <span style="color:#008000;font-weight:bold">while</span>(start_index <span style="color:#666">&lt;</span> size)
@@ -121,7 +121,7 @@
     }
 }
 </code></pre></div><p>The above function works only for integer value. Here is the generic function which works for all data types.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>
 <span style="color:#b00040">void</span> selection_sort(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> array)
 {
     <span style="color:#008000;font-weight:bold">typedef</span> <span style="color:#008000;font-weight:bold">typename</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;::</span>iterator Itr;
@@ -146,7 +146,7 @@
 <p>Here is the output after running generic function.</p>
 <p><img src="/assets/images/selectionsortout.png" alt="Selectionsort"></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>

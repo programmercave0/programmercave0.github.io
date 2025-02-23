@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -107,7 +107,7 @@
 <p>In the above fig. algorithm add edges with minimum weight and if it does not create cycle. Weight of edge <em>b - e</em> is less than edge <em>d – f</em> but it was creating a cycle <em>a – b – e – a</em> , so it was not added.</p>
 <!-- raw HTML omitted -->
 <p>In fig. (c) there are two disjoint sets. First set contains <em>{a, b}</em> and representative of this set is <em>a</em> whereas second set contains <em>{e, f}</em> and representative of this set is <em>e</em>. Thus <em>a</em> and <em>b</em> forms a tree and <em>e</em> and <em>f</em> forms another tree. All vertices in a tree have same representative (or <code>parent</code>).</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>size_t find_set(std<span style="color:#666">::</span>size_t vertex)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>size_t find_set(std<span style="color:#666">::</span>size_t vertex)
 {
     <span style="color:#008000;font-weight:bold">auto</span> it <span style="color:#666">=</span> vertices[vertex].parent;
     std<span style="color:#666">::</span>size_t parent_id <span style="color:#666">=</span> it<span style="color:#666">-&gt;</span>id;
@@ -118,13 +118,13 @@
     <span style="color:#008000;font-weight:bold">return</span> parent_id;
 }
 </code></pre></div><p><code>find_set</code> tells us about the representative of the vertex. <code>find_set(a) = find_set(b)</code> and <code>find_set(a) ≠ find_set(b)</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">make_set</span>(std<span style="color:#666">::</span>size_t vertex)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">make_set</span>(std<span style="color:#666">::</span>size_t vertex)
 {
     vertices[vertex].parent <span style="color:#666">=</span> <span style="color:#666">&amp;</span>vertices[vertex];
     vertices[vertex].rank   <span style="color:#666">=</span> <span style="color:#666">0</span>;
 }
 </code></pre></div><p><code>make_set</code> is the first function algorithm calls. Initially, number of disjoint sets is equal to the number of vertices, since there is no spanning tree and no vertices are connected like in fig. (a). It sets rank of each vertex to 0 and make them representative of their set since there is only one element in the set, which is the vertex.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">link</span>(std<span style="color:#666">::</span>size_t to, std<span style="color:#666">::</span>size_t from)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">link</span>(std<span style="color:#666">::</span>size_t to, std<span style="color:#666">::</span>size_t from)
 {
     <span style="color:#008000;font-weight:bold">if</span> (vertices[to].rank <span style="color:#666">&gt;</span> vertices[from].rank)
     {
@@ -140,7 +140,7 @@
     }
 }
 </code></pre></div><p><code>to</code> is the vertex which is already in a spanning tree and <code>from</code> is the vertex which is being added to the tree.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">union_</span>(std<span style="color:#666">::</span>size_t ver1, std<span style="color:#666">::</span>size_t ver2)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">union_</span>(std<span style="color:#666">::</span>size_t ver1, std<span style="color:#666">::</span>size_t ver2)
 {
     link( find_set(vertices[ver1].id), find_set(vertices[ver2].id) );
 }
@@ -172,7 +172,7 @@
 </code></pre></div><p>After function <code>make_set</code> is called, the edges are sorted in increasing order according to their weight. Edges are added only if they are not in the same set means only if they do not have same <code>parent</code>.
 In fig. (e) edge-weight of <em>b – e</em> is smaller than that of <em>d - f</em> but since b and e belongs to same set and if it is added a cycle will create in the graph.</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;map&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;unordered_set&gt;</span><span style="color:#bc7a00">

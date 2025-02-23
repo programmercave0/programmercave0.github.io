@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -115,7 +115,7 @@
 </ul>
 <h2 id="syntax-of-the-select-statement">Syntax of the <code>select</code> Statement</h2>
 <p>Here’s the basic structure of the <code>select</code> statement:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">select</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">select</span> {
 <span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>channel1:
    <span style="color:#408080;font-style:italic">// Code for receiving data from channel1
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">case</span> data <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channel2:
@@ -137,7 +137,7 @@
 <h3 id="blocking-operations">Blocking Operations</h3>
 <p>In Go, channel operations can block until another goroutine is ready to communicate. For example:</p>
 <h4 id="example-of-blocking-receive">Example of Blocking Receive:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">12</span> }()
    integerValue <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch
@@ -147,7 +147,7 @@
 <li>The <code>&lt;-ch</code> operation blocks until another goroutine sends a value to <code>ch</code>.</li>
 </ul>
 <h4 id="example-of-blocking-send">Example of Blocking Send:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) }()
    ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span>
@@ -158,7 +158,7 @@
 <h3 id="non-blocking-operations">Non-Blocking Operations</h3>
 <p>To prevent blocking, you can use the <code>default</code> case in a <code>select</code> statement.</p>
 <h4 id="example-of-non-blocking-receive">Example of Non-Blocking Receive:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span> }()
    <span style="color:#008000;font-weight:bold">select</span> {
@@ -175,7 +175,7 @@
 <h2 id="timeouts-in-select">Timeouts in <code>select</code></h2>
 <p>Timeouts are essential for preventing your program from waiting indefinitely for a channel operation. You can use the <code>time.After()</code> function to implement timeouts.</p>
 <h4 id="example-of-timeout-handling">Example of Timeout Handling:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
    taskChannel <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>, <span style="color:#666">1</span>)
    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
        time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
@@ -197,7 +197,7 @@
 <h2 id="default-case-in-select">Default Case in <code>select</code></h2>
 <p>The <code>default</code> case ensures that your program doesn’t block when no channels are ready. It’s particularly useful for implementing non-blocking patterns.</p>
 <h4 id="example-of-default-case">Example of Default Case:</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
    channelOne <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
    channelTwo <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {

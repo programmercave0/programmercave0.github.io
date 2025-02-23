@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -103,7 +103,7 @@
     </div>
   
   <p>Given a Singly Circular Linked List, we have to split it into two equal halves. If the number of nodes in the given list is odd then first list will have one node more than the second list.</p>
-<pre tabindex="0"><code>Input : { 2, 3, 18, 25, 5 }
+<pre><code>Input : { 2, 3, 18, 25, 5 }
 Output List 1 : { 2, 3, 18 }
 Output List 2 : { 25, 5 }
 </code></pre><p>Here is a meme to understand Circular Linked List</p>
@@ -111,7 +111,7 @@ Output List 2 : { 25, 5 }
 <p><img src="/assets/images/splitsinglycircularlinkedlist.png" alt="Split Linked List"></p>
 <p>From the above fig. first we have to find middle node of the given singly circular linked list.</p>
 <p>Middle node can be found using <code>slow_ptr</code> and <code>fast_ptr</code>. <code>slow_ptr</code> increments by one node whereas <code>fast_ptr</code> increments by two nodes. When <code>fast_ptr-&gt;next == head</code> or <code>fast_pr-&gt;next-&gt;next == head</code> then no increment of <code>fast_ptr</code> or <code>slow_ptr</code> and <code>slow_ptr</code> is at the middle node of the list.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node <span style="color:#666">*</span><span style="color:#00f">find_middle_node</span>()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Node <span style="color:#666">*</span><span style="color:#00f">find_middle_node</span>()
 {
     <span style="color:#408080;font-style:italic">//slow pointer advances by 1
 </span><span style="color:#408080;font-style:italic"></span>    Node <span style="color:#666">*</span>slow_ptr <span style="color:#666">=</span> head;
@@ -129,7 +129,7 @@ Output List 2 : { 25, 5 }
 }
 </code></pre></div><!-- raw HTML omitted -->
 <p>After getting middle node, the node next to middle node is the head of second ouput list. Then tail of the lists are updated so that circular list is maintained.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">split_list</span>(circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> second_half)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">split_list</span>(circular_linked_list<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> second_half)
 {
     Node <span style="color:#666">*</span>tail <span style="color:#666">=</span> find_tail_node();
     Node <span style="color:#666">*</span>mid <span style="color:#666">=</span> find_middle_node();
@@ -140,7 +140,7 @@ Output List 2 : { 25, 5 }
     mid<span style="color:#666">-&gt;</span>next <span style="color:#666">=</span> head;
 }
 </code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -124,13 +124,13 @@ existing object and avoiding dependencies on the class of the object that needs 
 <p>Let us say we have to create a new <code>User</code> API and we want to test it. To test it, we need to create a new user. We can create a new user by using the <code>new</code> keyword.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">User user <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> User<span style="color:#666">(</span><span style="color:#ba2121">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;Doe&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;john@doe.in&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;1234567890&#34;</span><span style="color:#666">);</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">User user <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> User<span style="color:#666">(</span><span style="color:#ba2121">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;Doe&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;john@doe.in&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;1234567890&#34;</span><span style="color:#666">);</span>
 </code></pre></div><ul>
 <li>We might be calling a separate API to get these random values for the user. So each time we want to create a new user we have to call the API.</li>
 <li>Instead, we can create a new user by cloning an existing user and modifying the fields that are necessary. This way we can avoid calling the API each time we want to create a new user.</li>
 <li>To clone an existing user, we have to implement a common interface for all the user objects <code>clone()</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">User</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">User</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> User <span style="color:#00f">clone</span><span style="color:#666">();</span>
 <span style="color:#666">}</span>
  <span style="color:#666">...</span>
@@ -155,7 +155,7 @@ user2<span style="color:#666">.</span><span style="color:#7d9029">setId</span><s
 <li>Each such different type of user might have some fields that are specific to the type so the fields to be copied might be different.</li>
 <li>We can create a registry of pre-defined prototypes for each of these roles</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#666">...</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#666">...</span>
 
 <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">UserRegistry</span> <span style="color:#666">{</span>
 	User <span style="color:#00f">getPrototype</span><span style="color:#666">(</span>UserRole role<span style="color:#666">);</span>
@@ -183,7 +183,7 @@ registry<span style="color:#666">.</span><span style="color:#7d9029">addPrototyp
 User user <span style="color:#666">=</span> registry<span style="color:#666">.</span><span style="color:#7d9029">getPrototype</span><span style="color:#666">(</span>UserRole<span style="color:#666">.</span><span style="color:#7d9029">STUDENT</span><span style="color:#666">);</span>
 user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><span style="color:#666">(</span>1<span style="color:#666">);</span>
 </code></pre></div><h3 id="prototype-pattern-in-python">Prototype Pattern in Python</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 <span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">copy</span> <span style="color:#008000;font-weight:bold">import</span> deepcopy
 <span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">enum</span> <span style="color:#008000;font-weight:bold">import</span> Enum
 
@@ -209,7 +209,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">model_type</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_model_type
 
-    <span style="color:#a2f">@model_type</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@model_type.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">model_type</span>(self, model_type):
         self<span style="color:#666">.</span>_model_type <span style="color:#666">=</span> model_type
 
@@ -217,7 +217,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">description</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_description
 
-    <span style="color:#a2f">@description</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@description.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">description</span>(self, description):
         self<span style="color:#666">.</span>_description <span style="color:#666">=</span> description
 
@@ -225,7 +225,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">training_split</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_training_split
 
-    <span style="color:#a2f">@training_split</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@training_split.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">training_split</span>(self, training_split):
         self<span style="color:#666">.</span>_training_split <span style="color:#666">=</span> training_split
 
@@ -233,7 +233,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">validation_split</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_validation_split
 
-    <span style="color:#a2f">@validation_split</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@validation_split.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">validation_split</span>(self, validation_split):
         self<span style="color:#666">.</span>_validation_split <span style="color:#666">=</span> validation_split
 
@@ -241,7 +241,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">alpha</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_alpha
 
-    <span style="color:#a2f">@alpha</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@alpha.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">alpha</span>(self, alpha):
         self<span style="color:#666">.</span>_alpha <span style="color:#666">=</span> alpha
 
@@ -249,14 +249,14 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">beta</span>(self):
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_beta
 
-    <span style="color:#a2f">@beta</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@beta.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">beta</span>(self, beta):
         self<span style="color:#666">.</span>_beta <span style="color:#666">=</span> beta
 
     <span style="color:#008000;font-weight:bold">def</span> __str__(self):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#39;MLModel(type=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_model_type<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, description=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_description<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#39;</span> \
-               <span style="color:#ba2121">f</span><span style="color:#ba2121">&#39;training_split=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_training_split<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, validation_split=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_validation_split<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#39;</span> \
-               <span style="color:#ba2121">f</span><span style="color:#ba2121">&#39;alpha=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_alpha<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, beta=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_beta<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">)&#39;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#39;MLModel(type={self._model_type}, description={self._description}, &#39;</span> \
+               f<span style="color:#ba2121">&#39;training_split={self._training_split}, validation_split={self._validation_split}, &#39;</span> \
+               f<span style="color:#ba2121">&#39;alpha={self._alpha}, beta={self._beta})&#39;</span>
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ModelType</span>(Enum):
     LR <span style="color:#666">=</span> <span style="color:#ba2121">&#34;LR&#34;</span>
@@ -273,7 +273,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_model</span>(self, model_type):
         model <span style="color:#666">=</span> self<span style="color:#666">.</span>_models<span style="color:#666">.</span>get(model_type)
-        <span style="color:#008000;font-weight:bold">return</span> model<span style="color:#666">.</span>clone() <span style="color:#008000;font-weight:bold">if</span> model <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">None</span>
+        <span style="color:#008000;font-weight:bold">return</span> model<span style="color:#666">.</span>clone() <span style="color:#008000;font-weight:bold">if</span> model <span style="color:#008000;font-weight:bold">else</span> None
 
 <span style="color:#408080;font-style:italic"># Example usage</span>
 <span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
@@ -291,13 +291,13 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
     cloned_lr_model<span style="color:#666">.</span>description <span style="color:#666">=</span> <span style="color:#ba2121">&#34;Linear Regression Model Cloned&#34;</span>
     cloned_svm_model <span style="color:#666">=</span> registry<span style="color:#666">.</span>get_model(ModelType<span style="color:#666">.</span>SVM)
     cloned_svm_model<span style="color:#666">.</span>description <span style="color:#666">=</span> <span style="color:#ba2121">&#34;Support Vector Machine Model Cloned&#34;</span>
-    <span style="color:#008000">print</span>(lr_model)
-    <span style="color:#008000">print</span>(cloned_lr_model)
-    <span style="color:#008000">print</span>(svm_model)
-    <span style="color:#008000">print</span>(cloned_svm_model)
+    <span style="color:#008000;font-weight:bold">print</span>(lr_model)
+    <span style="color:#008000;font-weight:bold">print</span>(cloned_lr_model)
+    <span style="color:#008000;font-weight:bold">print</span>(svm_model)
+    <span style="color:#008000;font-weight:bold">print</span>(cloned_svm_model)
 
 </code></pre></div><h3 id="prototype-pattern-in-golang">Prototype Pattern in Golang</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> prototype
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> prototype
 
 <span style="color:#008000;font-weight:bold">type</span> ObjectClonable <span style="color:#008000;font-weight:bold">interface</span> {
 	<span style="color:#00f">Clone</span>() <span style="color:#666">*</span>MLModel
@@ -412,7 +412,7 @@ user<span style="color:#666">.</span><span style="color:#7d9029">setId</span><sp
 <li>is a creational pattern that provides a static method for creating objects.</li>
 <li>The method can be used to create objects without having to specify the exact class of the object that will be created. This is done by creating a factory class that contains a static method for creating objects.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">UserFactory</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">UserFactory</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">static</span> User <span style="color:#00f">createUser</span><span style="color:#666">(</span>UserRole role<span style="color:#666">)</span> <span style="color:#666">{</span>
 		<span style="color:#008000;font-weight:bold">switch</span> <span style="color:#666">(</span>role<span style="color:#666">)</span> <span style="color:#666">{</span>
 			<span style="color:#008000;font-weight:bold">case</span> STUDENT<span style="color:#666">:</span>
@@ -461,7 +461,7 @@ User user <span style="color:#666">=</span> UserFactory<span style="color:#666">
 <p>The factory method is also known as the virtual constructor.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f">@AllArgsContructor</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a2f">@AllArgsContructor</span>
 <span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">UserFactory</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> User <span style="color:#00f">createUser</span><span style="color:#666">(</span>String firstName<span style="color:#666">,</span> String lastName<span style="color:#666">);</span>
 <span style="color:#666">}</span>
@@ -487,7 +487,7 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
 </li>
 </ul>
 <h4 id="factory-method-in-python">Factory Method in Python</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Button</span>(ABC):
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, border: <span style="color:#008000">float</span>):
@@ -497,7 +497,7 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">border</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">float</span>:
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_border
 
-    <span style="color:#a2f">@border</span><span style="color:#666">.</span>setter
+    <span style="color:#a2f">@border.setter</span>
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">border</span>(self, value: <span style="color:#008000">float</span>):
         self<span style="color:#666">.</span>_border <span style="color:#666">=</span> value
 
@@ -524,10 +524,10 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_radius
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onClick</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Round Button was clicked!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Round Button was clicked!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RoundButtonFactory</span>(ButtonFactory):
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">createButton</span>(self, border: <span style="color:#008000">float</span>, radius: <span style="color:#008000">float</span>, length: <span style="color:#008000">float</span>) <span style="color:#666">-&gt;</span> Button:
@@ -543,10 +543,10 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_length
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onClick</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Square Button was clicked!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Square Button was clicked!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">SquareButtonFactory</span>(ButtonFactory):
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">createButton</span>(self, border: <span style="color:#008000">float</span>, radius: <span style="color:#008000">float</span>, length: <span style="color:#008000">float</span>) <span style="color:#666">-&gt;</span> Button:
@@ -560,17 +560,17 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
 
 <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">main</span>():
     round_button_factory <span style="color:#666">=</span> RoundButtonFactory()
-    <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Using RoundButtonFactory:&#34;</span>)
+    <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Using RoundButtonFactory:&#34;</span>)
     client_code(round_button_factory)
 
     square_button_factory <span style="color:#666">=</span> SquareButtonFactory()
-    <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">Using SquareButtonFactory:&#34;</span>)
+    <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">Using SquareButtonFactory:&#34;</span>)
     client_code(square_button_factory)
 
 <span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
     main()
 </code></pre></div><h4 id="factory-method-in-golang">Factory Method in Golang</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> factorymethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> factorymethod
 
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 
@@ -681,7 +681,7 @@ User user <span style="color:#666">=</span> factory<span style="color:#666">.</s
 <li>We have already created a <code>User</code> abstract class. Now we will create the concrete classes <code>Student</code> and <code>Teacher</code>.</li>
 <li>To restrict the usage of subclasses, we can create factories for each of the concrete classes. The <code>StudentFactory</code> will be used to create <code>Student</code> objects and the <code>TeacherFactory</code> will be used to create <code>Teacher</code> objects.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StudentFactory</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StudentFactory</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">public</span> User <span style="color:#00f">createStudent</span><span style="color:#666">(</span>String firstName<span style="color:#666">,</span> String lastName<span style="color:#666">)</span> <span style="color:#666">{</span>
 		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">new</span> Student<span style="color:#666">(</span>firstName<span style="color:#666">,</span> lastName<span style="color:#666">);</span>
 	<span style="color:#666">}</span>
@@ -705,14 +705,14 @@ Teacher teacher <span style="color:#666">=</span> teacherFactory<span style="col
 <li>This is where the concept of related or a family of objects comes into play. The <code>Student</code> and <code>Teacher</code> objects are related to each other.</li>
 <li>A teacher should only be able to teach a student of the same class. So we can create a factory that can create a family of related objects. The <code>ClassroomFactory</code> will be used to create <code>Student</code> and <code>Teacher</code> objects of the same class.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ClassroomFactory</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ClassroomFactory</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> Student <span style="color:#00f">createStudent</span><span style="color:#666">(</span>String firstName<span style="color:#666">,</span> String lastName<span style="color:#666">);</span>
 	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> Teacher <span style="color:#00f">createTeacher</span><span style="color:#666">(</span>String firstName<span style="color:#666">,</span> String lastName<span style="color:#666">);</span>
 <span style="color:#666">}</span>
 </code></pre></div><ul>
 <li>Now we can create concrete factories for each family of related objects that we want to create.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BiologyClassroomFactory</span> <span style="color:#008000;font-weight:bold">extends</span> ClassroomFactory <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BiologyClassroomFactory</span> <span style="color:#008000;font-weight:bold">extends</span> ClassroomFactory <span style="color:#666">{</span>
 	<span style="color:#a2f">@Override</span>
 	<span style="color:#008000;font-weight:bold">public</span> Student <span style="color:#00f">createStudent</span><span style="color:#666">(</span>String firstName<span style="color:#666">,</span> String lastName<span style="color:#666">)</span> <span style="color:#666">{</span>
 		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">new</span> BiologyStudent<span style="color:#666">(</span>firstName<span style="color:#666">,</span> lastName<span style="color:#666">);</span>
@@ -727,14 +727,14 @@ Teacher teacher <span style="color:#666">=</span> teacherFactory<span style="col
 <li>The class <code>ClassroomFactory</code> is an abstract class that contains the factory methods for creating the objects.</li>
 <li>The child classes can override the factory methods to create objects of their own type. The client code can request an object from the factory class without having to know the class of the object that will be returned.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ClassroomFactory factory <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> BiologyClassroomFactory<span style="color:#666">();</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ClassroomFactory factory <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> BiologyClassroomFactory<span style="color:#666">();</span>
 Student student <span style="color:#666">=</span> factory<span style="color:#666">.</span><span style="color:#7d9029">createStudent</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;Doe&#34;</span><span style="color:#666">);</span>
 Teacher teacher <span style="color:#666">=</span> factory<span style="color:#666">.</span><span style="color:#7d9029">createTeacher</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;John&#34;</span><span style="color:#666">,</span> <span style="color:#ba2121">&#34;Doe&#34;</span><span style="color:#666">);</span>
 </code></pre></div><ul>
 <li>The class <code>ClassroomFactory</code> becomes our abstract factory that essentially is a factory of factories.</li>
 </ul>
 <h4 id="abstract-factory-in-python">Abstract Factory in Python</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 
 <span style="color:#408080;font-style:italic"># Abstract Product: Button</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Button</span>(ABC):
@@ -764,10 +764,10 @@ Teacher teacher <span style="color:#666">=</span> factory<span style="color:#666
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_radius
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onClick</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Dark Btn was clicked!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Dark Btn was clicked!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
 
 <span style="color:#408080;font-style:italic"># Abstract Product: Radio</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Radio</span>(ABC):
@@ -782,10 +782,10 @@ Teacher teacher <span style="color:#666">=</span> factory<span style="color:#666
 <span style="color:#408080;font-style:italic"># Concrete Product: DarkRadio</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">DarkRadio</span>(Radio):
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onSelect</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;DarkRadio selected!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;DarkRadio selected!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;DarkRadio rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;DarkRadio rendered!&#34;</span>)
 
 <span style="color:#408080;font-style:italic"># Abstract Factory</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ThemeFactory</span>(ABC):
@@ -816,18 +816,18 @@ Teacher teacher <span style="color:#666">=</span> factory<span style="color:#666
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_length
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onClick</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Light Btn was clicked!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Light Btn was clicked!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Rendered!&#34;</span>)
 
 <span style="color:#408080;font-style:italic"># Concrete Product: LightRadio</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">LightRadio</span>(Radio):
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">onSelect</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;LightRadio selected!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;LightRadio selected!&#34;</span>)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">render</span>(self):
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;LightRadio rendered!&#34;</span>)
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;LightRadio rendered!&#34;</span>)
 
 <span style="color:#408080;font-style:italic"># Concrete Factory: LightThemeFactory</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">LightThemeFactory</span>(ThemeFactory):
@@ -848,18 +848,18 @@ Teacher teacher <span style="color:#666">=</span> factory<span style="color:#666
     radio<span style="color:#666">.</span>onSelect()
 
 <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">main</span>():
-    <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Using DarkThemeFactory:&#34;</span>)
+    <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Using DarkThemeFactory:&#34;</span>)
     dark_factory <span style="color:#666">=</span> DarkThemeFactory()
     client_code(dark_factory)
 
-    <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">Using LightThemeFactory:&#34;</span>)
+    <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">Using LightThemeFactory:&#34;</span>)
     light_factory <span style="color:#666">=</span> LightThemeFactory()
     client_code(light_factory)
 
 <span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
     main()
 </code></pre></div><h4 id="abstract-factory-in-golang">Abstract Factory in Golang</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> abstractfactory
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> abstractfactory
 
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 

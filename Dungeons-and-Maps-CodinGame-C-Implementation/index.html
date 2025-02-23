@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -108,7 +108,7 @@
 <!-- raw HTML omitted -->
 <p>We have different maps and we have to find the which map has the shortest distance to the treasure. In output we will print the index of that map.</p>
 <p>Characters can be:</p>
-<pre tabindex="0"><code>. - Empty square
+<pre><code>. - Empty square
 # - Wall
 ^ - Move UP
 v - Move DOWN
@@ -117,28 +117,28 @@ v - Move DOWN
 T - The treasure square
 </code></pre><p>When we encounter wall or an empty square, we cannot proceed further. Means the treasure cannot be found in that map.</p>
 <p>We will store all maps in a vector. Each row in a map is a string and each map is a vector of strings. Width <code>w</code> and height <code>h</code> of the maps is given. So the vector to store maps is :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
 </code></pre></div><p>Here <code>n</code> is the number of maps.</p>
 <p>The integer variables <code>start_row</code> and <code>start_col</code> denote starting position on the map.</p>
 <p>This is how vector <code>maps</code> will look like -</p>
 <p><img src="/assets/images/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps1.jpg" alt="Dungeons and Maps CodinGame"></p>
 <p>A <code>for</code> loop will be used to traverse through 2D verctor <code>maps</code> and <code>while</code> loop to traverse through each map.</p>
 <p>An integer variable <code>shortest_distance</code> will be initialised with the highest value an integer can store.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
 </code></pre></div><p>An integer variable <code>count</code>, stores the distance from starting position to the treasure for each map. It is initialised with <code>0</code>, when processing of a map is completed and if the value of <code>count</code> is less than value of <code>shortest_distance</code>, then <code>shortest_distance</code> is updated with the value of <code>count</code>. Means we have a new map whose distance to treasure is the shortest.</p>
 <p>For eg., after processing map at index <code>0</code>, the value of count we get is 5 which is less than the value of <code>shortest_distance</code>. So the new value of <code>shortest_distance</code> is 5.</p>
 <p>This updating of <code>shortest_distance</code> with new value of <code>count</code> is done at the end. Before that we have to terminate unnecessary processing.</p>
 <p>For eg., while processing map at index <code>1</code>, the current value of <code>count</code> is greater than <code>shortest_distance(=5)</code>. So there is no need to process it anymore. It will not give us desired result even if we find treasure in the map. So, we will terminate the processing using <code>break</code> statement.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
 </span><span style="color:#408080;font-style:italic"></span>{
     <span style="color:#008000;font-weight:bold">break</span>;
 }
 </code></pre></div><p>While moving up and down, the value of row is changed and while moving left and right, the value of column is changed.</p>
 <p>So, before processing a map, integer variable <code>next_row</code> is initialised with <code>start_row</code> and <code>next_col</code> is initialised with <code>start_col</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
 <span style="color:#b00040">int</span> next_col <span style="color:#666">=</span> start_col;
 </code></pre></div><p>This is how we will move through the map -</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
 </span><span style="color:#408080;font-style:italic"></span>{
     next_row <span style="color:#666">=</span> next_row <span style="color:#666">-</span> <span style="color:#666">1</span>;
     count<span style="color:#666">++</span>;
@@ -168,7 +168,7 @@ T - The treasure square
 <p>We will have to terminate the processing if a loop in formed in a map.</p>
 <p><img src="/assets/images/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps3.jpg" alt="Dungeons and Maps CodinGame"></p>
 <p>If the value of <code>next_row</code> is less than 0 and greater than and equal to the width of map, then we have to terminate the processing. Similarly, if the value of <code>next_col</code> is less than 0 and greater than and equal to height of the map, then also we have to terminate the processing.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col) <span style="color:#408080;font-style:italic">//forms loop, so break
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col) <span style="color:#408080;font-style:italic">//forms loop, so break
 </span><span style="color:#408080;font-style:italic"></span>{
     <span style="color:#008000;font-weight:bold">break</span>;
 }
@@ -181,7 +181,7 @@ T - The treasure square
     <span style="color:#008000;font-weight:bold">break</span>;
 }
 </code></pre></div><p>If we found the map with shortest distance to treasure then its index number is updated to an integer variable <code>index</code>. Initially <code>index</code> was initialised with <code>-1</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
 </span><span style="color:#408080;font-style:italic"></span>{
     count<span style="color:#666">++</span>;
     <span style="color:#008000;font-weight:bold">if</span> (shortest_distance <span style="color:#666">&gt;</span> count)
@@ -194,7 +194,7 @@ T - The treasure square
 </code></pre></div><p>We will stop the processing once we find the treasure.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">

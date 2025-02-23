@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -124,7 +124,7 @@ and the password is <code>leviathan0</code> .</p>
 <p><code>ltrace</code> is a diagnostic and debugging tool for the command line. It intercepts and records the dynamic library calls which are called by the executed process and the signals which are received by that process.  It can also intercept and print the system calls executed by the program.</p>
 <p>This command will tell about all the system call this binary file made when it is executed.</p>
 <p>The command is</p>
-<pre tabindex="0"><code>ltrace ./check
+<pre><code>ltrace ./check
 </code></pre><p>and we are prompted to enter password. We enter <em>test</em> and one of the function called is <code>strcmp</code>. It compares <em>test</em> with <em>sex</em>. This means <em>sex</em> is the password the binary file need.</p>
 <p><img src="/assets/images/Leviathan-OverTheWire/levi_l12_terminal3.jpg" alt="Leviathan OverTheWire"></p>
 <p>After we enter <em>sex</em> as password, we are in root shell and then we can see the password for next level using command <code>cat /etc/leviathan_pass/leviathan2</code> and the password is <code>ougahZi8Ta</code> .</p>

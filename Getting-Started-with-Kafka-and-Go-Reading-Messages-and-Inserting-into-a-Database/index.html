@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -114,37 +114,37 @@
 <p>To install Kafka on a machine, follow the below steps:</p>
 <h3 id="step-1-download-kafka">Step 1: Download Kafka</h3>
 <p>Go to the official Kafka website <a href="https://kafka.apache.org/downloads">https://kafka.apache.org/downloads</a> and download the latest stable release of Kafka. Extract the downloaded tarball using the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar -xzf kafka_2.13-2.8.0.tgz
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar -xzf kafka_2.13-2.8.0.tgz
 </code></pre></div><p>Note: The version number may vary depending on the latest release.</p>
 <h3 id="step-2-start-zookeeper">Step 2: Start ZooKeeper</h3>
 <p>Kafka uses ZooKeeper to manage its distributed state. To start ZooKeeper, open a new terminal window and navigate to the Kafka installation directory. Then, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008000">cd</span> kafka_2.13-2.8.0
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008000">cd</span> kafka_2.13-2.8.0
 bin/zookeeper-server-start.sh config/zookeeper.properties
 </code></pre></div><p><img src="/assets/images/Kafka/kgo1.png" alt="Read Kafka Message"></p>
 <p>This command starts the ZooKeeper service, which is required by Kafka to run.</p>
 <h3 id="step-3-start-kafka">Step 3: Start Kafka</h3>
 <p>To start Kafka, open a new terminal window and navigate to the Kafka installation directory. Then, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-server-start.sh config/server.properties
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-server-start.sh config/server.properties
 </code></pre></div><p>This command starts the Kafka broker service, which is responsible for handling incoming and outgoing data streams.</p>
 <h3 id="step-4-create-a-topic">Step 4: Create a Topic</h3>
 <p>To create a topic in Kafka, open a new terminal window and navigate to the Kafka installation directory. Then, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-topics.sh --create --topic mytopic --bootstrap-server localhost:9092
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-topics.sh --create --topic mytopic --bootstrap-server localhost:9092
 </code></pre></div><p><img src="/assets/images/Kafka/kgo2.png" alt="Read Kafka Message"></p>
 <p>Note: Replace mytopic with the name of your topic.</p>
 <h3 id="step-5-check-if-kafka-is-installed">Step 5: Check if Kafka is installed</h3>
 <p>To check if Kafka is installed and running properly, open a new terminal window and navigate to the Kafka installation directory. Then, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">bin/kafka-topics.sh --list --bootstrap-server localhost:9092
 </code></pre></div><p><img src="/assets/images/Kafka/kgo3.png" alt="Read Kafka Message"></p>
 <p>This command should display the list of topics that are available in Kafka. If you see your topic in the list, then Kafka is installed and running properly.</p>
 <h1 id="reading-kafka-response-in-go">Reading Kafka Response in Go:</h1>
 <p>To read Kafka response in Go, follow the below steps:</p>
 <h3 id="step-1-install-kafka-go-client">Step 1: Install Kafka Go client</h3>
 <p>To use Kafka in Go, we need to install the Kafka Go client. To install it, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get github.com/segmentio/kafka-go
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get github.com/segmentio/kafka-go
 </code></pre></div><h3 id="step-2-create-a-kafka-reader">Step 2: Create a Kafka Reader</h3>
 <p>To read messages from a Kafka topic, we need to create a Kafka reader.</p>
 <p>The <code>kafka.ReaderConfig</code> struct is used to define the configuration options for the Kafka reader.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">reader <span style="color:#666">:=</span> kafka.<span style="color:#00f">NewReader</span>(kafka.ReaderConfig{
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">reader <span style="color:#666">:=</span> kafka.<span style="color:#00f">NewReader</span>(kafka.ReaderConfig{
     Brokers:  []<span style="color:#b00040">string</span>{<span style="color:#ba2121">&#34;localhost:9092&#34;</span>},
     Topic:    <span style="color:#ba2121">&#34;mytopic&#34;</span>,
     GroupID:  <span style="color:#ba2121">&#34;mygroup&#34;</span>,
@@ -158,7 +158,7 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 <p>Once the reader is set up, we can use the <code>ReadMessage</code> method to read messages from the Kafka topic.</p>
 <h3 id="step-3-read-kafka-messages">Step 3: Read Kafka Messages</h3>
 <p>To read messages from Kafka, we use the <code>ReadMessage()</code> method of the Kafka reader. The following code reads messages from Kafka:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">m, err <span style="color:#666">:=</span> reader.<span style="color:#00f">ReadMessage</span>(context.<span style="color:#00f">Background</span>())
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">m, err <span style="color:#666">:=</span> reader.<span style="color:#00f">ReadMessage</span>(context.<span style="color:#00f">Background</span>())
 <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error reading message: %v&#34;</span>, err)
     <span style="color:#008000;font-weight:bold">continue</span>
@@ -169,7 +169,7 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 <p>I have created table <code>kafka_mytopic</code> in database <code>kafka_responses</code> and the user is <code>user_mytopic</code>.</p>
 <p><img src="/assets/images/Kafka/kgo4.png" alt="Read Kafka Message"></p>
 <p>In the code snippet provided, we see that the PostgreSQL database connection is set up using the <code>database/sql</code> package.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">db, err <span style="color:#666">:=</span> sql.<span style="color:#00f">Open</span>(<span style="color:#ba2121">&#34;postgres&#34;</span>, <span style="color:#ba2121">&#34;postgres://user_mytopic:password@localhost/kafka_responses?sslmode=disable&#34;</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">db, err <span style="color:#666">:=</span> sql.<span style="color:#00f">Open</span>(<span style="color:#ba2121">&#34;postgres&#34;</span>, <span style="color:#ba2121">&#34;postgres://user_mytopic:password@localhost/kafka_responses?sslmode=disable&#34;</span>)
 <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Fatalf</span>(<span style="color:#ba2121">&#34;Failed to connect to database: %v&#34;</span>, err)
 }
@@ -178,18 +178,18 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 <p>The second argument to <code>sql.Open</code> is the connection string. The connection string specifies the details of the database connection, such as the database name, username, and password. In this case, we are connecting to a PostgreSQL database running on the local machine with the database name <code>mydatabase</code>, using a username of <code>user</code> and a password of <code>password</code>.</p>
 <p>The <code>sslmode=disable</code> option is used to disable SSL encryption for the database connection. This option should only be used for development and testing purposes, as it can make your database connection less secure.</p>
 <p>If the connection is successful, a new <code>*sql.DB</code> object is returned. We can use this object to execute SQL queries and transactions against the database.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">_, err = db.<span style="color:#00f">Exec</span>(<span style="color:#ba2121">&#34;INSERT INTO kafka_mytopic (key, value) VALUES ($1, $2)&#34;</span>, msg.Key, msg.Value)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">_, err = db.<span style="color:#00f">Exec</span>(<span style="color:#ba2121">&#34;INSERT INTO kafka_mytopic (key, value) VALUES ($1, $2)&#34;</span>, msg.Key, msg.Value)
 <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error inserting record: %v&#34;</span>, err)
     <span style="color:#008000;font-weight:bold">continue</span>
 }
 </code></pre></div><p>In the code snippet above, we are using the <code>db.Exec</code> method to execute an <code>INSERT</code> query against the <code>kafka_mytopic</code> table in the PostgreSQL database. The <code>$1</code> and <code>$2</code> placeholders are used to pass in the <code>msg.Key</code> and <code>msg.Value</code> values as parameters to the query.</p>
 <p>Finally, we use the <code>defer</code> keyword to ensure that the database connection is closed when the program exits.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">defer</span> db.<span style="color:#00f">Close</span>()
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">defer</span> db.<span style="color:#00f">Close</span>()
 </code></pre></div><p>Closing the database connection is important to ensure that database resources are properly released and to avoid leaking connections.</p>
 <h1 id="processing-kafka-messages">Processing Kafka Messages:</h1>
 <p>The main loop of the program is responsible for reading messages from Kafka, parsing them as JSON, and inserting them into the PostgreSQL database.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">for</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">for</span> {
     m, err <span style="color:#666">:=</span> reader.<span style="color:#00f">ReadMessage</span>(context.<span style="color:#00f">Background</span>())
     <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
         log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error reading message: %v&#34;</span>, err)
@@ -213,12 +213,12 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 }
 </code></pre></div><p>In the loop, we use the <code>reader.ReadMessage</code> method to read a single message from the Kafka topic. The <code>context.Background()</code> parameter is used to create a new context for the message read operation.</p>
 <p>If there is an error reading the message, we log the error and continue to the next iteration of the loop.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error reading message: %v&#34;</span>, err)
     <span style="color:#008000;font-weight:bold">continue</span>
 }
 </code></pre></div><p>Once we have a message, we use the <code>json.Unmarshal</code> method to parse the JSON-encoded message into a <code>Message</code> struct.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> msg Message
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> msg Message
 err = json.<span style="color:#00f">Unmarshal</span>(m.Value, <span style="color:#666">&amp;</span>msg)
 <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error parsing message: %v&#34;</span>, err)
@@ -226,25 +226,25 @@ err = json.<span style="color:#00f">Unmarshal</span>(m.Value, <span style="color
 }
 </code></pre></div><p>If there is an error parsing the message, we log the error and continue to the next iteration of the loop.</p>
 <p>We then use the <code>db.Exec</code> method to insert the message into the PostgreSQL database.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">_, err = db.<span style="color:#00f">Exec</span>(<span style="color:#ba2121">&#34;INSERT INTO kafka_mytopic (key, value) VALUES ($1, $2)&#34;</span>, msg.Key, msg.Value)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">_, err = db.<span style="color:#00f">Exec</span>(<span style="color:#ba2121">&#34;INSERT INTO kafka_mytopic (key, value) VALUES ($1, $2)&#34;</span>, msg.Key, msg.Value)
 <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
     log.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Error inserting record: %v&#34;</span>, err)
     <span style="color:#008000;font-weight:bold">continue</span>
 }
 </code></pre></div><p>If there is an error inserting the message into the database, we log the error and continue to the next iteration of the loop.</p>
 <p>Finally, we log that we have processed the message.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Processed message: %v\n&#34;</span>, msg)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Processed message: %v\n&#34;</span>, msg)
 </code></pre></div><p>If there are no more messages to read from the Kafka topic, the loop will continue running, waiting for new messages to arrive.</p>
 <p>In summary, the main loop of the program reads messages from Kafka, parses them as JSON, and inserts them into the PostgreSQL database. The program handles errors during message processing by logging them and continuing to the next iteration of the loop.</p>
 <h1 id="sending-messages-to-kafka-topic">Sending Messages to Kafka Topic</h1>
 <p>In addition to reading messages from a Kafka topic, it&rsquo;s also possible to send messages to a topic using the kafka-go package. Here&rsquo;s an example of how to send a message to a topic using the kafka-console-producer command-line tool:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic mytopic
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic mytopic
 &gt; <span style="color:#666">{</span><span style="color:#ba2121">&#34;key&#34;</span>: <span style="color:#ba2121">&#34;foo&#34;</span>, <span style="color:#ba2121">&#34;value&#34;</span>: <span style="color:#ba2121">&#34;bar&#34;</span><span style="color:#666">}</span>
 &gt; <span style="color:#666">{</span><span style="color:#ba2121">&#34;key&#34;</span>: <span style="color:#ba2121">&#34;baz&#34;</span>, <span style="color:#ba2121">&#34;value&#34;</span>: <span style="color:#ba2121">&#34;qux&#34;</span><span style="color:#666">}</span>
 </code></pre></div><p>This command opens an interactive console where you can enter messages to send to the specified Kafka topic. Each message should be a JSON object with &ldquo;key&rdquo; and &ldquo;value&rdquo; fields.</p>
 <p><img src="/assets/images/Kafka/Kafka-.gif" alt="Read Kafka Message"></p>
 <p>In a Go program, you can use the kafka-go package to send messages to a Kafka topic. Here&rsquo;s an example:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 
 <span style="color:#008000;font-weight:bold">import</span> (
     <span style="color:#ba2121">&#34;context&#34;</span>

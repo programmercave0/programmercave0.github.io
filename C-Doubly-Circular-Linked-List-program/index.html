@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -108,7 +108,7 @@
 <p><img src="/assets/images/cll.jpg" alt="Split Linked List"></p>
 <p>The first node of the linked list is the head and the last node is the tail. If head is NULL then the list is empty.</p>
 <p>In C++, a node can be defined using <code>struct</code>, which contain a data item and node pointers.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
 {
     T data;
     Node <span style="color:#666">*</span> next;
@@ -128,7 +128,7 @@
 <p>In the <code>search</code> function a value is passed as an argument and its node is returned if found, otherwise a message says “No such element in the list” and <code>nullptr</code> is returned.</p>
 <p>The function starts searching from the head to the last node and passed value is matched with every node’s data item.</p>
 <p>Here is the code for iterative search.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span> <span style="color:#666">*</span><span style="color:#00f">search</span>(T value)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span> <span style="color:#666">*</span><span style="color:#00f">search</span>(T value)
 {
     Node <span style="color:#666">*</span>node <span style="color:#666">=</span> head;
     <span style="color:#008000;font-weight:bold">while</span>(node<span style="color:#666">-&gt;</span>next <span style="color:#666">!=</span> head)
@@ -148,7 +148,7 @@
 }
 </code></pre></div><!-- raw HTML omitted -->
 <p><code>insert</code> function insert a node with the value at the end of the linked list. If the linked list does not contain any node then the new node becomes head and tail otherwise new node is added after tail and its <code>prev</code> pointer points to tail and <code>next</code> pointer points to head. Then new node becomes tail.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insert</span>(T value)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insert</span>(T value)
 {
     Node <span style="color:#666">*</span>node <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Node(value);
 
@@ -173,7 +173,7 @@
 <p>If the searched node is <code>head</code> then node next to head is made head and then the searched node is deleted. The node is deleted only if the value exists means <code>if (node != nullptr)</code>.</p>
 <!-- raw HTML omitted -->
 <p>After deletion next and prev pointer of previous and next nodes are updated.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">deleteNode</span>(T value)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">deleteNode</span>(T value)
 {
     Node <span style="color:#666">*</span>node <span style="color:#666">=</span> search(value);
     <span style="color:#008000;font-weight:bold">if</span>(node <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
@@ -222,7 +222,7 @@
 </code></pre></div><!-- raw HTML omitted -->
 <p>In C++ implementation of this program we have copy constructor, move constructor, copy assignment operator, move assignment operator and destructor.</p>
 <p>Because the presence of a user-defined destructor, copy-constructor, or copy-assignment operator prevents implicit definition of the move constructor and the move assignment operator, any class for which move semantics are desirable, has to declare all five special member functions. This is called <a href="https://en.cppreference.com/w/cpp/language/rule_of_three">Rule of Five</a>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;utility&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">typename</span> T<span style="color:#666">&gt;</span>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -109,7 +109,7 @@
 <ul>
 <li><strong>Scenario:</strong> Rohit writes a reminder in his diary, but Raj doesn’t update his copy.</li>
 <li><strong>Result:</strong> Customers get inconsistent information.
-<pre tabindex="0"><code>[Client] --&gt; [Rohit's Diary: &quot;Call X&quot;]  
+<pre><code>[Client] --&gt; [Rohit's Diary: &quot;Call X&quot;]  
 [Client] --&gt; [Raj's Diary: &quot;No Entry&quot;]  
 </code></pre></li>
 <li><strong>Solution:</strong> Both must write entries simultaneously to ensure <strong>consistency</strong>.</li>
@@ -118,7 +118,7 @@
 <ul>
 <li><strong>Scenario:</strong> If Raj is unavailable, Rohit can’t respond to requests until Raj returns.</li>
 <li><strong>Result:</strong> Delays frustrate customers.
-<pre tabindex="0"><code>[Client Request] --&gt; [Rohit: Available ✅]  
+<pre><code>[Client Request] --&gt; [Rohit: Available ✅]  
                    [Raj: Unavailable ❌]  
 </code></pre></li>
 <li><strong>Solution:</strong> Accept entries even if one person is missing, and sync later.</li>
@@ -130,7 +130,7 @@
 <li><strong>Reject requests</strong> (prioritize <strong>consistency</strong> but lose availability).</li>
 <li><strong>Accept requests</strong> (prioritize <strong>availability</strong> but risk inconsistency).</li>
 </ul>
-<pre tabindex="0"><code>Partition Occurs:  
+<pre><code>Partition Occurs:  
 [Rohit] --✂️ Network Failure ✂️-- [Raj]  
 Choose:  
 1. Reject writes ➔ Consistency ✔️, Availability ❌  

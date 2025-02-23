@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -102,7 +102,7 @@
 <li><strong>Length</strong>: Indicates the number of elements in the slice.</li>
 <li><strong>Capacity</strong>: The maximum number of elements the slice can accommodate without requiring reallocation.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 
@@ -113,7 +113,7 @@
 </span><span style="color:#408080;font-style:italic"></span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#008000">len</span>(b)) <span style="color:#408080;font-style:italic">// 3
 </span><span style="color:#408080;font-style:italic"></span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#008000">cap</span>(b)) <span style="color:#408080;font-style:italic">// 5
 </span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><pre tabindex="0"><code>Underlying Array: [10, 20, 30, 40, 50]
+</code></pre></div><pre><code>Underlying Array: [10, 20, 30, 40, 50]
 Slice Header: {
   Pointer: -&gt; [10, 20, 30, 40, 50],
   Length: 3,
@@ -134,7 +134,7 @@ Slice Header: {
 <li>Fixed size (e.g., <code>[5]int</code>).</li>
 <li>Value types; copying an array duplicates the entire array.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 
 <span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
@@ -150,7 +150,7 @@ Slice Header: {
 <li>Dynamic lengths and capacities.</li>
 <li>Share the same underlying array when assigned.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 
 <span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
@@ -163,7 +163,7 @@ Slice Header: {
 </ul>
 <h3 id="slice-header-structure">Slice Header Structure</h3>
 <p>Internally, a slice is represented by a struct:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> runtime
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> runtime
 
 <span style="color:#008000;font-weight:bold">type</span> slice <span style="color:#008000;font-weight:bold">struct</span> {
     ptr   unsafe.Pointer
@@ -176,14 +176,14 @@ Slice Header: {
 <li>
 <p><strong>Appending Elements</strong>:
 Use the <code>append</code> function to add elements dynamically.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">slice <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">3</span>}
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">slice <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">3</span>}
 slice = <span style="color:#008000">append</span>(slice, <span style="color:#666">4</span>, <span style="color:#666">5</span>)
 fmt.<span style="color:#00f">Println</span>(slice) <span style="color:#408080;font-style:italic">// Output: [1, 2, 3, 4, 5]
 </span></code></pre></div></li>
 <li>
 <p><strong>Copying Slices</strong>:
 Use <code>copy</code> to transfer elements between slices.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">src <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">3</span>}
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">src <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">3</span>}
 dst <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]<span style="color:#b00040">int</span>, <span style="color:#008000">len</span>(src))
 <span style="color:#008000">copy</span>(dst, src)
 fmt.<span style="color:#00f">Println</span>(dst) <span style="color:#408080;font-style:italic">// Output: [1, 2, 3]
@@ -192,16 +192,16 @@ fmt.<span style="color:#00f">Println</span>(dst) <span style="color:#408080;font
 <p><strong>Using Slices as Stacks</strong>:
 Implement stack operations using slices.</p>
 <p>Push operation:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">stack <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{}
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">stack <span style="color:#666">:=</span> []<span style="color:#b00040">int</span>{}
 stack = <span style="color:#008000">append</span>(stack, <span style="color:#666">10</span>) <span style="color:#408080;font-style:italic">// Push
 </span></code></pre></div><p>Pop operation:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">val <span style="color:#666">:=</span> stack[<span style="color:#008000">len</span>(stack)<span style="color:#666">-</span><span style="color:#666">1</span>] <span style="color:#408080;font-style:italic">// Peek
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">val <span style="color:#666">:=</span> stack[<span style="color:#008000">len</span>(stack)<span style="color:#666">-</span><span style="color:#666">1</span>] <span style="color:#408080;font-style:italic">// Peek
 </span><span style="color:#408080;font-style:italic"></span>stack = stack[:<span style="color:#008000">len</span>(stack)<span style="color:#666">-</span><span style="color:#666">1</span>] <span style="color:#408080;font-style:italic">// Pop
 </span></code></pre></div></li>
 <li>
 <p><strong>Modifying Slices in Functions</strong>:
 Changes within functions affect the original slice due to shared underlying arrays.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">negate</span>(s []<span style="color:#b00040">int</span>) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">negate</span>(s []<span style="color:#b00040">int</span>) {
     <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> s {
         s[i] = <span style="color:#666">-</span>s[i]
     }
@@ -216,7 +216,7 @@ Changes within functions affect the original slice due to shared underlying arra
 <li>
 <p><strong>Inserting Elements</strong>:
 Shift elements to insert new values.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">Insert</span>(slice []<span style="color:#b00040">int</span>, index, value <span style="color:#b00040">int</span>) []<span style="color:#b00040">int</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">Insert</span>(slice []<span style="color:#b00040">int</span>, index, value <span style="color:#b00040">int</span>) []<span style="color:#b00040">int</span> {
     slice = <span style="color:#008000">append</span>(slice, <span style="color:#666">0</span>) <span style="color:#408080;font-style:italic">// Extend length
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000">copy</span>(slice[index<span style="color:#666">+</span><span style="color:#666">1</span>:], slice[index:])
     slice[index] = value
@@ -233,7 +233,7 @@ fmt.<span style="color:#00f">Println</span>(slice) <span style="color:#408080;fo
 <li>A <strong>nil slice</strong> has no underlying array.</li>
 <li>An <strong>empty slice</strong> has a length of zero but can still grow.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> nilSlice []<span style="color:#b00040">int</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> nilSlice []<span style="color:#b00040">int</span>
 emptySlice <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]<span style="color:#b00040">int</span>, <span style="color:#666">0</span>)
 fmt.<span style="color:#00f">Println</span>(nilSlice <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nil</span>) <span style="color:#408080;font-style:italic">// true
 </span><span style="color:#408080;font-style:italic"></span>fmt.<span style="color:#00f">Println</span>(emptySlice <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nil</span>) <span style="color:#408080;font-style:italic">// false

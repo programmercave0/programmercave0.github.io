@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -155,7 +155,7 @@
 <ul>
 <li>first step is to hide the constructor by making it private. This will prevent other classes from instantiating the singleton class.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#00f">Database</span><span style="color:#666">()</span> <span style="color:#666">{</span>
 	<span style="color:#666">}</span>
 <span style="color:#666">}</span>
@@ -163,7 +163,7 @@
 <li>above code restricts the instantiation of the Database class. Now, we need to provide a global access point to get the instance of the Database class.</li>
 <li>We can do this by creating a static method that returns the instance of the Database class. If the instance does not exist, it should create the instance and then return it.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#008000;font-weight:bold">static</span> Database instance <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Database<span style="color:#666">();</span>
 	
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#00f">Database</span><span style="color:#666">()</span> <span style="color:#666">{</span>
@@ -183,7 +183,7 @@
 <li>If two threads call the <code>getInstance()</code> method at the same time, both threads will check if the instance variable is null. Both threads will find that the instance variable is null.</li>
 <li>Both threads will create a new instance of the Database class. This will result in two instances of the Database class.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#008000;font-weight:bold">static</span> Database instance <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Database<span style="color:#666">();</span>
 	
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#00f">Database</span><span style="color:#666">()</span> <span style="color:#666">{</span>
@@ -204,7 +204,7 @@
 <li>Once the lock is released, one thread will create a new instance of the Database class. The other thread will wait for the lock to be released. Once the lock is released, it will create a new instance of the Database class. This will result in two instances of the Database class.</li>
 <li>To make the above code efficient, we can use double-checked locking.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#008000;font-weight:bold">static</span> Database instance <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Database<span style="color:#666">();</span>
 	
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#00f">Database</span><span style="color:#666">()</span> <span style="color:#666">{</span>
@@ -223,32 +223,32 @@
 	<span style="color:#666">}</span>
 <span style="color:#666">}</span>
 </code></pre></div><h4 id="singleton-pattern-in-python">Singleton Pattern in Python</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ConnectionPool</span>(<span style="color:#008000">object</span>):
-    _instance <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">None</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">ConnectionPool</span>(<span style="color:#008000">object</span>):
+    _instance <span style="color:#666">=</span> None
 
     <span style="color:#008000;font-weight:bold">def</span> __new__(cls):
-        <span style="color:#008000;font-weight:bold">if</span> cls<span style="color:#666">.</span>_instance <span style="color:#a2f;font-weight:bold">is</span> <span style="color:#008000;font-weight:bold">None</span>:
-            <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Creating the object&#34;</span>)
+        <span style="color:#008000;font-weight:bold">if</span> cls<span style="color:#666">.</span>_instance <span style="color:#a2f;font-weight:bold">is</span> None:
+            <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Creating the object&#34;</span>)
             cls<span style="color:#666">.</span>_instance <span style="color:#666">=</span> <span style="color:#008000">super</span>(ConnectionPool, cls)<span style="color:#666">.</span>__new__(cls)
         <span style="color:#008000;font-weight:bold">return</span> cls<span style="color:#666">.</span>_instance
 </code></pre></div><ul>
 <li>The object is created on the first call to the class:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pool1 <span style="color:#666">=</span> ConnectionPool()
-<span style="color:#008000">print</span>(pool1)
-</code></pre></div><pre tabindex="0"><code>Creating the object
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pool1 <span style="color:#666">=</span> ConnectionPool()
+<span style="color:#008000;font-weight:bold">print</span>(pool1)
+</code></pre></div><pre><code>Creating the object
 &lt;__main__.ConnectionPool object at 0x7f15ecf9fe80&gt;
 </code></pre><ul>
 <li>But the second call returns the same instance. The message “Creating the object” does not print, nor is a different object returned:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pool2 <span style="color:#666">=</span> ConnectionPool()
-<span style="color:#008000">print</span>(pool2)
-<span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Are they the same object?&#34;</span>, pool1 <span style="color:#a2f;font-weight:bold">is</span> pool2)
-</code></pre></div><pre tabindex="0"><code>&lt;__main__.ConnectionPool object at 0x7f15ecf9fe80&gt;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pool2 <span style="color:#666">=</span> ConnectionPool()
+<span style="color:#008000;font-weight:bold">print</span>(pool2)
+<span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Are they the same object?&#34;</span>, pool1 <span style="color:#a2f;font-weight:bold">is</span> pool2)
+</code></pre></div><pre><code>&lt;__main__.ConnectionPool object at 0x7f15ecf9fe80&gt;
 Are they the same object? True
 </code></pre><h4 id="singleton-pattern-in-golang">Singleton Pattern in Golang</h4>
 <h5 id="using-user-defined-function">Using user-defined function</h5>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> lock = <span style="color:#666">&amp;</span>sync.Mutex{}
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> lock = <span style="color:#666">&amp;</span>sync.Mutex{}
 
 <span style="color:#008000;font-weight:bold">type</span> connectionPool <span style="color:#008000;font-weight:bold">struct</span> {
 }
@@ -280,7 +280,7 @@ Are they the same object? True
 <ul>
 <li><code>sync.Once</code> will only perform the operation only once</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> once sync.Once
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> once sync.Once
 
 <span style="color:#008000;font-weight:bold">type</span> connectionPool <span style="color:#008000;font-weight:bold">struct</span> {
 }
@@ -330,7 +330,7 @@ Are they the same object? True
 <ul>
 <li>we can use a class to accept parameters for object creation. The parameter class is type safe, and it is easy to identify the parameters.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> String host<span style="color:#666">;</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">int</span> port<span style="color:#666">;</span>
 	<span style="color:#008000;font-weight:bold">private</span> String username<span style="color:#666">;</span>
@@ -358,7 +358,7 @@ Are they the same object? True
 <li>This will require creating a Database constructor with all the fields. Again, why would developers not just want to use the constructor instead? - So we need a way to allow the parameter class to create the Database object while not exposing a constructor.
 -This can be done using an inner class. This inner class is known as the <strong>builder class</strong>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span> <span style="color:#666">{</span>
 	<span style="color:#008000;font-weight:bold">private</span> String host<span style="color:#666">;</span>
 	<span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">int</span> port<span style="color:#666">;</span>
 	<span style="color:#008000;font-weight:bold">private</span> String username<span style="color:#666">;</span>
@@ -387,14 +387,14 @@ Are they the same object? True
 <li>above code now allows us to create a Database object using the DatabaseBuilder class.</li>
 <li>We can fail object creation by adding a validation hook to the build method. The objects created are immutable because the Database class does not have any setters. And the developer can create objects with any permutation of parameters.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Database database <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Database<span style="color:#666">.</span><span style="color:#7d9029">DatabaseBuilder</span><span style="color:#666">()</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Database database <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Database<span style="color:#666">.</span><span style="color:#7d9029">DatabaseBuilder</span><span style="color:#666">()</span>
 	<span style="color:#666">.</span><span style="color:#7d9029">host</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;localhost&#34;</span><span style="color:#666">)</span>
 	<span style="color:#666">.</span><span style="color:#7d9029">port</span><span style="color:#666">(</span>3306<span style="color:#666">)</span>
 	<span style="color:#666">.</span><span style="color:#7d9029">username</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;root&#34;</span><span style="color:#666">)</span>
 	<span style="color:#666">.</span><span style="color:#7d9029">password</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;password&#34;</span><span style="color:#666">)</span>
 	<span style="color:#666">.</span><span style="color:#7d9029">build</span><span style="color:#666">();</span>
 </code></pre></div><h4 id="builder-pattern-in-python">Builder Pattern in Python</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">__future__</span> <span style="color:#008000;font-weight:bold">import</span> annotations
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">__future__</span> <span style="color:#008000;font-weight:bold">import</span> annotations
 <span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Builder</span>(ABC):
@@ -411,7 +411,7 @@ Are they the same object? True
         <span style="color:#008000;font-weight:bold">pass</span>
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">DatabaseBuilder</span>(Builder):
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> __init__(self) <span style="color:#666">-&gt;</span> None:
         self<span style="color:#666">.</span>_database <span style="color:#666">=</span> Database()
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">with_name</span>(self, name: <span style="color:#008000">str</span>) <span style="color:#666">-&gt;</span> DatabaseBuilder:
@@ -429,31 +429,31 @@ Are they the same object? True
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_database
     
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">is_valid</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">bool</span>:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_database<span style="color:#666">.</span>_name <span style="color:#a2f;font-weight:bold">is</span> <span style="color:#a2f;font-weight:bold">not</span> <span style="color:#008000;font-weight:bold">None</span>
+        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_database<span style="color:#666">.</span>_name <span style="color:#a2f;font-weight:bold">is</span> <span style="color:#a2f;font-weight:bold">not</span> None
 
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Database</span>:
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self, name<span style="color:#666">=</span><span style="color:#008000;font-weight:bold">None</span>, host<span style="color:#666">=</span><span style="color:#008000;font-weight:bold">None</span>, port<span style="color:#666">=</span><span style="color:#008000;font-weight:bold">None</span>):
+    <span style="color:#008000;font-weight:bold">def</span> __init__(self, name<span style="color:#666">=</span>None, host<span style="color:#666">=</span>None, port<span style="color:#666">=</span>None):
         self<span style="color:#666">.</span>_name <span style="color:#666">=</span> name
         self<span style="color:#666">.</span>_host <span style="color:#666">=</span> host
         self<span style="color:#666">.</span>_port <span style="color:#666">=</span> port
 
     <span style="color:#008000;font-weight:bold">def</span> __repr__(self):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;Database(name=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_name<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, host=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_host<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, port=</span><span style="color:#b68;font-weight:bold">{</span>self<span style="color:#666">.</span>_port<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">)&#34;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#34;Database(name={self._name}, host={self._host}, port={self._port})&#34;</span>
     
 <span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
     <span style="color:#008000;font-weight:bold">try</span>:
         <span style="color:#408080;font-style:italic"># Building a valid database</span>
         db <span style="color:#666">=</span> DatabaseBuilder()<span style="color:#666">.</span>with_name(<span style="color:#ba2121">&#34;MyDB&#34;</span>)<span style="color:#666">.</span>with_url(<span style="color:#ba2121">&#34;localhost&#34;</span>, <span style="color:#666">3306</span>)<span style="color:#666">.</span>build()
-        <span style="color:#008000">print</span>(db)
+        <span style="color:#008000;font-weight:bold">print</span>(db)
 
         <span style="color:#408080;font-style:italic"># Building an invalid database (missing name)</span>
         invalid_db <span style="color:#666">=</span> DatabaseBuilder()<span style="color:#666">.</span>with_url(<span style="color:#ba2121">&#34;localhost&#34;</span>, <span style="color:#666">3306</span>)<span style="color:#666">.</span>build()
-        <span style="color:#008000">print</span>(invalid_db)
+        <span style="color:#008000;font-weight:bold">print</span>(invalid_db)
     <span style="color:#008000;font-weight:bold">except</span> <span style="color:#d2413a;font-weight:bold">ValueError</span> <span style="color:#008000;font-weight:bold">as</span> e:
-        <span style="color:#008000">print</span>(e)
+        <span style="color:#008000;font-weight:bold">print</span>(e)
 </code></pre></div><h4 id="builder-pattern-in-golang">Builder pattern in Golang</h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> builder
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> builder
 
 <span style="color:#008000;font-weight:bold">import</span> (
 	<span style="color:#ba2121">&#34;errors&#34;</span>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -116,13 +116,13 @@
 <h3 id="solution-">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit16@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Nmap (“Network Mapper”) will help us to scan for ports. Option <code>-p</code> provides the port ranges to the tool. So our command is</p>
-<pre tabindex="0"><code>nmap localhost -p31000-32000 
+<pre><code>nmap localhost -p31000-32000 
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l1617_terminal1.jpg" alt="Bandit Level 16 17"></p>
 <p>We found two ports and port 31790 is open. Open port means server on that port is listening.</p>
 <p>Now to connect to port 31790 we will use <code>openssl</code> with <code>s_client</code> tool, which we have done in previous challenge.</p>
-<pre tabindex="0"><code>openssl s_client -connect localhost:31790
+<pre><code>openssl s_client -connect localhost:31790
 </code></pre><p>and the we enter the password for the current level. The output we received is a RSA private key.</p>
-<pre tabindex="0"><code>-----BEGIN RSA PRIVATE KEY-----
+<pre><code>-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
 imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
 Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
@@ -142,9 +142,9 @@ SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
 </code></pre><p>Save this key locally on your computer with name bandit17.key.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1617_terminal2.jpg" alt="Bandit Level 16 17"></p>
 <p>In level 13 we login using a ssh private key. We will try to do it here with command</p>
-<pre tabindex="0"><code>ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
+<pre><code>ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
 </code></pre><p>But we received <em>warning: unprotected private key file</em> because file was readable to group and to the world and writable by the owner. We change to read-only mode to the owner using command</p>
-<pre tabindex="0"><code>sudo chmod 400 bandit17.key
+<pre><code>sudo chmod 400 bandit17.key
 </code></pre><p>Now we can login into bandit17.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1617_terminal3.jpg" alt="Bandit Level 16 17"></p>
 <p>Reference : <a href="https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html">https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html</a><!-- raw HTML omitted -->
@@ -161,7 +161,7 @@ SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
 <p>Command to login <code>ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220</code></p>
 <p><code>diff</code> program compare files line by line and option <code>--normal</code> output a normal diff.</p>
 <p>Command to find difference between passwords.new and passwords.old</p>
-<pre tabindex="0"><code>diff --normal passwords.new passwords.old 
+<pre><code>diff --normal passwords.new passwords.old 
 </code></pre><p>and the difference in passwords.new is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1718_terminal.jpg" alt="Bandit Level 17 18"></p>
 <p>Reference : <a href="http://man7.org/linux/man-pages/man1/diff.1.html">http://man7.org/linux/man-pages/man1/diff.1.html</a></p>
@@ -177,7 +177,7 @@ SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
 <p>With option <code>-t</code> in <code>ssh</code> command we can force psuedo-tty allocation.</p>
 <p>&ldquo;Pseudo Terminals&rdquo; emulates Terminal hardware, handling input and output in the same way a physical device would so that the software connected is not aware there&rsquo;s not a real device attached.</p>
 <p>We have forced a psuedo terminal and we know that password is in the readme file, so we can view password using command.</p>
-<pre tabindex="0"><code>ssh -t bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+<pre><code>ssh -t bandit18@bandit.labs.overthewire.org -p 2220 cat readme
 </code></pre><p>and the password for the next level is <code>***</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1819_terminal.jpg" alt="Bandit Level 18 19"></p>
 <p>Reference : <a href="https://linux.die.net/man/1/ssh">https://linux.die.net/man/1/ssh</a><!-- raw HTML omitted -->

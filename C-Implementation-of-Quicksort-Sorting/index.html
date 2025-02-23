@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -105,7 +105,7 @@
 <p>The pivot element 4 in fig. (b) ends up in the correct position in the array and so on all pivot elements ends up in the correct position.</p>
 <!-- raw HTML omitted -->
 <p><code>split</code> function returns the index of pivot element.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
 {
     <span style="color:#b00040">int</span> x <span style="color:#666">=</span> a[end_index];
     <span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index <span style="color:#666">-</span> <span style="color:#666">1</span>;
@@ -123,7 +123,7 @@
 }
 </code></pre></div><p>Here is the operation of <code>split</code> for the first time.</p>
 <p><img src="/assets/images/quicksortsplit.png" alt="Quicksort"></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
 {
     <span style="color:#008000;font-weight:bold">if</span> (start_index <span style="color:#666">&lt;</span> end_index)
     {
@@ -134,7 +134,7 @@
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)

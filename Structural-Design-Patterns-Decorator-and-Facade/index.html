@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -111,7 +111,7 @@
 <ul>
 <li>Let us say we want to build a class that sends our users emails with a greeting. We can start with a simple class:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">EmailService</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">EmailService</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">sendEmail</span><span style="color:#666">(</span>String email<span style="color:#666">,</span> String message<span style="color:#666">)</span> <span style="color:#666">{</span>
         <span style="color:#666">...</span>
     <span style="color:#666">}</span>
@@ -121,7 +121,7 @@
 <li>For example, we may want to send phone notifications to our users or send them slack messages.</li>
 <li>We can obviously add new methods to our EmailService class, but this will violate the Single Responsibility Principle. So we do as we always do and abstract the functionality into a separate class:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Communicator</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Communicator</span> <span style="color:#666">{</span>
     <span style="color:#b00040">void</span> <span style="color:#00f">send</span><span style="color:#666">(</span>String target<span style="color:#666">,</span> String message<span style="color:#666">);</span>
 <span style="color:#666">}</span>
 </code></pre></div><ul>
@@ -164,13 +164,13 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Communicator</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Communicator</span> <span style="color:#666">{</span>
     <span style="color:#b00040">void</span> <span style="color:#00f">send</span><span style="color:#666">(</span>String target<span style="color:#666">,</span> String message<span style="color:#666">);</span>
 <span style="color:#666">}</span>
 </code></pre></div><ul>
 <li><strong>Concrete product</strong> - Create a concrete product class that implements the common interface and represents the basic behavior of the wrapped object.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">EmailService</span> <span style="color:#008000;font-weight:bold">implements</span> Communicator <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">EmailService</span> <span style="color:#008000;font-weight:bold">implements</span> Communicator <span style="color:#666">{</span>
     <span style="color:#a2f">@Override</span>
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">send</span><span style="color:#666">(</span>String email<span style="color:#666">,</span> String message<span style="color:#666">)</span> <span style="color:#666">{</span>
         <span style="color:#666">...</span>
@@ -179,7 +179,7 @@
 </code></pre></div><ul>
 <li><strong>Base decorator</strong> - Create a base decorator class that implements the common interface and contains a field for storing a reference to a wrapped object.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CommunicatorDecorator</span> <span style="color:#008000;font-weight:bold">implements</span> Communicator <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">abstract</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CommunicatorDecorator</span> <span style="color:#008000;font-weight:bold">implements</span> Communicator <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">protected</span> Communicator communicator<span style="color:#666">;</span>
 
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">CommunicatorDecorator</span><span style="color:#666">(</span>Communicator communicator<span style="color:#666">)</span> <span style="color:#666">{</span>
@@ -189,7 +189,7 @@
 </code></pre></div><ul>
 <li><strong>Concrete decorators</strong> - Create concrete decorator classes that extend the base decorator class and add additional behavior to the wrapped object.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PhoneService</span> <span style="color:#008000;font-weight:bold">extends</span> CommunicatorDecorator <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PhoneService</span> <span style="color:#008000;font-weight:bold">extends</span> CommunicatorDecorator <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">PhoneService</span><span style="color:#666">(</span>Communicator communicator<span style="color:#666">)</span> <span style="color:#666">{</span>
         <span style="color:#008000;font-weight:bold">super</span><span style="color:#666">(</span>communicator<span style="color:#666">);</span>
     <span style="color:#666">}</span>
@@ -207,7 +207,7 @@
 </code></pre></div><ul>
 <li><strong>Client</strong> - The client code works with all objects using the common interface. This way it can stay independent of the concrete classes of objects it works with.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Client</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Client</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">static</span> <span style="color:#b00040">void</span> <span style="color:#00f">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
         Communicator communicator <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> EmailService<span style="color:#666">();</span>
         Communicator phoneService <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> PhoneService<span style="color:#666">(</span>communicator<span style="color:#666">);</span>
@@ -216,7 +216,7 @@
     <span style="color:#666">}</span>
 <span style="color:#666">}</span>
 </code></pre></div><h3 id="decorator-pattern-in-python">Decorator Pattern in Python</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Datasource</span>(ABC):
     <span style="color:#a2f">@abstractmethod</span>
@@ -236,7 +236,7 @@
         <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;Base&#34;</span>
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">write</span>(self, value):
-        <span style="color:#008000">print</span>(value)
+        <span style="color:#008000;font-weight:bold">print</span>(value)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CompressionDecorator</span>(BaseDecorator):
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, datasource):
@@ -247,14 +247,14 @@
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_decompress(compressed)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">_decompress</span>(self, compressed):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;</span><span style="color:#b68;font-weight:bold">{</span>compressed<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121"> - Decompressed&#34;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#34;{compressed} - Decompressed&#34;</span>
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">write</span>(self, value):
         compressed <span style="color:#666">=</span> self<span style="color:#666">.</span>_compress(value)
         self<span style="color:#666">.</span>_next_layer<span style="color:#666">.</span>write(compressed)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">_compress</span>(self, value):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;</span><span style="color:#b68;font-weight:bold">{</span>value<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121"> - Compressed&#34;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#34;{value} - Compressed&#34;</span>
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">EncryptionDecorator</span>(BaseDecorator):
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, next_layer):
@@ -265,14 +265,14 @@
         <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_decrypt(value)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">_decrypt</span>(self, value):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;</span><span style="color:#b68;font-weight:bold">{</span>value<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121"> - Decrypted&#34;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#34;{value} - Decrypted&#34;</span>
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">write</span>(self, value):
         encrypted <span style="color:#666">=</span> self<span style="color:#666">.</span>_encrypt(value)
         self<span style="color:#666">.</span>_next_layer<span style="color:#666">.</span>write(encrypted)
 
     <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">_encrypt</span>(self, value):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;</span><span style="color:#b68;font-weight:bold">{</span>value<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121"> - Encrypted&#34;</span>
+        <span style="color:#008000;font-weight:bold">return</span> f<span style="color:#ba2121">&#34;{value} - Encrypted&#34;</span>
 
 <span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
     datasource <span style="color:#666">=</span> FileDatasource()
@@ -280,9 +280,9 @@
     compressed_encrypted_datasource <span style="color:#666">=</span> CompressionDecorator(encrypted_datasource)
 
     compressed_encrypted_datasource<span style="color:#666">.</span>write(<span style="color:#ba2121">&#34;Test Data&#34;</span>)
-    <span style="color:#008000">print</span>(compressed_encrypted_datasource<span style="color:#666">.</span>read())
+    <span style="color:#008000;font-weight:bold">print</span>(compressed_encrypted_datasource<span style="color:#666">.</span>read())
 </code></pre></div><h3 id="decorator-pattern-in-golang">Decorator Pattern in Golang</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> decorator
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> decorator
 
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 
@@ -394,7 +394,7 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Order</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Order</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">private</span> PaymentGateway paymentGateway<span style="color:#666">;</span>
     <span style="color:#008000;font-weight:bold">private</span> Inventory inventory<span style="color:#666">;</span>
     <span style="color:#008000;font-weight:bold">private</span> EmailService emailService<span style="color:#666">;</span>
@@ -435,7 +435,7 @@
 <li>The Facade pattern provides a higher-level interface that makes the subsystem easier to use.</li>
 <li>The Facade pattern is implemented by simply creating a new class that encapsulates the complex logic of the existing classes. For our example above, we will move the complex logic to a new class called <code>OrderProcessor</code>.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OrderProcessor</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OrderProcessor</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">private</span> PaymentGateway paymentGateway<span style="color:#666">;</span>
     <span style="color:#008000;font-weight:bold">private</span> Inventory inventory<span style="color:#666">;</span>
     <span style="color:#008000;font-weight:bold">private</span> EmailService emailService<span style="color:#666">;</span>
@@ -453,7 +453,7 @@
 </code></pre></div><ul>
 <li>Now we can use the <code>OrderProcessor</code> class in our <code>Order</code> class and delegate the complex logic to the <code>OrderProcessor</code> class.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Order</span> <span style="color:#666">{</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Order</span> <span style="color:#666">{</span>
     <span style="color:#008000;font-weight:bold">private</span> OrderProcessor orderProcessor<span style="color:#666">;</span>
 
     <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">checkout</span><span style="color:#666">()</span> <span style="color:#666">{</span>
@@ -466,27 +466,27 @@
 <li>The <code>Order</code> class is also easier to reuse. You can reuse the <code>Order</code> class in another application without changing the code.</li>
 </ul>
 <h3 id="facade-pattern-in-python">Facade Pattern in Python</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OrderManager</span>(ABC):
     <span style="color:#a2f">@abstractmethod</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_order</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_order</span>(self) <span style="color:#666">-&gt;</span> None:
         <span style="color:#008000;font-weight:bold">pass</span>
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OrderManagerImpl</span>(OrderManager):
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, order_processor: <span style="color:#ba2121">&#39;OrderProcessor&#39;</span>):
         self<span style="color:#666">.</span>order_processor <span style="color:#666">=</span> order_processor
 
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_order</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_order</span>(self) <span style="color:#666">-&gt;</span> None:
         self<span style="color:#666">.</span>order_processor<span style="color:#666">.</span>process()
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">AnalyticsService</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">track</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Analytics created&#34;</span>)
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">track</span>(self) <span style="color:#666">-&gt;</span> None:
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Analytics created&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">InventoryService</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_inventory</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Inventory checked&#34;</span>)
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_inventory</span>(self) <span style="color:#666">-&gt;</span> None:
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Inventory checked&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OrderProcessor</span>:
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, recommendation_service: <span style="color:#ba2121">&#39;RecommendationService&#39;</span>, 
@@ -496,7 +496,7 @@
         self<span style="color:#666">.</span>payment_service <span style="color:#666">=</span> payment_service
         self<span style="color:#666">.</span>warehouse_processor <span style="color:#666">=</span> warehouse_processor
 
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> None:
         self<span style="color:#666">.</span>warehouse_processor<span style="color:#666">.</span>process()
         self<span style="color:#666">.</span>recommendation_service<span style="color:#666">.</span>recommend()
         self<span style="color:#666">.</span>payment_service<span style="color:#666">.</span>pay()
@@ -508,7 +508,7 @@
         self<span style="color:#666">.</span>recommendation_service <span style="color:#666">=</span> RecommendationService()
         self<span style="color:#666">.</span>analytics_service <span style="color:#666">=</span> AnalyticsService()
 
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> None:
         self<span style="color:#666">.</span>payment_service<span style="color:#666">.</span>pay()
         <span style="color:#408080;font-style:italic"># update</span>
         self<span style="color:#666">.</span>inventory_service<span style="color:#666">.</span>check_inventory()
@@ -517,12 +517,12 @@
         self<span style="color:#666">.</span>analytics_service<span style="color:#666">.</span>track()
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentService</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Payment done&#34;</span>)
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self) <span style="color:#666">-&gt;</span> None:
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Payment done&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RecommendationService</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">recommend</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
-        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;Recommendation created&#34;</span>)
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">recommend</span>(self) <span style="color:#666">-&gt;</span> None:
+        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;Recommendation created&#34;</span>)
 
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">WarehouseProcessor</span>:
     <span style="color:#008000;font-weight:bold">def</span> __init__(self, inventory_service: InventoryService, 
@@ -530,7 +530,7 @@
         self<span style="color:#666">.</span>inventory_service <span style="color:#666">=</span> inventory_service
         self<span style="color:#666">.</span>analytics_service <span style="color:#666">=</span> analytics_service
 
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process</span>(self) <span style="color:#666">-&gt;</span> None:
         self<span style="color:#666">.</span>inventory_service<span style="color:#666">.</span>check_inventory()
         self<span style="color:#666">.</span>analytics_service<span style="color:#666">.</span>track()
 
@@ -538,7 +538,7 @@
     order_flow_processor <span style="color:#666">=</span> OrderFlowProcessor()
     order_flow_processor<span style="color:#666">.</span>process()
 </code></pre></div><h3 id="facade-pattern-in-golang">Facade Pattern in Golang</h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> facade
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> facade
 
 <span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
 

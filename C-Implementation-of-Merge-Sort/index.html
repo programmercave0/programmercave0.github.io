@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -103,7 +103,7 @@
 <p>If the size of the array is even then the size of subarrays is equal and if it is odd then first array has one element more than the second array. The division of array stops when subarrays contain only one element and then merging of subaarrays starts. The arrays are merged in sorted order.</p>
 <!-- raw HTML omitted -->
 <p>Here is the generic implementation of <code>merge</code> and <code>merge_sort</code> function. It sorts array of all datatypes.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
 <span style="color:#b00040">void</span> merge(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> v, <span style="color:#b00040">int</span> p, <span style="color:#b00040">int</span> q, <span style="color:#b00040">int</span> r)
 {
     <span style="color:#b00040">int</span> size1 <span style="color:#666">=</span> q<span style="color:#666">-</span>p<span style="color:#666">+</span><span style="color:#666">1</span>;
@@ -151,7 +151,7 @@
 <!-- raw HTML omitted -->
 <p>When we merge these subarrays, the smallest element from these subarray is selected and the element is entered in the input array <code>v</code> at index 0. <code>k</code> maintains the index of input array and <code>i</code> and <code>j</code> maintains the index of <code>L</code> and <code>R</code> subarrayarray respectively.</p>
 <p>If all the elements of one of the subarray are entered then remaining elements of the another subarrays are entered in the input array since all elements are greater than the last input value. This is done with the help of last two <code>for</code> loops in the above function.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
 <span style="color:#b00040">void</span> merge_sort(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&amp;</span> v, <span style="color:#b00040">int</span> p, <span style="color:#b00040">int</span> r)
 {
     <span style="color:#008000;font-weight:bold">if</span>(p <span style="color:#666">&lt;</span> r)
@@ -166,7 +166,7 @@
 <p>Here is the output of merge sort with generic functions.</p>
 <p><img src="/assets/images/mergesortout.png" alt="Mergesort"></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span><span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -113,10 +113,10 @@
 <p>Command to connect remote host : <code>ssh bandit4@bandit.labs.overthewire.org -p 2220</code> password is  <code>****</code> .</p>
 <p><code>file</code> command is used to determine a file’s type or what file contains.</p>
 <p>In <em>inhere</em> directory, there are 10 files <em>-file00, -file01, …, -file09</em>. The human-readable file means the content of that file is ASCII and we can find the type of content of a file by running command</p>
-<pre tabindex="0"><code>file ./-file00 
-</code></pre><pre tabindex="0"><code>file ./-file01
+<pre><code>file ./-file00 
+</code></pre><pre><code>file ./-file01
 </code></pre><p>&hellip;</p>
-<pre tabindex="0"><code>file ./file07
+<pre><code>file ./file07
 </code></pre><p>We found that <em>-file07</em> contains ASCII text.</p>
 <p>Instead of checking each file we can use <code>find</code> and <code>xargs</code> command.</p>
 <p><code>find</code> program searches a given directory (and its subdirectories) for files based on a variety of attributes.</p>
@@ -141,7 +141,7 @@
 <h3 id="solution--1">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit5@bandit.labs.overthewire.org -p 2220</code> password is  <code>****</code> .</p>
 <p>In manual pages of <code>find</code> command it is mentioned that option <code>-size</code> is used to specify size of the file and <code>c</code> is used for bytes. <code>-executable</code> matches the executable files, so <code>! -executables</code> matches the non executable files. We then pipe this output to <code>xargs</code> command which tells the content of the file found. Command is</p>
-<pre tabindex="0"><code>find . -type f -size 1033c ! - executable | xargs file
+<pre><code>find . -type f -size 1033c ! - executable | xargs file
 </code></pre><p>The password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l56_terminal.jpg" alt="Bandit Level 5 6"></p>
 <p>Reference : <a href="https://amzn.to/2PDVmZz">The Linux Command Line – A Complete Introduction</a><!-- raw HTML omitted -->
@@ -171,7 +171,7 @@ File belongs to group gname (numeric group ID allowed).<!-- raw HTML omitted -->
 <p>From the given, <code>uname</code> is <em>bandit7</em>, <code>gname</code> is <em>bandit6</em> and <code>n</code> is <em>33c</em>.</p>
 <p>We want file with ASCII content and <code>xargs file</code> will tell us about that.</p>
 <p>So the command is :</p>
-<pre tabindex="0"><code>find -user bandit7 -group bandit6 -size 33c | xargs file
+<pre><code>find -user bandit7 -group bandit6 -size 33c | xargs file
 </code></pre><p>The password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l67_terminal.jpg" alt="Bandit Level 6 7"></p>
 <p>Reference : <a href="https://amzn.to/2PDVmZz">The Linux Command Line – A Complete Introduction</a><!-- raw HTML omitted -->
@@ -186,7 +186,7 @@ File belongs to group gname (numeric group ID allowed).<!-- raw HTML omitted -->
 <p>Command to connect remote host : <code>ssh bandit7@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Here we can use <code>grep</code> program. <code>grep</code> is used to find text patterns within file. The text we have to find is <em>millionth</em> and the password for next level is next to it.</p>
 <p>The command is :</p>
-<pre tabindex="0"><code>cat data.txt | grep millionth
+<pre><code>cat data.txt | grep millionth
 </code></pre><p>The password for next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l78_terminal.jpg" alt="Bandit Level 7 8"></p>
 <p>Reference : <a href="https://amzn.to/2PDVmZz">The Linux Command Line – A Complete Introduction</a><!-- raw HTML omitted --></p>
@@ -199,7 +199,7 @@ File belongs to group gname (numeric group ID allowed).<!-- raw HTML omitted -->
 <h3 id="solution--4">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit8@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>We will use command <code>sort</code> to sort all texts in the file. Command <code>uniq</code> with option <code>u</code> i.e. <code>uniq -u</code> only prints unique lines. So the command is :</p>
-<pre tabindex="0"><code>sort data.txt | uniq -u
+<pre><code>sort data.txt | uniq -u
 </code></pre><p>and password is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l89_terminal.jpg" alt="Bandit Level 8 9"></p>
 <p>Reference : <a href="http://man7.org/linux/man-pages/man1/uniq.1.html">http://man7.org/linux/man-pages/man1/uniq.1.html</a><!-- raw HTML omitted -->

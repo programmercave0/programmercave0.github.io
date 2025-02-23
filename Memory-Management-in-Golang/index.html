@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -120,13 +120,13 @@
 <li><strong>Limited Size</strong>: Ideal for short-lived variables due to its fixed and relatively small size.</li>
 </ul>
 <h4 id="example-stack-allocation"><strong>Example: Stack Allocation</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
     x <span style="color:#666">:=</span> <span style="color:#666">42</span>  <span style="color:#408080;font-style:italic">// Stored on the stack
 </span><span style="color:#408080;font-style:italic"></span>    y <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;hello&#34;</span> <span style="color:#408080;font-style:italic">// Stored on the stack
 </span><span style="color:#408080;font-style:italic"></span>}
 </code></pre></div><p>In this example, <code>x</code> and <code>y</code> are stored on the stack. They exist only during the execution of <code>example()</code> and are automatically removed once the function completes.</p>
 <h4 id="stack-memory-diagram"><strong>Stack Memory Diagram</strong></h4>
-<pre tabindex="0"><code>+-----------------+   &lt;- Stack Top (Newer function calls)
+<pre><code>+-----------------+   &lt;- Stack Top (Newer function calls)
 | Function B      |   
 | Local Variables |   
 +-----------------+  
@@ -148,14 +148,14 @@
 <li><strong>Slower Access</strong>: Memory allocation and deallocation are more complex, making the heap slower than the stack.</li>
 </ul>
 <h4 id="example-heap-allocation"><strong>Example: Heap Allocation</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() <span style="color:#666">*</span><span style="color:#b00040">int</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() <span style="color:#666">*</span><span style="color:#b00040">int</span> {
     x <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>x = <span style="color:#666">42</span>
     <span style="color:#008000;font-weight:bold">return</span> x
 }
 </code></pre></div><p>Here, <code>x</code> is stored on the heap because it needs to persist beyond the <code>example()</code> function. If it were on the stack, it would be removed when <code>example()</code> finishes.</p>
 <h4 id="heap-memory-diagram"><strong>Heap Memory Diagram</strong></h4>
-<pre tabindex="0"><code>+-----------------------+
+<pre><code>+-----------------------+
 | Object 1 (Persistent) |
 +-----------------------+
 | Object 2 (Dynamic)    |
@@ -177,7 +177,7 @@
 <li><strong>Stack Expansion :</strong> If a stack outgrows its current size, a larger stack is allocated, and data is copied over.</li>
 </ul>
 <h4 id="stack-expansion-example"><strong>Stack Expansion Example</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">largeFunction</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">largeFunction</span>() {
     <span style="color:#008000;font-weight:bold">var</span> largeArray [<span style="color:#666">1000000</span>]<span style="color:#b00040">int</span> <span style="color:#408080;font-style:italic">// This array requires a lot of stack space
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Perform operations on largeArray
 </span><span style="color:#408080;font-style:italic"></span>}
@@ -192,7 +192,7 @@
 <li><strong>Background Operation</strong>: The GC runs automatically in the background, optimizing memory usage.</li>
 </ol>
 <h3 id="gc-example-in-action"><strong>GC Example in Action</strong></h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
     p <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>p = <span style="color:#666">100</span>
     <span style="color:#408080;font-style:italic">// If &#39;p&#39; is not used again, GC will remove it from memory

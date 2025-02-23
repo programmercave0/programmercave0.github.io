@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -103,7 +103,7 @@
     </div>
   
   <p>A linked list is a linear data structure where each element, called a node, is connected to the next element through a pointer. In a singly linked list, each node contains a data item and a pointer to the next node in the list. The order of the list is determined by the pointers, and the first node is called the head while the last node is called the tail. If the head is NULL, then the list is empty. In C++, nodes can be created using the <code>struct</code> keyword, which allows you to define a data type that contains a data item and a pointer to the next node.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span>
 {
     T data;
     Node <span style="color:#666">*</span> next;
@@ -128,7 +128,7 @@
 <!-- raw HTML omitted -->
 <p>The <code>search</code> function is a useful tool for finding a specific element or node in a linked list. To use this function, you pass a value as an argument and the function will search through the list, starting at the head, to find a node with a matching <code>data</code> value. If the node is found, it is returned, otherwise a message is printed saying &ldquo;No such element in the list&rdquo; and a <code>nullptr</code> is returned.</p>
 <p>Here is an example of code for an iterative search function in C++:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span> <span style="color:#666">*</span><span style="color:#00f">search</span>(T n)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Node</span> <span style="color:#666">*</span><span style="color:#00f">search</span>(T n)
 {                            <span style="color:#408080;font-style:italic">//returns node of the given value
 </span><span style="color:#408080;font-style:italic"></span>    Node <span style="color:#666">*</span>node <span style="color:#666">=</span> head;
     <span style="color:#008000;font-weight:bold">while</span>(node <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nullptr</span>)
@@ -144,7 +144,7 @@
 </code></pre></div><!-- raw HTML omitted -->
 <p>The <code>insert</code> function is a useful tool for adding a new node to a linked list. In this function, a value is passed as an argument and a new node with that value is inserted at the end of the list. If the list is empty, the new node becomes the head of the list.</p>
 <p>Here is an example of code for an insert function in C++:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insert</span>(T data)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">insert</span>(T data)
 {
     Node <span style="color:#666">*</span>t <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Node(data);
     Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
@@ -163,20 +163,20 @@
 }
 </code></pre></div><p>In addition to inserting a new node at the end of a linked list, it is also possible to insert a node at the front of the list, making it the new head. This can be useful in certain situations, such as when you want to add new elements to the beginning of the list or when you want to maintain the order of the list.</p>
 <p>Here is an example of code for an insert function in C++ that inserts a new node at the front of the list:</p>
-<pre tabindex="0"><code>template &lt;typename T&gt;
+<pre><code>template &lt;typename T&gt;
 void insertFront(Node&lt;T&gt;*&amp; head, const T&amp; val) {
   Node&lt;T&gt;* newNode = new Node&lt;T&gt;(val);
   newNode-&gt;next = head;
   head = newNode;
 }
 </code></pre><p>To use this function, you can call it with the head of your linked list and the value you want to insert as arguments. For example:</p>
-<pre tabindex="0"><code>insertFront(head, 5);
+<pre><code>insertFront(head, 5);
 </code></pre><p>This will insert a new node with a <code>data</code> value of 5 at the front of the list, making it the new head.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>The delete function is a useful tool for removing a specific node from a linked list. In this function, a value is passed as an argument and the function searches for a node with a matching <code>data</code> value using the search function. If the node is found, it is deleted from the list.</p>
 <p>Here is an example of code for a delete function in C++:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">deleteNode</span>(T data)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">deleteNode</span>(T data)
 {
     Node <span style="color:#666">*</span>node<span style="color:#666">=</span>search(data);
     Node <span style="color:#666">*</span>tmp <span style="color:#666">=</span> head;
@@ -200,7 +200,7 @@ void insertFront(Node&lt;T&gt;*&amp; head, const T&amp; val) {
     }
 }
 </code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#008000;font-weight:bold">template</span> <span style="color:#666">&lt;</span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">T</span><span style="color:#666">&gt;</span>
 <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">LinkedList</span>

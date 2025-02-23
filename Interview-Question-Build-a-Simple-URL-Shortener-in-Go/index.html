@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -99,7 +99,7 @@
 <hr>
 <h3 id="step-1-data-structure-for-storing-urls"><strong>Step 1: Data Structure for Storing URLs</strong></h3>
 <p>First, we need a place to store the URLs. Since we want our URL shortener to be fast and simple, we will use an in-memory map to store the mapping between the short codes and the original URLs. We also need a way to safely access this map in a multi-threaded environment, which is where <code>sync.Mutex</code> comes in.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
 
 <span style="color:#008000;font-weight:bold">import</span> (
 	<span style="color:#ba2121">&#34;fmt&#34;</span>
@@ -118,7 +118,7 @@
 <hr>
 <h3 id="step-2-generate-a-short-code"><strong>Step 2: Generate a Short Code</strong></h3>
 <p>To shorten the URL, we need to generate a short code. The short code will be a random alphanumeric string. We will define a function to generate this random string and ensure that it is unique before storing it.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Initialize the random seed
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Initialize the random seed
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">init</span>() {
 	rand.<span style="color:#00f">Seed</span>(time.<span style="color:#00f">Now</span>().<span style="color:#00f">UnixNano</span>())
 }
@@ -138,7 +138,7 @@
 <hr>
 <h3 id="step-3-store-the-url-mapping"><strong>Step 3: Store the URL Mapping</strong></h3>
 <p>Once we have a short code, we need to store the mapping between the short code and the long URL. To ensure uniqueness, we will check if the generated short code already exists in the <code>urlStore</code> map. If it does, we generate a new code.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// ShortenURL takes a long URL and returns a short code
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// ShortenURL takes a long URL and returns a short code
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">ShortenURL</span>(longURL <span style="color:#b00040">string</span>) <span style="color:#b00040">string</span> {
 	mu.<span style="color:#00f">Lock</span>()
 	<span style="color:#008000;font-weight:bold">defer</span> mu.<span style="color:#00f">Unlock</span>()
@@ -159,7 +159,7 @@
 <hr>
 <h3 id="step-4-retrieve-the-original-url"><strong>Step 4: Retrieve the Original URL</strong></h3>
 <p>To retrieve the original URL from the short code, we will define a function that looks up the short code in the <code>urlStore</code> map. If the short code exists, it will return the corresponding long URL.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// GetOriginalURL retrieves the original URL from a short code
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// GetOriginalURL retrieves the original URL from a short code
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">GetOriginalURL</span>(shortCode <span style="color:#b00040">string</span>) (<span style="color:#b00040">string</span>, <span style="color:#b00040">bool</span>) {
 	mu.<span style="color:#00f">Lock</span>()
 	<span style="color:#008000;font-weight:bold">defer</span> mu.<span style="color:#00f">Unlock</span>()
@@ -173,7 +173,7 @@
 <hr>
 <h3 id="step-5-putting-it-all-together"><strong>Step 5: Putting It All Together</strong></h3>
 <p>Now that we have all the necessary functions, let&rsquo;s put everything together in the <code>main</code> function. We will demonstrate how to shorten a URL and retrieve the original URL using the generated short code.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Main for demonstration
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Main for demonstration
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
 	<span style="color:#408080;font-style:italic">// Shorten a URL
 </span><span style="color:#408080;font-style:italic"></span>	longURL <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;https://example.com&#34;</span>
@@ -197,7 +197,7 @@
 </li>
 </ul>
 <h4 id="example-output"><strong>Example Output:</strong></h4>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Short code for https://example.com: aB3cD1
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Short code for https://example.com: aB3cD1
 Original URL for short code aB3cD1: https://example.com
 </code></pre></div><hr>
 <h3 id="conclusion"><strong>Conclusion</strong></h3>

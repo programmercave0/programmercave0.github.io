@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -124,7 +124,7 @@
 <p>Command to connect remote host : <code>ssh bandit27@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>We will use command <code>git clone</code> to clone repository. But we cannot clone it in a home directory, so make a new directory <em>programmercave</em> in <em>tmp</em> directory.</p>
 <p>Command to clone</p>
-<pre tabindex="0"><code>git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+<pre><code>git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
 </code></pre><p>and enter this level’s password.</p>
 <p>The password is in the README in <em>repo</em> directory and the password is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2728_terminal.jpg" alt="Bandit Level 27 28"></p>
@@ -138,7 +138,7 @@
 <h3 id="solution--1">Solution :</h3>
 <p>Command to connect remote host : <code>ssh bandit28@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>Initial part is same as the previous level. Clone the repository in your directory in <em>tmp</em> directory.</p>
-<pre tabindex="0"><code>git clone  ssh://bandit28-git@localhost/home/bandit28-git/repo
+<pre><code>git clone  ssh://bandit28-git@localhost/home/bandit28-git/repo
 </code></pre><p>But README.md file does not contain password.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2829_terminal1.jpg" alt="Bandit Level 28 29"></p>
 <p>The file README.md has been updated. The <code>git show</code> command shows the most recent commit on the current branch. This command shows the changes made in the README.md file. The password for the next level is <code>****</code> .</p>
@@ -192,7 +192,7 @@
 <p>Command to connect remote host : <code>ssh bandit31@bandit.labs.overthewire.org -p 2220</code> password is <code>****</code> .</p>
 <p>First clone the repository in <em>tmp</em> directory using <code>git clone ssh://bandit31-git@localhost/home/bandit31-git/repo</code></p>
 <p>The README.md file tells us to push file <em>key.txt</em> to the remote directory. The commands to push a file on a git repository is</p>
-<pre tabindex="0"><code>git add key.txt
+<pre><code>git add key.txt
 git commit -m “commit message”
 git push origin master
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l3132_terminal1.jpg" alt="Bandit Level 31 32"></p>

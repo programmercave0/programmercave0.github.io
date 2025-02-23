@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -130,10 +130,10 @@
 <li><strong>Order Service</strong>: Manages orders placed by users.</li>
 </ul>
 <p>When the Order Service needs user details, it sends an HTTP GET request to the User Service:</p>
-<pre tabindex="0"><code>GET /users/{userId} HTTP/1.1
+<pre><code>GET /users/{userId} HTTP/1.1
 Host: user-service.example.com
 </code></pre><p>The User Service responds with the requested user data:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#008000;font-weight:bold">&#34;id&#34;</span>: <span style="color:#666">123</span>,
   <span style="color:#008000;font-weight:bold">&#34;name&#34;</span>: <span style="color:#ba2121">&#34;John Doe&#34;</span>,
   <span style="color:#008000;font-weight:bold">&#34;email&#34;</span>: <span style="color:#ba2121">&#34;john.doe@example.com&#34;</span>
@@ -169,7 +169,7 @@ Host: user-service.example.com
 <li><strong>Notification Service</strong>: Sends notifications to users.</li>
 </ul>
 <p>When an order is placed, the Order Service publishes an event to a message broker (e.g., Kafka):</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#008000;font-weight:bold">&#34;eventType&#34;</span>: <span style="color:#ba2121">&#34;OrderPlaced&#34;</span>,
   <span style="color:#008000;font-weight:bold">&#34;orderId&#34;</span>: <span style="color:#666">456</span>,
   <span style="color:#008000;font-weight:bold">&#34;userId&#34;</span>: <span style="color:#666">123</span>,

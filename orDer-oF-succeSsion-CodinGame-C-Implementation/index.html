@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -123,7 +123,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 <p>Read full problem here : <a href="https://www.codingame.com/ide/puzzle/order-of-succession">orDer oF succeSsion</a></p>
 <!-- raw HTML omitted -->
 <p>For each individual, we can store their personal information such as name, parent&rsquo;s name, year of birth and death, etc. in a struct called Details.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Details</span>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Details</span>
 {
     std<span style="color:#666">::</span>string name;
     std<span style="color:#666">::</span>string parent_name;
@@ -146,10 +146,10 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
         gender(gender_), index(index_), parent(<span style="color:#008000;font-weight:bold">nullptr</span>), sibling(<span style="color:#008000;font-weight:bold">nullptr</span>), first_child(<span style="color:#008000;font-weight:bold">nullptr</span>) {}
 };
 </code></pre></div><p>In the main function, we can store the personal information of multiple individuals in a vector of structures called <code>Details</code>. This can be done using the following code:</p>
-<pre tabindex="0"><code>std::vector&lt;Details&gt; family_details;
+<pre><code>std::vector&lt;Details&gt; family_details;
 </code></pre><p>This creates a new vector called <code>family_details</code> that is capable of storing <code>Details</code> structures.</p>
 <p>To determine the first ruler in a given family, we can find the person whose parent does not exist in the <code>family_details</code> vector. This person is considered the first ruler, and we can store their index in the vector in an integer variable called <code>first_ruler_index</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> first_ruler_idx;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> first_ruler_idx;
 
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) 
 {
@@ -174,7 +174,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 <p>In this function, we pass a vector of <code>Details</code> and an integer variable <code>first_ruler_idx</code> as parameters. The function returns a vector of strings in the order of succession.</p>
 <p>We declare a vector of strings rulers and an integer variable <code>curr_ruler_idx</code>. Then, we call the <code>map_parent_children</code> function, which maps the ruler at <code>curr_ruler_idx</code> with his or her children.</p>
 <p>To order the rulers, we use a <code>while</code> loop whose condition is always <code>true</code>. In the loop, we check that the person is eligible to rule by making sure they are not dead and their religion is not Catholic. We also set a boolean variable processed for each person to <code>true</code> once they have been processed to ensure that the same person is not processed twice.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
 {
     <span style="color:#008000;font-weight:bold">if</span> (family[curr_ruler_idx].death <span style="color:#666">==</span> <span style="color:#ba2121">&#34;-&#34;</span> <span style="color:#666">&amp;&amp;</span> 
         family[curr_ruler_idx].religion <span style="color:#666">!=</span> <span style="color:#ba2121">&#34;Catholic&#34;</span> <span style="color:#666">&amp;&amp;</span> <span style="color:#666">!</span>family[curr_ruler_idx].processed)
@@ -189,7 +189,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 }
 </code></pre></div><p>After adding the ruler at <code>curr_ruler_idx</code> to the vector ruler, we check if they have a child. If they do, we update the value of <code>curr_ruler_idx</code> to the index of the first child.</p>
 <p>Note that the siblings are already ordered according to their age and gender in the <code>map_parent_children</code> function.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
 {
     ...
 
@@ -204,7 +204,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
     map_parent_children(family, curr_ruler_idx); 
 }
 </code></pre></div><p>If the current ruler does not have a child, we check if they have a sibling. If they do, we update the value of <code>curr_ruler_idx</code> to the index of the next sibling.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
 {
     ...
 
@@ -228,7 +228,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 </code></pre></div><p>If the current ruler does not have a sibling, the next ruler will be the sibling of their parent. If the parent does not have a sibling, we move on to check for the grandparent and so on, until we find the next ruler in the line of succession.</p>
 <p><img src="/assets/images/2021-04-11-orDer-oF-succeSsion-CodinGame/order_of_succession2.jpg" alt="orDer oF succeSsion"></p>
 <p>Before processing, we make sure that the current ruler is not equal to the first ruler. If they are equal, it means we have processed everyone in the family and we can terminate the <code>while</code> loop.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">while</span> (<span style="color:#008000">true</span>)
 {
     ...
 
@@ -268,10 +268,10 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 <p>In this function, we pass a vector of <code>Details</code> called <code>family</code> and an integer variable <code>curr_ruler_idx</code> as parameters. The function maps the ruler at <code>curr_ruler_idx</code> with their children.</p>
 <p><img src="/assets/images/2021-04-11-orDer-oF-succeSsion-CodinGame/order_of_succession3.jpg" alt="orDer oF succeSsion"></p>
 <p>First, we declare two vectors of integers: <code>next_gen_m_idx</code> will store the indices of male children of the ruler at <code>curr_ruler_idx</code>, and <code>next_gen_f_idx</code> will store the indices of female children. These vectors will be used to store the indices of the children in the family vector.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> next_gen_m_idx; <span style="color:#408080;font-style:italic">// stores index of male members of next generation
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> next_gen_m_idx; <span style="color:#408080;font-style:italic">// stores index of male members of next generation
 </span><span style="color:#408080;font-style:italic"></span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> next_gen_f_idx; <span style="color:#408080;font-style:italic">// stores index of female members of next generation
 </span></code></pre></div><p>We iterate through the <code>family</code> vector and check if the name of the parent of the person at the current index is equal to the name of the ruler at <code>curr_ruler_idx</code>. If it is, the current ruler is the parent of the person we are processing. We then store the index of the current person in either the <code>next_gen_m_idx</code> vector or the <code>next_gen_f_idx vector</code>, depending on their gender.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> family.size(); <span style="color:#666">++</span>i)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> family.size(); <span style="color:#666">++</span>i)
 {
     <span style="color:#008000;font-weight:bold">if</span> (family[i].parent_name <span style="color:#666">==</span> family[curr_ruler_idx].name)
     {
@@ -288,7 +288,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
     }  
 }
 </code></pre></div><p>In the case of siblings, the eldest sibling is the next ruler. So, we sort both the <code>next_gen_m_idx</code> and <code>next_gen_f_idx</code> vectors according to the age of the siblings. Then, we call the <code>map_siblings</code> function to determine the order of succession among the siblings.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#408080;font-style:italic">//sort both vectors according to age
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#408080;font-style:italic">//sort both vectors according to age
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">if</span> (family[curr_ruler_idx].has_child)
 {
     <span style="color:#008000;font-weight:bold">static</span> <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> by_age <span style="color:#666">=</span> [family](<span style="color:#666">/</span>Const <span style="color:#b00040">int</span> i, <span style="color:#008000;font-weight:bold">const</span> <span style="color:#b00040">int</span> j)
@@ -307,7 +307,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 <p>We first check if the <code>male_idx</code> vector is empty. If it is not, we set the <code>first_child</code> of the current ruler to the child at index <code>0</code> of the <code>male_idx</code> vector.</p>
 <p>If the size of <code>male_idx</code> is <code>1</code> and the <code>female_idx</code> vector is not empty, we set the sibling of the child at index <code>0</code> of <code>male_idx</code> to the child at index <code>0</code> of <code>female_idx</code>.</p>
 <p>Otherwise, we iterate through the <code>male_idx</code> vector and link the siblings.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>male_idx.empty())
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>male_idx.empty())
 {
     family[curr_ruler_idx].first_child <span style="color:#666">=</span> <span style="color:#666">&amp;</span>family[male_idx[<span style="color:#666">0</span>]];
     <span style="color:#008000;font-weight:bold">if</span> (male_idx.size() <span style="color:#666">==</span> <span style="color:#666">1</span>)
@@ -331,7 +331,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
     ...
 }
 </code></pre></div><p>If the <code>male_idx</code> vector is empty, the <code>first_child</code> of the current ruler is the child at index <code>0</code> of the <code>female_idx</code> vector.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>male_idx.empty())
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>male_idx.empty())
 {
     ...
 }
@@ -340,7 +340,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
     family[curr_ruler_idx].first_child <span style="color:#666">=</span> <span style="color:#666">&amp;</span>family[female_idx[<span style="color:#666">0</span>]];
 }
 </code></pre></div><p>If the number of male children is more than 1 and there is at least one female child, we link the last male child to the first female child.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>female_idx.empty())
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (<span style="color:#666">!</span>female_idx.empty())
 {
     <span style="color:#008000;font-weight:bold">if</span> (male_idx.size() <span style="color:#666">&gt;</span> <span style="color:#666">1</span>)
     {
@@ -357,7 +357,7 @@ Exactly one people does not have a parent (the parent’s name is replaced by th
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">

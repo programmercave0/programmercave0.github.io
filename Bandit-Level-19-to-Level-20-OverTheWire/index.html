@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -120,7 +120,7 @@
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l1920_terminal.jpg" alt="Bandit Level 19 20"></p>
 <p>Here setuid is set for the binary file (<code>-rwsr-x--</code>) and the user is <em>bandit20</em>. So if execute <code>./bandit20-do</code> it will run as user <em>bandit20</em> and password for <em>bandit20</em> is stored in <em>/etc/bandit_paas/bandit20</em> which is only accessible through user <em>bandit20</em>.</p>
 <p>The command is</p>
-<pre tabindex="0"><code>./bandit20-do cat /etc/bandit_pass/bandit20
+<pre><code>./bandit20-do cat /etc/bandit_pass/bandit20
 </code></pre><p>and the password is <code>****</code> .</p>
 <p>Reference : <a href="https://www.computerhope.com/jargon/s/setuid.htm">https://www.computerhope.com/jargon/s/setuid.htm</a></p>
 <!-- raw HTML omitted -->
@@ -141,9 +141,9 @@
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2021_terminal2.jpg" alt="Bandit Level 20 21"></p>
 <p>First we have to establish a TCP connection like we did above. We can connect on any port for eg. port 12345. Then we pass the password of current level (bandit20). And if the password is correct, it will display password for level 21.</p>
 <p>In terminal 1 server will listen on port 12345 and password of the current level is passed. Command is</p>
-<pre tabindex="0"><code>nc -l localhost -p 12345 &lt; /etc/bandit_pass/bandit20
+<pre><code>nc -l localhost -p 12345 &lt; /etc/bandit_pass/bandit20
 </code></pre><p>In terminal 2 binary file suconncet will connect to server on port 12345 and if password matches, password for next level is displayed on the terminal 1. Command is</p>
-<pre tabindex="0"><code>./suconnect 12345
+<pre><code>./suconnect 12345
 </code></pre><p>and the password is <code>****</code> .</p>
 <p>Here connection is also established on port 12346.</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l2021_terminal3.jpg" alt="Bandit Level 20 21"></p>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -123,7 +123,7 @@
 <p>If book is returned within the same calendar year but after expected return month (<code>due_month</code>) i. e. <code>(return_year == due_year &amp;&amp; return_month &gt; due_month)</code> then fine is <code>500 Hackos * (return_month – due_month)</code>.</p>
 <p>If the book is returned within the same calendar year and within the same calendar month but after the expected return day i. e. <code>(return_year == due_year &amp;&amp; return_month == due_month &amp;&amp; return_day &gt; due_day)</code> then fine is <code>15 Hackos * (return_day – due_day)</code>.</p>
 <p>If the book is returned after the expected return year i. e. <code>(return_year &gt; due_year)</code> then fine is <code>10000 Hackos</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">library_fine</span>(<span style="color:#b00040">int</span> return_day, <span style="color:#b00040">int</span> return_month, <span style="color:#b00040">int</span> return_year, <span style="color:#b00040">int</span> due_day, <span style="color:#b00040">int</span> due_month, <span style="color:#b00040">int</span> due_year) 
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">library_fine</span>(<span style="color:#b00040">int</span> return_day, <span style="color:#b00040">int</span> return_month, <span style="color:#b00040">int</span> return_year, <span style="color:#b00040">int</span> due_day, <span style="color:#b00040">int</span> due_month, <span style="color:#b00040">int</span> due_year) 
 {
     <span style="color:#b00040">int</span> fine <span style="color:#666">=</span> <span style="color:#666">0</span>;
     <span style="color:#008000;font-weight:bold">if</span> (return_year <span style="color:#666">==</span> due_year)
@@ -148,7 +148,7 @@
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 <span style="color:#b00040">int</span> <span style="color:#00f">library_fine</span>(<span style="color:#b00040">int</span> return_day, <span style="color:#b00040">int</span> return_month, <span style="color:#b00040">int</span> return_year, <span style="color:#b00040">int</span> due_day, <span style="color:#b00040">int</span> due_month, <span style="color:#b00040">int</span> due_year) 
 {

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -113,7 +113,7 @@
 <p>We have given an address - <em>bandit.labs.overthewire.org</em>, port - <em>2220</em>, username - <em>bandit0</em> and password – <em>bandit0</em>.
 The option <code>-p</code> is tell the port to connect and the general command to connect is <code>ssh username@address -p port</code></p>
 <p>So the command to connect to bandit server is :</p>
-<pre tabindex="0"><code>ssh bandit0@bandit.labs.overthewire.org -p 2220
+<pre><code>ssh bandit0@bandit.labs.overthewire.org -p 2220
 </code></pre><p><img src="/assets/images/Bandit-Overthewire/bandit_l0_terminal.jpg" alt="Bandit Level 0"></p>
 <p>A message “The authenticity of host … can’t be established” is displayed when connection is established for first time. To connect enter “yes” and once the connection is established, the user is asked to enter the password which is <em>bandit0</em> for this level.</p>
 <p>Reference : <a href="https://amzn.to/2PDVmZz">The Linux Command Line – A Complete Introduction</a></p>
@@ -142,7 +142,7 @@ The option <code>-p</code> is tell the port to connect and the general command t
 <p>In UNIX and Linux, a filename can start with  – (dash) or can be just – (dash). Above it is given that  the file is called – (dash).</p>
 <p>But content of the file – can not be displayed using command <code>cat –</code> because it reads from standard input and it is waiting for us to type something.</p>
 <p>So to view the content of the file - , the path to the file is prefixed with the filename.</p>
-<pre tabindex="0"><code>cat ./-
+<pre><code>cat ./-
 </code></pre><p>The password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l12_terminal.jpg" alt="Bandit Level 1 2"></p>
 <p>Reference: <a href="https://www.cs.ait.ac.th/~on/O/oreilly/unix/upt/ch23_14.htm">https://www.cs.ait.ac.th/~on/O/oreilly/unix/upt/ch23_14.htm</a><!-- raw HTML omitted -->
@@ -159,7 +159,7 @@ The option <code>-p</code> is tell the port to connect and the general command t
 <p>When there are spaces in a filename use <strong>\</strong> after every word.</p>
 <p>“A non-quoted backslash (\) is the escape character. It preserves the literal value of the next character that follows, with the exception of <code>&lt;newline&gt;</code>.”</p>
 <p>The command is</p>
-<pre tabindex="0"><code>cat spaces\ in\ this\ filename
+<pre><code>cat spaces\ in\ this\ filename
 </code></pre><p>Since in that directory there is only file we can also use <em>tab button</em>, after typing s, which writes the full name of file which starts with s.</p>
 <p>The password for the next level is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l23_terminal.jpg" alt="Bandit Level 2 3"></p>

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -94,14 +94,14 @@
 <hr>
 <h3 id="step-1-defining-the-job"><strong>Step 1: Defining the Job</strong></h3>
 <p>A <strong>Job</strong> is a unit of work that the worker goroutines will process. In our implementation, the <code>Job</code> struct contains an <code>ID</code> field to identify the task.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Job represents the task to be executed by a worker
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Job represents the task to be executed by a worker
 </span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Job <span style="color:#008000;font-weight:bold">struct</span> {
 	ID <span style="color:#b00040">int</span>
 }
 </code></pre></div><hr>
 <h3 id="step-2-designing-the-worker-pool"><strong>Step 2: Designing the Worker Pool</strong></h3>
 <p>The <code>WorkerPool</code> struct manages the workers, job queue, and results channel. It uses a <strong>WaitGroup</strong> to wait for all workers to finish their tasks.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> WorkerPool <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> WorkerPool <span style="color:#008000;font-weight:bold">struct</span> {
 	numWorkers <span style="color:#b00040">int</span>
 	jobQueue   <span style="color:#008000;font-weight:bold">chan</span> Job
 	results    <span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>
@@ -124,7 +124,7 @@
 <hr>
 <h3 id="step-3-implementing-the-worker-function"><strong>Step 3: Implementing the Worker Function</strong></h3>
 <p>Each worker goroutine picks tasks from the <code>jobQueue</code>, processes them, and sends the result to the <code>results</code> channel.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">worker</span>(id <span style="color:#b00040">int</span>) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">worker</span>(id <span style="color:#b00040">int</span>) {
 	<span style="color:#008000;font-weight:bold">defer</span> wp.wg.<span style="color:#00f">Done</span>()
 	<span style="color:#008000;font-weight:bold">for</span> job <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> wp.jobQueue {
 		fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Worker %d started job %d\n&#34;</span>, id, job.ID)
@@ -140,7 +140,7 @@
 <hr>
 <h3 id="step-4-starting-the-worker-pool"><strong>Step 4: Starting the Worker Pool</strong></h3>
 <p>The <code>Start</code> method creates the worker goroutines and assigns them to process jobs from the <code>jobQueue</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">Start</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">Start</span>() {
 	<span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;=</span> wp.numWorkers; i<span style="color:#666">++</span> {
 		wp.wg.<span style="color:#00f">Add</span>(<span style="color:#666">1</span>)
 		<span style="color:#008000;font-weight:bold">go</span> wp.<span style="color:#00f">worker</span>(i)
@@ -149,7 +149,7 @@
 </code></pre></div><hr>
 <h3 id="step-5-adding-jobs-and-collecting-results"><strong>Step 5: Adding Jobs and Collecting Results</strong></h3>
 <p>Jobs are added to the <code>jobQueue</code> using <code>AddJob</code>. After all jobs are added, we close the queue to signal workers to stop.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">AddJob</span>(job Job) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">AddJob</span>(job Job) {
 	wp.jobQueue <span style="color:#666">&lt;-</span> job
 }
 
@@ -161,14 +161,14 @@
 </code></pre></div><hr>
 <h3 id="step-6-waiting-for-workers-to-complete"><strong>Step 6: Waiting for Workers to Complete</strong></h3>
 <p>The <code>Wait</code> method waits for all workers to finish their tasks and then closes the <code>results</code> channel.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">Wait</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> (wp <span style="color:#666">*</span>WorkerPool) <span style="color:#00f">Wait</span>() {
 	wp.wg.<span style="color:#00f">Wait</span>()
 	<span style="color:#008000">close</span>(wp.results)
 }
 </code></pre></div><hr>
 <h3 id="putting-it-all-together"><strong>Putting It All Together</strong></h3>
 <p>Finally, we bring everything together in the <code>main</code> function. We create a worker pool, add jobs, and process the results.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
 	numWorkers <span style="color:#666">:=</span> <span style="color:#666">3</span>
 	numJobs <span style="color:#666">:=</span> <span style="color:#666">10</span>
 
@@ -186,7 +186,7 @@
 }
 </code></pre></div><hr>
 <h3 id="output-example"><strong>Output Example</strong></h3>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Worker 1 started job 1
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Worker 1 started job 1
 Worker 2 started job 2
 Worker 3 started job 3
 Worker 1 finished job 1

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -95,19 +95,19 @@
 <p><img src="/assets/images/go-interfaces/go-interface-basics.png" alt="Elevating Code Modularity: Harnessing Interfaces for Generic Types and Decoupling in Go"></p>
 <h1 id="defining-generic-types-with-interfaces">Defining Generic Types with Interfaces</h1>
 <p>Consider a scenario where you have a pet dog and a pet cat, and you want to create a function that can interact with both animals efficiently. Instead of writing separate functions for dogs and cats, you can define an interface that encapsulates the shared behaviors of these pets.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Animal <span style="color:#008000;font-weight:bold">interface</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Animal <span style="color:#008000;font-weight:bold">interface</span> {
   <span style="color:#00f">Eat</span>()
   <span style="color:#00f">Sleep</span>()
 }
 </code></pre></div><p>In this example, we define an <code>Animal</code> interface that includes common methods like <code>Eat()</code> and <code>Sleep()</code>. Now, any type that implements these methods will automatically be considered an <code>Animal</code>. By defining an interface, you create a contract that guarantees a set of functionalities for any type that adheres to it.</p>
 <p>To illustrate the usage of interfaces, let&rsquo;s create a function called <code>FeedAnimal()</code>:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;I am feeding an animal.&#34;</span>)
   animal.<span style="color:#00f">Eat</span>()
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;I am done feeding the animal.&#34;</span>)
 }
 </code></pre></div><p>The <code>FeedAnimal()</code> function takes an <code>Animal</code> as an argument and performs actions like feeding and interacting with it. This function remains agnostic about the specific type of animal and can work with any object that implements the <code>Animal</code> interface.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
   dog <span style="color:#666">:=</span> Dog{name: <span style="color:#ba2121">&#34;Spot&#34;</span>}
   cat <span style="color:#666">:=</span> Cat{name: <span style="color:#ba2121">&#34;Mittens&#34;</span>}
 
@@ -121,7 +121,7 @@
 </code></pre></div><p>By passing both a <code>Dog</code> and a <code>Cat</code> to the <code>FeedAnimal()</code> function, you can see that the function successfully interacts with both types, despite their inherent differences. This demonstrates the power of using interfaces to define generic types and write more versatile code.</p>
 <h1 id="decoupling-code-with-interfaces">Decoupling Code with Interfaces</h1>
 <p>Interfaces can also facilitate code decoupling, enabling you to modify behavior without impacting the code that relies on it. Consider a scenario where you have a struct called <code>Dog</code> with an <code>Eat()</code> method:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Dog <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Dog <span style="color:#008000;font-weight:bold">struct</span> {
   name <span style="color:#b00040">string</span>
 }
 
@@ -129,7 +129,7 @@
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The dog is eating.&#34;</span>)
 }
 </code></pre></div><p>Similarly, you can define a struct <code>Cat</code> with its own implementation of the <code>Eat()</code> method:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Cat <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Cat <span style="color:#008000;font-weight:bold">struct</span> {
   name <span style="color:#b00040">string</span>
 }
 
@@ -137,13 +137,13 @@
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The cat is eating.&#34;</span>)
 }
 </code></pre></div><p>Both the <code>Dog</code> and <code>Cat</code> types implement the <code>Animal</code> interface by providing their respective <code>Eat()</code> methods. Now, let&rsquo;s modify the <code>FeedAnimal()</code> function to demonstrate the flexibility achieved through interfaces:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;I am feeding an animal.&#34;</span>)
   animal.<span style="color:#00f">Eat</span>()
   fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;I am done feeding the animal.&#34;</span>)
 }
 </code></pre></div><p>Even though the <code>Dog</code> and <code>Cat</code> eat differently, the <code>FeedAnimal()</code> function remains unchanged. This highlights the power of interfaces in decoupling code, as you can easily swap implementations without affecting the consuming code.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
   dog <span style="color:#666">:=</span> Dog{name: <span style="color:#ba2121">&#34;Spot&#34;</span>}
   cat <span style="color:#666">:=</span> Cat{name: <span style="color:#ba2121">&#34;Mittens&#34;</span>}
 

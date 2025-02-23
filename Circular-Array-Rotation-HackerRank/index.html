@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -124,7 +124,7 @@ For each array, perform a number of right circular rotations and return the valu
 <p>If number of rotations is greater than the size of the input array then array after <code>num_of_rotations</code> times rotation is equal to the array after <code>num_of_rotations – array.size()</code> times rotations.</p>
 <p>For eg. if the size of array is <em>3</em> and number of rotations are <em>5</em> then array after 5 rotations is equal to the array after 2 rotations.</p>
 <p><img src="/assets/images/2019-12-12-Circular-Array-Rotation/HR_circulararrayrotation.jpg" alt="Cirular Array Rotation HackerRank"></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> arr_size <span style="color:#666">=</span> array.size();
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> arr_size <span style="color:#666">=</span> array.size();
 <span style="color:#008000;font-weight:bold">while</span> (num_of_rotations <span style="color:#666">&gt;</span> arr_size)
 {
     num_of_rotations <span style="color:#666">=</span> num_of_rotations <span style="color:#666">-</span> arr_size;
@@ -137,7 +137,7 @@ For each array, perform a number of right circular rotations and return the valu
 <!-- raw HTML omitted -->
 <p>And then the elements from index <code>0</code> to index <code>array.size() - num_of_rotations – 1</code> are added to the <code>new_array</code> i.e. elements <em>1, 2, 3</em>.<!-- raw HTML omitted -->
 <code>new_array = [4, 5, 6, 1, 2, 3].</code></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> new_array;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> new_array;
 <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> arr_size <span style="color:#666">-</span> num_of_rotations; i <span style="color:#666">&lt;</span> arr_size; <span style="color:#666">++</span>i)
 {
     new_array.push_back(array[i]);
@@ -147,7 +147,7 @@ For each array, perform a number of right circular rotations and return the valu
     new_array.push_back(array[i]);
 }
 </code></pre></div><p>To store the elements at the indices stored in the array <code>indices_to_check</code>, an array <code>res</code> is declared.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> res;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> res;
 <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> indices_to_check.size(); <span style="color:#666">++</span>i)
 {
     <span style="color:#b00040">int</span> idx <span style="color:#666">=</span> indices_to_check[i];
@@ -155,7 +155,7 @@ For each array, perform a number of right circular rotations and return the valu
     res.push_back(val);
 }
 </code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>
 std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> circular_array_rotation(<span style="color:#008000;font-weight:bold">const</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> array, <span style="color:#b00040">int</span> num_of_rotations, <span style="color:#008000;font-weight:bold">const</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> indices_to_check) 

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -118,20 +118,20 @@
 <p><img src="/assets/images/2019-11-29-Between-Two-Sets-HackerRank-Challenge/HR_betweentwosets.jpg" alt="Between Two Sets Hackerrank"></p>
 <!-- raw HTML omitted -->
 <p>First we sort both the arrays in increasing order because values can be entered in any order. Let the first array is <code>factors</code> and second array is <code>multiples</code> (See conditions 1 and 2).</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(factors.begin(), factors.end());
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>sort(factors.begin(), factors.end());
 std<span style="color:#666">::</span>sort(multiples.begin(), multiples.end());
 </code></pre></div><p>The range of integer being considered is from last element of factors to first element of multiples. Let that integer is <code>num</code>. So <code>num = { factors.back(), ... , multiplies.front() }</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">short</span> num <span style="color:#666">=</span> factors.back();
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">unsigned</span> <span style="color:#b00040">short</span> num <span style="color:#666">=</span> factors.back();
 <span style="color:#b00040">unsigned</span> <span style="color:#b00040">short</span> times_multiplied <span style="color:#666">=</span> <span style="color:#666">2</span>;
 </code></pre></div><!-- raw HTML omitted -->
 <p>Here <code>num</code> also contain integers that are not multiples of <code>2</code> and <code>6</code> for eg. <code>7, 11, 13, 15 ...</code> To make program efficient <code>num</code> should contain multiples of <code>factors.back()</code> i. e. in the above example multiples of 6. So <code>num = {6, 12, 18, 24 }</code> and the numbers which satisfy the above two conditions are <code>6 and 12</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">num <span style="color:#666">=</span> factors.back() <span style="color:#666">*</span> times_multiplied;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">num <span style="color:#666">=</span> factors.back() <span style="color:#666">*</span> times_multiplied;
 times_multiplied<span style="color:#666">++</span>;
 </code></pre></div><p>Bool variable <code>is_multiple</code> tells if a number is  multiple of the <code>num</code> and <code>is_factor</code> tells if the <code>num</code> is the factor of a number.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> is_multiple <span style="color:#666">=</span> <span style="color:#008000">true</span>;
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> is_multiple <span style="color:#666">=</span> <span style="color:#008000">true</span>;
 <span style="color:#b00040">bool</span> is_factor <span style="color:#666">=</span> <span style="color:#008000">true</span>;
 </code></pre></div><p>If <code>is_multiple</code> is <code>true</code> for all the elements of <code>factors</code> and <code>is_factor</code> is <code>true</code> for all the elements of <code>multiplies</code> for a <code>num</code> then that <code>num</code> belongs to between the two arrays and our <code>count</code> variable is incremented by 1.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> factors.size(); <span style="color:#666">++</span>i)
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">unsigned</span> <span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> factors.size(); <span style="color:#666">++</span>i)
 {
     <span style="color:#008000;font-weight:bold">if</span> (num <span style="color:#666">%</span> factors[i] <span style="color:#666">!=</span> <span style="color:#666">0</span>)
     {
@@ -155,7 +155,7 @@ times_multiplied<span style="color:#666">++</span>;
 }
 </code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
 </span><span style="color:#bc7a00"></span>

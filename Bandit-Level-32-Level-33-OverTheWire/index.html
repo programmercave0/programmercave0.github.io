@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -125,7 +125,7 @@
 <p><code>$0</code> expands to the name of the shell or shell script. This is set at shell initialization. If bash is invoked with a file of commands, <code>$0</code> is set to the name of that file.</p>
 <p><code>$0</code> helps us to come out of the interactive mode.</p>
 <p>After running <code>ls -la</code> we found that uppershell has escalated privilege as user bandit33. <code>echo $SHELL</code> tells us the current shell which is uppershell. The command is</p>
-<pre tabindex="0"><code>cat /etc/bandit_pass/bandit33 
+<pre><code>cat /etc/bandit_pass/bandit33 
 </code></pre><p>and the password is <code>****</code> .</p>
 <p><img src="/assets/images/Bandit-Overthewire/bandit_l3233_terminal2.jpg" alt="Bandit Level 32 33"></p>
 <p>Reference : <a href="https://bash.cyberciti.biz/guide/$0">https://bash.cyberciti.biz/guide/$0</a><!-- raw HTML omitted -->

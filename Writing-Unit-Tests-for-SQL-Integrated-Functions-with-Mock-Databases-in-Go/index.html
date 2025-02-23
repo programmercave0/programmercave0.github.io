@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.92.2" />
+  <meta name="generator" content="Hugo 0.81.0" />
   
   
       
@@ -110,7 +110,7 @@
 <ol>
 <li>
 <p><strong>StudentConfig Struct</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> StudentConfig <span style="color:#008000;font-weight:bold">struct</span> {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> StudentConfig <span style="color:#008000;font-weight:bold">struct</span> {
     StudentID   <span style="color:#b00040">int</span>
     FirstName   <span style="color:#b00040">string</span>
     LastName    <span style="color:#b00040">string</span>
@@ -123,7 +123,7 @@
 </li>
 <li>
 <p><strong>SQL Queries</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
     insertOrUpdateStudentConfig = <span style="color:#ba2121">`
 </span><span style="color:#ba2121">    INSERT INTO student (student_id, first_name, last_name, date_of_birth, gender, email, phone_number)
 </span><span style="color:#ba2121">    VALUES ($1, $2, $3, $4, $5, $6, $7)
@@ -146,7 +146,7 @@
 </li>
 <li>
 <p><strong>Functions for Database Interactions</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">InsertOrUpdateStudentConfig</span>(db <span style="color:#666">*</span>sql.DB, student StudentConfig) (StudentConfig, <span style="color:#b00040">error</span>) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">InsertOrUpdateStudentConfig</span>(db <span style="color:#666">*</span>sql.DB, student StudentConfig) (StudentConfig, <span style="color:#b00040">error</span>) {
     tx, err <span style="color:#666">:=</span> db.<span style="color:#00f">Begin</span>()
     <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
         <span style="color:#008000;font-weight:bold">return</span> StudentConfig{}, fmt.<span style="color:#00f">Errorf</span>(<span style="color:#ba2121">&#34;could not begin transaction: %v&#34;</span>, err)
@@ -215,7 +215,7 @@
 <ol>
 <li>
 <p><strong>Creating a Mocked Database Connection</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">TestInsertOrUpdateStudentConfig</span>(t <span style="color:#666">*</span>testing.T) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">TestInsertOrUpdateStudentConfig</span>(t <span style="color:#666">*</span>testing.T) {
     <span style="color:#408080;font-style:italic">// Create a mocked database connection
 </span><span style="color:#408080;font-style:italic"></span>    db, mock, err <span style="color:#666">:=</span> sqlmock.<span style="color:#00f">New</span>()
     <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
@@ -229,7 +229,7 @@
 </li>
 <li>
 <p><strong>Initializing Test Data</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Initialize your StudentConfig for testing
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Initialize your StudentConfig for testing
 </span><span style="color:#408080;font-style:italic"></span>    student <span style="color:#666">:=</span> StudentConfig{
         StudentID:   <span style="color:#666">1</span>,
         FirstName:   <span style="color:#ba2121">&#34;John&#34;</span>,
@@ -245,7 +245,7 @@
 </li>
 <li>
 <p><strong>Mocking Database Expectations</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Create expected database query and mock behavior for InsertOrUpdateStudentConfig
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Create expected database query and mock behavior for InsertOrUpdateStudentConfig
 </span><span style="color:#408080;font-style:italic"></span>    mock.<span style="color:#00f">ExpectBegin</span>()
     mock.<span style="color:#00f">ExpectExec</span>(regexp.<span style="color:#00f">QuoteMeta</span>(insertOrUpdateStudentConfig)).<span style="color:#00f">WithArgs</span>(student.StudentID, student.FirstName, student.LastName, student.DateOfBirth, student.Gender, student.Email, student.PhoneNumber).<span style="color:#00f">WillReturnResult</span>(sqlmock.<span style="color:#00f">NewResult</span>(<span style="color:#666">0</span>, <span style="color:#666">1</span>))
     mock.<span style="color:#00f">ExpectCommit</span>()
@@ -273,7 +273,7 @@
 </li>
 <li>
 <p><strong>Testing the Function</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Test InsertOrUpdateStudentConfig function
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Test InsertOrUpdateStudentConfig function
 </span><span style="color:#408080;font-style:italic"></span>    insertedConfig, err <span style="color:#666">:=</span> <span style="color:#00f">InsertOrUpdateStudentConfig</span>(db, student)
     <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
         t.<span style="color:#00f">Fatalf</span>(<span style="color:#ba2121">&#34;InsertOrUpdateStudentConfig failed: %v&#34;</span>, err)
@@ -285,7 +285,7 @@
 </li>
 <li>
 <p><strong>Assertions</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Add assertions to check the correctness of insertedConfig
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Add assertions to check the correctness of insertedConfig
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">if</span> insertedConfig.StudentID <span style="color:#666">!=</span> student.StudentID {
         t.<span style="color:#00f">Errorf</span>(<span style="color:#ba2121">&#34;Expected StudentID: %d, Got: %d&#34;</span>, student.StudentID, insertedConfig.StudentID)
     }
@@ -300,7 +300,7 @@
 </li>
 <li>
 <p><strong>Verifying Mock Expectations</strong></p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Ensure all expectations were met
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#408080;font-style:italic">// Ensure all expectations were met
 </span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">:=</span> mock.<span style="color:#00f">ExpectationsWereMet</span>(); err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
         t.<span style="color:#00f">Fatalf</span>(<span style="color:#ba2121">&#34;mock expectations were not met: %v&#34;</span>, err)
     }
@@ -314,7 +314,7 @@
 <p>The <code>insertOrUpdateStudentConfig</code> function is thoroughly tested by this comprehensive testing setup, which emulates database interactions using a mock environment to ensure its correctness and adherence to expected database operations defined in the function from <code>student.go</code> file.</p>
 <h3 id="testgetstudentconfig">TestGetStudentConfig</h3>
 <p>The structure and assertions in the <code>TestGetStudentConfig</code> function are similar to those in <code>TestInsertOrUpdateStudentConfig</code>. Given the similarity in testing approaches and the behavior being tested, no further explanation is necessary as it mirrors the process utilized in <code>TestInsertOrUpdateStudentConfig</code>.</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">TestGetStudentConfig</span>(t <span style="color:#666">*</span>testing.T) {
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">TestGetStudentConfig</span>(t <span style="color:#666">*</span>testing.T) {
 	<span style="color:#408080;font-style:italic">// Create a mocked database connection
 </span><span style="color:#408080;font-style:italic"></span>	db, mock, err <span style="color:#666">:=</span> sqlmock.<span style="color:#00f">New</span>()
 	<span style="color:#008000;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#008000;font-weight:bold">nil</span> {
