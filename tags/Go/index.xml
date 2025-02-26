@@ -6,7 +6,16 @@
     <description>Recent content in Go on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: What are Interfaces in Golang?</title>
+      <link>https://programmercave.com/Interview-Question-What-Are-Interfaces-in-Golang/</link>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-What-Are-Interfaces-in-Golang/</guid>
+      <description>Key Takeaways  Interfaces in Go define method signatures and enable polymorphism, abstraction, and modularity. Implicit Implementation means types automatically implement interfaces by defining required methods—no explicit declaration is needed. The Empty Interface (interface{}) can hold any value, making it useful for generic functions but requiring type assertions for safe usage. Interface Embedding allows reusability by combining multiple interfaces into one. Type Assertions and Type Switches are essential for working with the empty interface to extract underlying types at runtime.</description>
+    </item>
+    
     <item>
       <title>Interview Question: What is the difference between new() and make() in Golang?</title>
       <link>https://programmercave.com/Interview-Question-What-is-the-difference-between-new-and-make-in-Golang/</link>
