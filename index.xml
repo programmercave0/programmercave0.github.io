@@ -6,7 +6,16 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interview Question: Why Do We Need Interfaces in Golang?</title>
+      <link>https://programmercave.com/Interview-Question-Why-Do-We-Need-Interfaces-in-Golang/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Interview-Question-Why-Do-We-Need-Interfaces-in-Golang/</guid>
+      <description>Introduction Imagine you’re building a zoo app in Golang where animals like dogs, cats, and llamas need to make sounds and move around. You could write separate functions for each animal, but that’d get messy fast. Enter Golang interfaces—a simple yet powerful tool that lets you handle different types with one neat solution. As a software engineer, I’ve seen this question pop up in interviews: &amp;ldquo;Why do we need interfaces in Golang when we can just define functions?</description>
+    </item>
+    
     <item>
       <title>Interview Question: What are Interfaces in Golang?</title>
       <link>https://programmercave.com/Interview-Question-What-Are-Interfaces-in-Golang/</link>
