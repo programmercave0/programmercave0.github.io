@@ -6,7 +6,16 @@
     <description>Recent content in Go on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iota in Golang</title>
+      <link>https://programmercave.com/iota-in-Golang/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/iota-in-Golang/</guid>
+      <description>Key Takeaways:  iota automatically assigns incrementing integer values to constants. Use _ to skip values or start sequences from non-zero numbers. Combine iota with arithmetic/bit shifts for enums, flags, or memory units. Each const block resets iota to 0. String methods can make iota-based enums human-readable.   What is iota in Go? iota is a built-in Go tool that simplifies creating sequences of related constants. It starts at 0 in each const block and increments by 1 for each subsequent constant.</description>
+    </item>
+    
     <item>
       <title>Interview Question: Why Do We Need Interfaces in Golang?</title>
       <link>https://programmercave.com/Interview-Question-Why-Do-We-Need-Interfaces-in-Golang/</link>
