@@ -22,7 +22,7 @@
       <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
       
       <guid>https://programmercave.com/Interview-Question-Why-Do-We-Need-Interfaces-in-Golang/</guid>
-      <description>Introduction Imagine you’re building a zoo app in Golang where animals like dogs, cats, and llamas need to make sounds and move around. You could write separate functions for each animal, but that’d get messy fast. Enter Golang interfaces—a simple yet powerful tool that lets you handle different types with one neat solution. As a software engineer, I’ve seen this question pop up in interviews: &amp;ldquo;Why do we need interfaces in Golang when we can just define functions?</description>
+      <description>1. What Are Interfaces in Golang?  Definition: An interface in Go is a type that lists method signatures—no fields, no implementation, just a blueprint of behaviors. Purpose: Interfaces define what a type can do (behavior) rather than how it does it (implementation). This abstraction allows flexibility and reusability. Example: type Animal interface { Sound() string Move() string }  Any type that implements the Sound() and Move() methods automatically satisfies the Animal interface.</description>
     </item>
     
     <item>
