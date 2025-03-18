@@ -6,7 +6,16 @@
     <description>Recent content on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Map Internals</title>
+      <link>https://programmercave.com/Golang-Map-Internals/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/Golang-Map-Internals/</guid>
+      <description>Key Points  Go maps are implemented as hash tables. Each hash table consists of buckets, and each bucket can hold up to 8 key-value pairs. The map header contains important metadata such as the number of entries, the number of buckets (which is always a power of two), and a random hash seed. Maps grow dynamically when the load factor exceeds a certain threshold or when there are too many overflow buckets.</description>
+    </item>
+    
     <item>
       <title>iota in Golang</title>
       <link>https://programmercave.com/iota-in-Golang/</link>
