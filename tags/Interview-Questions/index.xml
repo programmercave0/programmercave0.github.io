@@ -6,7 +6,46 @@
     <description>Recent content in Interview-Questions on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://programmercave.com/tags/Interview-Questions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0004 - DNS (Domain Name System)</title>
+      <link>https://programmercave.com/DNS-Domain-Name-System/</link>
+      <pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/DNS-Domain-Name-System/</guid>
+      <description>Basic Concepts  What is it? The &amp;ldquo;phonebook of the internet.&amp;rdquo; It&amp;rsquo;s a distributed database that translates human-readable domain names (www.google.com) into machine-readable IP addresses (142.250.191.78). Why is it needed? Because remembering IP addresses is hard for humans.  The DNS Resolution Process (Recursive Query) What happens when you type google.com into your browser?
+ Browser/OS Cache: The browser first checks its own cache, then the OS cache. If the IP is found, the process stops here.</description>
+    </item>
+    
+    <item>
+      <title>0003 - HTTP and HTTPS</title>
+      <link>https://programmercave.com/HTTP-and-HTTPS/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/HTTP-and-HTTPS/</guid>
+      <description>Basic Concepts: HTTP (Hypertext Transfer Protocol)  What is it? An application-layer protocol for transmitting hypermedia documents, such as HTML. It&amp;rsquo;s the foundation of data communication for the World Wide Web. Client-Server Model: HTTP is a request-response protocol. The client (e.g., browser) sends an HTTP Request, and the server (e.g., web server) returns an HTTP Response. Stateless: Each HTTP request is an independent transaction. The server does not retain any state between requests from the same client.</description>
+    </item>
+    
+    <item>
+      <title>0002 - TCP vs. UDP</title>
+      <link>https://programmercave.com/TCP-vs-UDP/</link>
+      <pubDate>Thu, 26 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/TCP-vs-UDP/</guid>
+      <description>Core Comparison    Feature TCP (Transmission Control Protocol) UDP (User Datagram Protocol)     Connection Connection-Oriented: Requires a &amp;ldquo;handshake&amp;rdquo; to establish a connection before data is sent. Connectionless: Just sends packets (datagrams) without establishing a connection. Fire-and-forget.   Reliability Reliable: Guarantees that data is delivered in the order it was sent and is error-checked. It retransmits lost packets. Unreliable: No guarantee of delivery, ordering, or error checking.</description>
+    </item>
+    
+    <item>
+      <title>0001 - The OSI and TCP IP Models</title>
+      <link>https://programmercave.com/The-OSI-and-TCP-IP-Models/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://programmercave.com/The-OSI-and-TCP-IP-Models/</guid>
+      <description>What are they?
+ They are conceptual models that standardize the functions of a telecommunication or computing system in terms of abstraction layers. They provide a common language for network engineers and software developers.  Key Difference:
+ The OSI (Open Systems Interconnection) model is a more theoretical, 7-layer model. The TCP/IP model is a more practical, 4-layer model that is the foundation of the modern internet.  The OSI Model (7 Layers) Think of it with the mnemonic: &amp;ldquo;All People Seem To Need Data Processing.</description>
+    </item>
+    
     <item>
       <title>Golang Map Internals</title>
       <link>https://programmercave.com/Golang-Map-Internals/</link>
