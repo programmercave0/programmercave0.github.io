@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -103,7 +103,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Data-Structures/">Data-Structures</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Mathematics/">Mathematics</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structures/&#34;&gt;Data-Structures&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Mathematics/&#34;&gt;Mathematics&lt;/a&gt;
     </div>
   
   <h2 id="introduction">Introduction</h2>
@@ -113,27 +113,27 @@
 <p>The most basic algorithm to check if a number is a prime number or not is to iterate over all positive integers less than the number, and check if any of them divide the number evenly. If none of them divide the number evenly, then the number is a prime number.</p>
 <p><img src="/assets/images/Prime-Numbers/prime_number1.png" alt="Prime Numbers"></p>
 <p>Here&rsquo;s a simple implementation of this algorithm in C++:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
-    <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) {
-        <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-    }
-    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
-}
-</code></pre></div><p>This algorithm has a time complexity of <strong>O(n)</strong>, since it iterates over all positive integers less than n. Therefore, this algorithm is not suitable for large values of n.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This algorithm has a time complexity of <strong>O(n)</strong>, since it iterates over all positive integers less than n. Therefore, this algorithm is not suitable for large values of n.</p>
 <h2 id="optimized-algorithm">Optimized Algorithm</h2>
 <p>The optimized algorithm for checking if a number is prime or not works by reducing the number of iterations in the loop. All non-prime numbers can be expressed as the product of two numbers less than or equal to its square root, so we only need to check for divisors up to the square root of n. This is because if a number has a divisor greater than its square root, then it must also have a corresponding factor that is less than its square root. For example, if 16 has a factor greater than 4, then it must also have a factor less than 4.</p>
 <p><img src="/assets/images/Prime-Numbers/prime_number2.png" alt="Prime Numbers"></p>
 <p>Let&rsquo;s consider an example where n = 16. To check if 16 is a prime number, we start by finding the square root of n, which is 4. We then iterate over all numbers from 2 to 4 and check if they divide n evenly. When a = 2, then b = 8. If <code>n % a == 0 (16 % 2 == 0)</code>, this also means <code>n % b == 0 (16 % 8 == 0)</code>. If we traverse beyond the square root of n, the values of a and b will be interchanged, and we will end up calculating what we have already calculated. Therefore, we don&rsquo;t want i &gt; sqrt(n). If we find a divisor, then we know that n is not a prime number, and we can return false. If we reach the end of the loop without finding a divisor, then we know that n is a prime number, and we can return true.</p>
 <p>Here&rsquo;s the implementation of the optimized algorithm in C++:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
-    <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; i<span style="color:#666">++</span>) {
-        <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-    }
-    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
-}
-</code></pre></div><p>In this implementation, we use the condition <code>i*i &lt;= n</code> instead of <code>i &lt;= sqrt(n)</code> to avoid the overhead of the square root operation. This is because calculating the square root of a number is a relatively expensive operation, especially for large numbers.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; i<span style="color:#666">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>) <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this implementation, we use the condition <code>i*i &lt;= n</code> instead of <code>i &lt;= sqrt(n)</code> to avoid the overhead of the square root operation. This is because calculating the square root of a number is a relatively expensive operation, especially for large numbers.</p>
 <p>In the case of n = 16, the loop will iterate over the numbers 2, 3, and 4. The first iteration checks if 2 divides 16 evenly, which it does. Therefore, we return false and terminate the function. If we had continued iterating, we would have found that 4 also divides 16 evenly, which would have also led to a false return value.</p>
 <p>By iterating only up to the square root of n, we can significantly reduce the number of iterations in the loop and improve the performance of the algorithm. This is especially important for large values of n, where the basic algorithm would be prohibitively slow.</p>
 <p>This algorithm has a time complexity of <strong>O(sqrt(n))</strong>, which is a significant improvement over the basic algorithm.</p>
@@ -169,7 +169,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Data-Structures/">Data-Structures</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Mathematics/">Mathematics</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structures/&#34;&gt;Data-Structures&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Mathematics/&#34;&gt;Mathematics&lt;/a&gt;
     </div>
   
 
@@ -187,7 +187,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

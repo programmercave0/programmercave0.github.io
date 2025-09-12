@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Sorting/">Sorting</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Sorting/&#34;&gt;Sorting&lt;/a&gt;
     </div>
   
   <p>Like mergesort, <strong>quicksort</strong> also follows <em>divide-and-conquer</em> approach. The algorithm selects an element as <em>pivot</em>. The input array is <strong>divided</strong> into two subarrays. All elements in left subarray are less than pivot and all elements in right subarray are greater than pivot. These two subarrays are <strong>sorted</strong> independently and then <strong>merged</strong> to form a single sorted array.</p>
@@ -105,77 +105,77 @@
 <p>The pivot element 4 in fig. (b) ends up in the correct position in the array and so on all pivot elements ends up in the correct position.</p>
 <!-- raw HTML omitted -->
 <p><code>split</code> function returns the index of pivot element.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
-{
-    <span style="color:#b00040">int</span> x <span style="color:#666">=</span> a[end_index];
-    <span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index <span style="color:#666">-</span> <span style="color:#666">1</span>;
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> start_index; j <span style="color:#666">&lt;</span> end_index; j<span style="color:#666">++</span>)
-    {
-        <span style="color:#008000;font-weight:bold">if</span> (a[j] <span style="color:#666">&lt;=</span> x)
-        {
-            i<span style="color:#666">++</span>;
-            std<span style="color:#666">::</span>swap(a[i], a[j]);<span style="color:#408080;font-style:italic">//swap(a[i],a[j])
-</span><span style="color:#408080;font-style:italic"></span>        }
-    }
-    std<span style="color:#666">::</span>swap(a[i<span style="color:#666">+</span><span style="color:#666">1</span>], a[end_index]);<span style="color:#408080;font-style:italic">//swap(a[i+1],a[end_index])
-</span><span style="color:#408080;font-style:italic"></span>
-    <span style="color:#008000;font-weight:bold">return</span> i<span style="color:#666">+</span><span style="color:#666">1</span>;
-}
-</code></pre></div><p>Here is the operation of <code>split</code> for the first time.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> x <span style="color:#666">=</span> a[end_index];
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> start_index; j <span style="color:#666">&lt;</span> end_index; j<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (a[j] <span style="color:#666">&lt;=</span> x)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            i<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            std<span style="color:#666">::</span>swap(a[i], a[j]);<span style="color:#408080;font-style:italic">//swap(a[i],a[j])
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>swap(a[i<span style="color:#666">+</span><span style="color:#666">1</span>], a[end_index]);<span style="color:#408080;font-style:italic">//swap(a[i+1],a[end_index])
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> i<span style="color:#666">+</span><span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here is the operation of <code>split</code> for the first time.</p>
 <p><img src="/assets/images/quicksortsplit.png" alt="Quicksort"></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
-{
-    <span style="color:#008000;font-weight:bold">if</span> (start_index <span style="color:#666">&lt;</span> end_index)
-    {
-        <span style="color:#b00040">int</span> mid_index <span style="color:#666">=</span> split(a, start_index, end_index);
-                        quicksort(a, start_index, mid_index <span style="color:#666">-</span> <span style="color:#666">1</span>);
-                        quicksort(a, mid_index <span style="color:#666">+</span> <span style="color:#666">1</span>, end_index);
-    }
-}
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (start_index <span style="color:#666">&lt;</span> end_index)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> mid_index <span style="color:#666">=</span> split(a, start_index, end_index);
+</span></span><span style="display:flex;"><span>                        quicksort(a, start_index, mid_index <span style="color:#666">-</span> <span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>                        quicksort(a, mid_index <span style="color:#666">+</span> <span style="color:#666">1</span>, end_index);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-<span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
-{
-    <span style="color:#b00040">int</span> x <span style="color:#666">=</span> a[end_index];
-    <span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index <span style="color:#666">-</span> <span style="color:#666">1</span>;
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> start_index; j <span style="color:#666">&lt;</span> end_index; j<span style="color:#666">++</span>)
-    {
-        <span style="color:#008000;font-weight:bold">if</span> (a[j] <span style="color:#666">&lt;=</span> x)
-        {
-            i<span style="color:#666">++</span>;
-            std<span style="color:#666">::</span>swap(a[i], a[j]);<span style="color:#408080;font-style:italic">//swap(a[i],a[j])
-</span><span style="color:#408080;font-style:italic"></span>        }
-    }
-    std<span style="color:#666">::</span>swap(a[i<span style="color:#666">+</span><span style="color:#666">1</span>], a[end_index]);<span style="color:#408080;font-style:italic">//swap(a[i+1],a[end_index])
-</span><span style="color:#408080;font-style:italic"></span>
-    <span style="color:#008000;font-weight:bold">return</span> i<span style="color:#666">+</span><span style="color:#666">1</span>;
-}
-
-<span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
-{
-    <span style="color:#008000;font-weight:bold">if</span> (start_index <span style="color:#666">&lt;</span> end_index)
-    {
-        <span style="color:#b00040">int</span> mid_index <span style="color:#666">=</span> split(a, start_index, end_index);
-                        quicksort(a, start_index, mid_index <span style="color:#666">-</span> <span style="color:#666">1</span>);
-                        quicksort(a, mid_index <span style="color:#666">+</span> <span style="color:#666">1</span>, end_index);
-    }
-}
-
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-    <span style="color:#b00040">int</span> arr[<span style="color:#666">8</span>] <span style="color:#666">=</span> {<span style="color:#666">2</span>, <span style="color:#666">8</span>, <span style="color:#666">7</span>, <span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">5</span>, <span style="color:#666">6</span>, <span style="color:#666">4</span>};
-    quicksort(arr, <span style="color:#666">0</span>, <span style="color:#666">7</span>);
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#666">8</span>; i<span style="color:#666">++</span>)
-    {
-        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> arr[i] <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34; &#34;</span>;
-    }
-    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
-}
-</code></pre></div><p>Reference:<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;algorithm&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">split</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> x <span style="color:#666">=</span> a[end_index];
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> i <span style="color:#666">=</span> start_index <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> start_index; j <span style="color:#666">&lt;</span> end_index; j<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (a[j] <span style="color:#666">&lt;=</span> x)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            i<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            std<span style="color:#666">::</span>swap(a[i], a[j]);<span style="color:#408080;font-style:italic">//swap(a[i],a[j])
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>swap(a[i<span style="color:#666">+</span><span style="color:#666">1</span>], a[end_index]);<span style="color:#408080;font-style:italic">//swap(a[i+1],a[end_index])
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> i<span style="color:#666">+</span><span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> <span style="color:#00f">quicksort</span>(<span style="color:#b00040">int</span> a[], <span style="color:#b00040">int</span> start_index, <span style="color:#b00040">int</span> end_index)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (start_index <span style="color:#666">&lt;</span> end_index)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> mid_index <span style="color:#666">=</span> split(a, start_index, end_index);
+</span></span><span style="display:flex;"><span>                        quicksort(a, start_index, mid_index <span style="color:#666">-</span> <span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>                        quicksort(a, mid_index <span style="color:#666">+</span> <span style="color:#666">1</span>, end_index);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> arr[<span style="color:#666">8</span>] <span style="color:#666">=</span> {<span style="color:#666">2</span>, <span style="color:#666">8</span>, <span style="color:#666">7</span>, <span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">5</span>, <span style="color:#666">6</span>, <span style="color:#666">4</span>};
+</span></span><span style="display:flex;"><span>    quicksort(arr, <span style="color:#666">0</span>, <span style="color:#666">7</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> <span style="color:#666">8</span>; i<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> arr[i] <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Reference:<!-- raw HTML omitted -->
 <a href="https://amzn.to/2OarGBs">Introduction to Algorithms</a><!-- raw HTML omitted -->
 <a href="https://amzn.to/2CH9h9Z">The Algorithm Design Manual</a><!-- raw HTML omitted -->
 <a href="https://amzn.to/2NLM0dd">Data Structures and Algorithms Made Easy</a><!-- raw HTML omitted -->
@@ -202,7 +202,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Sorting/">Sorting</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Sorting/&#34;&gt;Sorting&lt;/a&gt;
     </div>
   
 
@@ -220,7 +220,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

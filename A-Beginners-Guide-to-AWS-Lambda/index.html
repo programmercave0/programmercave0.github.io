@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cloud/">Cloud</a>, <a href="https://programmercave.com/tags/AWS/">AWS</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cloud/&#34;&gt;Cloud&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/AWS/&#34;&gt;AWS&lt;/a&gt;
     </div>
   
   <h2 id="introduction-to-aws-lambda">Introduction to AWS Lambda</h2>
@@ -126,31 +126,31 @@
 <h2 id="how-to-create-a-lambda-function-in-go">How to Create a Lambda Function in Go</h2>
 <p>Let&rsquo;s dive into the steps to create an AWS Lambda function using the Go programming language.</p>
 <h3 id="1-write-your-lambda-function">1. Write Your Lambda Function</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-    <span style="color:#ba2121">&#34;context&#34;</span>
-    <span style="color:#ba2121">&#34;github.com/aws/aws-lambda-go/lambda&#34;</span>
-)
-
-<span style="color:#408080;font-style:italic">// Define the request and response structure
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Request <span style="color:#008000;font-weight:bold">struct</span> {
-    Name <span style="color:#b00040">string</span> <span style="color:#ba2121">`json:&#34;name&#34;`</span>
-}
-
-<span style="color:#008000;font-weight:bold">type</span> Response <span style="color:#008000;font-weight:bold">struct</span> {
-    Message <span style="color:#b00040">string</span> <span style="color:#ba2121">`json:&#34;message&#34;`</span>
-}
-
-<span style="color:#408080;font-style:italic">// Handler function
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">MyHandler</span>(ctx context.Context, req Request) (Response, <span style="color:#b00040">error</span>) {
-    <span style="color:#008000;font-weight:bold">return</span> Response{Message: <span style="color:#ba2121">&#34;Hello, &#34;</span> <span style="color:#666">+</span> req.Name}, <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-    lambda.<span style="color:#00f">Start</span>(MyHandler)
-}
-</code></pre></div><p>In this example:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#ba2121">&#34;context&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ba2121">&#34;github.com/aws/aws-lambda-go/lambda&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Define the request and response structure
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Request <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    Name <span style="color:#b00040">string</span> <span style="color:#ba2121">`json:&#34;name&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Response <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    Message <span style="color:#b00040">string</span> <span style="color:#ba2121">`json:&#34;message&#34;`</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Handler function
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">MyHandler</span>(ctx context.Context, req Request) (Response, <span style="color:#b00040">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> Response{Message: <span style="color:#ba2121">&#34;Hello, &#34;</span> <span style="color:#666">+</span> req.Name}, <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>    lambda.<span style="color:#00f">Start</span>(MyHandler)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example:</p>
 <ul>
 <li><code>Request</code> and <code>Response</code> structures define the input and output formats.</li>
 <li><code>MyHandler</code> is the function that processes the incoming event. It takes a <code>Request</code> and returns a <code>Response</code>.</li>
@@ -158,24 +158,24 @@
 </ul>
 <h3 id="2-install-aws-lambda-go-sdk">2. Install AWS Lambda Go SDK</h3>
 <p>You need the AWS Lambda Go SDK to handle Lambda events. Install it using:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">go get github.com/aws/aws-lambda-go/lambda
-</code></pre></div><h3 id="3-build-the-lambda-function">3. Build the Lambda Function</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>go get github.com/aws/aws-lambda-go/lambda
+</span></span></code></pre></div><h3 id="3-build-the-lambda-function">3. Build the Lambda Function</h3>
 <p>AWS Lambda runs on a Linux environment, so you&rsquo;ll need to build your Go program for Linux:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#19177c">GOOS</span><span style="color:#666">=</span>linux <span style="color:#19177c">GOARCH</span><span style="color:#666">=</span>amd64 go build -o main main.go
-</code></pre></div><h3 id="4-package-your-function">4. Package Your Function</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#19177c">GOOS</span><span style="color:#666">=</span>linux <span style="color:#19177c">GOARCH</span><span style="color:#666">=</span>amd64 go build -o main main.go
+</span></span></code></pre></div><h3 id="4-package-your-function">4. Package Your Function</h3>
 <p>Zip the executable to prepare it for deployment:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zip <span style="color:#008000;font-weight:bold">function</span>.zip main
-</code></pre></div><h3 id="5-deploy-your-lambda-function">5. Deploy Your Lambda Function</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>zip <span style="color:#008000;font-weight:bold">function</span>.zip main
+</span></span></code></pre></div><h3 id="5-deploy-your-lambda-function">5. Deploy Your Lambda Function</h3>
 <p>Use the AWS CLI to create the Lambda function:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws lambda create-function --function-name my-lambda-function <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>  --zip-file fileb://function.zip --handler main <span style="color:#b62;font-weight:bold">\
-</span><span style="color:#b62;font-weight:bold"></span>  --runtime go1.x --role arn:aws:iam::your-account-id:role/your-lambda-role
-</code></pre></div><p>Replace <code>your-account-id</code> and <code>your-lambda-role</code> with your actual AWS account ID and IAM role ARN.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>aws lambda create-function --function-name my-lambda-function <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>  --zip-file fileb://function.zip --handler main <span style="color:#b62;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b62;font-weight:bold"></span>  --runtime go1.x --role arn:aws:iam::your-account-id:role/your-lambda-role
+</span></span></code></pre></div><p>Replace <code>your-account-id</code> and <code>your-lambda-role</code> with your actual AWS account ID and IAM role ARN.</p>
 <h3 id="6-invoke-your-lambda-function">6. Invoke Your Lambda Function</h3>
 <p>Finally, you can test your function using the AWS CLI:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">aws lambda invoke --function-name my-lambda-function --payload <span style="color:#ba2121">&#39;{&#34;name&#34;: &#34;World&#34;}&#39;</span> response.json
-cat response.json
-</code></pre></div><p>This command invokes your Lambda function with the payload <code>{&quot;name&quot;: &quot;World&quot;}</code> and stores the response in <code>response.json</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>aws lambda invoke --function-name my-lambda-function --payload <span style="color:#ba2121">&#39;{&#34;name&#34;: &#34;World&#34;}&#39;</span> response.json
+</span></span><span style="display:flex;"><span>cat response.json
+</span></span></code></pre></div><p>This command invokes your Lambda function with the payload <code>{&quot;name&quot;: &quot;World&quot;}</code> and stores the response in <code>response.json</code>.</p>
 <h2 id="lambda-vs-lambda-function-understanding-the-difference">Lambda vs. Lambda Function: Understanding the Difference</h2>
 <p>It&rsquo;s important to distinguish between &ldquo;AWS Lambda&rdquo; and a &ldquo;lambda function&rdquo;:</p>
 <ul>
@@ -203,7 +203,7 @@ cat response.json
         
         
       
-      <a href="https://programmercave.com/tags/Cloud/">Cloud</a>, <a href="https://programmercave.com/tags/AWS/">AWS</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cloud/&#34;&gt;Cloud&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/AWS/&#34;&gt;AWS&lt;/a&gt;
     </div>
   
 
@@ -221,7 +221,7 @@ cat response.json
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

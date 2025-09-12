@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <p>Memory management is a critical aspect of any programming language, influencing both performance and resource utilization. <strong>Go (Golang)</strong> excels in memory management by efficiently using two primary regions of memory: <strong>the stack and the heap</strong>. Additionally, Go employs <strong>Garbage Collection (GC)</strong> to automate the cleanup of unused memory, making it easier for developers to manage resources.</p>
@@ -120,13 +120,13 @@
 <li><strong>Limited Size</strong>: Ideal for short-lived variables due to its fixed and relatively small size.</li>
 </ul>
 <h4 id="example-stack-allocation"><strong>Example: Stack Allocation</strong></h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
-    x <span style="color:#666">:=</span> <span style="color:#666">42</span>  <span style="color:#408080;font-style:italic">// Stored on the stack
-</span><span style="color:#408080;font-style:italic"></span>    y <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;hello&#34;</span> <span style="color:#408080;font-style:italic">// Stored on the stack
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><p>In this example, <code>x</code> and <code>y</code> are stored on the stack. They exist only during the execution of <code>example()</code> and are automatically removed once the function completes.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
+</span></span><span style="display:flex;"><span>    x <span style="color:#666">:=</span> <span style="color:#666">42</span>  <span style="color:#408080;font-style:italic">// Stored on the stack
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    y <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;hello&#34;</span> <span style="color:#408080;font-style:italic">// Stored on the stack
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><p>In this example, <code>x</code> and <code>y</code> are stored on the stack. They exist only during the execution of <code>example()</code> and are automatically removed once the function completes.</p>
 <h4 id="stack-memory-diagram"><strong>Stack Memory Diagram</strong></h4>
-<pre><code>+-----------------+   &lt;- Stack Top (Newer function calls)
+<pre tabindex="0"><code>+-----------------+   &lt;- Stack Top (Newer function calls)
 | Function B      |   
 | Local Variables |   
 +-----------------+  
@@ -148,14 +148,14 @@
 <li><strong>Slower Access</strong>: Memory allocation and deallocation are more complex, making the heap slower than the stack.</li>
 </ul>
 <h4 id="example-heap-allocation"><strong>Example: Heap Allocation</strong></h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() <span style="color:#666">*</span><span style="color:#b00040">int</span> {
-    x <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>x = <span style="color:#666">42</span>
-    <span style="color:#008000;font-weight:bold">return</span> x
-}
-</code></pre></div><p>Here, <code>x</code> is stored on the heap because it needs to persist beyond the <code>example()</code> function. If it were on the stack, it would be removed when <code>example()</code> finishes.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() <span style="color:#666">*</span><span style="color:#b00040">int</span> {
+</span></span><span style="display:flex;"><span>    x <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>x = <span style="color:#666">42</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> x
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here, <code>x</code> is stored on the heap because it needs to persist beyond the <code>example()</code> function. If it were on the stack, it would be removed when <code>example()</code> finishes.</p>
 <h4 id="heap-memory-diagram"><strong>Heap Memory Diagram</strong></h4>
-<pre><code>+-----------------------+
+<pre tabindex="0"><code>+-----------------------+
 | Object 1 (Persistent) |
 +-----------------------+
 | Object 2 (Dynamic)    |
@@ -177,11 +177,11 @@
 <li><strong>Stack Expansion :</strong> If a stack outgrows its current size, a larger stack is allocated, and data is copied over.</li>
 </ul>
 <h4 id="stack-expansion-example"><strong>Stack Expansion Example</strong></h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">largeFunction</span>() {
-    <span style="color:#008000;font-weight:bold">var</span> largeArray [<span style="color:#666">1000000</span>]<span style="color:#b00040">int</span> <span style="color:#408080;font-style:italic">// This array requires a lot of stack space
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Perform operations on largeArray
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><p>In this example, if the initial stack size is insufficient, Go will dynamically allocate a larger stack and copy the existing data over.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">largeFunction</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">var</span> largeArray [<span style="color:#666">1000000</span>]<span style="color:#b00040">int</span> <span style="color:#408080;font-style:italic">// This array requires a lot of stack space
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Perform operations on largeArray
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><p>In this example, if the initial stack size is insufficient, Go will dynamically allocate a larger stack and copy the existing data over.</p>
 <h2 id="garbage-collection-in-go">Garbage Collection in Go</h2>
 <p>Garbage collection (GC) is Go’s automated mechanism for managing heap memory.</p>
 <h3 id="how-gc-works"><strong>How GC Works</strong></h3>
@@ -192,12 +192,12 @@
 <li><strong>Background Operation</strong>: The GC runs automatically in the background, optimizing memory usage.</li>
 </ol>
 <h3 id="gc-example-in-action"><strong>GC Example in Action</strong></h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
-    p <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>p = <span style="color:#666">100</span>
-    <span style="color:#408080;font-style:italic">// If &#39;p&#39; is not used again, GC will remove it from memory
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><p>In this example, the GC will automatically detect when <code>p</code> is no longer needed and free the associated memory.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">example</span>() {
+</span></span><span style="display:flex;"><span>    p <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Allocated on the heap
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#666">*</span>p = <span style="color:#666">100</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">// If &#39;p&#39; is not used again, GC will remove it from memory
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><p>In this example, the GC will automatically detect when <code>p</code> is no longer needed and free the associated memory.</p>
 <h2 id="stack-vs-heap-a-quick-comparison">Stack vs Heap: A Quick Comparison</h2>
 <table>
 <thead>
@@ -263,7 +263,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -281,7 +281,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

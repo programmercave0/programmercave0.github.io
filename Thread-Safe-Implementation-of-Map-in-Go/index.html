@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <p>This blog demonstrates two approaches to implement a <strong>thread-safe map</strong> in Go: using <code>sync.Mutex</code> and the built-in <code>sync.Map</code>. These techniques ensure safe concurrent access to maps in multi-threaded environments.</p>
@@ -134,48 +134,48 @@ Retrieves the value for a given key:</p>
 </ul>
 <hr>
 <h4 id="code"><strong>Code</strong></h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-	<span style="color:#ba2121">&#34;sync&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">type</span> SafeMap <span style="color:#008000;font-weight:bold">struct</span> {
-	mu   sync.Mutex
-	data <span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewSafeMap</span>() <span style="color:#666">*</span>SafeMap {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>SafeMap{
-		data: <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>),
-	}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (m <span style="color:#666">*</span>SafeMap) <span style="color:#00f">Set</span>(key <span style="color:#b00040">string</span>, value <span style="color:#b00040">int</span>) {
-	m.mu.<span style="color:#00f">Lock</span>()
-	<span style="color:#008000;font-weight:bold">defer</span> m.mu.<span style="color:#00f">Unlock</span>()
-	m.data[key] = value
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (m <span style="color:#666">*</span>SafeMap) <span style="color:#00f">Get</span>(key <span style="color:#b00040">string</span>) (<span style="color:#b00040">int</span>, <span style="color:#b00040">bool</span>) {
-	m.mu.<span style="color:#00f">Lock</span>()
-	<span style="color:#008000;font-weight:bold">defer</span> m.mu.<span style="color:#00f">Unlock</span>()
-	value, ok <span style="color:#666">:=</span> m.data[key]
-	<span style="color:#008000;font-weight:bold">return</span> value, ok
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-	m <span style="color:#666">:=</span> <span style="color:#00f">NewSafeMap</span>()
-	m.<span style="color:#00f">Set</span>(<span style="color:#ba2121">&#34;a&#34;</span>, <span style="color:#666">42</span>)
-	value, ok <span style="color:#666">:=</span> m.<span style="color:#00f">Get</span>(<span style="color:#ba2121">&#34;a&#34;</span>)
-	<span style="color:#008000;font-weight:bold">if</span> ok {
-		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Value:&#34;</span>, value)
-	} <span style="color:#008000;font-weight:bold">else</span> {
-		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key not found&#34;</span>)
-	}
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;sync&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> SafeMap <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	mu   sync.Mutex
+</span></span><span style="display:flex;"><span>	data <span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewSafeMap</span>() <span style="color:#666">*</span>SafeMap {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>SafeMap{
+</span></span><span style="display:flex;"><span>		data: <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (m <span style="color:#666">*</span>SafeMap) <span style="color:#00f">Set</span>(key <span style="color:#b00040">string</span>, value <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>	m.mu.<span style="color:#00f">Lock</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">defer</span> m.mu.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>	m.data[key] = value
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (m <span style="color:#666">*</span>SafeMap) <span style="color:#00f">Get</span>(key <span style="color:#b00040">string</span>) (<span style="color:#b00040">int</span>, <span style="color:#b00040">bool</span>) {
+</span></span><span style="display:flex;"><span>	m.mu.<span style="color:#00f">Lock</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">defer</span> m.mu.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>	value, ok <span style="color:#666">:=</span> m.data[key]
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> value, ok
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	m <span style="color:#666">:=</span> <span style="color:#00f">NewSafeMap</span>()
+</span></span><span style="display:flex;"><span>	m.<span style="color:#00f">Set</span>(<span style="color:#ba2121">&#34;a&#34;</span>, <span style="color:#666">42</span>)
+</span></span><span style="display:flex;"><span>	value, ok <span style="color:#666">:=</span> m.<span style="color:#00f">Get</span>(<span style="color:#ba2121">&#34;a&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> ok {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Value:&#34;</span>, value)
+</span></span><span style="display:flex;"><span>	} <span style="color:#008000;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key not found&#34;</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h3 id="approach-2-using-syncmap"><strong>Approach 2: Using <code>sync.Map</code></strong></h3>
 <p>The <code>sync.Map</code> is a concurrent map provided by Go&rsquo;s <code>sync</code> package, optimized for high-concurrency use cases. It eliminates the need for manual locking.</p>
 <h4 id="characteristics"><strong>Characteristics</strong></h4>
@@ -194,35 +194,35 @@ Retrieves the value for a given key:</p>
 <li><code>Range(func(key, value any) bool)</code>: Iterates over all entries.</li>
 </ul>
 <h4 id="code-example"><strong>Code Example</strong></h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-	<span style="color:#ba2121">&#34;sync&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-	<span style="color:#008000;font-weight:bold">var</span> sm sync.Map
-
-	<span style="color:#408080;font-style:italic">// Store values
-</span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Store</span>(<span style="color:#ba2121">&#34;a&#34;</span>, <span style="color:#666">1</span>)
-	sm.<span style="color:#00f">Store</span>(<span style="color:#ba2121">&#34;b&#34;</span>, <span style="color:#666">2</span>)
-
-	<span style="color:#408080;font-style:italic">// Load values
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">if</span> value, ok <span style="color:#666">:=</span> sm.<span style="color:#00f">Load</span>(<span style="color:#ba2121">&#34;a&#34;</span>); ok {
-		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key &#39;a&#39;:&#34;</span>, value)
-	}
-
-	<span style="color:#408080;font-style:italic">// Iterate
-</span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Range</span>(<span style="color:#008000;font-weight:bold">func</span>(key, value any) <span style="color:#b00040">bool</span> {
-		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key:&#34;</span>, key, <span style="color:#ba2121">&#34;Value:&#34;</span>, value)
-		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">true</span> <span style="color:#408080;font-style:italic">// Continue iteration
-</span><span style="color:#408080;font-style:italic"></span>	})
-
-	<span style="color:#408080;font-style:italic">// Delete a key
-</span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Delete</span>(<span style="color:#ba2121">&#34;b&#34;</span>)
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;sync&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">var</span> sm sync.Map
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Store values
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Store</span>(<span style="color:#ba2121">&#34;a&#34;</span>, <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>	sm.<span style="color:#00f">Store</span>(<span style="color:#ba2121">&#34;b&#34;</span>, <span style="color:#666">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Load values
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">if</span> value, ok <span style="color:#666">:=</span> sm.<span style="color:#00f">Load</span>(<span style="color:#ba2121">&#34;a&#34;</span>); ok {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key &#39;a&#39;:&#34;</span>, value)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Iterate
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Range</span>(<span style="color:#008000;font-weight:bold">func</span>(key, value any) <span style="color:#b00040">bool</span> {
+</span></span><span style="display:flex;"><span>		fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Key:&#34;</span>, key, <span style="color:#ba2121">&#34;Value:&#34;</span>, value)
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">true</span> <span style="color:#408080;font-style:italic">// Continue iteration
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Delete a key
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	sm.<span style="color:#00f">Delete</span>(<span style="color:#ba2121">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <h3 id="use-cases"><strong>Use Cases</strong></h3>
 <ol>
 <li>
@@ -257,7 +257,7 @@ Retrieves the value for a given key:</p>
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -275,7 +275,7 @@ Retrieves the value for a given key:</p>
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

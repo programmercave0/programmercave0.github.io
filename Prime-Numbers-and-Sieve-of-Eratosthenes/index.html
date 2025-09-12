@@ -16,14 +16,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
   
   
   
-  <meta name="description" content="A prime number is an integer n  1 which is only divisible by 1 and n(itself). For example, 2, 3, 5 are prime numbers, but 6, 8, 9 are not prime numbers.">
+  <meta name="description" content="A prime number is an integer n &gt; 1 which is only divisible by 1 and n(itself). For example, 2, 3, 5 are prime numbers, but 6, 8, 9 are not prime numbers.">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Number-Theory/">Number-Theory</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Number-Theory/&#34;&gt;Number-Theory&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;
     </div>
   
   <p>A <strong>prime number</strong> is an integer <em>n</em> &gt; 1 which is only divisible by 1 and <em>n</em>(itself). For example, 2, 3, 5 are prime numbers, but 6, 8, 9 are not prime numbers.</p>
@@ -117,43 +117,43 @@
 <!-- raw HTML omitted -->
 <p>If a number <em>n</em> &gt; 1 is not a prime number then it has a factor between 2 and floor (√n). For example 27 = 3*9 and  √27 = 5.196 then 27 has a factor between 2 and 5 which is 3. So to test if a number is prime number we have to iterate to √n in a loop.</p>
 <p>Here is a function <code>is_prime</code> which checks if the given number is prime.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n)
-{
-	<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>)
-	{
-		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-	}
-
-	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
-	{
-		<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>)
-		{
-			<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
-		}
-	}
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
-}
-</code></pre></div><p>Here is the function <code>prime_factorization</code> which returns an array of prime factors of the number.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> prime_factorization(<span style="color:#b00040">int</span> n)
-{
-	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> factors;
-
-	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
-	{
-		<span style="color:#008000;font-weight:bold">while</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>)
-		{
-			factors.push_back(i);
-			n <span style="color:#666">=</span> n <span style="color:#666">/</span> i;
-		}
-	}
-
-	<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&gt;</span> <span style="color:#666">1</span>)
-	{
-		factors.push_back(n);
-	}
-	<span style="color:#008000;font-weight:bold">return</span> factors;
-}
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">bool</span> <span style="color:#00f">is_prime</span>(<span style="color:#b00040">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&lt;</span> <span style="color:#666">2</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here is the function <code>prime_factorization</code> which returns an array of prime factors of the number.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> prime_factorization(<span style="color:#b00040">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> factors;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i<span style="color:#666">*</span>i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">while</span> (n <span style="color:#666">%</span> i <span style="color:#666">==</span> <span style="color:#666">0</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			factors.push_back(i);
+</span></span><span style="display:flex;"><span>			n <span style="color:#666">=</span> n <span style="color:#666">/</span> i;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> (n <span style="color:#666">&gt;</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		factors.push_back(n);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> factors;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p>It is an efficient algorithm to find prime numbers upto a limit (say 10,000,000).</p>
 <p>In this algorithm, first we mark all the multiples of 2 upto n, then all the multiples of 3, then 5 and so on. In the end we have all the prime numbers upto n.</p>
 <p>For example, to find prime numbers less tha or equal to 20.</p>
@@ -164,25 +164,25 @@
 <p>2 3 <!-- raw HTML omitted -->4<!-- raw HTML omitted --> 5 <!-- raw HTML omitted -->6<!-- raw HTML omitted --> 7 <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> 11 <!-- raw HTML omitted -->12<!-- raw HTML omitted --> 13 <!-- raw HTML omitted -->14<!-- raw HTML omitted --> <!-- raw HTML omitted -->15<!-- raw HTML omitted --> <!-- raw HTML omitted -->16<!-- raw HTML omitted --> 17 <!-- raw HTML omitted -->18<!-- raw HTML omitted --> 19 <!-- raw HTML omitted -->20<!-- raw HTML omitted --></p>
 <p>The remaining integers in black are prime numbers less than 20.</p>
 <p>Here is the function <code>sieve_of_erastosthenes</code> which returns an array whose index can tell us the prime numbers less than or equal to <em>n</em>.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> sieve_of_erastosthenes(<span style="color:#b00040">int</span> n)
-{
-	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> is_prime(n<span style="color:#666">+</span><span style="color:#666">1</span>, <span style="color:#008000">true</span>);
-
-	is_prime[<span style="color:#666">0</span>] <span style="color:#666">=</span> is_prime[<span style="color:#666">1</span>] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
-
-	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
-	{
-		<span style="color:#008000;font-weight:bold">if</span> (is_prime[i])
-		{
-			<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> i<span style="color:#666">*</span>i; j <span style="color:#666">&lt;=</span> n; j <span style="color:#666">+=</span> i)
-			{
-				is_prime[j] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
-			}
-		}
-	}
-	<span style="color:#008000;font-weight:bold">return</span> is_prime;
-}
-</code></pre></div><p>Reference - Competitive Programmer’s Handbook, Antti Laaksonen</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> sieve_of_erastosthenes(<span style="color:#b00040">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> is_prime(n<span style="color:#666">+</span><span style="color:#666">1</span>, <span style="color:#008000">true</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	is_prime[<span style="color:#666">0</span>] <span style="color:#666">=</span> is_prime[<span style="color:#666">1</span>] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">if</span> (is_prime[i])
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> i<span style="color:#666">*</span>i; j <span style="color:#666">&lt;=</span> n; j <span style="color:#666">+=</span> i)
+</span></span><span style="display:flex;"><span>			{
+</span></span><span style="display:flex;"><span>				is_prime[j] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> is_prime;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Reference - Competitive Programmer’s Handbook, Antti Laaksonen</p>
 
   
   
@@ -201,7 +201,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Number-Theory/">Number-Theory</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Number-Theory/&#34;&gt;Number-Theory&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;
     </div>
   
 
@@ -219,7 +219,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

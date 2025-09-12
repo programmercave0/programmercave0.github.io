@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <p>Concurrency is a cornerstone of modern software engineering, and Go (Golang) makes it accessible with <strong>Goroutines</strong>. If you’re preparing for a software engineering interview, understanding Goroutines is crucial. This guide breaks down Goroutines in simple terms, complete with examples and diagrams.</p>
@@ -102,8 +102,8 @@
 <ul>
 <li><strong>Lightweight</strong>: Goroutines use minimal memory (as low as 2KB) compared to OS threads (1-2MB).</li>
 <li><strong>Simple Syntax</strong>: Prefix a function with <code>go</code> to run it concurrently:
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">myFunction</span>() <span style="color:#408080;font-style:italic">// Runs myFunction in a new Goroutine
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">myFunction</span>() <span style="color:#408080;font-style:italic">// Runs myFunction in a new Goroutine
+</span></span></span></code></pre></div></li>
 <li><strong>Managed by Go Runtime</strong>: The runtime handles scheduling, suspension, and resumption automatically.</li>
 </ul>
 <h3 id="the-main-goroutine">The Main Goroutine</h3>
@@ -149,26 +149,26 @@
 <li><strong>Join</strong>: Wait for child Goroutines to finish.</li>
 </ul>
 <p>Example without a Join Point:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
-    <span style="color:#008000;font-weight:bold">go</span> fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Hello&#34;</span>) <span style="color:#408080;font-style:italic">// Fork  
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Main Goroutine exits before &#34;Hello&#34; prints  
-</span><span style="color:#408080;font-style:italic"></span>}  
-</code></pre></div><p>Here, <code>&quot;Hello&quot;</code> might never print because the main Goroutine exits too quickly.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">go</span> fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Hello&#34;</span>) <span style="color:#408080;font-style:italic">// Fork  
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#408080;font-style:italic">// Main Goroutine exits before &#34;Hello&#34; prints  
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}  
+</span></span></code></pre></div><p>Here, <code>&quot;Hello&quot;</code> might never print because the main Goroutine exits too quickly.</p>
 <h2 id="fixing-race-conditions-with-syncwaitgroup">Fixing Race Conditions with sync.WaitGroup</h2>
 <p>Use <code>sync.WaitGroup</code> to create a <strong>join point</strong> and ensure Goroutines complete:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> wg sync.WaitGroup  
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
-    wg.<span style="color:#00f">Add</span>(<span style="color:#666">1</span>) <span style="color:#408080;font-style:italic">// Add 1 Goroutine to wait for  
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">sayHello</span>()  
-    wg.<span style="color:#00f">Wait</span>() <span style="color:#408080;font-style:italic">// Join point: wait until Done() is called  
-</span><span style="color:#408080;font-style:italic"></span>}  
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">sayHello</span>() {  
-    <span style="color:#008000;font-weight:bold">defer</span> wg.<span style="color:#00f">Done</span>() <span style="color:#408080;font-style:italic">// Signal completion  
-</span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Hello&#34;</span>)  
-}  
-</code></pre></div><h2 id="goroutine-scheduling-preemptive-or-nonpreemptive">Goroutine Scheduling: Preemptive or Nonpreemptive?</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">var</span> wg sync.WaitGroup  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {  
+</span></span><span style="display:flex;"><span>    wg.<span style="color:#00f">Add</span>(<span style="color:#666">1</span>) <span style="color:#408080;font-style:italic">// Add 1 Goroutine to wait for  
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">sayHello</span>()  
+</span></span><span style="display:flex;"><span>    wg.<span style="color:#00f">Wait</span>() <span style="color:#408080;font-style:italic">// Join point: wait until Done() is called  
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">sayHello</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">defer</span> wg.<span style="color:#00f">Done</span>() <span style="color:#408080;font-style:italic">// Signal completion  
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Hello&#34;</span>)  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><h2 id="goroutine-scheduling-preemptive-or-nonpreemptive">Goroutine Scheduling: Preemptive or Nonpreemptive?</h2>
 <p>Goroutines are <strong>nonpreemptive</strong> but appear preemptive because the Go runtime:</p>
 <ol>
 <li>Observes blocking operations (e.g., I/O, channel operations).</li>
@@ -198,7 +198,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -216,7 +216,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -87,7 +87,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
   <p>This blog demonstrates how to implement a <strong>thread-safe stack</strong> in Go using <code>sync.RWMutex</code>. It ensures safe concurrent access in multi-threaded environments. Below is a detailed breakdown.</p>
@@ -164,137 +164,137 @@ Checks if the stack is empty, using a read lock.</p>
 </li>
 </ul>
 <hr>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-	<span style="color:#ba2121">&#34;sync&#34;</span>
-)
-
-<span style="color:#408080;font-style:italic">// ItemType - The type of item in the stack.
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> ItemType <span style="color:#008000;font-weight:bold">interface</span>{}
-
-<span style="color:#408080;font-style:italic">// Stack - Stack of items.
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Stack <span style="color:#008000;font-weight:bold">struct</span> {
-
-	<span style="color:#408080;font-style:italic">// Slice of type ItemType, it holds items in the stack.
-</span><span style="color:#408080;font-style:italic"></span>	items []ItemType
-
-	<span style="color:#408080;font-style:italic">// rwLock for handling concurrent operations on the stack.
-</span><span style="color:#408080;font-style:italic"></span>	rwLock sync.RWMutex
-}
-
-<span style="color:#408080;font-style:italic">// New - Creates a new Stack.
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">New</span>() <span style="color:#666">*</span>Stack {
-
-	stack.items = []ItemType{}
-
-	<span style="color:#008000;font-weight:bold">return</span> stack
-}
-
-<span style="color:#408080;font-style:italic">// Push - Adds an Item to the top of the stack
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Push</span>(t ItemType) {
-
-	<span style="color:#408080;font-style:italic">//Initialize items slice if not initialized
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">if</span> stack.items <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nil</span> {
-		stack.items = []ItemType{}
-	}
-
-	<span style="color:#408080;font-style:italic">// Acquire read, write lock before inserting a new item in the stack.
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Lock</span>()
-
-	<span style="color:#408080;font-style:italic">// Performs append operation.
-</span><span style="color:#408080;font-style:italic"></span>	stack.items = <span style="color:#008000">append</span>(stack.items, t)
-
-	<span style="color:#408080;font-style:italic">// This will release read, write lock
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Unlock</span>()
-}
-
-<span style="color:#408080;font-style:italic">// Pop removes an Item from the top of the stack
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Pop</span>() <span style="color:#666">*</span>ItemType {
-
-	<span style="color:#408080;font-style:italic">// Acquire read, write lock as items are going to modify.
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Lock</span>()
-
-	<span style="color:#408080;font-style:italic">// Popping item from items slice.
-</span><span style="color:#408080;font-style:italic"></span>	item <span style="color:#666">:=</span> stack.items[<span style="color:#008000">len</span>(stack.items)<span style="color:#666">-</span><span style="color:#666">1</span>]
-
-	<span style="color:#408080;font-style:italic">//Adjusting the item&#39;s length accordingly
-</span><span style="color:#408080;font-style:italic"></span>	stack.items = stack.items[<span style="color:#666">0</span> : <span style="color:#008000">len</span>(stack.items)<span style="color:#666">-</span><span style="color:#666">1</span>]
-
-	<span style="color:#408080;font-style:italic">// Release read-write lock.
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Unlock</span>()
-
-	<span style="color:#408080;font-style:italic">// Return last popped item
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>item
-}
-
-<span style="color:#408080;font-style:italic">// Size return size i.e. number of items present in stack.
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Size</span>() <span style="color:#b00040">int</span> {
-	<span style="color:#408080;font-style:italic">// Acquire read lock
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
-
-	<span style="color:#408080;font-style:italic">// defer operation of unlocking.
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
-
-	<span style="color:#408080;font-style:italic">// Return length of items slice.
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">len</span>(stack.items)
-}
-
-<span style="color:#408080;font-style:italic">// All - return all items present in stack
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">All</span>() []ItemType {
-	<span style="color:#408080;font-style:italic">// Acquire read lock
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
-
-	<span style="color:#408080;font-style:italic">// defer operation of unlocking.
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
-
-	<span style="color:#408080;font-style:italic">// Return items slice to the caller.
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> stack.items
-}
-
-<span style="color:#408080;font-style:italic">// IsEmpty - Check is stack is empty or not.
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">IsEmpty</span>() <span style="color:#b00040">bool</span> {
-	<span style="color:#408080;font-style:italic">// Acquire read lock
-</span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
-	<span style="color:#408080;font-style:italic">// defer operation of unlock.
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
-
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">len</span>(stack.items) <span style="color:#666">==</span> <span style="color:#666">0</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-
-	stack <span style="color:#666">:=</span> Stack{}
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">10</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">20</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">30</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">40</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">50</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Push</span>(<span style="color:#666">60</span>)
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-	stack.<span style="color:#00f">Pop</span>()
-	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
-
-}
-</code></pre></div><h3 id="conclusion"><strong>Conclusion</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;sync&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// ItemType - The type of item in the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> ItemType <span style="color:#008000;font-weight:bold">interface</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Stack - Stack of items.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Stack <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Slice of type ItemType, it holds items in the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	items []ItemType
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// rwLock for handling concurrent operations on the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	rwLock sync.RWMutex
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// New - Creates a new Stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">New</span>() <span style="color:#666">*</span>Stack {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	stack.items = []ItemType{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> stack
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Push - Adds an Item to the top of the stack
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Push</span>(t ItemType) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">//Initialize items slice if not initialized
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">if</span> stack.items <span style="color:#666">==</span> <span style="color:#008000;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		stack.items = []ItemType{}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Acquire read, write lock before inserting a new item in the stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Lock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Performs append operation.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.items = <span style="color:#008000">append</span>(stack.items, t)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// This will release read, write lock
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Pop removes an Item from the top of the stack
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Pop</span>() <span style="color:#666">*</span>ItemType {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Acquire read, write lock as items are going to modify.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Lock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Popping item from items slice.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	item <span style="color:#666">:=</span> stack.items[<span style="color:#008000">len</span>(stack.items)<span style="color:#666">-</span><span style="color:#666">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">//Adjusting the item&#39;s length accordingly
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.items = stack.items[<span style="color:#666">0</span> : <span style="color:#008000">len</span>(stack.items)<span style="color:#666">-</span><span style="color:#666">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Release read-write lock.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Return last popped item
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>item
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Size return size i.e. number of items present in stack.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">Size</span>() <span style="color:#b00040">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Acquire read lock
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// defer operation of unlocking.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Return length of items slice.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">len</span>(stack.items)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// All - return all items present in stack
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">All</span>() []ItemType {
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Acquire read lock
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// defer operation of unlocking.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Return items slice to the caller.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> stack.items
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// IsEmpty - Check is stack is empty or not.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> (stack <span style="color:#666">*</span>Stack) <span style="color:#00f">IsEmpty</span>() <span style="color:#b00040">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Acquire read lock
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	stack.rwLock.<span style="color:#00f">RLock</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// defer operation of unlock.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">defer</span> stack.rwLock.<span style="color:#00f">RUnlock</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">len</span>(stack.items) <span style="color:#666">==</span> <span style="color:#666">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	stack <span style="color:#666">:=</span> Stack{}
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">10</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">20</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">30</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">40</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">50</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Push</span>(<span style="color:#666">60</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>	stack.<span style="color:#00f">Pop</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(stack.<span style="color:#00f">All</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="conclusion"><strong>Conclusion</strong></h3>
 <p>The thread-safe stack in Go demonstrates the power of <code>sync.RWMutex</code> for managing shared resources. Its methods ensure <strong>safe concurrent reads and writes</strong>, making it a robust solution for handling stacks in multi-threaded programs.</p>
 <p>This implementation is essential knowledge for anyone working with concurrent programming in Go.</p>
 
@@ -307,7 +307,7 @@ Checks if the stack is empty, using a read lock.</p>
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
 
@@ -325,7 +325,7 @@ Checks if the stack is empty, using a read lock.</p>
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

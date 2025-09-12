@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -103,7 +103,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Hackerrank/">Hackerrank</a>, <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Hackerrank/&#34;&gt;Hackerrank&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structure/&#34;&gt;Data-Structure&lt;/a&gt;
     </div>
   
   <!-- raw HTML omitted -->
@@ -113,58 +113,57 @@
 <!-- raw HTML omitted -->
 <p><img src="/assets/images/2020-04-25-Left-Rotation-HackerRank/HR_repeated_string.jpg" alt="Left Rotation HackerRank"></p>
 <p>This is a very easy problem. In the above figure we see that after two rotations, the element at index 2 is the first element in the new array. Thus after <em>d</em> rotations, the element at index <em>d</em> is the first element. And all elements after <em>d</em><!-- raw HTML omitted -->th<!-- raw HTML omitted --> elements with follow.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
-{
-    rotated_array.push_back(arr[i]);
-}
-</code></pre></div><p>Now, elements from 0 to <em>d</em>-1 indices are added to the new rotated array.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
-{
-    rotated_array.push_back(arr[i]);
-}
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    rotated_array.push_back(arr[i]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, elements from 0 to <em>d</em>-1 indices are added to the new rotated array.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    rotated_array.push_back(arr[i]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> left_rotation(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr, <span style="color:#b00040">int</span> rotations)
-{
-    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> rotated_array;
-
-    <span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
-    {
-        rotated_array.push_back(arr[i]);
-    }
-    <span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
-    {
-        rotated_array.push_back(arr[i]);
-    }
-    <span style="color:#008000;font-weight:bold">return</span> rotated_array;
-}
-
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-    <span style="color:#b00040">int</span> num_elements, num_left_rotations;
-
-    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> num_elements;
-    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> num_left_rotations;
-
-    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> input_array(num_elements);
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_elements; <span style="color:#666">++</span>i)
-    {
-        std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> input_array[i];
-    }
-
-    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> result_array <span style="color:#666">=</span> left_rotation(input_array, num_left_rotations);
-
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_elements; <span style="color:#666">++</span>i)
-    {
-        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> result_array[i] <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34; &#34;</span>;
-    }
-    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-}
-
-</code></pre></div><p>View this on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Hackerrank/Left_Rotation.cpp">Github</a></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> left_rotation(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;&amp;</span> arr, <span style="color:#b00040">int</span> rotations)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> rotated_array;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> rotations; i <span style="color:#666">&lt;</span> arr.size(); <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        rotated_array.push_back(arr[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (std<span style="color:#666">::</span>size_t i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> rotations; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        rotated_array.push_back(arr[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> rotated_array;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> num_elements, num_left_rotations;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> num_elements;
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> num_left_rotations;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> input_array(num_elements);
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_elements; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> input_array[i];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> result_array <span style="color:#666">=</span> left_rotation(input_array, num_left_rotations);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_elements; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> result_array[i] <span style="color:#666">&lt;&lt;</span><span style="color:#ba2121">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>View this on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Hackerrank/Left_Rotation.cpp">Github</a></p>
 <p>If you have another solution then please share it in the comments below.</p>
 <!-- raw HTML omitted -->
 
@@ -193,7 +192,7 @@ std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Hackerrank/">Hackerrank</a>, <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Hackerrank/&#34;&gt;Hackerrank&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structure/&#34;&gt;Data-Structure&lt;/a&gt;
     </div>
   
 
@@ -211,7 +210,7 @@ std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

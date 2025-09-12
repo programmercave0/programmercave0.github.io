@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <h2 id="key-takeaways">Key Takeaways</h2>
@@ -117,19 +117,19 @@
 <li><strong>Composability</strong>: Channels are inherently more composable, making it easier to build complex concurrent workflows by connecting multiple channels.</li>
 </ul>
 <h3 id="example">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">10</span>) <span style="color:#408080;font-style:italic">// Buffered channel
-</span><span style="color:#408080;font-style:italic">// Producer
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-    <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">10</span>; i<span style="color:#666">++</span> {
-        ch <span style="color:#666">&lt;-</span> i  <span style="color:#408080;font-style:italic">// Sending data
-</span><span style="color:#408080;font-style:italic"></span>    }
-    <span style="color:#008000">close</span>(ch)  <span style="color:#408080;font-style:italic">// Closing channel after sending all data
-</span><span style="color:#408080;font-style:italic"></span>}()
-<span style="color:#408080;font-style:italic">// Consumer
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> ch {
-    fmt.<span style="color:#00f">Println</span>(val)  <span style="color:#408080;font-style:italic">// Receiving data
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><h2 id="2-are-you-guarding-internal-state-of-a-struct">2. Are You Guarding Internal State of a Struct?</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">10</span>) <span style="color:#408080;font-style:italic">// Buffered channel
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Producer
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">10</span>; i<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>        ch <span style="color:#666">&lt;-</span> i  <span style="color:#408080;font-style:italic">// Sending data
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">close</span>(ch)  <span style="color:#408080;font-style:italic">// Closing channel after sending all data
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}()
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Consumer
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> ch {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(val)  <span style="color:#408080;font-style:italic">// Receiving data
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="2-are-you-guarding-internal-state-of-a-struct">2. Are You Guarding Internal State of a Struct?</h2>
 <h3 id="scenario">Scenario</h3>
 <p>When protecting the internal state of a struct or critical sections of code.</p>
 <h3 id="solution-use-syncmutex">Solution: Use <code>sync.Mutex</code></h3>
@@ -138,17 +138,17 @@
 <li><strong>Encapsulation</strong>: Mutexes encapsulate complexity, maintaining a simple interface for users of the struct.</li>
 </ul>
 <h3 id="example-1">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Counter <span style="color:#008000;font-weight:bold">struct</span> {
-    mu    sync.Mutex
-    value <span style="color:#b00040">int</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>Counter) <span style="color:#00f">Increment</span>() {
-    c.mu.<span style="color:#00f">Lock</span>()          <span style="color:#408080;font-style:italic">// Lock before accessing shared state
-</span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">defer</span> c.mu.<span style="color:#00f">Unlock</span>()  <span style="color:#408080;font-style:italic">// Unlock after access
-</span><span style="color:#408080;font-style:italic"></span>    c.value<span style="color:#666">++</span>
-}
-</code></pre></div><h3 id="best-practice">Best Practice</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Counter <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    mu    sync.Mutex
+</span></span><span style="display:flex;"><span>    value <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>Counter) <span style="color:#00f">Increment</span>() {
+</span></span><span style="display:flex;"><span>    c.mu.<span style="color:#00f">Lock</span>()          <span style="color:#408080;font-style:italic">// Lock before accessing shared state
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    <span style="color:#008000;font-weight:bold">defer</span> c.mu.<span style="color:#00f">Unlock</span>()  <span style="color:#408080;font-style:italic">// Unlock after access
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    c.value<span style="color:#666">++</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="best-practice">Best Practice</h3>
 <ul>
 <li><strong>Keep Locks Small</strong>: Keep the scope of locks as small as possible to minimize contention.</li>
 <li><strong>Avoid Exposing Locks</strong>: Do not expose locks outside the struct to maintain encapsulation.</li>
@@ -163,18 +163,18 @@
 </ul>
 <p><a href="/Understanding-the-select-Statement-in-Go/">Understanding the select Statement in Go</a></p>
 <h3 id="example-2">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-
-<span style="color:#008000;font-weight:bold">select</span> {
-<span style="color:#008000;font-weight:bold">case</span> msg1 <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch1:
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received from ch1:&#34;</span>, msg1)
-<span style="color:#008000;font-weight:bold">case</span> msg2 <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch2:
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received from ch2:&#34;</span>, msg2)
-<span style="color:#008000;font-weight:bold">default</span>:
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;No data received&#34;</span>)
-}
-</code></pre></div><h2 id="4-is-it-a-performance-critical-section">4. Is It a Performance-Critical Section?</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">case</span> msg1 <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch1:
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received from ch1:&#34;</span>, msg1)
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">case</span> msg2 <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch2:
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received from ch2:&#34;</span>, msg2)
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;No data received&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="4-is-it-a-performance-critical-section">4. Is It a Performance-Critical Section?</h2>
 <h3 id="clarification">Clarification</h3>
 <p>Channels involve internal synchronization, which can be slower than direct memory access using <code>sync.Mutex</code>.When data is sent or received through a channel, Go manages synchronization behind the scenes to ensure safe communication between goroutines. This involves blocking and waking up goroutines, which adds overhead compared to the more straightforward locking and unlocking mechanism of sync.Mutex. Therefore, in performance-critical sections where memory access speed is crucial, sync.Mutex might be a better choice.</p>
 <h3 id="approach">Approach</h3>
@@ -183,15 +183,15 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
 <li><strong>Use <code>sync.Mutex</code> Sparingly</strong>: Use <code>sync.Mutex</code> in performance-critical sections only when necessary.</li>
 </ul>
 <h3 id="example-3">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> counter <span style="color:#b00040">int</span>
-<span style="color:#008000;font-weight:bold">var</span> mu sync.Mutex
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">increment</span>() {
-    mu.<span style="color:#00f">Lock</span>()
-    counter<span style="color:#666">++</span>
-    mu.<span style="color:#00f">Unlock</span>()
-}
-</code></pre></div><h2 id="gos-concurrency-philosophy">Go’s Concurrency Philosophy</h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">var</span> counter <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">var</span> mu sync.Mutex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">increment</span>() {
+</span></span><span style="display:flex;"><span>    mu.<span style="color:#00f">Lock</span>()
+</span></span><span style="display:flex;"><span>    counter<span style="color:#666">++</span>
+</span></span><span style="display:flex;"><span>    mu.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="gos-concurrency-philosophy">Go’s Concurrency Philosophy</h2>
 <ol>
 <li><strong>Favor Simplicity</strong>: Prefer channels over mutexes for readability and maintainability.</li>
 <li><strong>Use Channels for Communication</strong>: Channels naturally model concurrent workflows and improve code safety.</li>
@@ -225,7 +225,7 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -243,7 +243,7 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

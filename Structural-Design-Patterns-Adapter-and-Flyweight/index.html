@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
   <p><strong>Structural Patterns</strong></p>
@@ -119,36 +119,36 @@
 <ul>
 <li>Let us take the example of payment processing. We first use the Stripe payment gateway.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripeApi</span> <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">createPayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Create payment
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
- 
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">checkStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Check payment status
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-
-<span style="color:#666">...</span>
-
-<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">processPayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-	StripeApi stripeApi <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> StripeApi<span style="color:#666">();</span>
-	Payment object <span style="color:#666">=</span> stripeApi<span style="color:#666">.</span><span style="color:#7d9029">createPayment</span><span style="color:#666">();</span>
-	PaymentStatus status <span style="color:#666">=</span> stripeApi<span style="color:#666">.</span><span style="color:#7d9029">checkStatus</span><span style="color:#666">(</span>object<span style="color:#666">.</span><span style="color:#7d9029">getId</span><span style="color:#666">());</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripeApi</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">createPayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Create payment</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">checkStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Check payment status</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">processPayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>StripeApi<span style="color:#bbb"> </span>stripeApi<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>StripeApi();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>Payment<span style="color:#bbb"> </span>object<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>stripeApi.<span style="color:#7d9029">createPayment</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>PaymentStatus<span style="color:#bbb"> </span>status<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>stripeApi.<span style="color:#7d9029">checkStatus</span>(object.<span style="color:#7d9029">getId</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>Now we want to integrate with another payment gateway. We use the PayPal payment gateway.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalApi</span> <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Create payment
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
- 
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Check payment status
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalApi</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Create payment</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Check payment status</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>As you can see, the Stripe API and the PayPal API have different method names.</li>
 <li>The Stripe API uses <code>createPayment</code> and <code>checkStatus</code> while the PayPal API uses <code>makePayment</code> and <code>getStatus</code>.</li>
 </ul>
@@ -156,335 +156,335 @@
 <ul>
 <li><strong>Incompatible classes</strong> - You should have two classes that have incompatible interfaces. For example, the Stripe API and the PayPal API.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripeApi</span> <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">createPayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Create payment
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
- 
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">checkStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Check payment status
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-
-<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalApi</span> <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Create payment
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
- 
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#408080;font-style:italic">// Check payment status
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripeApi</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">createPayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Create payment</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">checkStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Check payment status</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalApi</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Create payment</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#408080;font-style:italic">// Check payment status</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Adapter interface</strong> - Create an interface for the adapter that will be used to convert the incompatible interfaces.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">PaymentProvider</span> <span style="color:#666">{</span>
-	<span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">();</span>
-	PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">);</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">PaymentProvider</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Concrete adapter classes</strong> - Create a class that implements the target interface. This is the class that the client code expects to work with. The adapter will convert the interface of the existing class to this interface.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripePaymentProvider</span> <span style="color:#008000;font-weight:bold">implements</span> PaymentProvider <span style="color:#666">{</span>
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#666">...</span>
-	<span style="color:#666">}</span>
-	
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#666">...</span>
-	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-
-<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalPaymentProvider</span> <span style="color:#008000;font-weight:bold">implements</span> PaymentProvider <span style="color:#666">{</span>
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		<span style="color:#666">...</span>
-	<span style="color:#666">}</span>
-	
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#666">...</span>
-	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripePaymentProvider</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>PaymentProvider<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PayPalPaymentProvider</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>PaymentProvider<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Transform request and delegate to original class</strong> - In the adapter class, transform the request to the format that the original class expects. Then, call the original class to perform the operation.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripePaymentProvider</span> <span style="color:#008000;font-weight:bold">implements</span> PaymentProvider <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">private</span> StripeApi stripeApi <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> StripeApi<span style="color:#666">();</span>
- 
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">makePayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		stripeApi<span style="color:#666">.</span><span style="color:#7d9029">createPayment</span><span style="color:#666">();</span>
-	<span style="color:#666">}</span>
-	
-	<span style="color:#a2f">@Override</span>
-	<span style="color:#008000;font-weight:bold">public</span> PaymentStatus <span style="color:#00f">getStatus</span><span style="color:#666">(</span>String paymentId<span style="color:#666">)</span> <span style="color:#666">{</span>
-		StripeStatus status <span style="color:#666">=</span> stripeApi<span style="color:#666">.</span><span style="color:#7d9029">checkStatus</span><span style="color:#666">(</span>paymentId<span style="color:#666">);</span>
-		<span style="color:#008000;font-weight:bold">return</span> convertStatus<span style="color:#666">(</span>status<span style="color:#666">);</span>
-	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">StripePaymentProvider</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>PaymentProvider<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>StripeApi<span style="color:#bbb"> </span>stripeApi<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>StripeApi();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makePayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>stripeApi.<span style="color:#7d9029">createPayment</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>PaymentStatus<span style="color:#bbb"> </span><span style="color:#00f">getStatus</span>(String<span style="color:#bbb"> </span>paymentId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>StripeStatus<span style="color:#bbb"> </span>status<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>stripeApi.<span style="color:#7d9029">checkStatus</span>(paymentId);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#008000;font-weight:bold">return</span><span style="color:#bbb"> </span>convertStatus(status);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Client code</strong> - The client code expects to work with the target interface. The client code doesnʼt know that the adapter is converting the interface of the original class.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentProcessor</span> <span style="color:#666">{</span>
-	<span style="color:#008000;font-weight:bold">private</span> PaymentProvider paymentProvider<span style="color:#666">;</span>
- 
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">PaymentProcessor</span><span style="color:#666">(</span>PaymentProvider paymentProvider<span style="color:#666">)</span> <span style="color:#666">{</span>
-		<span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">paymentProvider</span> <span style="color:#666">=</span> paymentProvider<span style="color:#666">;</span>
-	<span style="color:#666">}</span>
-	
-	<span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">processPayment</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-		paymentProvider<span style="color:#666">.</span><span style="color:#7d9029">makePayment</span><span style="color:#666">();</span>
-		PaymentStatus status <span style="color:#666">=</span> paymentProvider<span style="color:#666">.</span><span style="color:#7d9029">getStatus</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;paymentId&#34;</span><span style="color:#666">);</span>
-	<span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><h3 id="adapter-pattern-in-python">Adapter Pattern in Python</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
-<span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">enum</span> <span style="color:#008000;font-weight:bold">import</span> Enum
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentStatus</span>(Enum):
-    SUCCESS <span style="color:#666">=</span> <span style="color:#ba2121">&#34;SUCCESS&#34;</span>
-    FAILURE <span style="color:#666">=</span> <span style="color:#ba2121">&#34;FAILURE&#34;</span>
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentRequest</span>:
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self, name, phone, email, amount):
-        self<span style="color:#666">.</span>_name <span style="color:#666">=</span> name
-        self<span style="color:#666">.</span>_phone <span style="color:#666">=</span> phone
-        self<span style="color:#666">.</span>_email <span style="color:#666">=</span> email
-        self<span style="color:#666">.</span>_amount <span style="color:#666">=</span> amount
-
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">name</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_name
-    
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">phone</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_phone
-    
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">email</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_email
-    
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">amount</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_amount
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentProviderInterface</span>(ABC):
-    <span style="color:#a2f">@abstractmethod</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
-        <span style="color:#008000;font-weight:bold">pass</span>
-    
-    <span style="color:#a2f">@abstractmethod</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
-        <span style="color:#008000;font-weight:bold">pass</span>
-    
-    <span style="color:#a2f">@abstractmethod</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
-        <span style="color:#008000;font-weight:bold">pass</span>
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CashfreeApi</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_url</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;Cashfree&#34;</span>
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">do_payment</span>(self, amount):
-        <span style="color:#008000;font-weight:bold">print</span>(f<span style="color:#ba2121">&#34;Cashfree Payment: {amount}&#34;</span>)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">verify_status</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;OK&#34;</span>
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CashFreePayProvider</span>(PaymentProviderInterface):
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
-        self<span style="color:#666">.</span>_cashfree_api <span style="color:#666">=</span> CashfreeApi()
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>create_url()
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
-        self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>do_payment(payment_request<span style="color:#666">.</span>amount)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
-        status <span style="color:#666">=</span> self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>verify_status()
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>to_payment_status(status)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">to_payment_status</span>(self, status):
-        <span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;OK&#34;</span>:
-            <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>SUCCESS
-        <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>FAILURE
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RazorPayApi</span>:
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">make_link</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;RazorPay&#34;</span>
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pre_pay</span>(self):
-        <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#ba2121">&#34;RazorPay PrePayment&#34;</span>)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, name, amount):
-        <span style="color:#008000;font-weight:bold">print</span>(f<span style="color:#ba2121">&#34;RazorPay Payment for {name} of amount {amount}&#34;</span>)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
-        <span style="color:#408080;font-style:italic"># Simulated status check</span>
-        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;PASS&#34;</span>
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RazorPayProvider</span>(PaymentProviderInterface):
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
-        self<span style="color:#666">.</span>_razorpay_api <span style="color:#666">=</span> RazorPayApi()
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>make_link()
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
-        self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>pre_pay()
-        self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>pay(payment_request<span style="color:#666">.</span>name, payment_request<span style="color:#666">.</span>amount)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
-        status <span style="color:#666">=</span> self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>check_status()
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>to_payment_status(status)
-    
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">to_payment_status</span>(self, status):
-        <span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;PASS&#34;</span>:
-            <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>SUCCESS
-        <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>FAILURE
-
-<span style="color:#408080;font-style:italic"># Client code to execute payment request</span>
-<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process_payment</span>(payment_provider, payment_request):
-    <span style="color:#008000;font-weight:bold">print</span>(payment_provider<span style="color:#666">.</span>generate_link())
-    payment_provider<span style="color:#666">.</span>pay(payment_request)
-    status <span style="color:#666">=</span> payment_provider<span style="color:#666">.</span>check_status()
-    <span style="color:#008000;font-weight:bold">print</span>(f<span style="color:#ba2121">&#34;Payment Status: {status.name}&#34;</span>)
-
-<span style="color:#408080;font-style:italic"># Example usage:</span>
-payment_request <span style="color:#666">=</span> PaymentRequest(<span style="color:#ba2121">&#34;John Doe&#34;</span>, <span style="color:#ba2121">&#34;1234567890&#34;</span>, <span style="color:#ba2121">&#34;john@example.com&#34;</span>, <span style="color:#666">100</span>)
-
-<span style="color:#408080;font-style:italic"># Using CashFreePayProvider</span>
-cashfree_provider <span style="color:#666">=</span> CashFreePayProvider()
-process_payment(cashfree_provider, payment_request)
-</code></pre></div><h3 id="adapter-pattern-in-go">Adapter Pattern in Go</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> adapter
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">type</span> PaymentStatus <span style="color:#b00040">string</span>
-
-<span style="color:#008000;font-weight:bold">const</span> (
-	Success PaymentStatus = <span style="color:#ba2121">&#34;SUCCESS&#34;</span>
-	Failure PaymentStatus = <span style="color:#ba2121">&#34;FAILURE&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">type</span> PaymentRequest <span style="color:#008000;font-weight:bold">struct</span> {
-	Name   <span style="color:#b00040">string</span>
-	Phone  <span style="color:#b00040">string</span>
-	Email  <span style="color:#b00040">string</span>
-	Amount <span style="color:#b00040">int</span>
-}
-
-<span style="color:#008000;font-weight:bold">type</span> PaymentProviderInterface <span style="color:#008000;font-weight:bold">interface</span> {
-	<span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span>
-	<span style="color:#00f">Pay</span>(paymentRequest PaymentRequest)
-	<span style="color:#00f">CheckStatus</span>() PaymentStatus
-}
-
-<span style="color:#008000;font-weight:bold">type</span> CashfreeApi <span style="color:#008000;font-weight:bold">struct</span>{}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">CreateURL</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;Cashfree&#34;</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">DoPayment</span>(amount <span style="color:#b00040">int</span>) {
-	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Cashfree Payment: %d\n&#34;</span>, amount)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">VerifyStatus</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#408080;font-style:italic">// Simulated status check
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;OK&#34;</span>
-}
-
-<span style="color:#008000;font-weight:bold">type</span> CashFreePayProvider <span style="color:#008000;font-weight:bold">struct</span> {
-	cashfreeApi <span style="color:#666">*</span>CashfreeApi
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewCashFreePayProvider</span>() <span style="color:#666">*</span>CashFreePayProvider {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>CashFreePayProvider{cashfreeApi: <span style="color:#666">&amp;</span>CashfreeApi{}}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> c.cashfreeApi.<span style="color:#00f">CreateURL</span>()
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">Pay</span>(paymentRequest PaymentRequest) {
-	c.cashfreeApi.<span style="color:#00f">DoPayment</span>(paymentRequest.Amount)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">CheckStatus</span>() PaymentStatus {
-	status <span style="color:#666">:=</span> c.cashfreeApi.<span style="color:#00f">VerifyStatus</span>()
-	<span style="color:#008000;font-weight:bold">return</span> c.<span style="color:#00f">toPaymentStatus</span>(status)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">toPaymentStatus</span>(status <span style="color:#b00040">string</span>) PaymentStatus {
-	<span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;OK&#34;</span> {
-		<span style="color:#008000;font-weight:bold">return</span> Success
-	}
-	<span style="color:#008000;font-weight:bold">return</span> Failure
-}
-
-<span style="color:#008000;font-weight:bold">type</span> RazorPayApi <span style="color:#008000;font-weight:bold">struct</span>{}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">MakeLink</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;RazorPay&#34;</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">PrePay</span>() {
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;RazorPay PrePayment&#34;</span>)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">Pay</span>(name <span style="color:#b00040">string</span>, amount <span style="color:#b00040">int</span>) {
-	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;RazorPay Payment for %s of amount %d\n&#34;</span>, name, amount)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">CheckStatus</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#408080;font-style:italic">// Simulated status check
-</span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;PASS&#34;</span>
-}
-
-<span style="color:#008000;font-weight:bold">type</span> RazorPayProvider <span style="color:#008000;font-weight:bold">struct</span> {
-	razorpayApi <span style="color:#666">*</span>RazorPayApi
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewRazorPayProvider</span>() <span style="color:#666">*</span>RazorPayProvider {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>RazorPayProvider{razorpayApi: <span style="color:#666">&amp;</span>RazorPayApi{}}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> r.razorpayApi.<span style="color:#00f">MakeLink</span>()
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">Pay</span>(paymentRequest PaymentRequest) {
-	r.razorpayApi.<span style="color:#00f">PrePay</span>()
-	r.razorpayApi.<span style="color:#00f">Pay</span>(paymentRequest.Name, paymentRequest.Amount)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">CheckStatus</span>() PaymentStatus {
-	status <span style="color:#666">:=</span> r.razorpayApi.<span style="color:#00f">CheckStatus</span>()
-	<span style="color:#008000;font-weight:bold">return</span> r.<span style="color:#00f">toPaymentStatus</span>(status)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">toPaymentStatus</span>(status <span style="color:#b00040">string</span>) PaymentStatus {
-	<span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;PASS&#34;</span> {
-		<span style="color:#008000;font-weight:bold">return</span> Success
-	}
-	<span style="color:#008000;font-weight:bold">return</span> Failure
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">ProcessPayment</span>(provider PaymentProviderInterface, paymentRequest PaymentRequest) {
-	fmt.<span style="color:#00f">Println</span>(provider.<span style="color:#00f">GenerateLink</span>())
-	provider.<span style="color:#00f">Pay</span>(paymentRequest)
-	status <span style="color:#666">:=</span> provider.<span style="color:#00f">CheckStatus</span>()
-	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Payment Status: %s\n&#34;</span>, status)
-}
-</code></pre></div><h3 id="advantages">Advantages</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentProcessor</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>PaymentProvider<span style="color:#bbb"> </span>paymentProvider;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00f">PaymentProcessor</span>(PaymentProvider<span style="color:#bbb"> </span>paymentProvider)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">paymentProvider</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>paymentProvider;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">processPayment</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>paymentProvider.<span style="color:#7d9029">makePayment</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span>PaymentStatus<span style="color:#bbb"> </span>status<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>paymentProvider.<span style="color:#7d9029">getStatus</span>(<span style="color:#ba2121">&#34;paymentId&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><h3 id="adapter-pattern-in-python">Adapter Pattern in Python</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">abc</span> <span style="color:#008000;font-weight:bold">import</span> ABC, abstractmethod
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">enum</span> <span style="color:#008000;font-weight:bold">import</span> Enum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentStatus</span>(Enum):
+</span></span><span style="display:flex;"><span>    SUCCESS <span style="color:#666">=</span> <span style="color:#ba2121">&#34;SUCCESS&#34;</span>
+</span></span><span style="display:flex;"><span>    FAILURE <span style="color:#666">=</span> <span style="color:#ba2121">&#34;FAILURE&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentRequest</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self, name, phone, email, amount):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_name <span style="color:#666">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_phone <span style="color:#666">=</span> phone
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_email <span style="color:#666">=</span> email
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_amount <span style="color:#666">=</span> amount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">name</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_name
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">phone</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_phone
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">email</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_email
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">amount</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_amount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">PaymentProviderInterface</span>(ABC):
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">pass</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">pass</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@abstractmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CashfreeApi</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">create_url</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;Cashfree&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">do_payment</span>(self, amount):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000">print</span>(<span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;Cashfree Payment: </span><span style="color:#b68;font-weight:bold">{</span>amount<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">verify_status</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;OK&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">CashFreePayProvider</span>(PaymentProviderInterface):
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_cashfree_api <span style="color:#666">=</span> CashfreeApi()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>create_url()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>do_payment(payment_request<span style="color:#666">.</span>amount)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
+</span></span><span style="display:flex;"><span>        status <span style="color:#666">=</span> self<span style="color:#666">.</span>_cashfree_api<span style="color:#666">.</span>verify_status()
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>to_payment_status(status)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">to_payment_status</span>(self, status):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;OK&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>SUCCESS
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>FAILURE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RazorPayApi</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">make_link</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;RazorPay&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pre_pay</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000">print</span>(<span style="color:#ba2121">&#34;RazorPay PrePayment&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, name, amount):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000">print</span>(<span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;RazorPay Payment for </span><span style="color:#b68;font-weight:bold">{</span>name<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121"> of amount </span><span style="color:#b68;font-weight:bold">{</span>amount<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#408080;font-style:italic"># Simulated status check</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;PASS&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">RazorPayProvider</span>(PaymentProviderInterface):
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_razorpay_api <span style="color:#666">=</span> RazorPayApi()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">generate_link</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>make_link()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">pay</span>(self, payment_request):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>pre_pay()
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>pay(payment_request<span style="color:#666">.</span>name, payment_request<span style="color:#666">.</span>amount)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">check_status</span>(self):
+</span></span><span style="display:flex;"><span>        status <span style="color:#666">=</span> self<span style="color:#666">.</span>_razorpay_api<span style="color:#666">.</span>check_status()
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>to_payment_status(status)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">to_payment_status</span>(self, status):
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;PASS&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>SUCCESS
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> PaymentStatus<span style="color:#666">.</span>FAILURE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Client code to execute payment request</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">process_payment</span>(payment_provider, payment_request):
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">print</span>(payment_provider<span style="color:#666">.</span>generate_link())
+</span></span><span style="display:flex;"><span>    payment_provider<span style="color:#666">.</span>pay(payment_request)
+</span></span><span style="display:flex;"><span>    status <span style="color:#666">=</span> payment_provider<span style="color:#666">.</span>check_status()
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">print</span>(<span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;Payment Status: </span><span style="color:#b68;font-weight:bold">{</span>status<span style="color:#666">.</span>name<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Example usage:</span>
+</span></span><span style="display:flex;"><span>payment_request <span style="color:#666">=</span> PaymentRequest(<span style="color:#ba2121">&#34;John Doe&#34;</span>, <span style="color:#ba2121">&#34;1234567890&#34;</span>, <span style="color:#ba2121">&#34;john@example.com&#34;</span>, <span style="color:#666">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"># Using CashFreePayProvider</span>
+</span></span><span style="display:flex;"><span>cashfree_provider <span style="color:#666">=</span> CashFreePayProvider()
+</span></span><span style="display:flex;"><span>process_payment(cashfree_provider, payment_request)
+</span></span></code></pre></div><h3 id="adapter-pattern-in-go">Adapter Pattern in Go</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> adapter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> PaymentStatus <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>	Success PaymentStatus = <span style="color:#ba2121">&#34;SUCCESS&#34;</span>
+</span></span><span style="display:flex;"><span>	Failure PaymentStatus = <span style="color:#ba2121">&#34;FAILURE&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> PaymentRequest <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Name   <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Phone  <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Email  <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Amount <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> PaymentProviderInterface <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">Pay</span>(paymentRequest PaymentRequest)
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">CheckStatus</span>() PaymentStatus
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> CashfreeApi <span style="color:#008000;font-weight:bold">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">CreateURL</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;Cashfree&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">DoPayment</span>(amount <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Cashfree Payment: %d\n&#34;</span>, amount)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashfreeApi) <span style="color:#00f">VerifyStatus</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Simulated status check
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;OK&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> CashFreePayProvider <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	cashfreeApi <span style="color:#666">*</span>CashfreeApi
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewCashFreePayProvider</span>() <span style="color:#666">*</span>CashFreePayProvider {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>CashFreePayProvider{cashfreeApi: <span style="color:#666">&amp;</span>CashfreeApi{}}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> c.cashfreeApi.<span style="color:#00f">CreateURL</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">Pay</span>(paymentRequest PaymentRequest) {
+</span></span><span style="display:flex;"><span>	c.cashfreeApi.<span style="color:#00f">DoPayment</span>(paymentRequest.Amount)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">CheckStatus</span>() PaymentStatus {
+</span></span><span style="display:flex;"><span>	status <span style="color:#666">:=</span> c.cashfreeApi.<span style="color:#00f">VerifyStatus</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> c.<span style="color:#00f">toPaymentStatus</span>(status)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (c <span style="color:#666">*</span>CashFreePayProvider) <span style="color:#00f">toPaymentStatus</span>(status <span style="color:#b00040">string</span>) PaymentStatus {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;OK&#34;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> Success
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> Failure
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> RazorPayApi <span style="color:#008000;font-weight:bold">struct</span>{}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">MakeLink</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;RazorPay&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">PrePay</span>() {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;RazorPay PrePayment&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">Pay</span>(name <span style="color:#b00040">string</span>, amount <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;RazorPay Payment for %s of amount %d\n&#34;</span>, name, amount)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayApi) <span style="color:#00f">CheckStatus</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Simulated status check
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#ba2121">&#34;PASS&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> RazorPayProvider <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	razorpayApi <span style="color:#666">*</span>RazorPayApi
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewRazorPayProvider</span>() <span style="color:#666">*</span>RazorPayProvider {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>RazorPayProvider{razorpayApi: <span style="color:#666">&amp;</span>RazorPayApi{}}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">GenerateLink</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> r.razorpayApi.<span style="color:#00f">MakeLink</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">Pay</span>(paymentRequest PaymentRequest) {
+</span></span><span style="display:flex;"><span>	r.razorpayApi.<span style="color:#00f">PrePay</span>()
+</span></span><span style="display:flex;"><span>	r.razorpayApi.<span style="color:#00f">Pay</span>(paymentRequest.Name, paymentRequest.Amount)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">CheckStatus</span>() PaymentStatus {
+</span></span><span style="display:flex;"><span>	status <span style="color:#666">:=</span> r.razorpayApi.<span style="color:#00f">CheckStatus</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> r.<span style="color:#00f">toPaymentStatus</span>(status)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>RazorPayProvider) <span style="color:#00f">toPaymentStatus</span>(status <span style="color:#b00040">string</span>) PaymentStatus {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> status <span style="color:#666">==</span> <span style="color:#ba2121">&#34;PASS&#34;</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> Success
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> Failure
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">ProcessPayment</span>(provider PaymentProviderInterface, paymentRequest PaymentRequest) {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(provider.<span style="color:#00f">GenerateLink</span>())
+</span></span><span style="display:flex;"><span>	provider.<span style="color:#00f">Pay</span>(paymentRequest)
+</span></span><span style="display:flex;"><span>	status <span style="color:#666">:=</span> provider.<span style="color:#00f">CheckStatus</span>()
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;Payment Status: %s\n&#34;</span>, status)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="advantages">Advantages</h3>
 <ul>
 <li>You can use adapters to reuse existing classes with incompatible interfaces.</li>
 <li>You can even modify the request and response of the original classes.</li>
@@ -549,203 +549,203 @@ process_payment(cashfree_provider, payment_request)
 <ul>
 <li><strong>Intrinsic state</strong> - The intrinsic state is stored in the flyweight object. It is independent of the flyweight’s context and remains the same for all flyweight objects.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Bullet</span> <span style="color:#666">{</span>
-    <span style="color:#008000;font-weight:bold">private</span> String image<span style="color:#666">;</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Bullet</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>image;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Extrinsic state</strong> - The extrinsic state is stored or computed by client objects. It depends on the flyweight’s context and changes with it.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">FlyingBullet</span> <span style="color:#666">{</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> x<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> y<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> z<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> radius<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> direction<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">double</span> speed<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">int</span> status<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#b00040">int</span> type<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> Bullet bullet<span style="color:#666">;</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">FlyingBullet</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>x;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>y;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>z;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>radius;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>direction;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">double</span><span style="color:#bbb"> </span>speed;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">int</span><span style="color:#bbb"> </span>status;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#b00040">int</span><span style="color:#bbb"> </span>type;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>Bullet<span style="color:#bbb"> </span>bullet;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Flyweight factory</strong> - The flyweight factory is responsible for creating and managing flyweight objects. It ensures that flyweights are shared properly. When a client requests a flyweight, the flyweight factory either returns an existing instance or creates a new one, if it doesn’t exist yet.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletFactory</span> <span style="color:#666">{</span>
-    <span style="color:#008000;font-weight:bold">private</span> <span style="color:#008000;font-weight:bold">static</span> <span style="color:#008000;font-weight:bold">final</span> Map<span style="color:#666">&lt;</span>String<span style="color:#666">,</span> Bullet<span style="color:#666">&gt;</span> bullets <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> HashMap<span style="color:#666">&lt;&gt;();</span>
-
-    <span style="color:#008000;font-weight:bold">public</span> Bullet <span style="color:#00f">getBullet</span><span style="color:#666">(</span>BulletType type<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#666">...</span>
-    <span style="color:#666">}</span>
-
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">addBullet</span><span style="color:#666">(</span>BulletType type<span style="color:#666">,</span> Bullet bullet<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#666">...</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletFactory</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">final</span><span style="color:#bbb"> </span>Map<span style="color:#666">&lt;</span>String,<span style="color:#bbb"> </span>Bullet<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>bullets<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>HashMap<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span>Bullet<span style="color:#bbb"> </span><span style="color:#00f">getBullet</span>(BulletType<span style="color:#bbb"> </span>type)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">addBullet</span>(BulletType<span style="color:#bbb"> </span>type,<span style="color:#bbb"> </span>Bullet<span style="color:#bbb"> </span>bullet)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li><strong>Client code</strong> - The client code usually creates a bunch of pre-populated flyweights in the initialization stage of the application.</li>
 </ul>
 <h3 id="flyweight-pattern-in-python">Flyweight Pattern in Python</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">enum</span> <span style="color:#008000;font-weight:bold">import</span> Enum
-<span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">typing</span> <span style="color:#008000;font-weight:bold">import</span> Dict
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletType</span>(Enum):
-    NINE_MM <span style="color:#666">=</span> <span style="color:#666">1</span>
-    ELEVEN_MM <span style="color:#666">=</span> <span style="color:#666">2</span>
-    ACP <span style="color:#666">=</span> <span style="color:#666">3</span>
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Bullet</span>:
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self, image: <span style="color:#008000">str</span>, radius: <span style="color:#008000">float</span>, weight: <span style="color:#008000">float</span>, bullet_type: BulletType):
-        self<span style="color:#666">.</span>__image <span style="color:#666">=</span> image
-        self<span style="color:#666">.</span>__radius <span style="color:#666">=</span> radius
-        self<span style="color:#666">.</span>__weight <span style="color:#666">=</span> weight
-        self<span style="color:#666">.</span>__type <span style="color:#666">=</span> bullet_type
-
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">image</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">str</span>:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__image
-
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">radius</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">float</span>:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__radius
-
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">weight</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">float</span>:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__weight
-
-    <span style="color:#a2f">@property</span>
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">type</span>(self) <span style="color:#666">-&gt;</span> BulletType:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__type
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletRegistry</span>:
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
-        self<span style="color:#666">.</span>__bullets: Dict[BulletType, Bullet] <span style="color:#666">=</span> {}
-
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">add_bullet</span>(self, bullet: Bullet):
-        self<span style="color:#666">.</span>__bullets[bullet<span style="color:#666">.</span>type] <span style="color:#666">=</span> bullet
-
-    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_bullet</span>(self, bullet_type: BulletType) <span style="color:#666">-&gt;</span> Bullet:
-        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__bullets<span style="color:#666">.</span>get(bullet_type)
-
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">FlyingBullet</span>:
-    <span style="color:#008000;font-weight:bold">def</span> __init__(self, x: <span style="color:#008000">float</span>, y: <span style="color:#008000">float</span>, z: <span style="color:#008000">float</span>, direction: <span style="color:#008000">float</span>, bullet: Bullet):
-        self<span style="color:#666">.</span>__x <span style="color:#666">=</span> x
-        self<span style="color:#666">.</span>__y <span style="color:#666">=</span> y
-        self<span style="color:#666">.</span>__z <span style="color:#666">=</span> z
-        self<span style="color:#666">.</span>__direction <span style="color:#666">=</span> direction
-        self<span style="color:#666">.</span>__bullet <span style="color:#666">=</span> bullet
-
-<span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
-    <span style="color:#408080;font-style:italic"># Create a BulletRegistry instance</span>
-    registry <span style="color:#666">=</span> BulletRegistry()
-
-    <span style="color:#408080;font-style:italic"># Add bullets to the registry</span>
-    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;9mm.png&#34;</span>, <span style="color:#666">9.0</span>, <span style="color:#666">7.5</span>, BulletType<span style="color:#666">.</span>NINE_MM))
-    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;11mm.png&#34;</span>, <span style="color:#666">11.0</span>, <span style="color:#666">8.0</span>, BulletType<span style="color:#666">.</span>ELEVEN_MM))
-    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;acp.png&#34;</span>, <span style="color:#666">12.0</span>, <span style="color:#666">9.0</span>, BulletType<span style="color:#666">.</span>ACP))
-
-    <span style="color:#408080;font-style:italic"># Retrieve a bullet from the registry</span>
-    bullet <span style="color:#666">=</span> registry<span style="color:#666">.</span>get_bullet(BulletType<span style="color:#666">.</span>NINE_MM)
-
-    <span style="color:#408080;font-style:italic"># Create a FlyingBullet instance</span>
-    flying_bullet <span style="color:#666">=</span> FlyingBullet(<span style="color:#666">0.0</span>, <span style="color:#666">0.0</span>, <span style="color:#666">0.0</span>, <span style="color:#666">90.0</span>, bullet)
-
-    <span style="color:#408080;font-style:italic"># Print the details of the FlyingBullet instance</span>
-    <span style="color:#008000;font-weight:bold">print</span>(f<span style="color:#ba2121">&#34;FlyingBullet details: x={flying_bullet._FlyingBullet__x}, &#34;</span>
-          f<span style="color:#ba2121">&#34;y={flying_bullet._FlyingBullet__y}, z={flying_bullet._FlyingBullet__z}, &#34;</span>
-          f<span style="color:#ba2121">&#34;direction={flying_bullet._FlyingBullet__direction}, &#34;</span>
-          f<span style="color:#ba2121">&#34;bullet_type={flying_bullet._FlyingBullet__bullet.type.name}, &#34;</span>
-          f<span style="color:#ba2121">&#34;bullet_image={flying_bullet._FlyingBullet__bullet.image}, &#34;</span>
-          f<span style="color:#ba2121">&#34;bullet_radius={flying_bullet._FlyingBullet__bullet.radius}, &#34;</span>
-          f<span style="color:#ba2121">&#34;bullet_weight={flying_bullet._FlyingBullet__bullet.weight}&#34;</span>)
-</code></pre></div><h3 id="flyweight-pattern-in-go">Flyweight Pattern in Go</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> flyweight
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-)
-
-<span style="color:#408080;font-style:italic">// BulletType enum
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> BulletType <span style="color:#b00040">int</span>
-
-<span style="color:#008000;font-weight:bold">const</span> (
-	NINE_MM BulletType = <span style="color:#008000;font-weight:bold">iota</span>
-	ELEVEN_MM
-	ACP
-)
-
-<span style="color:#408080;font-style:italic">// Bullet struct representing the flyweight object
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Bullet <span style="color:#008000;font-weight:bold">struct</span> {
-	image  <span style="color:#b00040">string</span>
-	radius <span style="color:#b00040">float64</span>
-	weight <span style="color:#b00040">float64</span>
-	bType  BulletType
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBullet</span>(image <span style="color:#b00040">string</span>, radius, weight <span style="color:#b00040">float64</span>, bType BulletType) <span style="color:#666">*</span>Bullet {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>Bullet{
-		image:  image,
-		radius: radius,
-		weight: weight,
-		bType:  bType,
-	}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Image</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> b.image
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Radius</span>() <span style="color:#b00040">float64</span> {
-	<span style="color:#008000;font-weight:bold">return</span> b.radius
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Weight</span>() <span style="color:#b00040">float64</span> {
-	<span style="color:#008000;font-weight:bold">return</span> b.weight
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Type</span>() BulletType {
-	<span style="color:#008000;font-weight:bold">return</span> b.bType
-}
-
-<span style="color:#408080;font-style:italic">// BulletRegistry to manage shared Bullet instances
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> BulletRegistry <span style="color:#008000;font-weight:bold">struct</span> {
-	bullets <span style="color:#008000;font-weight:bold">map</span>[BulletType]<span style="color:#666">*</span>Bullet
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBulletRegistry</span>() <span style="color:#666">*</span>BulletRegistry {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>BulletRegistry{
-		bullets: <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[BulletType]<span style="color:#666">*</span>Bullet),
-	}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (br <span style="color:#666">*</span>BulletRegistry) <span style="color:#00f">AddBullet</span>(bullet <span style="color:#666">*</span>Bullet) {
-	br.bullets[bullet.<span style="color:#00f">Type</span>()] = bullet
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (br <span style="color:#666">*</span>BulletRegistry) <span style="color:#00f">GetBullet</span>(bType BulletType) <span style="color:#666">*</span>Bullet {
-	<span style="color:#008000;font-weight:bold">return</span> br.bullets[bType]
-}
-
-<span style="color:#408080;font-style:italic">// FlyingBullet struct representing the extrinsic state
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> FlyingBullet <span style="color:#008000;font-weight:bold">struct</span> {
-	x, y, z   <span style="color:#b00040">float64</span>
-	direction <span style="color:#b00040">float64</span>
-	bullet    <span style="color:#666">*</span>Bullet
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewFlyingBullet</span>(x, y, z, direction <span style="color:#b00040">float64</span>, bullet <span style="color:#666">*</span>Bullet) <span style="color:#666">*</span>FlyingBullet {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>FlyingBullet{
-		x:         x,
-		y:         y,
-		z:         z,
-		direction: direction,
-		bullet:    bullet,
-	}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (fb <span style="color:#666">*</span>FlyingBullet) <span style="color:#00f">Details</span>() <span style="color:#b00040">string</span> {
-	<span style="color:#008000;font-weight:bold">return</span> fmt.<span style="color:#00f">Sprintf</span>(<span style="color:#ba2121">&#34;FlyingBullet details: x=%.1f, y=%.1f, z=%.1f, direction=%.1f, bullet_type=%d, bullet_image=%s, bullet_radius=%.1f, bullet_weight=%.1f&#34;</span>,
-		fb.x, fb.y, fb.z, fb.direction, fb.bullet.<span style="color:#00f">Type</span>(), fb.bullet.<span style="color:#00f">Image</span>(), fb.bullet.<span style="color:#00f">Radius</span>(), fb.bullet.<span style="color:#00f">Weight</span>())
-}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">enum</span> <span style="color:#008000;font-weight:bold">import</span> Enum
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">typing</span> <span style="color:#008000;font-weight:bold">import</span> Dict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletType</span>(Enum):
+</span></span><span style="display:flex;"><span>    NINE_MM <span style="color:#666">=</span> <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>    ELEVEN_MM <span style="color:#666">=</span> <span style="color:#666">2</span>
+</span></span><span style="display:flex;"><span>    ACP <span style="color:#666">=</span> <span style="color:#666">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Bullet</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self, image: <span style="color:#008000">str</span>, radius: <span style="color:#008000">float</span>, weight: <span style="color:#008000">float</span>, bullet_type: BulletType):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__image <span style="color:#666">=</span> image
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__radius <span style="color:#666">=</span> radius
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__weight <span style="color:#666">=</span> weight
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__type <span style="color:#666">=</span> bullet_type
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">image</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">str</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">radius</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">float</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__radius
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">weight</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#008000">float</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__weight
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">type</span>(self) <span style="color:#666">-&gt;</span> BulletType:
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__type
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">BulletRegistry</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__bullets: Dict[BulletType, Bullet] <span style="color:#666">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">add_bullet</span>(self, bullet: Bullet):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__bullets[bullet<span style="color:#666">.</span>type] <span style="color:#666">=</span> bullet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_bullet</span>(self, bullet_type: BulletType) <span style="color:#666">-&gt;</span> Bullet:
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__bullets<span style="color:#666">.</span>get(bullet_type)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">FlyingBullet</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">def</span> __init__(self, x: <span style="color:#008000">float</span>, y: <span style="color:#008000">float</span>, z: <span style="color:#008000">float</span>, direction: <span style="color:#008000">float</span>, bullet: Bullet):
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__x <span style="color:#666">=</span> x
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__y <span style="color:#666">=</span> y
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__z <span style="color:#666">=</span> z
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__direction <span style="color:#666">=</span> direction
+</span></span><span style="display:flex;"><span>        self<span style="color:#666">.</span>__bullet <span style="color:#666">=</span> bullet
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Create a BulletRegistry instance</span>
+</span></span><span style="display:flex;"><span>    registry <span style="color:#666">=</span> BulletRegistry()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Add bullets to the registry</span>
+</span></span><span style="display:flex;"><span>    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;9mm.png&#34;</span>, <span style="color:#666">9.0</span>, <span style="color:#666">7.5</span>, BulletType<span style="color:#666">.</span>NINE_MM))
+</span></span><span style="display:flex;"><span>    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;11mm.png&#34;</span>, <span style="color:#666">11.0</span>, <span style="color:#666">8.0</span>, BulletType<span style="color:#666">.</span>ELEVEN_MM))
+</span></span><span style="display:flex;"><span>    registry<span style="color:#666">.</span>add_bullet(Bullet(<span style="color:#ba2121">&#34;acp.png&#34;</span>, <span style="color:#666">12.0</span>, <span style="color:#666">9.0</span>, BulletType<span style="color:#666">.</span>ACP))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Retrieve a bullet from the registry</span>
+</span></span><span style="display:flex;"><span>    bullet <span style="color:#666">=</span> registry<span style="color:#666">.</span>get_bullet(BulletType<span style="color:#666">.</span>NINE_MM)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Create a FlyingBullet instance</span>
+</span></span><span style="display:flex;"><span>    flying_bullet <span style="color:#666">=</span> FlyingBullet(<span style="color:#666">0.0</span>, <span style="color:#666">0.0</span>, <span style="color:#666">0.0</span>, <span style="color:#666">90.0</span>, bullet)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic"># Print the details of the FlyingBullet instance</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">print</span>(<span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;FlyingBullet details: x=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__x<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;y=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__y<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, z=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__z<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;direction=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__direction<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;bullet_type=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__bullet<span style="color:#666">.</span>type<span style="color:#666">.</span>name<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;bullet_image=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__bullet<span style="color:#666">.</span>image<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;bullet_radius=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__bullet<span style="color:#666">.</span>radius<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">, &#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ba2121">f</span><span style="color:#ba2121">&#34;bullet_weight=</span><span style="color:#b68;font-weight:bold">{</span>flying_bullet<span style="color:#666">.</span>_FlyingBullet__bullet<span style="color:#666">.</span>weight<span style="color:#b68;font-weight:bold">}</span><span style="color:#ba2121">&#34;</span>)
+</span></span></code></pre></div><h3 id="flyweight-pattern-in-go">Flyweight Pattern in Go</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> flyweight
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// BulletType enum
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> BulletType <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>	NINE_MM BulletType = <span style="color:#008000;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>	ELEVEN_MM
+</span></span><span style="display:flex;"><span>	ACP
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Bullet struct representing the flyweight object
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Bullet <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	image  <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	radius <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>	weight <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>	bType  BulletType
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBullet</span>(image <span style="color:#b00040">string</span>, radius, weight <span style="color:#b00040">float64</span>, bType BulletType) <span style="color:#666">*</span>Bullet {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>Bullet{
+</span></span><span style="display:flex;"><span>		image:  image,
+</span></span><span style="display:flex;"><span>		radius: radius,
+</span></span><span style="display:flex;"><span>		weight: weight,
+</span></span><span style="display:flex;"><span>		bType:  bType,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Image</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.image
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Radius</span>() <span style="color:#b00040">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.radius
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Weight</span>() <span style="color:#b00040">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.weight
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>Bullet) <span style="color:#00f">Type</span>() BulletType {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.bType
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// BulletRegistry to manage shared Bullet instances
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> BulletRegistry <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	bullets <span style="color:#008000;font-weight:bold">map</span>[BulletType]<span style="color:#666">*</span>Bullet
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBulletRegistry</span>() <span style="color:#666">*</span>BulletRegistry {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>BulletRegistry{
+</span></span><span style="display:flex;"><span>		bullets: <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[BulletType]<span style="color:#666">*</span>Bullet),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (br <span style="color:#666">*</span>BulletRegistry) <span style="color:#00f">AddBullet</span>(bullet <span style="color:#666">*</span>Bullet) {
+</span></span><span style="display:flex;"><span>	br.bullets[bullet.<span style="color:#00f">Type</span>()] = bullet
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (br <span style="color:#666">*</span>BulletRegistry) <span style="color:#00f">GetBullet</span>(bType BulletType) <span style="color:#666">*</span>Bullet {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> br.bullets[bType]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// FlyingBullet struct representing the extrinsic state
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> FlyingBullet <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	x, y, z   <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>	direction <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>	bullet    <span style="color:#666">*</span>Bullet
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewFlyingBullet</span>(x, y, z, direction <span style="color:#b00040">float64</span>, bullet <span style="color:#666">*</span>Bullet) <span style="color:#666">*</span>FlyingBullet {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>FlyingBullet{
+</span></span><span style="display:flex;"><span>		x:         x,
+</span></span><span style="display:flex;"><span>		y:         y,
+</span></span><span style="display:flex;"><span>		z:         z,
+</span></span><span style="display:flex;"><span>		direction: direction,
+</span></span><span style="display:flex;"><span>		bullet:    bullet,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (fb <span style="color:#666">*</span>FlyingBullet) <span style="color:#00f">Details</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> fmt.<span style="color:#00f">Sprintf</span>(<span style="color:#ba2121">&#34;FlyingBullet details: x=%.1f, y=%.1f, z=%.1f, direction=%.1f, bullet_type=%d, bullet_image=%s, bullet_radius=%.1f, bullet_weight=%.1f&#34;</span>,
+</span></span><span style="display:flex;"><span>		fb.x, fb.y, fb.z, fb.direction, fb.bullet.<span style="color:#00f">Type</span>(), fb.bullet.<span style="color:#00f">Image</span>(), fb.bullet.<span style="color:#00f">Radius</span>(), fb.bullet.<span style="color:#00f">Weight</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
 <blockquote>
 <p>These are my notes from the Low-Level Design (LLD) course I took at Scaler.</p>
 </blockquote>
@@ -766,7 +766,7 @@ process_payment(cashfree_provider, payment_request)
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
 
@@ -784,7 +784,7 @@ process_payment(cashfree_provider, payment_request)
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

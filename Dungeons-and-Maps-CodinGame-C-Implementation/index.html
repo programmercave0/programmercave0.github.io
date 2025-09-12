@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/CodinGame/">CodinGame</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CodinGame/&#34;&gt;CodinGame&lt;/a&gt;
     </div>
   
   <p>The problem is from <a href="https://www.codingame.com/home">CodinGame</a> with difficulty level Easy.</p>
@@ -108,7 +108,7 @@
 <!-- raw HTML omitted -->
 <p>We have different maps and we have to find the which map has the shortest distance to the treasure. In output we will print the index of that map.</p>
 <p>Characters can be:</p>
-<pre><code>. - Empty square
+<pre tabindex="0"><code>. - Empty square
 # - Wall
 ^ - Move UP
 v - Move DOWN
@@ -117,196 +117,196 @@ v - Move DOWN
 T - The treasure square
 </code></pre><p>When we encounter wall or an empty square, we cannot proceed further. Means the treasure cannot be found in that map.</p>
 <p>We will store all maps in a vector. Each row in a map is a string and each map is a vector of strings. Width <code>w</code> and height <code>h</code> of the maps is given. So the vector to store maps is :</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
-</code></pre></div><p>Here <code>n</code> is the number of maps.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
+</span></span></code></pre></div><p>Here <code>n</code> is the number of maps.</p>
 <p>The integer variables <code>start_row</code> and <code>start_col</code> denote starting position on the map.</p>
 <p>This is how vector <code>maps</code> will look like -</p>
 <p><img src="/assets/images/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps1.jpg" alt="Dungeons and Maps CodinGame"></p>
 <p>A <code>for</code> loop will be used to traverse through 2D verctor <code>maps</code> and <code>while</code> loop to traverse through each map.</p>
 <p>An integer variable <code>shortest_distance</code> will be initialised with the highest value an integer can store.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
-</code></pre></div><p>An integer variable <code>count</code>, stores the distance from starting position to the treasure for each map. It is initialised with <code>0</code>, when processing of a map is completed and if the value of <code>count</code> is less than value of <code>shortest_distance</code>, then <code>shortest_distance</code> is updated with the value of <code>count</code>. Means we have a new map whose distance to treasure is the shortest.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+</span></span></code></pre></div><p>An integer variable <code>count</code>, stores the distance from starting position to the treasure for each map. It is initialised with <code>0</code>, when processing of a map is completed and if the value of <code>count</code> is less than value of <code>shortest_distance</code>, then <code>shortest_distance</code> is updated with the value of <code>count</code>. Means we have a new map whose distance to treasure is the shortest.</p>
 <p>For eg., after processing map at index <code>0</code>, the value of count we get is 5 which is less than the value of <code>shortest_distance</code>. So the new value of <code>shortest_distance</code> is 5.</p>
 <p>This updating of <code>shortest_distance</code> with new value of <code>count</code> is done at the end. Before that we have to terminate unnecessary processing.</p>
 <p>For eg., while processing map at index <code>1</code>, the current value of <code>count</code> is greater than <code>shortest_distance(=5)</code>. So there is no need to process it anymore. It will not give us desired result even if we find treasure in the map. So, we will terminate the processing using <code>break</code> statement.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
-</span><span style="color:#408080;font-style:italic"></span>{
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-</code></pre></div><p>While moving up and down, the value of row is changed and while moving left and right, the value of column is changed.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>While moving up and down, the value of row is changed and while moving left and right, the value of column is changed.</p>
 <p>So, before processing a map, integer variable <code>next_row</code> is initialised with <code>start_row</code> and <code>next_col</code> is initialised with <code>start_col</code>.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
-<span style="color:#b00040">int</span> next_col <span style="color:#666">=</span> start_col;
-</code></pre></div><p>This is how we will move through the map -</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
-</span><span style="color:#408080;font-style:italic"></span>{
-    next_row <span style="color:#666">=</span> next_row <span style="color:#666">-</span> <span style="color:#666">1</span>;
-    count<span style="color:#666">++</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;v&#39;</span>) <span style="color:#408080;font-style:italic">// Down
-</span><span style="color:#408080;font-style:italic"></span>{
-    next_row <span style="color:#666">=</span> next_row <span style="color:#666">+</span> <span style="color:#666">1</span>;
-    count<span style="color:#666">++</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&lt;&#39;</span>) <span style="color:#408080;font-style:italic">// Left
-</span><span style="color:#408080;font-style:italic"></span>{
-    next_col <span style="color:#666">=</span> next_col <span style="color:#666">-</span> <span style="color:#666">1</span>;
-    count<span style="color:#666">++</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&gt;&#39;</span>) <span style="color:#408080;font-style:italic">// Right
-</span><span style="color:#408080;font-style:italic"></span>{
-    next_col <span style="color:#666">=</span> next_col <span style="color:#666">+</span> <span style="color:#666">1</span>;
-    count<span style="color:#666">++</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;.&#39;</span> <span style="color:#666">||</span> maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;#&#39;</span>) <span style="color:#408080;font-style:italic">// empty sqaure or wall
-</span><span style="color:#408080;font-style:italic"></span>{
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-</code></pre></div><p>We will terminate the processing of the map if empty square or wall is encountered.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> next_col <span style="color:#666">=</span> start_col;
+</span></span></code></pre></div><p>This is how we will move through the map -</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    next_row <span style="color:#666">=</span> next_row <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;v&#39;</span>) <span style="color:#408080;font-style:italic">// Down
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    next_row <span style="color:#666">=</span> next_row <span style="color:#666">+</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&lt;&#39;</span>) <span style="color:#408080;font-style:italic">// Left
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    next_col <span style="color:#666">=</span> next_col <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&gt;&#39;</span>) <span style="color:#408080;font-style:italic">// Right
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    next_col <span style="color:#666">=</span> next_col <span style="color:#666">+</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;.&#39;</span> <span style="color:#666">||</span> maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;#&#39;</span>) <span style="color:#408080;font-style:italic">// empty sqaure or wall
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We will terminate the processing of the map if empty square or wall is encountered.</p>
 <p>Successfully reaching the treasure -</p>
 <p><img src="/assets/images/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps2.jpg" alt="Dungeons and Maps CodinGame"></p>
 <p>We will have to terminate the processing if a loop in formed in a map.</p>
 <p><img src="/assets/images/2021-03-01-Dungeons-and-Maps-CodinGame/cg_dungeons_and_maps3.jpg" alt="Dungeons and Maps CodinGame"></p>
 <p>If the value of <code>next_row</code> is less than 0 and greater than and equal to the width of map, then we have to terminate the processing. Similarly, if the value of <code>next_col</code> is less than 0 and greater than and equal to height of the map, then also we have to terminate the processing.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col) <span style="color:#408080;font-style:italic">//forms loop, so break
-</span><span style="color:#408080;font-style:italic"></span>{
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (next_row <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_row <span style="color:#666">&gt;=</span> width) <span style="color:#408080;font-style:italic">//exceeding boundary(width)
-</span><span style="color:#408080;font-style:italic"></span>{
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (next_col <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_col <span style="color:#666">&gt;=</span> height) <span style="color:#408080;font-style:italic">//exceeding boundary(height)
-</span><span style="color:#408080;font-style:italic"></span>{
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-</code></pre></div><p>If we found the map with shortest distance to treasure then its index number is updated to an integer variable <code>index</code>. Initially <code>index</code> was initialised with <code>-1</code>.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
-</span><span style="color:#408080;font-style:italic"></span>{
-    count<span style="color:#666">++</span>;
-    <span style="color:#008000;font-weight:bold">if</span> (shortest_distance <span style="color:#666">&gt;</span> count)
-    {
-        index <span style="color:#666">=</span> i;
-        shortest_distance <span style="color:#666">=</span> count;
-    }
-    <span style="color:#008000;font-weight:bold">break</span>;
-}
-</code></pre></div><p>We will stop the processing once we find the treasure.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col) <span style="color:#408080;font-style:italic">//forms loop, so break
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (next_row <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_row <span style="color:#666">&gt;=</span> width) <span style="color:#408080;font-style:italic">//exceeding boundary(width)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (next_col <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_col <span style="color:#666">&gt;=</span> height) <span style="color:#408080;font-style:italic">//exceeding boundary(height)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we found the map with shortest distance to treasure then its index number is updated to an integer variable <code>index</code>. Initially <code>index</code> was initialised with <code>-1</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>    count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (shortest_distance <span style="color:#666">&gt;</span> count)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        index <span style="color:#666">=</span> i;
+</span></span><span style="display:flex;"><span>        shortest_distance <span style="color:#666">=</span> count;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We will stop the processing once we find the treasure.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-<span style="color:#b00040">int</span> <span style="color:#00f">shortest_path_map_index</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;&amp;</span> maps, <span style="color:#b00040">int</span> start_row, <span style="color:#b00040">int</span> start_col, 
-                            <span style="color:#b00040">int</span> num_maps, <span style="color:#b00040">int</span> width, <span style="color:#b00040">int</span> height)
-{
-    <span style="color:#b00040">int</span> index <span style="color:#666">=</span> <span style="color:#666">-</span><span style="color:#666">1</span>;
-    <span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
-
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_maps; <span style="color:#666">++</span>i)
-    {
-        <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">0</span>;
-        <span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
-        <span style="color:#b00040">int</span> next_col <span style="color:#666">=</span> start_col;
-        <span style="color:#008000;font-weight:bold">while</span>(<span style="color:#666">1</span>)
-        {
-
-            <span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
-</span><span style="color:#408080;font-style:italic"></span>            {
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-
-            <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
-</span><span style="color:#408080;font-style:italic"></span>            {
-                next_row <span style="color:#666">=</span> next_row <span style="color:#666">-</span> <span style="color:#666">1</span>;
-                count<span style="color:#666">++</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;v&#39;</span>) <span style="color:#408080;font-style:italic">// Down
-</span><span style="color:#408080;font-style:italic"></span>            {
-                next_row <span style="color:#666">=</span> next_row <span style="color:#666">+</span> <span style="color:#666">1</span>;
-                count<span style="color:#666">++</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&lt;&#39;</span>) <span style="color:#408080;font-style:italic">// Left
-</span><span style="color:#408080;font-style:italic"></span>            {
-                next_col <span style="color:#666">=</span> next_col <span style="color:#666">-</span> <span style="color:#666">1</span>;
-                count<span style="color:#666">++</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&gt;&#39;</span>) <span style="color:#408080;font-style:italic">// Right
-</span><span style="color:#408080;font-style:italic"></span>            {
-                next_col <span style="color:#666">=</span> next_col <span style="color:#666">+</span> <span style="color:#666">1</span>;
-                count<span style="color:#666">++</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;.&#39;</span> <span style="color:#666">||</span> maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;#&#39;</span>) <span style="color:#408080;font-style:italic">// empty sqaure or wall
-</span><span style="color:#408080;font-style:italic"></span>            {
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-
-            <span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col)<span style="color:#408080;font-style:italic">//forms loop, so break
-</span><span style="color:#408080;font-style:italic"></span>            {
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_row <span style="color:#666">&gt;=</span> width)<span style="color:#408080;font-style:italic">//exceeding boundary(width)
-</span><span style="color:#408080;font-style:italic"></span>            {
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (next_col <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_col <span style="color:#666">&gt;=</span> height)<span style="color:#408080;font-style:italic">//exceeding boundary(height)
-</span><span style="color:#408080;font-style:italic"></span>            {
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-
-            <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
-</span><span style="color:#408080;font-style:italic"></span>            {
-                count<span style="color:#666">++</span>;
-                <span style="color:#008000;font-weight:bold">if</span> (shortest_distance <span style="color:#666">&gt;</span> count)
-                {
-                    index <span style="color:#666">=</span> i;
-                    shortest_distance <span style="color:#666">=</span> count;
-                }
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-        }
-    }
-    <span style="color:#008000;font-weight:bold">return</span> index;
-}
-
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-    <span style="color:#b00040">int</span> w;
-    <span style="color:#b00040">int</span> h;
-    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> w <span style="color:#666">&gt;&gt;</span> h; std<span style="color:#666">::</span>cin.ignore();
-    <span style="color:#b00040">int</span> start_row;
-    <span style="color:#b00040">int</span> start_col;
-    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> start_row <span style="color:#666">&gt;&gt;</span> start_col; std<span style="color:#666">::</span>cin.ignore();
-    <span style="color:#b00040">int</span> n;
-    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> n; std<span style="color:#666">::</span>cin.ignore();
-
-    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) 
-    {
-        std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> map(h);
-
-        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> h; j<span style="color:#666">++</span>) 
-        {
-            std<span style="color:#666">::</span>string map_row;
-            std<span style="color:#666">::</span>getline(std<span style="color:#666">::</span>cin, map_row);
-            map[j] <span style="color:#666">=</span> map_row;
-        }
-        maps[i] <span style="color:#666">=</span> map;
-    }
-
-    <span style="color:#b00040">int</span> map_index <span style="color:#666">=</span> shortest_path_map_index(maps, start_row, start_col, n, w, h);
-    <span style="color:#008000;font-weight:bold">if</span> (map_index <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#666">1</span>)
-    {
-        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;TRAP</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    }
-    <span style="color:#008000;font-weight:bold">else</span>
-    {
-        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> map_index <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    }
-}
-</code></pre></div><p>View this on <a href="https://github.com/abhiabhi0/CodinGame-Solutions/blob/master/Dungeons_and_Maps.cpp">Github</a></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">shortest_path_map_index</span>(std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;&amp;</span> maps, <span style="color:#b00040">int</span> start_row, <span style="color:#b00040">int</span> start_col, 
+</span></span><span style="display:flex;"><span>                            <span style="color:#b00040">int</span> num_maps, <span style="color:#b00040">int</span> width, <span style="color:#b00040">int</span> height)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> index <span style="color:#666">=</span> <span style="color:#666">-</span><span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> shortest_distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> num_maps; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> count <span style="color:#666">=</span> <span style="color:#666">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> next_row <span style="color:#666">=</span> start_row;
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> next_col <span style="color:#666">=</span> start_col;
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">while</span>(<span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">if</span> (count <span style="color:#666">&gt;=</span> shortest_distance) <span style="color:#408080;font-style:italic">//current map does not have shortest distance, so break
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;^&#39;</span>) <span style="color:#408080;font-style:italic">// Up
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                next_row <span style="color:#666">=</span> next_row <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>                count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;v&#39;</span>) <span style="color:#408080;font-style:italic">// Down
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                next_row <span style="color:#666">=</span> next_row <span style="color:#666">+</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>                count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&lt;&#39;</span>) <span style="color:#408080;font-style:italic">// Left
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                next_col <span style="color:#666">=</span> next_col <span style="color:#666">-</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>                count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;&gt;&#39;</span>) <span style="color:#408080;font-style:italic">// Right
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                next_col <span style="color:#666">=</span> next_col <span style="color:#666">+</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>                count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;.&#39;</span> <span style="color:#666">||</span> maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;#&#39;</span>) <span style="color:#408080;font-style:italic">// empty sqaure or wall
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">==</span> start_row <span style="color:#666">&amp;&amp;</span> next_col <span style="color:#666">==</span> start_col)<span style="color:#408080;font-style:italic">//forms loop, so break
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (next_row <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_row <span style="color:#666">&gt;=</span> width)<span style="color:#408080;font-style:italic">//exceeding boundary(width)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">else</span> <span style="color:#008000;font-weight:bold">if</span> (next_col <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> next_col <span style="color:#666">&gt;=</span> height)<span style="color:#408080;font-style:italic">//exceeding boundary(height)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">if</span> (maps[i][next_row][next_col] <span style="color:#666">==</span> <span style="color:#ba2121">&#39;T&#39;</span>)<span style="color:#408080;font-style:italic">//finds treasure
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>            {
+</span></span><span style="display:flex;"><span>                count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">if</span> (shortest_distance <span style="color:#666">&gt;</span> count)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    index <span style="color:#666">=</span> i;
+</span></span><span style="display:flex;"><span>                    shortest_distance <span style="color:#666">=</span> count;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> index;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> w;
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> h;
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> w <span style="color:#666">&gt;&gt;</span> h; std<span style="color:#666">::</span>cin.ignore();
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> start_row;
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> start_col;
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> start_row <span style="color:#666">&gt;&gt;</span> start_col; std<span style="color:#666">::</span>cin.ignore();
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> n;
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> n; std<span style="color:#666">::</span>cin.ignore();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> maps(n, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span>(h));
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) 
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>string<span style="color:#666">&gt;</span> map(h);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>; j <span style="color:#666">&lt;</span> h; j<span style="color:#666">++</span>) 
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            std<span style="color:#666">::</span>string map_row;
+</span></span><span style="display:flex;"><span>            std<span style="color:#666">::</span>getline(std<span style="color:#666">::</span>cin, map_row);
+</span></span><span style="display:flex;"><span>            map[j] <span style="color:#666">=</span> map_row;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        maps[i] <span style="color:#666">=</span> map;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">int</span> map_index <span style="color:#666">=</span> shortest_path_map_index(maps, start_row, start_col, n, w, h);
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (map_index <span style="color:#666">==</span> <span style="color:#666">-</span><span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;TRAP</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> map_index <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>View this on <a href="https://github.com/abhiabhi0/CodinGame-Solutions/blob/master/Dungeons_and_Maps.cpp">Github</a></p>
 <p>If you have another solution then please share it in the comments below.</p>
 <!-- raw HTML omitted -->
 
@@ -327,7 +327,7 @@ T - The treasure square
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/CodinGame/">CodinGame</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CodinGame/&#34;&gt;CodinGame&lt;/a&gt;
     </div>
   
 
@@ -345,7 +345,7 @@ T - The treasure square
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

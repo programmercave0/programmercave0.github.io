@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -103,7 +103,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Hackerrank/">Hackerrank</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Data-Structure/&#34;&gt;Data-Structure&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Hackerrank/&#34;&gt;Hackerrank&lt;/a&gt;
     </div>
   
   <!-- raw HTML omitted -->
@@ -116,99 +116,99 @@
 <p><img src="/assets/images/2019-11-28-Kangaroo-HackerRank-Challenge/HR_kangaroo.png" alt="HackerRank"></p>
 <!-- raw HTML omitted -->
 <p>Here <code>pos1</code> is current position of kangaroo 1 and <code>pos2</code> is current position of kangaroo2. <code>speed1</code> is speed of kangaroo 1 and <code>speed2</code> is speed of kangaroo 2. <code>difference</code> stores the initial difference between their starting positions. The kangaroo whose position is last should cover that distance in <code>difference</code> number of steps because the minimum speed for a kangaroo is <code>1</code>.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>string no <span style="color:#666">=</span> <span style="color:#ba2121">&#34;NO&#34;</span>;
-std<span style="color:#666">::</span>string yes <span style="color:#666">=</span> <span style="color:#ba2121">&#34;YES&#34;</span>;
-<span style="color:#b00040">int</span> difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
-</code></pre></div><p>The next position for kangaroos is <code>pos1 = pos1 + speed1</code> and <code>pos2 = pos2 + speed2</code>. If <code>pos1</code> is equal to <code>pos2</code> means they met and answer is <code>YES</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#666">::</span>string no <span style="color:#666">=</span> <span style="color:#ba2121">&#34;NO&#34;</span>;
+</span></span><span style="display:flex;"><span>std<span style="color:#666">::</span>string yes <span style="color:#666">=</span> <span style="color:#ba2121">&#34;YES&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
+</span></span></code></pre></div><p>The next position for kangaroos is <code>pos1 = pos1 + speed1</code> and <code>pos2 = pos2 + speed2</code>. If <code>pos1</code> is equal to <code>pos2</code> means they met and answer is <code>YES</code>.</p>
 <p><strong>Case 1:</strong> When starting positions of both kangaroo are different i.e. <code>pos1 != pos2</code> and <code>difference != 0</code>.</p>
 <!-- raw HTML omitted -->
 <p>Then a loop will run for <code>difference</code> number of times and in each step their current positions are updated and if their updated current positions are equal then return <code>YES</code>.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> difference; <span style="color:#666">++</span>i)
-{
-	pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
-	pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
-	<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">==</span> pos2)
-	{
-		<span style="color:#008000;font-weight:bold">return</span> yes;
-	}
-}
-<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">!=</span> pos2)
-{
-	<span style="color:#008000;font-weight:bold">return</span> no;
-}
-</code></pre></div><p><strong>Case 2:</strong> When starting positions of both kangaroo are same i.e. <code>pos1 == pos2</code> and <code>difference == 0</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> difference; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
+</span></span><span style="display:flex;"><span>	pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">==</span> pos2)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> yes;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">!=</span> pos2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> no;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Case 2:</strong> When starting positions of both kangaroo are same i.e. <code>pos1 == pos2</code> and <code>difference == 0</code>.</p>
 <p>Then next position is calculated <code>pos1 = pos1 + speed1</code> and <code>pos2 = pos2 + speed2</code> and if their speeds are different then new <code>difference</code> is calculated and proceed as case 1. If their speeds are same then they will meet in second step.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">!=</span> speed2)
-{
-	pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
-	pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
-	difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
-}
-<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">==</span> speed2)
-{
-	<span style="color:#008000;font-weight:bold">return</span> yes;
-}
-</code></pre></div><p>The kangaroos will never meet if the kangaroo whose is ahead has more speed than the last kangaroo.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">if</span> ((pos1 <span style="color:#666">&gt;</span> pos2 <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">&gt;</span> speed2) <span style="color:#666">||</span> (pos2 <span style="color:#666">&gt;</span> pos1 <span style="color:#666">&amp;&amp;</span> speed2 <span style="color:#666">&gt;</span> speed1))
-{
-	<span style="color:#008000;font-weight:bold">return</span> no; 
-}
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">!=</span> speed2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
+</span></span><span style="display:flex;"><span>	pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
+</span></span><span style="display:flex;"><span>	difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">==</span> speed2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> yes;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The kangaroos will never meet if the kangaroo whose is ahead has more speed than the last kangaroo.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">if</span> ((pos1 <span style="color:#666">&gt;</span> pos2 <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">&gt;</span> speed2) <span style="color:#666">||</span> (pos2 <span style="color:#666">&gt;</span> pos1 <span style="color:#666">&amp;&amp;</span> speed2 <span style="color:#666">&gt;</span> speed1))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> no; 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <p><strong>Related:</strong> <a href="/Roy-and-Code-Streak-HackerEarth-Challenge">Roy and Code Streak HackerEarth Challenge</a></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;cassert&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-std<span style="color:#666">::</span>string does_meet(<span style="color:#b00040">int</span> pos1, <span style="color:#b00040">int</span> speed1, <span style="color:#b00040">int</span> pos2, <span style="color:#b00040">int</span> speed2)
-{
-	std<span style="color:#666">::</span>string no <span style="color:#666">=</span> <span style="color:#ba2121">&#34;NO&#34;</span>;
-	std<span style="color:#666">::</span>string yes <span style="color:#666">=</span> <span style="color:#ba2121">&#34;YES&#34;</span>;
-	<span style="color:#b00040">int</span> difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
-
-	<span style="color:#008000;font-weight:bold">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">!=</span> speed2)
-	{
-		pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
-		pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
-		difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
-	}
-	<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">==</span> speed2)
-	{
-		<span style="color:#008000;font-weight:bold">return</span> yes;
-	}
-
-	<span style="color:#008000;font-weight:bold">if</span> ((pos1 <span style="color:#666">&gt;</span> pos2 <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">&gt;</span> speed2) <span style="color:#666">||</span> (pos2 <span style="color:#666">&gt;</span> pos1 <span style="color:#666">&amp;&amp;</span> speed2 <span style="color:#666">&gt;</span> speed1))
-	{
-		<span style="color:#008000;font-weight:bold">return</span> no; 
-	}
-	<span style="color:#008000;font-weight:bold">else</span>
-	{
-		<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> difference; <span style="color:#666">++</span>i)
-		{
-			pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
-			pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
-			<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">==</span> pos2)
-			{
-				<span style="color:#008000;font-weight:bold">return</span> yes;
-			}
-		}
-		<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">!=</span> pos2)
-		{
-			<span style="color:#008000;font-weight:bold">return</span> no;
-		}
-	}
-	<span style="color:#008000;font-weight:bold">return</span> no;
-}
-
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-	<span style="color:#b00040">int</span> x1, x2, v1, v2;
-	std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> x1 <span style="color:#666">&gt;&gt;</span> v1 <span style="color:#666">&gt;&gt;</span> x2 <span style="color:#666">&gt;&gt;</span> v2;
-
-	std<span style="color:#666">::</span>string result <span style="color:#666">=</span> does_meet(x1, v1, x2, v2);
-	std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> result <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-}
-</code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Hackerrank/Kangaroo.cpp">Github</a>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;cassert&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;string&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#666">::</span>string does_meet(<span style="color:#b00040">int</span> pos1, <span style="color:#b00040">int</span> speed1, <span style="color:#b00040">int</span> pos2, <span style="color:#b00040">int</span> speed2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>string no <span style="color:#666">=</span> <span style="color:#ba2121">&#34;NO&#34;</span>;
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>string yes <span style="color:#666">=</span> <span style="color:#ba2121">&#34;YES&#34;</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#b00040">int</span> difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">!=</span> speed2)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
+</span></span><span style="display:flex;"><span>		pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
+</span></span><span style="display:flex;"><span>		difference <span style="color:#666">=</span> abs(pos1 <span style="color:#666">-</span> pos2);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">else</span> <span style="color:#00f">if</span> (difference <span style="color:#666">==</span> <span style="color:#666">0</span> <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">==</span> speed2)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> yes;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">if</span> ((pos1 <span style="color:#666">&gt;</span> pos2 <span style="color:#666">&amp;&amp;</span> speed1 <span style="color:#666">&gt;</span> speed2) <span style="color:#666">||</span> (pos2 <span style="color:#666">&gt;</span> pos1 <span style="color:#666">&amp;&amp;</span> speed2 <span style="color:#666">&gt;</span> speed1))
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> no; 
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> difference; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			pos1 <span style="color:#666">=</span> pos1 <span style="color:#666">+</span> speed1;
+</span></span><span style="display:flex;"><span>			pos2 <span style="color:#666">=</span> pos2 <span style="color:#666">+</span> speed2;
+</span></span><span style="display:flex;"><span>			<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">==</span> pos2)
+</span></span><span style="display:flex;"><span>			{
+</span></span><span style="display:flex;"><span>				<span style="color:#008000;font-weight:bold">return</span> yes;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">if</span> (pos1 <span style="color:#666">!=</span> pos2)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#008000;font-weight:bold">return</span> no;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> no;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#b00040">int</span> x1, x2, v1, v2;
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> x1 <span style="color:#666">&gt;&gt;</span> v1 <span style="color:#666">&gt;&gt;</span> x2 <span style="color:#666">&gt;&gt;</span> v2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>string result <span style="color:#666">=</span> does_meet(x1, v1, x2, v2);
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> result <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Hackerrank/Kangaroo.cpp">Github</a>.</p>
 
   
   
@@ -235,7 +235,7 @@ std<span style="color:#666">::</span>string does_meet(<span style="color:#b00040
         
         
       
-      <a href="https://programmercave.com/tags/Data-Structure/">Data-Structure</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Hackerrank/">Hackerrank</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Data-Structure/&#34;&gt;Data-Structure&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Hackerrank/&#34;&gt;Hackerrank&lt;/a&gt;
     </div>
   
 
@@ -253,7 +253,7 @@ std<span style="color:#666">::</span>string does_meet(<span style="color:#b00040
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

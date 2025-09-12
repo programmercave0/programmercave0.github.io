@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/SQL/">SQL</a>, <a href="https://programmercave.com/tags/PostgreSQL/">PostgreSQL</a>, <a href="https://programmercave.com/tags/DataBase/">DataBase</a>
+      &lt;a href=&#34;https://programmercave.com/tags/SQL/&#34;&gt;SQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/PostgreSQL/&#34;&gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/DataBase/&#34;&gt;DataBase&lt;/a&gt;
     </div>
   
   <h1 id="introduction">Introduction</h1>
@@ -104,25 +104,25 @@
 <h1 id="trigger-for-insert-operations">Trigger for Insert Operations</h1>
 <p>To create a trigger that sends a notification when a record is inserted into a table, we can use the <code>AFTER INSERT</code> trigger. This trigger fires after a record is inserted into the table, but before the transaction that contains the <code>INSERT</code> statement is committed.</p>
 <p>Here&rsquo;s the code to create a trigger for insert operations:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">REPLACE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_insert_trigger() <span style="color:#008000;font-weight:bold">RETURNS</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> <span style="color:#008000;font-weight:bold">AS</span> <span style="">$$</span>
-<span style="color:#008000;font-weight:bold">DECLARE</span>
-  notification JSON;
-<span style="color:#008000;font-weight:bold">BEGIN</span>
-  notification :<span style="color:#666">=</span> json_build_object(
-    <span style="color:#ba2121">&#39;table&#39;</span>, TG_TABLE_NAME,
-    <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;insert&#39;</span>,
-    <span style="color:#ba2121">&#39;time&#39;</span>, round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,
-    <span style="color:#ba2121">&#39;data&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)
-  )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">NOTIFY</span> employee_table_changes, notification;
-  <span style="color:#008000;font-weight:bold">RETURN</span> <span style="color:#008000;font-weight:bold">NEW</span>;
-<span style="color:#008000;font-weight:bold">END</span>;
-<span style="">$$</span> <span style="color:#008000;font-weight:bold">LANGUAGE</span> plpgsql;
-
-<span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> employee_insert <span style="color:#008000;font-weight:bold">AFTER</span> <span style="color:#008000;font-weight:bold">INSERT</span> <span style="color:#008000;font-weight:bold">ON</span> employee
-<span style="color:#008000;font-weight:bold">FOR</span> <span style="color:#008000;font-weight:bold">EACH</span> <span style="color:#008000;font-weight:bold">ROW</span>
-<span style="color:#008000;font-weight:bold">EXECUTE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_insert_trigger();
-</code></pre></div><p>Let&rsquo;s go over this code step by step.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_insert_trigger()<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">RETURNS</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span><span style="">$$</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">DECLARE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>JSON;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span>TG_TABLE_NAME,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;insert&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span>round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">NOTIFY</span><span style="color:#bbb"> </span>employee_table_changes,<span style="color:#bbb"> </span>notification;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">NEW</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">$$</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">LANGUAGE</span><span style="color:#bbb"> </span>plpgsql;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>employee_insert<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ON</span><span style="color:#bbb"> </span>employee<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ROW</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_insert_trigger();<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Let&rsquo;s go over this code step by step.</p>
 <p>First, we define a function named <code>employee_insert_trigger()</code> that returns a <code>TRIGGER</code>. This function will be executed whenever an <code>INSERT</code> operation is performed on the <code>employee</code> table.</p>
 <p>Inside the function, we declare a variable named <code>notification</code> of type <code>JSON</code>. This variable will hold the notification payload that will be sent to the channel.</p>
 <p>Next, we use the <code>json_build_object()</code> function to create a JSON object that contains the following key-value pairs:</p>
@@ -139,121 +139,121 @@
 <h1 id="trigger-for-update-operations">Trigger for Update Operations</h1>
 <p>To create a trigger that sends a notification when a record is updated in a table, we can use the <code>AFTER UPDATE</code> trigger. This trigger fires after a record is updated, but before the transaction that contains the <code>UPDATE</code> statement is committed.</p>
 <p>Here&rsquo;s the code to create a trigger for update operations:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">REPLACE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_update_trigger() <span style="color:#008000;font-weight:bold">RETURNS</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> <span style="color:#008000;font-weight:bold">AS</span> <span style="">$$</span>
-<span style="color:#008000;font-weight:bold">DECLARE</span>
-  notification JSON;
-<span style="color:#008000;font-weight:bold">BEGIN</span>
-  notification :<span style="color:#666">=</span> json_build_object(
-    <span style="color:#ba2121">&#39;table&#39;</span>, TG_TABLE_NAME,
-    <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;update&#39;</span>,
-    <span style="color:#ba2121">&#39;time&#39;</span>, round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,
-    <span style="color:#ba2121">&#39;data&#39;</span>, json_build_object(
-      <span style="color:#ba2121">&#39;old&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>),
-      <span style="color:#ba2121">&#39;new&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)
-    )
-  )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">NOTIFY</span> employee_table_changes, notification;
-  <span style="color:#008000;font-weight:bold">RETURN</span> <span style="color:#008000;font-weight:bold">NEW</span>;
-<span style="color:#008000;font-weight:bold">END</span>;
-<span style="">$$</span> <span style="color:#008000;font-weight:bold">LANGUAGE</span> plpgsql;
-
-<span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> employee_update <span style="color:#008000;font-weight:bold">AFTER</span> <span style="color:#008000;font-weight:bold">UPDATE</span> <span style="color:#008000;font-weight:bold">ON</span> employee
-<span style="color:#008000;font-weight:bold">FOR</span> <span style="color:#008000;font-weight:bold">EACH</span> <span style="color:#008000;font-weight:bold">ROW</span>
-<span style="color:#008000;font-weight:bold">EXECUTE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_update_trigger();
-</code></pre></div><p>This code is similar to the code for the insert trigger, with a few differences.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_update_trigger()<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">RETURNS</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span><span style="">$$</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">DECLARE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>JSON;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span>TG_TABLE_NAME,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;update&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span>round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;old&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;new&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">NOTIFY</span><span style="color:#bbb"> </span>employee_table_changes,<span style="color:#bbb"> </span>notification;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">NEW</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">$$</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">LANGUAGE</span><span style="color:#bbb"> </span>plpgsql;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>employee_update<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ON</span><span style="color:#bbb"> </span>employee<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ROW</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_update_trigger();<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This code is similar to the code for the insert trigger, with a few differences.</p>
 <p>First, we define a function named <code>employee_update_trigger()</code> that returns a <code>TRIGGER</code>. This function will be executed whenever an <code>UPDATE</code> operation is performed on the <code>employee</code> table.</p>
 <p>We also create a trigger named <code>employee_update</code> that fires after an <code>UPDATE</code> operation is performed on the <code>employee</code> table. This trigger calls the <code>employee_update_trigger()</code> function for each row that is updated in the table.</p>
 <h1 id="trigger-for-delete-operations">Trigger for Delete Operations</h1>
 <p>To create a trigger that sends a notification when a record is deleted from a table, we can use the <code>AFTER DELETE</code> trigger. This trigger fires after a record is deleted from the table, but before the transaction that contains the <code>DELETE</code> statement is committed.</p>
 <p>Here&rsquo;s the code to create a trigger for delete operations:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">REPLACE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_delete_trigger() <span style="color:#008000;font-weight:bold">RETURNS</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> <span style="color:#008000;font-weight:bold">AS</span> <span style="">$$</span>
-<span style="color:#008000;font-weight:bold">DECLARE</span>
-  notification JSON;
-<span style="color:#008000;font-weight:bold">BEGIN</span>
-  notification :<span style="color:#666">=</span> json_build_object(
-    <span style="color:#ba2121">&#39;table&#39;</span>, TG_TABLE_NAME,
-    <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;delete&#39;</span>,
-    <span style="color:#ba2121">&#39;time&#39;</span>, round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,
-    <span style="color:#ba2121">&#39;data&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>)
-  )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">NOTIFY</span> employee_table_changes, notification;
-  <span style="color:#008000;font-weight:bold">RETURN</span> <span style="color:#008000;font-weight:bold">OLD</span>;
-<span style="color:#008000;font-weight:bold">END</span>;
-<span style="">$$</span> <span style="color:#008000;font-weight:bold">LANGUAGE</span> plpgsql;
-
-<span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> employee_delete <span style="color:#008000;font-weight:bold">AFTER</span> <span style="color:#008000;font-weight:bold">DELETE</span> <span style="color:#008000;font-weight:bold">ON</span> employee
-<span style="color:#008000;font-weight:bold">FOR</span> <span style="color:#008000;font-weight:bold">EACH</span> <span style="color:#008000;font-weight:bold">ROW</span>
-<span style="color:#008000;font-weight:bold">EXECUTE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_delete_trigger();
-</code></pre></div><p>This code is similar to the code for the insert and update triggers, with a few differences.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_delete_trigger()<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">RETURNS</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span><span style="">$$</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">DECLARE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>JSON;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span>TG_TABLE_NAME,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;delete&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span>round(<span style="color:#008000;font-weight:bold">EXTRACT</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>)::<span style="color:#008000">bigint</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">NOTIFY</span><span style="color:#bbb"> </span>employee_table_changes,<span style="color:#bbb"> </span>notification;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OLD</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">$$</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">LANGUAGE</span><span style="color:#bbb"> </span>plpgsql;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>employee_delete<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ON</span><span style="color:#bbb"> </span>employee<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ROW</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_delete_trigger();<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This code is similar to the code for the insert and update triggers, with a few differences.</p>
 <h1 id="triggers-for-insert-update-and-delete-operations-in-a-single-function">Triggers for Insert, Update and Delete Operations in a single function</h1>
 <p>We can write all the trigger functions for <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> operations in a single function using an <code>IF</code>-<code>ELSE</code> block. This can help reduce code duplication and make it easier to manage the triggers.</p>
 <p>Here&rsquo;s an example of how we can write a single trigger function that handles all three types of operations:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">REPLACE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_trigger()
-<span style="color:#008000;font-weight:bold">RETURNS</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> <span style="color:#008000;font-weight:bold">AS</span> <span style="">$$</span>
-<span style="color:#008000;font-weight:bold">DECLARE</span>
-  notification JSON;
-<span style="color:#008000;font-weight:bold">BEGIN</span>
-  <span style="color:#008000;font-weight:bold">IF</span> (TG_OP <span style="color:#666">=</span> <span style="color:#ba2121">&#39;INSERT&#39;</span>) <span style="color:#008000;font-weight:bold">THEN</span>
-    notification :<span style="color:#666">=</span> json_build_object(
-      <span style="color:#ba2121">&#39;table&#39;</span>, <span style="color:#ba2121">&#39;employee&#39;</span>,
-      <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;insert&#39;</span>,
-      <span style="color:#ba2121">&#39;time&#39;</span>, <span style="color:#008000;font-weight:bold">extract</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>,
-      <span style="color:#ba2121">&#39;data&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)
-    )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">ELSIF</span> (TG_OP <span style="color:#666">=</span> <span style="color:#ba2121">&#39;UPDATE&#39;</span>) <span style="color:#008000;font-weight:bold">THEN</span>
-    notification :<span style="color:#666">=</span> json_build_object(
-      <span style="color:#ba2121">&#39;table&#39;</span>, <span style="color:#ba2121">&#39;employee&#39;</span>,
-      <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;update&#39;</span>,
-      <span style="color:#ba2121">&#39;time&#39;</span>, <span style="color:#008000;font-weight:bold">extract</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>,
-      <span style="color:#ba2121">&#39;data&#39;</span>, json_build_object(
-        <span style="color:#ba2121">&#39;old&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>),
-        <span style="color:#ba2121">&#39;new&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)
-      )
-    )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">ELSIF</span> (TG_OP <span style="color:#666">=</span> <span style="color:#ba2121">&#39;DELETE&#39;</span>) <span style="color:#008000;font-weight:bold">THEN</span>
-    notification :<span style="color:#666">=</span> json_build_object(
-      <span style="color:#ba2121">&#39;table&#39;</span>, <span style="color:#ba2121">&#39;employee&#39;</span>,
-      <span style="color:#ba2121">&#39;action&#39;</span>, <span style="color:#ba2121">&#39;delete&#39;</span>,
-      <span style="color:#ba2121">&#39;time&#39;</span>, <span style="color:#008000;font-weight:bold">extract</span>(epoch <span style="color:#008000;font-weight:bold">from</span> clock_timestamp()) <span style="color:#666">*</span> <span style="color:#666">1000</span>,
-      <span style="color:#ba2121">&#39;data&#39;</span>, row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>)
-    )::<span style="color:#008000">text</span>;
-  <span style="color:#008000;font-weight:bold">END</span> <span style="color:#008000;font-weight:bold">IF</span>;
-  
-  PERFORM pg_notify(<span style="color:#ba2121">&#39;employee_table_changes&#39;</span>, notification);
-  
-  <span style="color:#008000;font-weight:bold">RETURN</span> <span style="color:#008000;font-weight:bold">NEW</span>;
-<span style="color:#008000;font-weight:bold">END</span>;
-<span style="">$$</span> <span style="color:#008000;font-weight:bold">LANGUAGE</span> plpgsql;
-</code></pre></div><p>In this function, we use an <code>IF</code>-<code>ELSE</code> block to check the value of the <code>TG_OP</code> variable, which indicates the type of operation that triggered the function. Depending on the operation type, we create a notification payload using the appropriate data.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">REPLACE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_trigger()<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">RETURNS</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span><span style="">$$</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">DECLARE</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>notification<span style="color:#bbb"> </span>JSON;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">BEGIN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">IF</span><span style="color:#bbb"> </span>(TG_OP<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;INSERT&#39;</span>)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">THEN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;employee&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;insert&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">extract</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">ELSIF</span><span style="color:#bbb"> </span>(TG_OP<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;UPDATE&#39;</span>)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">THEN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;employee&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;update&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">extract</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#ba2121">&#39;old&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>),<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#ba2121">&#39;new&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">NEW</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">ELSIF</span><span style="color:#bbb"> </span>(TG_OP<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;DELETE&#39;</span>)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">THEN</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>notification<span style="color:#bbb"> </span>:<span style="color:#666">=</span><span style="color:#bbb"> </span>json_build_object(<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;table&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;employee&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;action&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;delete&#39;</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;time&#39;</span>,<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">extract</span>(epoch<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">from</span><span style="color:#bbb"> </span>clock_timestamp())<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span><span style="color:#666">1000</span>,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#ba2121">&#39;data&#39;</span>,<span style="color:#bbb"> </span>row_to_json(<span style="color:#008000;font-weight:bold">OLD</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>)::<span style="color:#008000">text</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">IF</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>PERFORM<span style="color:#bbb"> </span>pg_notify(<span style="color:#ba2121">&#39;employee_table_changes&#39;</span>,<span style="color:#bbb"> </span>notification);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#008000;font-weight:bold">RETURN</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">NEW</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">END</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">$$</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">LANGUAGE</span><span style="color:#bbb"> </span>plpgsql;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this function, we use an <code>IF</code>-<code>ELSE</code> block to check the value of the <code>TG_OP</code> variable, which indicates the type of operation that triggered the function. Depending on the operation type, we create a notification payload using the appropriate data.</p>
 <p>For <code>INSERT</code> operations, we use the <code>NEW</code> variable to get the newly inserted row and create a notification payload that includes the table name, the action type (<code>insert</code>), the current timestamp, and the new data in JSON format.</p>
 <p>For <code>UPDATE</code> operations, we use both the <code>OLD</code> and <code>NEW</code> variables to get the old and new rows, respectively. We then create a notification payload that includes the table name, the action type (<code>update</code>), the current timestamp, and an object that contains the old and new data in JSON format.</p>
 <p>For <code>DELETE</code> operations, we use the <code>OLD</code> variable to get the deleted row and create a notification payload that includes the table name, the action type (<code>delete</code>), the current timestamp, and the old data in JSON format.</p>
 <p>We then use the <code>PERFORM pg_notify()</code> statement to send the notification payload to the <code>employee_table_changes</code> channel.</p>
 <p>Finally, we return the <code>NEW</code> row, which allows the operation to proceed normally.</p>
 <p>To use this trigger function, we need to create a trigger for each table and operation type that we want to track. For example, we can create an <code>AFTER INSERT OR UPDATE OR DELETE</code> trigger for the <code>employee</code> table using the following statement:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">TRIGGER</span> employee_trigger
-<span style="color:#008000;font-weight:bold">AFTER</span> <span style="color:#008000;font-weight:bold">INSERT</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">UPDATE</span> <span style="color:#008000;font-weight:bold">OR</span> <span style="color:#008000;font-weight:bold">DELETE</span> <span style="color:#008000;font-weight:bold">ON</span> employee
-<span style="color:#008000;font-weight:bold">FOR</span> <span style="color:#008000;font-weight:bold">EACH</span> <span style="color:#008000;font-weight:bold">ROW</span>
-<span style="color:#008000;font-weight:bold">EXECUTE</span> <span style="color:#008000;font-weight:bold">FUNCTION</span> employee_trigger();
-</code></pre></div><p>This will call the <code>employee_trigger()</code> function for each row that is inserted, updated, or deleted from the <code>employee</code> table.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TRIGGER</span><span style="color:#bbb"> </span>employee_trigger<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">AFTER</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">OR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ON</span><span style="color:#bbb"> </span>employee<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FOR</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">EACH</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">ROW</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">EXECUTE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FUNCTION</span><span style="color:#bbb"> </span>employee_trigger();<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This will call the <code>employee_trigger()</code> function for each row that is inserted, updated, or deleted from the <code>employee</code> table.</p>
 <p>Using a single trigger function for all types of operations can make it easier to manage triggers, especially when working with multiple tables. However, it can also make the code more complex and harder to debug.</p>
 <h1 id="testing-the-triggers">Testing the Triggers</h1>
 <p>This is how our <code>employee</code> table looks like:</p>
 <p><img src="/assets/images/Postgres-Triggers/employee_table.png" alt="Employee Table"></p>
 <p>To test our triggers, we need to listen to the <code>employee_table_changes</code> channel in the database using the following command:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">LISTEN</span> employee_table_changes;
-</code></pre></div><p>Once we&rsquo;re listening to the channel, we can perform some <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> operations on the <code>employee</code> table and observe the notifications that are sent to the channel.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">LISTEN</span><span style="color:#bbb"> </span>employee_table_changes;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>Once we&rsquo;re listening to the channel, we can perform some <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> operations on the <code>employee</code> table and observe the notifications that are sent to the channel.</p>
 <p>Let&rsquo;s start by inserting a new employee into the <code>employee</code> table:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">INSERT</span> <span style="color:#008000;font-weight:bold">INTO</span> employee (name, department) <span style="color:#008000;font-weight:bold">VALUES</span> (<span style="color:#ba2121">&#39;Alice&#39;</span>, <span style="color:#ba2121">&#39;Marketing&#39;</span>);
-</code></pre></div><p>After running this <code>INSERT</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">INTO</span><span style="color:#bbb"> </span>employee<span style="color:#bbb"> </span>(name,<span style="color:#bbb"> </span>department)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">VALUES</span><span style="color:#bbb"> </span>(<span style="color:#ba2121">&#39;Alice&#39;</span>,<span style="color:#bbb"> </span><span style="color:#ba2121">&#39;Marketing&#39;</span>);<span style="color:#bbb">
+</span></span></span></code></pre></div><p>After running this <code>INSERT</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
 <p><img src="/assets/images/Postgres-Triggers/after_insert.png" alt="Employee Table"></p>
 <p>Next, we can update Alice&rsquo;s department using the following <code>UPDATE</code> statement:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">UPDATE</span> employee <span style="color:#008000;font-weight:bold">SET</span> department <span style="color:#666">=</span> <span style="color:#ba2121">&#39;Sales&#39;</span> <span style="color:#008000;font-weight:bold">WHERE</span> name <span style="color:#666">=</span> <span style="color:#ba2121">&#39;Alice&#39;</span>;
-</code></pre></div><p>After running this <code>UPDATE</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">UPDATE</span><span style="color:#bbb"> </span>employee<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">SET</span><span style="color:#bbb"> </span>department<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;Sales&#39;</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;Alice&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>After running this <code>UPDATE</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
 <p><img src="/assets/images/Postgres-Triggers/after_update.png" alt="Employee Table"></p>
 <p>Finally, we can delete Alice&rsquo;s record using the following <code>DELETE</code> statement:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">DELETE</span> <span style="color:#008000;font-weight:bold">FROM</span> employee <span style="color:#008000;font-weight:bold">WHERE</span> name <span style="color:#666">=</span> <span style="color:#ba2121">&#39;Alice&#39;</span>;
-</code></pre></div><p>After running this <code>DELETE</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FROM</span><span style="color:#bbb"> </span>employee<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#ba2121">&#39;Alice&#39;</span>;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>After running this <code>DELETE</code> statement, a notification should be sent to the <code>employee_table_changes</code> channel with the following payload:</p>
 <p><img src="/assets/images/Postgres-Triggers/after_delete.png" alt="Employee Table"></p>
 <p>By using triggers and notifications, we can easily track changes to a database table and respond to them in real-time. This can be useful for building real-time applications or monitoring systems that need to react to changes in a database.</p>
 
@@ -274,7 +274,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/SQL/">SQL</a>, <a href="https://programmercave.com/tags/PostgreSQL/">PostgreSQL</a>, <a href="https://programmercave.com/tags/DataBase/">DataBase</a>
+      &lt;a href=&#34;https://programmercave.com/tags/SQL/&#34;&gt;SQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/PostgreSQL/&#34;&gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/DataBase/&#34;&gt;DataBase&lt;/a&gt;
     </div>
   
 
@@ -292,7 +292,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

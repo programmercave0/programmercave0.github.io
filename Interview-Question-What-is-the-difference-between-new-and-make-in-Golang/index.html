@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <h2 id="key-takeaways">Key Takeaways</h2>
@@ -109,17 +109,17 @@
 <h2 id="what-does-new-do">What Does <code>new()</code> Do?</h2>
 <p>The <code>new()</code> function in Go allocates memory for a given type and returns a pointer to it. The allocated memory is initialized to the type’s zero value (e.g., <code>0</code> for integers, <code>&quot;&quot;</code> for strings, <code>false</code> for booleans).</p>
 <h3 id="syntax">Syntax</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">pointer <span style="color:#666">:=</span> <span style="color:#008000">new</span>(Type) <span style="color:#408080;font-style:italic">// Returns *Type
-</span></code></pre></div><h3 id="example">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Allocating a pointer to an int
-</span><span style="color:#408080;font-style:italic"></span>numPtr <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>)
-fmt.<span style="color:#00f">Println</span>(<span style="color:#666">*</span>numPtr) <span style="color:#408080;font-style:italic">// Output: 0 (zero value of int)
-</span><span style="color:#408080;font-style:italic"></span>
-<span style="color:#408080;font-style:italic">// Allocating a pointer to a struct
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Person <span style="color:#008000;font-weight:bold">struct</span> { Name <span style="color:#b00040">string</span>; Age <span style="color:#b00040">int</span> }
-personPtr <span style="color:#666">:=</span> <span style="color:#008000">new</span>(Person)
-fmt.<span style="color:#00f">Println</span>(personPtr) <span style="color:#408080;font-style:italic">// Output: &amp;{ 0 }
-</span></code></pre></div><h3 id="when-to-use-new">When to Use <code>new()</code></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>pointer <span style="color:#666">:=</span> <span style="color:#008000">new</span>(Type) <span style="color:#408080;font-style:italic">// Returns *Type
+</span></span></span></code></pre></div><h3 id="example">Example</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Allocating a pointer to an int
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>numPtr <span style="color:#666">:=</span> <span style="color:#008000">new</span>(<span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00f">Println</span>(<span style="color:#666">*</span>numPtr) <span style="color:#408080;font-style:italic">// Output: 0 (zero value of int)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Allocating a pointer to a struct
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Person <span style="color:#008000;font-weight:bold">struct</span> { Name <span style="color:#b00040">string</span>; Age <span style="color:#b00040">int</span> }
+</span></span><span style="display:flex;"><span>personPtr <span style="color:#666">:=</span> <span style="color:#008000">new</span>(Person)
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00f">Println</span>(personPtr) <span style="color:#408080;font-style:italic">// Output: &amp;{ 0 }
+</span></span></span></code></pre></div><h3 id="when-to-use-new">When to Use <code>new()</code></h3>
 <ul>
 <li>You need a pointer to modify a value across functions.</li>
 <li>Working with basic types (e.g., <code>int</code>, <code>string</code>) or structs.</li>
@@ -127,19 +127,19 @@ fmt.<span style="color:#00f">Println</span>(personPtr) <span style="color:#40808
 <h2 id="what-does-make-do">What Does <code>make()</code> Do?</h2>
 <p>The <code>make()</code> function in Go is used to initialize slices, maps, and channels so they are ready to use. Unlike <code>new()</code>, <code>make()</code> returns the actual value (not a pointer).</p>
 <h3 id="syntax-1">Syntax</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">slice <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]Type, length, capacity)  
-m <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[KeyType]ValueType)  
-ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> Type)
-</code></pre></div><h3 id="example-1">Example</h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#408080;font-style:italic">// Slice with length 3
-</span><span style="color:#408080;font-style:italic"></span>names <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]<span style="color:#b00040">string</span>, <span style="color:#666">3</span>)
-names[<span style="color:#666">0</span>] = <span style="color:#ba2121">&#34;Alice&#34;</span> <span style="color:#408080;font-style:italic">// Works (initialized)
-</span><span style="color:#408080;font-style:italic"></span>fmt.<span style="color:#00f">Println</span>(names) <span style="color:#408080;font-style:italic">// Output: [Alice  ]
-</span><span style="color:#408080;font-style:italic"></span>
-<span style="color:#408080;font-style:italic">// Map
-</span><span style="color:#408080;font-style:italic"></span>scores <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>)
-scores[<span style="color:#ba2121">&#34;Bob&#34;</span>] = <span style="color:#666">85</span> <span style="color:#408080;font-style:italic">// No error
-</span></code></pre></div><h3 id="when-to-use-make">When to Use <code>make()</code></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>slice <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]Type, length, capacity)  
+</span></span><span style="display:flex;"><span>m <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[KeyType]ValueType)  
+</span></span><span style="display:flex;"><span>ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> Type)
+</span></span></code></pre></div><h3 id="example-1">Example</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Slice with length 3
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>names <span style="color:#666">:=</span> <span style="color:#008000">make</span>([]<span style="color:#b00040">string</span>, <span style="color:#666">3</span>)
+</span></span><span style="display:flex;"><span>names[<span style="color:#666">0</span>] = <span style="color:#ba2121">&#34;Alice&#34;</span> <span style="color:#408080;font-style:italic">// Works (initialized)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>fmt.<span style="color:#00f">Println</span>(names) <span style="color:#408080;font-style:italic">// Output: [Alice  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Map
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>scores <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">map</span>[<span style="color:#b00040">string</span>]<span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>scores[<span style="color:#ba2121">&#34;Bob&#34;</span>] = <span style="color:#666">85</span> <span style="color:#408080;font-style:italic">// No error
+</span></span></span></code></pre></div><h3 id="when-to-use-make">When to Use <code>make()</code></h3>
 <ul>
 <li>Creating slices, maps, or channels.</li>
 <li>Avoiding runtime errors like “nil map” or “slice out of bounds”.</li>
@@ -195,7 +195,7 @@ scores[<span style="color:#ba2121">&#34;Bob&#34;</span>] = <span style="color:#6
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -213,7 +213,7 @@ scores[<span style="color:#ba2121">&#34;Bob&#34;</span>] = <span style="color:#6
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -87,7 +87,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
   <h1 id="introduction">Introduction:</h1>
@@ -102,32 +102,32 @@
 <h1 id="utilizing-interfaces-for-flexibility">Utilizing Interfaces for Flexibility:</h1>
 <p>So, why are interfaces useful? They enable us to write code that works with different types of objects, even if those objects have different behaviors. For instance, we can create a function that takes either a <code>Dog</code> or a <code>Cat</code> as an argument. Regardless of the animal type, the function can feed, play, and care for them effectively.</p>
 <p>Let&rsquo;s consider a simplified code example using Go:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Animal <span style="color:#008000;font-weight:bold">interface</span> {
-  <span style="color:#00f">Eat</span>()
-  <span style="color:#00f">Sleep</span>()
-}
-
-<span style="color:#008000;font-weight:bold">type</span> Dog <span style="color:#008000;font-weight:bold">struct</span> {
-  name <span style="color:#b00040">string</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (d <span style="color:#666">*</span>Dog) <span style="color:#00f">Eat</span>() {
-  fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The dog is eating.&#34;</span>)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (d <span style="color:#666">*</span>Dog) <span style="color:#00f">Sleep</span>() {
-  fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The dog is sleeping.&#34;</span>)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
-  animal.<span style="color:#00f">Eat</span>()
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-  dog <span style="color:#666">:=</span> Dog{name: <span style="color:#ba2121">&#34;Spot&#34;</span>}
-  <span style="color:#00f">FeedAnimal</span>(dog)
-}
-</code></pre></div><p>In this example, we define the <code>Animal</code> interface with <code>Eat()</code> and <code>Sleep()</code> methods. The <code>Dog</code> struct implements this interface by providing its own <code>Eat()</code> and <code>Sleep()</code> methods.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Animal <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">Eat</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">Sleep</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Dog <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>  name <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (d <span style="color:#666">*</span>Dog) <span style="color:#00f">Eat</span>() {
+</span></span><span style="display:flex;"><span>  fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The dog is eating.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (d <span style="color:#666">*</span>Dog) <span style="color:#00f">Sleep</span>() {
+</span></span><span style="display:flex;"><span>  fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;The dog is sleeping.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">FeedAnimal</span>(animal Animal) {
+</span></span><span style="display:flex;"><span>  animal.<span style="color:#00f">Eat</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>  dog <span style="color:#666">:=</span> Dog{name: <span style="color:#ba2121">&#34;Spot&#34;</span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#00f">FeedAnimal</span>(dog)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, we define the <code>Animal</code> interface with <code>Eat()</code> and <code>Sleep()</code> methods. The <code>Dog</code> struct implements this interface by providing its own <code>Eat()</code> and <code>Sleep()</code> methods.</p>
 <p>To demonstrate the power of interfaces, we have a <code>FeedAnimal()</code> function that takes an <code>Animal</code> as an argument. It invokes the <code>Eat()</code> method on the provided animal. Since the <code>Dog</code> struct implements the <code>Animal</code> interface, the <code>Eat()</code> method of the <code>Dog</code> struct is called successfully.</p>
 <h1 id="how-to-use-interfaces-in-golang">How to use interfaces in Golang:</h1>
 <p>There are a few different ways to use interfaces in Golang. One way is to use them as a way to define a generic type. For example, you could define a function that takes an <code>Animal</code> as an argument and the function would know how to feed, play with, and walk the animal, even though different animals eat, play, and walk in different ways.</p>
@@ -147,7 +147,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
 
@@ -165,7 +165,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

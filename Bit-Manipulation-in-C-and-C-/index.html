@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Bitmasking/">Bitmasking</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Bitmasking/&#34;&gt;Bitmasking&lt;/a&gt;
     </div>
   
   <p>All data in computer is represented in binary i.e. in 0 or 1. Computers or machines do not understand our languages, they understand bits. Generally programmer do not care about operations at the bit level. But sometimes a programmer has to dive in a deeper level and work on bits.</p>
@@ -109,10 +109,10 @@
 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->
 There is a connection between a signed and an unsigned representation. A signed number <code>-x</code> equals an unsigned number 2<!-- raw HTML omitted -->n<!-- raw HTML omitted --> – x.<!-- raw HTML omitted -->
 -x (signed) = 2<!-- raw HTML omitted -->n<!-- raw HTML omitted --> - x (unsigned)</p>
-<pre><code>int a = -10;
+<pre tabindex="0"><code>int a = -10;
 unsigned int b = a;
-std::cout &lt;&lt; a &lt;&lt; &quot;\n&quot;; /* -10 */
-std::cout &lt;&lt; b &lt;&lt; &quot;\n&quot;; /* 4294967286 */
+std::cout &lt;&lt; a &lt;&lt; &#34;\n&#34;; /* -10 */
+std::cout &lt;&lt; b &lt;&lt; &#34;\n&#34;; /* 4294967286 */
 </code></pre><p>In a signed representation, the next number after 2<!-- raw HTML omitted -->n – 1<!-- raw HTML omitted --> – 1 is -2<!-- raw HTML omitted -->n<!-- raw HTML omitted --> – 1, and in an unsigned representation, the next number after 2<!-- raw HTML omitted -->n<!-- raw HTML omitted --> – 1 is <code>0</code>.</p>
 <h1 id="bit-operations">Bit Operations</h1>
 <p><img src="/assets/images/bitmtable2.png" alt="Operations"></p>
@@ -120,31 +120,31 @@ std::cout &lt;&lt; b &lt;&lt; &quot;\n&quot;; /* 4294967286 */
 <p><code>x&lt;&lt;k</code> corresponds to multiplying <code>x</code> by 2<!-- raw HTML omitted -->k<!-- raw HTML omitted -->, and <code>x&gt;&gt;k</code> corresponds to dividing <code>x</code> by 2<!-- raw HTML omitted -->k<!-- raw HTML omitted --> rounded down to an integer.</p>
 <h1 id="common-bit-tasks">Common Bit Tasks</h1>
 <p><strong>Binary representation of <em>unsigned int</em>:</strong></p>
-<pre><code>void binary(unsigned int num)
+<pre tabindex="0"><code>void binary(unsigned int num)
 {
 	for(int i = 256; i &gt; 0; i = i/2) {
 		if(num &amp; i) 
-			std::cout &lt;&lt; &quot;1 &quot;;
+			std::cout &lt;&lt; &#34;1 &#34;;
 		else
-			std::cout &lt;&lt; &quot;0 &quot;;
+			std::cout &lt;&lt; &#34;0 &#34;;
 	}
 	std::cout &lt;&lt; std::endl;
 }
 </code></pre><p><strong>Setting Bit at <em>position</em>:</strong></p>
-<pre><code>int set_bit(int num, int position)
+<pre tabindex="0"><code>int set_bit(int num, int position)
 {
 	int mask = 1 &lt;&lt; position;
 	return num | mask;
 }
 </code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->
 <strong>Getting Bit at <em>position</em>:</strong></p>
-<pre><code>bool get_bit(int num, int position)
+<pre tabindex="0"><code>bool get_bit(int num, int position)
 {
 	bool bit = num &amp; (1 &lt;&lt; position);
 	return bit;
 }
 </code></pre><p><strong>Clearing Bit at <em>position</em>:</strong></p>
-<pre><code>int clear_bit(int num, int position)
+<pre tabindex="0"><code>int clear_bit(int num, int position)
 {
 	int mask = 1 &lt;&lt; position;
 	return num &amp; ~mask;
@@ -155,7 +155,7 @@ std::cout &lt;&lt; b &lt;&lt; &quot;\n&quot;; /* 4294967286 */
 00000000000000000000000100011010<!-- raw HTML omitted -->
 and decimal representation is 2<!-- raw HTML omitted -->8<!-- raw HTML omitted --> + 2<!-- raw HTML omitted -->4<!-- raw HTML omitted --> + 2<!-- raw HTML omitted -->3<!-- raw HTML omitted --> + 2<!-- raw HTML omitted -->1<!-- raw HTML omitted --> = 282.</p>
 <p>Code to form subset and add elements to it:</p>
-<pre><code>int add_elements_to_subset()
+<pre tabindex="0"><code>int add_elements_to_subset()
 {
 	int subset = 0;
 	subset = subset | (1 &lt;&lt; 1);
@@ -165,11 +165,11 @@ and decimal representation is 2<!-- raw HTML omitted -->8<!-- raw HTML omitted -
 	return subset;
 }
 </code></pre><p>Code to print elements of the subset:</p>
-<pre><code>void printing_subset(int subset)
+<pre tabindex="0"><code>void printing_subset(int subset)
 {
 	for (int i = 0; i &lt; 32; i++) 
 	{
-		if (subset &amp; (1 &lt;&lt; i)) std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+		if (subset &amp; (1 &lt;&lt; i)) std::cout &lt;&lt; i &lt;&lt; &#34; &#34;;
 	}
 }
 </code></pre><h1 id="additional-functions">Additional functions</h1>
@@ -198,7 +198,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen</p>
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Bitmasking/">Bitmasking</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Bitmasking/&#34;&gt;Bitmasking&lt;/a&gt;
     </div>
   
 
@@ -216,7 +216,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen</p>
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

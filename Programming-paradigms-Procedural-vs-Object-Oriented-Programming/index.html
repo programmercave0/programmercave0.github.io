@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
   <p><img src="/assets/images/LLD/programming-paradigms.jpg" alt="Programming paradigms"></p>
@@ -124,18 +124,18 @@
 </li>
 </ul>
 <h4 id="python-procedural-code">Python Procedural Code</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(source: <span style="color:#008000">int</span>, destination: <span style="color:#008000">int</span>, amount: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> None:
-    source_account <span style="color:#666">=</span> get_account(source)
-    update_account(source_account, <span style="color:#666">-</span>amount)
-    destination_account <span style="color:#666">=</span> get_account(destination)
-    update_account(destination_account, amount)
-
-<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_account</span>(number: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000">dict</span>:
-    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">list</span>(<span style="color:#008000">filter</span>(<span style="color:#008000;font-weight:bold">lambda</span> account: account[<span style="color:#ba2121">&#39;number&#39;</span>] <span style="color:#666">==</span> number,accounts))[<span style="color:#666">0</span>]
-
-<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">update_account</span>(account: <span style="color:#008000">int</span>, delta: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> None:
-    account[<span style="color:#ba2121">&#39;balance&#39;</span>] <span style="color:#666">+=</span> delta
-</code></pre></div><h3 id="object-oriented-programming">Object Oriented Programming</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(source: <span style="color:#008000">int</span>, destination: <span style="color:#008000">int</span>, amount: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+</span></span><span style="display:flex;"><span>    source_account <span style="color:#666">=</span> get_account(source)
+</span></span><span style="display:flex;"><span>    update_account(source_account, <span style="color:#666">-</span>amount)
+</span></span><span style="display:flex;"><span>    destination_account <span style="color:#666">=</span> get_account(destination)
+</span></span><span style="display:flex;"><span>    update_account(destination_account, amount)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">get_account</span>(number: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000">dict</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">list</span>(<span style="color:#008000">filter</span>(<span style="color:#008000;font-weight:bold">lambda</span> account: account[<span style="color:#ba2121">&#39;number&#39;</span>] <span style="color:#666">==</span> number,accounts))[<span style="color:#666">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">update_account</span>(account: <span style="color:#008000">int</span>, delta: <span style="color:#008000">int</span>) <span style="color:#666">-&gt;</span> <span style="color:#008000;font-weight:bold">None</span>:
+</span></span><span style="display:flex;"><span>    account[<span style="color:#ba2121">&#39;balance&#39;</span>] <span style="color:#666">+=</span> delta
+</span></span></code></pre></div><h3 id="object-oriented-programming">Object Oriented Programming</h3>
 <ul>
 <li>programming paradigm that uses objects to model real-world things and aims to implement state and behavior using objects.</li>
 <li>State and behaviour are combined into one new concept: an Object. An OO application can therefore produce some output by calling an Object, without needing to pass data structures.</li>
@@ -172,109 +172,109 @@
 <li>is an instance of a class.</li>
 </ul>
 <h4 id="java-oop-code">Java OOP Code</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span> <span style="color:#666">{</span>
-    <span style="color:#008000;font-weight:bold">private</span> Integer number<span style="color:#666">;</span>
-    <span style="color:#008000;font-weight:bold">private</span> Integer balance<span style="color:#666">;</span>
-    
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">OopBankAccount</span><span style="color:#666">(</span>Integer number<span style="color:#666">,</span> Integer balance<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">number</span> <span style="color:#666">=</span> number<span style="color:#666">;</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">=</span> balance<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    
-    <span style="color:#b00040">void</span> <span style="color:#00f">deposit</span><span style="color:#666">(</span>Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">+=</span> amount<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    
-    <span style="color:#b00040">void</span> <span style="color:#00f">withdraw</span><span style="color:#666">(</span>Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">balance</span> <span style="color:#666">+=</span> amount<span style="color:#666">;</span>
-    <span style="color:#666">}</span>
-    
-    <span style="color:#b00040">void</span> <span style="color:#00f">transfer</span><span style="color:#666">(</span>OopBankAccount destination<span style="color:#666">,</span> Integer amount<span style="color:#666">)</span> <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">withdraw</span><span style="color:#666">(</span>amount<span style="color:#666">);</span>
-        destination<span style="color:#666">.</span><span style="color:#7d9029">deposit</span><span style="color:#666">(</span>amount<span style="color:#666">);</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><h4 id="python-oop-code">Python OOP Code</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span>:
-	<span style="color:#008000;font-weight:bold">def</span> __init__(self, balance, number):
-		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number
-		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getNumber</span>(self):
-		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__number
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setNumber</span>(self, number):
-		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number 
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getBalance</span>(self):
-		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__balance
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setBalance</span>(self, balance):
-		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">deposit</span>(self, amount):
-		self<span style="color:#666">.</span>__balance <span style="color:#666">+=</span> amount
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">withdraw</span>(self, amount):
-		self<span style="color:#666">.</span>__balance <span style="color:#666">-=</span> amount
-
-	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(self, destination, amount):
-		self<span style="color:#666">.</span>withdraw(amount)
-		destination<span style="color:#666">.</span>deposit(amount)
-</code></pre></div><h4 id="golang-code">Golang Code</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> BankAccount <span style="color:#008000;font-weight:bold">struct</span> {
-	AccountNumber <span style="color:#b00040">int64</span>
-	Name          <span style="color:#b00040">string</span>
-	Balance       <span style="color:#b00040">float64</span>
-}
-
-<span style="color:#008000;font-weight:bold">type</span> BankAccountOps <span style="color:#008000;font-weight:bold">interface</span> {
-	<span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>)
-	<span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>)
-	<span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>)
-	<span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
-	<span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
-	<span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
-	<span style="color:#00f">PrintBalance</span>()
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBankAccount</span>(number <span style="color:#b00040">int64</span>, name <span style="color:#b00040">string</span>, balance <span style="color:#b00040">float64</span>) <span style="color:#666">*</span>BankAccount {
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>BankAccount{AccountNumber: number, Name: name, Balance: balance}
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>) {
-	<span style="color:#008000;font-weight:bold">return</span> b.AccountNumber, <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>) {
-	<span style="color:#008000;font-weight:bold">return</span> b.Name, <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>) {
-	<span style="color:#008000;font-weight:bold">return</span> b.Balance, <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
-	b.Balance <span style="color:#666">+=</span> amount
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
-	b.Balance <span style="color:#666">-=</span> amount
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
-	b.<span style="color:#00f">Withdraw</span>(amount)
-	destiantion.<span style="color:#00f">Deposit</span>(amount)
-
-	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
-}
-
-<span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">PrintBalance</span>() {
-	fmt.<span style="color:#00f">Println</span>(b.AccountNumber, b.Name, b.Balance)
-}
-</code></pre></div><h4 id="advantages">Advantages:</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>Integer<span style="color:#bbb"> </span>number;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>Integer<span style="color:#bbb"> </span>balance;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00f">OopBankAccount</span>(Integer<span style="color:#bbb"> </span>number,<span style="color:#bbb"> </span>Integer<span style="color:#bbb"> </span>balance)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">number</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>number;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">balance</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>balance;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">deposit</span>(Integer<span style="color:#bbb"> </span>amount)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">balance</span><span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span>amount;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">withdraw</span>(Integer<span style="color:#bbb"> </span>amount)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">balance</span><span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span>amount;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">transfer</span>(OopBankAccount<span style="color:#bbb"> </span>destination,<span style="color:#bbb"> </span>Integer<span style="color:#bbb"> </span>amount)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">withdraw</span>(amount);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>destination.<span style="color:#7d9029">deposit</span>(amount);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><h4 id="python-oop-code">Python OOP Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">OopBankAccount</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> __init__(self, balance, number):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getNumber</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__number
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setNumber</span>(self, number):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__number <span style="color:#666">=</span> number 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">getBalance</span>(self):
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">return</span> self<span style="color:#666">.</span>__balance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">setBalance</span>(self, balance):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__balance <span style="color:#666">=</span> balance
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">deposit</span>(self, amount):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__balance <span style="color:#666">+=</span> amount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">withdraw</span>(self, amount):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>__balance <span style="color:#666">-=</span> amount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">transfer</span>(self, destination, amount):
+</span></span><span style="display:flex;"><span>		self<span style="color:#666">.</span>withdraw(amount)
+</span></span><span style="display:flex;"><span>		destination<span style="color:#666">.</span>deposit(amount)
+</span></span></code></pre></div><h4 id="golang-code">Golang Code</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> BankAccount <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	AccountNumber <span style="color:#b00040">int64</span>
+</span></span><span style="display:flex;"><span>	Name          <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Balance       <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> BankAccountOps <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">PrintBalance</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewBankAccount</span>(number <span style="color:#b00040">int64</span>, name <span style="color:#b00040">string</span>, balance <span style="color:#b00040">float64</span>) <span style="color:#666">*</span>BankAccount {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>BankAccount{AccountNumber: number, Name: name, Balance: balance}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetAccountNumber</span>() (<span style="color:#b00040">int64</span>, <span style="color:#b00040">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.AccountNumber, <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetName</span>() (<span style="color:#b00040">string</span>, <span style="color:#b00040">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.Name, <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">GetBalance</span>() (<span style="color:#b00040">float64</span>, <span style="color:#b00040">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> b.Balance, <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Deposit</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+</span></span><span style="display:flex;"><span>	b.Balance <span style="color:#666">+=</span> amount
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Withdraw</span>(amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+</span></span><span style="display:flex;"><span>	b.Balance <span style="color:#666">-=</span> amount
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">Transfer</span>(destiantion <span style="color:#666">*</span>BankAccount, amount <span style="color:#b00040">float64</span>) <span style="color:#b00040">error</span> {
+</span></span><span style="display:flex;"><span>	b.<span style="color:#00f">Withdraw</span>(amount)
+</span></span><span style="display:flex;"><span>	destiantion.<span style="color:#00f">Deposit</span>(amount)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (b <span style="color:#666">*</span>BankAccount) <span style="color:#00f">PrintBalance</span>() {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(b.AccountNumber, b.Name, b.Balance)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="advantages">Advantages:</h4>
 <ul>
 <li><strong>Reusability</strong>: Through classes and objects, and inheritance of common attributes and functions.</li>
 <li><strong>Security</strong>: Hiding and protecting information through encapsulation.</li>
@@ -307,7 +307,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
 
@@ -325,7 +325,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

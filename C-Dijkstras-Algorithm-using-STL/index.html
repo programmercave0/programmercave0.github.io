@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Graph-Algorithms/">Graph-Algorithms</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Graph-Algorithms/&#34;&gt;Graph-Algorithms&lt;/a&gt;
     </div>
   
   <p><strong>Dijkstra&rsquo;s algorithm</strong> finds shortest paths from the source vertex to all vertices in the graph. The condition for the algorithm is that all edge weights should be non-negative. Thus, Dijkstra’s algorithm is efficient than the Bellman-Ford algorithm because it processes each edge only once, since it knows that there are no negative-weight edges in the graph.</p>
@@ -112,51 +112,51 @@
 <!-- raw HTML omitted -->
 <p>To store color, distance of a vertex a data structure is needed. An array is needed to store processed vertices and a minimum priority queue to store unprocessed vertices.</p>
 <p>Here is the implementation of <code>dijkstra</code> and <code>relax</code> function.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, BLACK};
-    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
-    {
-        std<span style="color:#666">::</span>size_t id;
-        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
-        Color color <span style="color:#666">=</span> WHITE;
-        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
-    };
-
-<span style="color:#b00040">void</span> <span style="color:#00f">relax</span>(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
-{
-    <span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> next_dist <span style="color:#666">=</span> vertices[dest].distance;
-    <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> curr_dist <span style="color:#666">=</span> vertices[src].distance <span style="color:#666">+</span> weight;
-    <span style="color:#008000;font-weight:bold">if</span> (curr_dist <span style="color:#666">&lt;</span> next_dist)
-    {
-        next_dist <span style="color:#666">=</span> curr_dist;
-        <span style="color:#408080;font-style:italic">//update distance in unprocessed queue
-</span><span style="color:#408080;font-style:italic"></span>        unprocessed.push( std<span style="color:#666">::</span>make_pair(next_dist, dest));
-    }
-}
-
-<span style="color:#b00040">void</span> <span style="color:#00f">dijkstra</span>(std<span style="color:#666">::</span>size_t src)
-{
-    <span style="color:#408080;font-style:italic">//initialize distance of source
-</span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
-
-    unprocessed.push( std<span style="color:#666">::</span>make_pair(vertices[src].distance, src) );
-    <span style="color:#008000;font-weight:bold">while</span> (<span style="color:#666">!</span>unprocessed.empty())
-    {
-         <span style="color:#b00040">int</span> curr_vertex_dist <span style="color:#666">=</span> unprocessed.top().first;
-         std<span style="color:#666">::</span>size_t curr_vertex <span style="color:#666">=</span> unprocessed.top().second;
-         unprocessed.pop();
-
-        <span style="color:#008000;font-weight:bold">if</span> (vertices[curr_vertex].color <span style="color:#666">==</span> WHITE)
-        {
-            processed.push_back(curr_vertex);
-        }
-        vertices[curr_vertex].color <span style="color:#666">=</span> BLACK;
-        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">ver</span>: adj_list[curr_vertex])
-        {
-            relax(curr_vertex, ver.first, ver.second);
-        }
-    }
-}
-</code></pre></div><p><code>relax</code> function updates the distance of the destination vertex and if the new calculated distance is smaller than the stored distance, then the distance is updated and the vertex is pushed in the minimum priority queue.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, BLACK};
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>size_t id;
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+</span></span><span style="display:flex;"><span>        Color color <span style="color:#666">=</span> WHITE;
+</span></span><span style="display:flex;"><span>        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> <span style="color:#00f">relax</span>(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> next_dist <span style="color:#666">=</span> vertices[dest].distance;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> curr_dist <span style="color:#666">=</span> vertices[src].distance <span style="color:#666">+</span> weight;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (curr_dist <span style="color:#666">&lt;</span> next_dist)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        next_dist <span style="color:#666">=</span> curr_dist;
+</span></span><span style="display:flex;"><span>        <span style="color:#408080;font-style:italic">//update distance in unprocessed queue
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>        unprocessed.push( std<span style="color:#666">::</span>make_pair(next_dist, dest));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> <span style="color:#00f">dijkstra</span>(std<span style="color:#666">::</span>size_t src)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">//initialize distance of source
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    unprocessed.push( std<span style="color:#666">::</span>make_pair(vertices[src].distance, src) );
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">while</span> (<span style="color:#666">!</span>unprocessed.empty())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>         <span style="color:#b00040">int</span> curr_vertex_dist <span style="color:#666">=</span> unprocessed.top().first;
+</span></span><span style="display:flex;"><span>         std<span style="color:#666">::</span>size_t curr_vertex <span style="color:#666">=</span> unprocessed.top().second;
+</span></span><span style="display:flex;"><span>         unprocessed.pop();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (vertices[curr_vertex].color <span style="color:#666">==</span> WHITE)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            processed.push_back(curr_vertex);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        vertices[curr_vertex].color <span style="color:#666">=</span> BLACK;
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">ver</span>: adj_list[curr_vertex])
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            relax(curr_vertex, ver.first, ver.second);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>relax</code> function updates the distance of the destination vertex and if the new calculated distance is smaller than the stored distance, then the distance is updated and the vertex is pushed in the minimum priority queue.</p>
 <p>In the function <code>dijkstra</code> source vertex in passed as an argument. Variable <code>curr_vertex</code> stores the vertex that is nearer to the source because in minimum priority queue element having minimum value is at the top of queue. If the color of the selected vertex is <code>white</code>, then it is pushed into the processed array and then its color changes to <code>black</code>. Then all the vertices that are reachable from the selected vertex are processed.</p>
 <!-- raw HTML omitted -->
 <p>Here is the C++ implementation of Dijkstra&rsquo;s Algorithm.</p>
@@ -164,163 +164,163 @@
 <p>For <code>emplace_back</code> constructor <code>A (int x_arg)</code> will be called.
 And for <code>push_back</code> <code>A (int x_arg)</code> is called first and <code>move A (A &amp;&amp;rhs)</code> is called afterwards. <a href="https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back">push_back vs emplace_back</a></p>
 <p><strong>Related:</strong> <a href="/C-Bellman-Ford-Algorithm-using-STL">Bellman Ford Algorithm</a></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;map&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;list&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;queue&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-<span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Graph</span>
-{
-    <span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, BLACK};
-
-    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
-    {
-        std<span style="color:#666">::</span>size_t id;
-        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
-        Color color <span style="color:#666">=</span> WHITE;
-        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
-    };
-
-    <span style="color:#008000;font-weight:bold">using</span> pair_ <span style="color:#666">=</span> std<span style="color:#666">::</span>pair<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>size_t, <span style="color:#b00040">int</span><span style="color:#666">&gt;</span>;
-    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>Vertex<span style="color:#666">&gt;</span> vertices <span style="color:#666">=</span> {};
-
-    <span style="color:#408080;font-style:italic">//to store processed vertex
-</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>size_t<span style="color:#666">&gt;</span> processed  <span style="color:#666">=</span> {};
-    <span style="color:#408080;font-style:italic">//adjacency list , store src, dest, and weight
-</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> pair_<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> adj_list;
-    <span style="color:#408080;font-style:italic">//to store unprocessed vertex min-priority queue
-</span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>priority_queue<span style="color:#666">&lt;</span> pair_, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>pair_<span style="color:#666">&gt;</span>,
-                         std<span style="color:#666">::</span>greater<span style="color:#666">&lt;</span>pair_<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> unprocessed;
-
-  <span style="color:#008000;font-weight:bold">public</span><span style="color:#666">:</span>
-    Graph(std<span style="color:#666">::</span>size_t size);
-    <span style="color:#b00040">void</span> <span style="color:#00f">add_edge</span>(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight);
-    <span style="color:#b00040">void</span> <span style="color:#00f">dijkstra</span>(std<span style="color:#666">::</span>size_t src);
-    std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> print_distance(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span>) <span style="color:#008000;font-weight:bold">const</span>;
-
-  <span style="color:#008000;font-weight:bold">private</span><span style="color:#666">:</span>
-    <span style="color:#b00040">void</span> relax(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight);
-};
-
-Graph<span style="color:#666">::</span>Graph(std<span style="color:#666">::</span>size_t size)
-{
-    vertices.reserve(size);
-    adj_list.resize(size);
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> size; i<span style="color:#666">++</span>)
-    {
-        vertices.emplace_back(i);
-    }
-}
-
-<span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>add_edge(std<span style="color:#666">::</span>size_t src , std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
-{
-    <span style="color:#008000;font-weight:bold">if</span>(weight <span style="color:#666">&gt;=</span> <span style="color:#666">0</span>)
-    {
-        <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">==</span> dest)
-        {
-            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Source and destination vertices are same&#34;</span>);
-        }
-
-        <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> src)
-        {
-            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct source vertex&#34;</span>);
-        }
-
-        <span style="color:#008000;font-weight:bold">if</span> (dest <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> dest)
-        {
-            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct destination vertex&#34;</span>);
-        }
-
-        <span style="color:#b00040">int</span> flag <span style="color:#666">=</span> <span style="color:#666">0</span>, i <span style="color:#666">=</span> src;
-        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">it</span> : adj_list[i])
-        {
-            <span style="color:#008000;font-weight:bold">if</span> (it.first <span style="color:#666">==</span> dest)
-            {
-                flag <span style="color:#666">=</span> <span style="color:#666">1</span>;
-                <span style="color:#008000;font-weight:bold">break</span>;
-            }
-        }
-        <span style="color:#008000;font-weight:bold">if</span> (flag <span style="color:#666">==</span> <span style="color:#666">0</span>)
-        {
-            adj_list[src].push_back( {dest, weight} );
-        }
-        <span style="color:#008000;font-weight:bold">else</span>
-        {
-            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Existing edge&#34;</span>);
-        }
-
-    }
-    <span style="color:#008000;font-weight:bold">else</span>
-    {
-        std<span style="color:#666">::</span>cerr <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Negative weight</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    }
-}
-
-<span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>relax(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
-{
-    <span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> next_dist <span style="color:#666">=</span> vertices[dest].distance;
-    <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> curr_dist <span style="color:#666">=</span> vertices[src].distance <span style="color:#666">+</span> weight;
-    <span style="color:#008000;font-weight:bold">if</span> (curr_dist <span style="color:#666">&lt;</span> next_dist)
-    {
-        next_dist <span style="color:#666">=</span> curr_dist;
-        <span style="color:#408080;font-style:italic">//update distance in unprocessed queue
-</span><span style="color:#408080;font-style:italic"></span>        unprocessed.push( std<span style="color:#666">::</span>make_pair(next_dist, dest));
-    }
-}
-
-<span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>dijkstra(std<span style="color:#666">::</span>size_t src)
-{
-    <span style="color:#408080;font-style:italic">//initialize distance of source
-</span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
-
-    unprocessed.push( std<span style="color:#666">::</span>make_pair(vertices[src].distance, src) );
-    <span style="color:#008000;font-weight:bold">while</span> (<span style="color:#666">!</span>unprocessed.empty())
-    {
-         <span style="color:#b00040">int</span> curr_vertex_dist <span style="color:#666">=</span> unprocessed.top().first;
-         std<span style="color:#666">::</span>size_t curr_vertex <span style="color:#666">=</span> unprocessed.top().second;
-         unprocessed.pop();
-
-        <span style="color:#008000;font-weight:bold">if</span> (vertices[curr_vertex].color <span style="color:#666">==</span> WHITE)
-        {
-            processed.push_back(curr_vertex);
-        }
-        vertices[curr_vertex].color <span style="color:#666">=</span> BLACK;
-        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">ver</span>: adj_list[curr_vertex])
-        {
-            relax(curr_vertex, ver.first, ver.second);
-        }
-    }
-}
-
-std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> Graph<span style="color:#666">::</span>print_distance(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> os) <span style="color:#008000;font-weight:bold">const</span>
-{
-    os <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Vertex</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">Distance from Source</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> <span style="color:#a0a000">vertex</span>: vertices)
-    {
-        os <span style="color:#666">&lt;&lt;</span> vertex.id <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">&#34;</span> <span style="color:#666">&lt;&lt;</span> vertex.distance <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-    }
-    <span style="color:#008000;font-weight:bold">return</span> os;
-}
-
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-    Graph grp(<span style="color:#666">5</span>);
-    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">1</span>, <span style="color:#666">10</span>);
-    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">2</span>, <span style="color:#666">5</span>);
-    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">1</span>);
-    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">2</span>);
-    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">1</span>, <span style="color:#666">3</span>);
-    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">3</span>, <span style="color:#666">9</span>);
-    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">4</span>, <span style="color:#666">2</span>);
-    grp.add_edge(<span style="color:#666">3</span>, <span style="color:#666">4</span>, <span style="color:#666">4</span>);
-    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">3</span>, <span style="color:#666">6</span>);
-    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">0</span>, <span style="color:#666">7</span>);
-    grp.dijkstra(<span style="color:#666">0</span>);
-    grp.print_distance(std<span style="color:#666">::</span>cout);
-}
-</code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Algo-Data-Structure/tree/master/Graph_Algorithms/Dijkstra_Algo">Github</a></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;map&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;limits&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;list&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;queue&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Graph</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">enum</span> <span style="color:#00f;font-weight:bold">Color</span> {WHITE, BLACK};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">struct</span> <span style="color:#00f;font-weight:bold">Vertex</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>size_t id;
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> distance <span style="color:#666">=</span> std<span style="color:#666">::</span>numeric_limits<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;::</span>max();
+</span></span><span style="display:flex;"><span>        Color color <span style="color:#666">=</span> WHITE;
+</span></span><span style="display:flex;"><span>        Vertex(std<span style="color:#666">::</span>size_t id) <span style="color:#666">:</span> id(id) {}
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">using</span> pair_ <span style="color:#666">=</span> std<span style="color:#666">::</span>pair<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>size_t, <span style="color:#b00040">int</span><span style="color:#666">&gt;</span>;
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>Vertex<span style="color:#666">&gt;</span> vertices <span style="color:#666">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">//to store processed vertex
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>std<span style="color:#666">::</span>size_t<span style="color:#666">&gt;</span> processed  <span style="color:#666">=</span> {};
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">//adjacency list , store src, dest, and weight
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span> pair_<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> adj_list;
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">//to store unprocessed vertex min-priority queue
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    std<span style="color:#666">::</span>priority_queue<span style="color:#666">&lt;</span> pair_, std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span>pair_<span style="color:#666">&gt;</span>,
+</span></span><span style="display:flex;"><span>                         std<span style="color:#666">::</span>greater<span style="color:#666">&lt;</span>pair_<span style="color:#666">&gt;</span> <span style="color:#666">&gt;</span> unprocessed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">public</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>    Graph(std<span style="color:#666">::</span>size_t size);
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">void</span> <span style="color:#00f">add_edge</span>(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight);
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">void</span> <span style="color:#00f">dijkstra</span>(std<span style="color:#666">::</span>size_t src);
+</span></span><span style="display:flex;"><span>    std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> print_distance(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span>) <span style="color:#008000;font-weight:bold">const</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000;font-weight:bold">private</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b00040">void</span> relax(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Graph<span style="color:#666">::</span>Graph(std<span style="color:#666">::</span>size_t size)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    vertices.reserve(size);
+</span></span><span style="display:flex;"><span>    adj_list.resize(size);
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> size; i<span style="color:#666">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        vertices.emplace_back(i);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>add_edge(std<span style="color:#666">::</span>size_t src , std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span>(weight <span style="color:#666">&gt;=</span> <span style="color:#666">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">==</span> dest)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Source and destination vertices are same&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (src <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> src)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct source vertex&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (dest <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> vertices.size() <span style="color:#666">&lt;=</span> dest)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>out_of_range(<span style="color:#ba2121">&#34;Enter correct destination vertex&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#b00040">int</span> flag <span style="color:#666">=</span> <span style="color:#666">0</span>, i <span style="color:#666">=</span> src;
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">it</span> : adj_list[i])
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">if</span> (it.first <span style="color:#666">==</span> dest)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                flag <span style="color:#666">=</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#008000;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (flag <span style="color:#666">==</span> <span style="color:#666">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            adj_list[src].push_back( {dest, weight} );
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">throw</span> std<span style="color:#666">::</span>logic_error(<span style="color:#ba2121">&#34;Existing edge&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        std<span style="color:#666">::</span>cerr <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Negative weight</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>relax(std<span style="color:#666">::</span>size_t src, std<span style="color:#666">::</span>size_t dest, <span style="color:#b00040">int</span> weight)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> next_dist <span style="color:#666">=</span> vertices[dest].distance;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">const</span> <span style="color:#008000;font-weight:bold">auto</span> curr_dist <span style="color:#666">=</span> vertices[src].distance <span style="color:#666">+</span> weight;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">if</span> (curr_dist <span style="color:#666">&lt;</span> next_dist)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        next_dist <span style="color:#666">=</span> curr_dist;
+</span></span><span style="display:flex;"><span>        <span style="color:#408080;font-style:italic">//update distance in unprocessed queue
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>        unprocessed.push( std<span style="color:#666">::</span>make_pair(next_dist, dest));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">void</span> Graph<span style="color:#666">::</span>dijkstra(std<span style="color:#666">::</span>size_t src)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">//initialize distance of source
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    vertices[src].distance <span style="color:#666">=</span> <span style="color:#666">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    unprocessed.push( std<span style="color:#666">::</span>make_pair(vertices[src].distance, src) );
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">while</span> (<span style="color:#666">!</span>unprocessed.empty())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>         <span style="color:#b00040">int</span> curr_vertex_dist <span style="color:#666">=</span> unprocessed.top().first;
+</span></span><span style="display:flex;"><span>         std<span style="color:#666">::</span>size_t curr_vertex <span style="color:#666">=</span> unprocessed.top().second;
+</span></span><span style="display:flex;"><span>         unprocessed.pop();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">if</span> (vertices[curr_vertex].color <span style="color:#666">==</span> WHITE)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            processed.push_back(curr_vertex);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        vertices[curr_vertex].color <span style="color:#666">=</span> BLACK;
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span><span style="color:#666">&amp;</span> <span style="color:#a0a000">ver</span>: adj_list[curr_vertex])
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            relax(curr_vertex, ver.first, ver.second);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> Graph<span style="color:#666">::</span>print_distance(std<span style="color:#666">::</span>ostream<span style="color:#666">&amp;</span> os) <span style="color:#008000;font-weight:bold">const</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    os <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;Vertex</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">Distance from Source</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> (<span style="color:#008000;font-weight:bold">auto</span> <span style="color:#a0a000">vertex</span>: vertices)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        os <span style="color:#666">&lt;&lt;</span> vertex.id <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\t\t</span><span style="color:#ba2121">&#34;</span> <span style="color:#666">&lt;&lt;</span> vertex.distance <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> os;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Graph grp(<span style="color:#666">5</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">1</span>, <span style="color:#666">10</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">0</span>, <span style="color:#666">2</span>, <span style="color:#666">5</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">2</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">1</span>, <span style="color:#666">3</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">3</span>, <span style="color:#666">9</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">2</span>, <span style="color:#666">4</span>, <span style="color:#666">2</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">3</span>, <span style="color:#666">4</span>, <span style="color:#666">4</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">3</span>, <span style="color:#666">6</span>);
+</span></span><span style="display:flex;"><span>    grp.add_edge(<span style="color:#666">4</span>, <span style="color:#666">0</span>, <span style="color:#666">7</span>);
+</span></span><span style="display:flex;"><span>    grp.dijkstra(<span style="color:#666">0</span>);
+</span></span><span style="display:flex;"><span>    grp.print_distance(std<span style="color:#666">::</span>cout);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>View this code on <a href="https://github.com/abhiabhi0/Algo-Data-Structure/tree/master/Graph_Algorithms/Dijkstra_Algo">Github</a></p>
 <p>Output</p>
 <p><img src="/assets/images/DijkstraOut.png" alt="Output"></p>
 <p>Reference:<!-- raw HTML omitted -->
@@ -347,7 +347,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Graph-Algorithms/">Graph-Algorithms</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Graph-Algorithms/&#34;&gt;Graph-Algorithms&lt;/a&gt;
     </div>
   
 
@@ -365,7 +365,7 @@ Competitive Programmer’s Handbook - Antti Laaksonen<!-- raw HTML omitted --></
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

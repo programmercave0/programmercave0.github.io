@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -87,7 +87,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
   <h2 id="key-takeaways"><strong>Key Takeaways:</strong></h2>
@@ -103,61 +103,61 @@
 <h2 id="what-is-iota-in-go"><strong>What is <code>iota</code> in Go?</strong></h2>
 <p><code>iota</code> is a built-in Go tool that simplifies creating sequences of related constants. It starts at 0 in each <code>const</code> block and increments by 1 for each subsequent constant.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    Red = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0
-</span><span style="color:#408080;font-style:italic"></span>    Green      <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>    Blue       <span style="color:#408080;font-style:italic">// 2
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    Red = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Green      <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Blue       <span style="color:#408080;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><hr>
 <h2 id="common-use-cases"><strong>Common Use Cases</strong></h2>
 <h3 id="1-skipping-values"><strong>1. Skipping Values</strong></h3>
 <p>Use <code>_</code> to skip the first value:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    _ = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// Skip 0
-</span><span style="color:#408080;font-style:italic"></span>    One      <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>    Two      <span style="color:#408080;font-style:italic">// 2
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><h3 id="2-starting-from-non-zero"><strong>2. Starting from Non-Zero</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    _ = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// Skip 0
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    One      <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Two      <span style="color:#408080;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><h3 id="2-starting-from-non-zero"><strong>2. Starting from Non-Zero</strong></h3>
 <p>Add offsets to <code>iota</code>:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    A = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#666">+</span> <span style="color:#666">1</span> <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>    B            <span style="color:#408080;font-style:italic">// 2
-</span><span style="color:#408080;font-style:italic"></span>    C            <span style="color:#408080;font-style:italic">// 3
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><h3 id="3-bitmaskflags"><strong>3. Bitmask/Flags</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    A = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#666">+</span> <span style="color:#666">1</span> <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    B            <span style="color:#408080;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    C            <span style="color:#408080;font-style:italic">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><h3 id="3-bitmaskflags"><strong>3. Bitmask/Flags</strong></h3>
 <p>Create binary flags using shifts:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    Read = <span style="color:#666">1</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 1 (0001)
-</span><span style="color:#408080;font-style:italic"></span>    Write            <span style="color:#408080;font-style:italic">// 2 (0010)
-</span><span style="color:#408080;font-style:italic"></span>    Execute          <span style="color:#408080;font-style:italic">// 4 (0100)
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><p><strong>Use Case:</strong> Combine flags with bitwise operations (e.g., <code>Read | Write</code>).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    Read = <span style="color:#666">1</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 1 (0001)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Write            <span style="color:#408080;font-style:italic">// 2 (0010)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Execute          <span style="color:#408080;font-style:italic">// 4 (0100)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><p><strong>Use Case:</strong> Combine flags with bitwise operations (e.g., <code>Read | Write</code>).</p>
 <hr>
 <h3 id="4-enums-with-string-values"><strong>4. Enums with String Values</strong></h3>
 <p>Attach human-readable names to constants:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">type</span> Direction <span style="color:#b00040">int</span>
-
-<span style="color:#008000;font-weight:bold">const</span> (
-    North Direction = <span style="color:#008000;font-weight:bold">iota</span>
-    East
-    South
-    West
-)
-
-<span style="color:#008000;font-weight:bold">func</span> (d Direction) <span style="color:#00f">String</span>() <span style="color:#b00040">string</span> {
-    <span style="color:#008000;font-weight:bold">return</span> [<span style="color:#666">...</span>]<span style="color:#b00040">string</span>{<span style="color:#ba2121">&#34;North&#34;</span>, <span style="color:#ba2121">&#34;East&#34;</span>, <span style="color:#ba2121">&#34;South&#34;</span>, <span style="color:#ba2121">&#34;West&#34;</span>}[d]
-}
-</code></pre></div><p><strong>Output:</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">fmt.<span style="color:#00f">Println</span>(North) <span style="color:#408080;font-style:italic">// &#34;North&#34;
-</span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Direction <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    North Direction = <span style="color:#008000;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>    East
+</span></span><span style="display:flex;"><span>    South
+</span></span><span style="display:flex;"><span>    West
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (d Direction) <span style="color:#00f">String</span>() <span style="color:#b00040">string</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> [<span style="color:#666">...</span>]<span style="color:#b00040">string</span>{<span style="color:#ba2121">&#34;North&#34;</span>, <span style="color:#ba2121">&#34;East&#34;</span>, <span style="color:#ba2121">&#34;South&#34;</span>, <span style="color:#ba2121">&#34;West&#34;</span>}[d]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fmt.<span style="color:#00f">Println</span>(North) <span style="color:#408080;font-style:italic">// &#34;North&#34;
+</span></span></span></code></pre></div><hr>
 <h3 id="5-complex-sequences"><strong>5. Complex Sequences</strong></h3>
 <p>Use arithmetic or exponents:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    KB = <span style="color:#666">1</span> <span style="color:#666">&lt;&lt;</span> (<span style="color:#666">10</span> <span style="color:#666">*</span> <span style="color:#008000;font-weight:bold">iota</span>) <span style="color:#408080;font-style:italic">// 1024 (2^10)
-</span><span style="color:#408080;font-style:italic"></span>    MB                     <span style="color:#408080;font-style:italic">// 1,048,576 (2^20)
-</span><span style="color:#408080;font-style:italic"></span>    GB                     <span style="color:#408080;font-style:italic">// 1,073,741,824 (2^30)
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    KB = <span style="color:#666">1</span> <span style="color:#666">&lt;&lt;</span> (<span style="color:#666">10</span> <span style="color:#666">*</span> <span style="color:#008000;font-weight:bold">iota</span>) <span style="color:#408080;font-style:italic">// 1024 (2^10)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    MB                     <span style="color:#408080;font-style:italic">// 1,048,576 (2^20)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    GB                     <span style="color:#408080;font-style:italic">// 1,073,741,824 (2^30)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><hr>
 <h2 id="important-rules"><strong>Important Rules</strong></h2>
 <table>
 <thead>
@@ -183,24 +183,24 @@
 <hr>
 <h2 id="frequently-confused-scenarios"><strong>Frequently Confused Scenarios</strong></h2>
 <h3 id="multiple-assignments-in-one-line"><strong>Multiple Assignments in One Line</strong></h3>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    Active, Running = <span style="color:#008000;font-weight:bold">iota</span>, <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#666">+</span> <span style="color:#666">100</span> <span style="color:#408080;font-style:italic">// Active=0, Running=100
-</span><span style="color:#408080;font-style:italic"></span>    Passive, Stopped                   <span style="color:#408080;font-style:italic">// Passive=1, Stopped=101
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><p><strong>Why?</strong> <code>iota</code> increments per line, not per constant.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    Active, Running = <span style="color:#008000;font-weight:bold">iota</span>, <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#666">+</span> <span style="color:#666">100</span> <span style="color:#408080;font-style:italic">// Active=0, Running=100
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    Passive, Stopped                   <span style="color:#408080;font-style:italic">// Passive=1, Stopped=101
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><p><strong>Why?</strong> <code>iota</code> increments per line, not per constant.</p>
 <hr>
 <h3 id="resetting-iota"><strong>Resetting <code>iota</code></strong></h3>
 <p>Each <code>const</code> block resets <code>iota</code>:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">const</span> (
-    FirstA = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0
-</span><span style="color:#408080;font-style:italic"></span>    FirstB        <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>)
-
-<span style="color:#008000;font-weight:bold">const</span> (
-    SecondA = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0 (reset)
-</span><span style="color:#408080;font-style:italic"></span>    SecondB        <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>)
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    FirstA = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    FirstB        <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>    SecondA = <span style="color:#008000;font-weight:bold">iota</span> <span style="color:#408080;font-style:italic">// 0 (reset)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    SecondB        <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>)
+</span></span></code></pre></div><hr>
 <h2 id="why-use-iota"><strong>Why Use <code>iota</code>?</strong></h2>
 <ul>
 <li><strong>Readable Code:</strong> Avoids magic numbers (e.g., <code>Read: 1 &lt;&lt; 0</code>).</li>
@@ -217,7 +217,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
 
@@ -235,7 +235,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -103,7 +103,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Data-Structures/">Data-Structures</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Mathematics/">Mathematics</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structures/&#34;&gt;Data-Structures&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Mathematics/&#34;&gt;Mathematics&lt;/a&gt;
     </div>
   
   <h2 id="introduction">Introduction</h2>
@@ -134,25 +134,25 @@
 <p><img src="/assets/images/Prime-Numbers/sieve.png" alt="Sieve of Eratosthenes"></p>
 <h2 id="implementation">Implementation</h2>
 <p>Let&rsquo;s implement this algorithm in C++.</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> sieve(<span style="color:#b00040">int</span> n)
-{
-	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> primes(n<span style="color:#666">+</span><span style="color:#666">1</span>, <span style="color:#008000">true</span>);
-	primes[<span style="color:#666">0</span>] <span style="color:#666">=</span> primes[<span style="color:#666">1</span>] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
-
-	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
-	{
-		<span style="color:#008000;font-weight:bold">if</span> (primes[i])
-		{
-			<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> i<span style="color:#666">*</span><span style="color:#666">2</span>; j <span style="color:#666">&lt;=</span> n; j <span style="color:#666">+=</span> i)
-			{
-				primes[j] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
-			}
-		}
-	}
-
-	<span style="color:#008000;font-weight:bold">return</span> primes;
-}
-</code></pre></div><p>The above code initializes every number as a prime number. It then starts with the number 2 and marks every number that is divisible by 2 as a non-prime number. It then moves to the next unmarked number, which is 3, and marks every number that is divisible by 3 as a non-prime number. The process continues until we reach the end of the array.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> sieve(<span style="color:#b00040">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">bool</span><span style="color:#666">&gt;</span> primes(n<span style="color:#666">+</span><span style="color:#666">1</span>, <span style="color:#008000">true</span>);
+</span></span><span style="display:flex;"><span>	primes[<span style="color:#666">0</span>] <span style="color:#666">=</span> primes[<span style="color:#666">1</span>] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">2</span>; i <span style="color:#666">&lt;=</span> n; <span style="color:#666">++</span>i)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#008000;font-weight:bold">if</span> (primes[i])
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> j <span style="color:#666">=</span> i<span style="color:#666">*</span><span style="color:#666">2</span>; j <span style="color:#666">&lt;=</span> n; j <span style="color:#666">+=</span> i)
+</span></span><span style="display:flex;"><span>			{
+</span></span><span style="display:flex;"><span>				primes[j] <span style="color:#666">=</span> <span style="color:#008000">false</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">return</span> primes;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The above code initializes every number as a prime number. It then starts with the number 2 and marks every number that is divisible by 2 as a non-prime number. It then moves to the next unmarked number, which is 3, and marks every number that is divisible by 3 as a non-prime number. The process continues until we reach the end of the array.</p>
 <p>If you&rsquo;d like to see the complete code for finding prime numbers till <em>N</em>, you can find it on my <a href="https://github.com/abhiabhi0/Algo-Data-Structure/blob/master/Maths/sieve_of_eratosthenes.cpp">Github</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>In conclusion, finding all prime numbers till N is a common problem in computer science and mathematics. The optimized algorithm based on the Sieve of Eratosthenes is an efficient way to solve this problem. The time complexity of this algorithm is O(N log log N), which is much more efficient than the basic algorithm. We hope this blog post has helped you understand how to find all prime numbers till N.</p>
@@ -184,7 +184,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Algorithm/">Algorithm</a>, <a href="https://programmercave.com/tags/Data-Structures/">Data-Structures</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/Mathematics/">Mathematics</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Algorithm/&#34;&gt;Algorithm&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Data-Structures/&#34;&gt;Data-Structures&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Mathematics/&#34;&gt;Mathematics&lt;/a&gt;
     </div>
   
 
@@ -202,7 +202,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

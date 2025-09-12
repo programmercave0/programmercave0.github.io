@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -87,7 +87,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
   <h1 id="introduction">Introduction:</h1>
@@ -116,57 +116,57 @@
 <hr>
 <h1 id="converting-a-string-to-integer-in-go">Converting a String to Integer in Go</h1>
 <p>To convert a string to an integer in Go, you can utilize the <code>strconv</code> package. Here&rsquo;s an example code snippet demonstrating the conversion process for various integer types:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-	<span style="color:#ba2121">&#34;strconv&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-	numStr <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;42&#34;</span> <span style="color:#408080;font-style:italic">// Sample string representing a number
-</span><span style="color:#408080;font-style:italic"></span>
-	<span style="color:#408080;font-style:italic">// Convert to int8
-</span><span style="color:#408080;font-style:italic"></span>	numInt8, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">8</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int8:&#34;</span>, <span style="color:#008000">int8</span>(numInt8))
-
-	<span style="color:#408080;font-style:italic">// Convert to int16
-</span><span style="color:#408080;font-style:italic"></span>	numInt16, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">16</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int16:&#34;</span>, <span style="color:#008000">int16</span>(numInt16))
-
-	<span style="color:#408080;font-style:italic">// Convert to int32
-</span><span style="color:#408080;font-style:italic"></span>	numInt32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">32</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int32:&#34;</span>, <span style="color:#008000">int32</span>(numInt32))
-
-	<span style="color:#408080;font-style:italic">// Convert to int64
-</span><span style="color:#408080;font-style:italic"></span>	numInt64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int64:&#34;</span>, numInt64)
-
-	<span style="color:#408080;font-style:italic">// Convert to int (architecture-specific)
-</span><span style="color:#408080;font-style:italic"></span>	numInt, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">Atoi</span>(numStr)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int:&#34;</span>, numInt)
-
-	<span style="color:#408080;font-style:italic">// Convert to uint8
-</span><span style="color:#408080;font-style:italic"></span>	numUint8, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">8</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint8:&#34;</span>, <span style="color:#008000">uint8</span>(numUint8))
-
-	<span style="color:#408080;font-style:italic">// Convert to uint16
-</span><span style="color:#408080;font-style:italic"></span>	numUint16, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">16</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint16:&#34;</span>, <span style="color:#008000">uint16</span>(numUint16))
-
-	<span style="color:#408080;font-style:italic">// Convert to uint32
-</span><span style="color:#408080;font-style:italic"></span>	numUint32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">32</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint32:&#34;</span>, <span style="color:#008000">uint32</span>(numUint32))
-
-	<span style="color:#408080;font-style:italic">// Convert to uint64
-</span><span style="color:#408080;font-style:italic"></span>	numUint64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint64:&#34;</span>, numUint64)
-
-	<span style="color:#408080;font-style:italic">// Convert to uintptr
-</span><span style="color:#408080;font-style:italic"></span>	numUintptr, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uintptr:&#34;</span>, <span style="color:#008000">uintptr</span>(numUintptr))
-}
-</code></pre></div><p>In this code, we utilize the <code>strconv</code> package to convert the string <code>numStr</code> to different integer types. By using functions like <code>ParseInt</code> and <code>ParseUint</code>, we parse the string with a specified base (10 for decimal) and desired bit size. Then, through type casting, we convert the parsed value to the appropriate integer type.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	numStr <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;42&#34;</span> <span style="color:#408080;font-style:italic">// Sample string representing a number
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to int8
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numInt8, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">8</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int8:&#34;</span>, <span style="color:#008000">int8</span>(numInt8))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to int16
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numInt16, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">16</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int16:&#34;</span>, <span style="color:#008000">int16</span>(numInt16))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to int32
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numInt32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">32</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int32:&#34;</span>, <span style="color:#008000">int32</span>(numInt32))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to int64
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numInt64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseInt</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int64:&#34;</span>, numInt64)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to int (architecture-specific)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numInt, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">Atoi</span>(numStr)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;int:&#34;</span>, numInt)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to uint8
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numUint8, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">8</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint8:&#34;</span>, <span style="color:#008000">uint8</span>(numUint8))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to uint16
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numUint16, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">16</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint16:&#34;</span>, <span style="color:#008000">uint16</span>(numUint16))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to uint32
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numUint32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">32</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint32:&#34;</span>, <span style="color:#008000">uint32</span>(numUint32))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to uint64
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numUint64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uint64:&#34;</span>, numUint64)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to uintptr
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numUintptr, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseUint</span>(numStr, <span style="color:#666">10</span>, <span style="color:#666">64</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;uintptr:&#34;</span>, <span style="color:#008000">uintptr</span>(numUintptr))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this code, we utilize the <code>strconv</code> package to convert the string <code>numStr</code> to different integer types. By using functions like <code>ParseInt</code> and <code>ParseUint</code>, we parse the string with a specified base (10 for decimal) and desired bit size. Then, through type casting, we convert the parsed value to the appropriate integer type.</p>
 <p>Please note that this example omits error handling for brevity, but it&rsquo;s crucial to handle errors returned by the <code>strconv</code> functions in real-world scenarios.</p>
 <hr>
 <h1 id="go-floating-point-data-types">Go Floating-Point Data Types</h1>
@@ -176,29 +176,29 @@
 <li><code>float64</code>: 64-bit floating-point number, also known as double-precision float.</li>
 </ol>
 <p>By default, Go assumes the <code>float64</code> type if you declare a floating-point variable without explicitly specifying the type. For instance:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">var</span> x = <span style="color:#666">3.14</span> <span style="color:#408080;font-style:italic">// x is inferred as float64
-</span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">var</span> x = <span style="color:#666">3.14</span> <span style="color:#408080;font-style:italic">// x is inferred as float64
+</span></span></span></code></pre></div><hr>
 <h1 id="converting-a-string-to-float-in-go">Converting a String to Float in Go</h1>
 <p>To convert a string to a float in Go, you can use the <code>strconv</code> package. Here&rsquo;s an example code snippet demonstrating the process:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-
-<span style="color:#008000;font-weight:bold">import</span> (
-	<span style="color:#ba2121">&#34;fmt&#34;</span>
-	<span style="color:#ba2121">&#34;strconv&#34;</span>
-)
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-	numStr <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;3.14159&#34;</span> <span style="color:#408080;font-style:italic">// Sample string representing a floating-point number
-</span><span style="color:#408080;font-style:italic"></span>
-	<span style="color:#408080;font-style:italic">// Convert to float32
-</span><span style="color:#408080;font-style:italic"></span>	numFloat32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseFloat</span>(numStr, <span style="color:#666">32</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;float32:&#34;</span>, <span style="color:#008000">float32</span>(numFloat32))
-
-	<span style="color:#408080;font-style:italic">// Convert to float64 (default float type)
-</span><span style="color:#408080;font-style:italic"></span>	numFloat64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseFloat</span>(numStr, <span style="color:#666">64</span>)
-	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;float64:&#34;</span>, numFloat64)
-}
-</code></pre></div><p>In the above code, we use the <code>strconv</code> package&rsquo;s <code>ParseFloat</code> function to convert the string <code>numStr</code> to floating-point values. We specify the desired bit size (32 for <code>float32</code> and 64 for <code>float64</code>) and then convert the parsed value to the appropriate float type using type casting.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ba2121">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	numStr <span style="color:#666">:=</span> <span style="color:#ba2121">&#34;3.14159&#34;</span> <span style="color:#408080;font-style:italic">// Sample string representing a floating-point number
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to float32
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numFloat32, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseFloat</span>(numStr, <span style="color:#666">32</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;float32:&#34;</span>, <span style="color:#008000">float32</span>(numFloat32))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Convert to float64 (default float type)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	numFloat64, _ <span style="color:#666">:=</span> strconv.<span style="color:#00f">ParseFloat</span>(numStr, <span style="color:#666">64</span>)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;float64:&#34;</span>, numFloat64)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the above code, we use the <code>strconv</code> package&rsquo;s <code>ParseFloat</code> function to convert the string <code>numStr</code> to floating-point values. We specify the desired bit size (32 for <code>float32</code> and 64 for <code>float64</code>) and then convert the parsed value to the appropriate float type using type casting.</p>
 <p>Remember, error handling is excluded in this example for brevity, but it&rsquo;s essential to handle errors returned by <code>strconv.ParseFloat</code> in real-world applications.</p>
 <hr>
 <h1 id="conclusion">Conclusion:</h1>
@@ -213,7 +213,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
     </div>
   
 
@@ -231,7 +231,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

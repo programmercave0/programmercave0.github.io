@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -99,7 +99,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Linux/">Linux</a>, <a href="https://programmercave.com/tags/OverTheWire-Krypton/">OverTheWire-Krypton</a>, <a href="https://programmercave.com/tags/CTF/">CTF</a>, <a href="https://programmercave.com/tags/Cryptography/">Cryptography</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Linux/&#34;&gt;Linux&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/OverTheWire-Krypton/&#34;&gt;OverTheWire-Krypton&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CTF/&#34;&gt;CTF&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cryptography/&#34;&gt;Cryptography&lt;/a&gt;
     </div>
   
   <p>Learn basic cryptographic techniques by playing <a href="https://overthewire.org/wargames/krypton/">Krypton</a> wargame from OverTheWire. Below is the solution of Level 0 → Level 1, Level 1 → Level 2 and Level 2 → Level 3.</p>
@@ -111,7 +111,7 @@
 <p>Use this password to log in to krypton.labs.overthewire.org with username krypton1 using SSH on port 2222. You can find the files for other levels in /krypton/</p>
 <h3 id="solution">Solution</h3>
 <p>To get the password of the next level decode the given string using command</p>
-<pre><code>echo S1JZUFRPTklTR1JFQVQ= | base64 -d
+<pre tabindex="0"><code>echo S1JZUFRPTklTR1JFQVQ= | base64 -d
 </code></pre><p>and the password is <code>KRYPTONISGREAT</code> .</p>
 <p><img src="/assets/images/Krypton-OverTheWire/kryp_l01_terminal1.jpg" alt="Krypton OverTheWire"></p>
 <p>Reference : <a href="https://askubuntu.com/questions/178521/how-can-i-decode-a-base64-string-from-the-command-line">How can I decode a base64 string from the command line?</a></p>
@@ -123,14 +123,14 @@
 <p>The file <em>krypton2</em> is in directory <em>/krypton/krypton1</em>. First change into that directory <code>cd /krypton/krypton1</code> .</p>
 <p><img src="/assets/images/Krypton-OverTheWire/kryp_l12_terminal1.jpg" alt="Krypton OverTheWire"></p>
 <p>The password in <em>krypton2</em> file is encrypted using simple rotation. We can decrypt it like we did in <a href="/Bandit-Level-9-to-Level-12-OverTheWire">Bandit Level 11 → Level 12</a>. The command is</p>
-<pre><code>cat krypton2 | tr &quot;[a-zA-Z]&quot; &quot;[n-za-mN-ZA-M]
+<pre tabindex="0"><code>cat krypton2 | tr &#34;[a-zA-Z]&#34; &#34;[n-za-mN-ZA-M]
 </code></pre><p>and the password is <code>ROTTEN</code> .</p>
 <p><img src="/assets/images/Krypton-OverTheWire/kryp_l12_terminal2.jpg" alt="Krypton OverTheWire"></p>
 <!-- raw HTML omitted -->
 <h2 id="krypton-level-2--level-3httpsoverthewireorgwargameskryptonkrypton2html"><a href="https://overthewire.org/wargames/krypton/krypton2.html">Krypton Level 2 → Level 3</a></h2>
 <h3 id="level-info-2">Level Info</h3>
 <p>This level contains an old form of cipher called a ‘Caesar Cipher’. A Caesar cipher shifts the alphabet by a set number. For example:</p>
-<pre><code>plain:  a b c d e f g h i j k ...
+<pre tabindex="0"><code>plain:  a b c d e f g h i j k ...
 cipher: G H I J K L M N O P Q ...
 </code></pre><p>In this example, the letter ‘a’ in plaintext is replaced by a ‘G’ in the ciphertext so, for example, the plaintext ‘bad’ becomes ‘HGJ’ in ciphertext.</p>
 <p>The password for level 3 is in the file krypton3. It is in 5 letter group ciphertext. It is encrypted with a Caesar Cipher. Without any further information, this cipher text may be difficult to break. You do not have direct access to the key, however you do have access to a program that will encrypt anything you wish to give it using the key. If you think logically, this is completely easy.</p>
@@ -140,7 +140,7 @@ cipher: G H I J K L M N O P Q ...
 <p>In the directory there is encrypt binary and <em>keyfile.dat</em> which contains the key but we cannot open it.  When we execute the binary the output says that a file containing plaintext should be executed along with the binary.</p>
 <p><img src="/assets/images/Krypton-OverTheWire/kryp_l23_terminal1.jpg" alt="Krypton OverTheWire"></p>
 <p>We can create a directory <em>/tmp/programmercave</em> . This directory mush have executable permission set because we will execute the <em>encrypt</em> binary. This directory will contain a <em>plaintext</em> file with text ABCD.</p>
-<pre><code>mkdir /tmp/programmercave
+<pre tabindex="0"><code>mkdir /tmp/programmercave
 chmod 777 /tmp/programmercave
 cd /tmp/programmercave
 cat &gt; plaintext
@@ -148,11 +148,11 @@ ABCD
 ^C
 </code></pre><p><img src="/assets/images/Krypton-OverTheWire/kryp_l23_terminal2.jpg" alt="Krypton OverTheWire"></p>
 <p>We need to create symbolic link to file <em>/krypton/krypton2/keyfile.dat</em> because when encrypt is executed, key should there in that directory. This can be done using</p>
-<pre><code>ln -s /krypton/krypton2/keyfile.dat  
+<pre tabindex="0"><code>ln -s /krypton/krypton2/keyfile.dat  
 </code></pre><p><img src="/assets/images/Krypton-OverTheWire/kryp_l23_terminal3.jpg" alt="Krypton OverTheWire"></p>
 <p>The command <code>/krypton/krypton2/encrypt plaintext</code> will encrypt the text ABCD in <em>plaintext</em> using key from <em>keyfile.dat</em> to new file <em>ciphertext</em>. The file <em>ciphertext</em> contains MNOP. This means the key is converting ABCD to MNOP.</p>
 <p>Using this we can decrypt the password in <em>krypton3</em> file using <code>tr</code> program. The command is</p>
-<pre><code>cat /krypton/krypton2/krypton3 | tr &quot;[m-za-lM-ZA-L]&quot; &quot;[a-zA-Z]&quot;
+<pre tabindex="0"><code>cat /krypton/krypton2/krypton3 | tr &#34;[m-za-lM-ZA-L]&#34; &#34;[a-zA-Z]&#34;
 </code></pre><p>and the password is <code>CAESARISEASY</code> .</p>
 <p><img src="/assets/images/Krypton-OverTheWire/kryp_l23_terminal4.jpg" alt="Krypton OverTheWire"></p>
 <h3 id="next-post">Next Post</h3>
@@ -179,7 +179,7 @@ ABCD
         
         
       
-      <a href="https://programmercave.com/tags/Linux/">Linux</a>, <a href="https://programmercave.com/tags/OverTheWire-Krypton/">OverTheWire-Krypton</a>, <a href="https://programmercave.com/tags/CTF/">CTF</a>, <a href="https://programmercave.com/tags/Cryptography/">Cryptography</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Linux/&#34;&gt;Linux&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/OverTheWire-Krypton/&#34;&gt;OverTheWire-Krypton&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CTF/&#34;&gt;CTF&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cryptography/&#34;&gt;Cryptography&lt;/a&gt;
     </div>
   
 
@@ -197,7 +197,7 @@ ABCD
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

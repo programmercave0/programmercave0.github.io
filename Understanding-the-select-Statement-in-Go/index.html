@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <p>If you&rsquo;re preparing for a software engineering interview and are new to Go (Golang), understanding the <code>select</code> statement is crucial. It&rsquo;s a powerful tool for managing concurrency, especially when working with channels. This blog will explain everything you need to know about the <code>select</code> statement, including its syntax, how it works, and practical examples.</p>
@@ -115,17 +115,17 @@
 </ul>
 <h2 id="syntax-of-the-select-statement">Syntax of the <code>select</code> Statement</h2>
 <p>Here’s the basic structure of the <code>select</code> statement:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">select</span> {
-<span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>channel1:
-   <span style="color:#408080;font-style:italic">// Code for receiving data from channel1
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">case</span> data <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channel2:
-   <span style="color:#408080;font-style:italic">// Code for receiving data from channel2
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">case</span> channel3 <span style="color:#666">&lt;-</span> value:
-   <span style="color:#408080;font-style:italic">// Code for sending data to channel3
-</span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">default</span>:
-   <span style="color:#408080;font-style:italic">// Code for non-blocking fallback
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><h3 id="key-components">Key Components:</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>channel1:
+</span></span><span style="display:flex;"><span>   <span style="color:#408080;font-style:italic">// Code for receiving data from channel1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">case</span> data <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channel2:
+</span></span><span style="display:flex;"><span>   <span style="color:#408080;font-style:italic">// Code for receiving data from channel2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">case</span> channel3 <span style="color:#666">&lt;-</span> value:
+</span></span><span style="display:flex;"><span>   <span style="color:#408080;font-style:italic">// Code for sending data to channel3
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#408080;font-style:italic">// Code for non-blocking fallback
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><h3 id="key-components">Key Components:</h3>
 <ul>
 <li><strong><code>select</code>:</strong> Starts the block where multiple channel operations are evaluated.</li>
 <li><strong><code>case &lt;-channel</code>:</strong> Waits for data to be received from a channel.</li>
@@ -137,59 +137,59 @@
 <h3 id="blocking-operations">Blocking Operations</h3>
 <p>In Go, channel operations can block until another goroutine is ready to communicate. For example:</p>
 <h4 id="example-of-blocking-receive">Example of Blocking Receive:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">12</span> }()
-   integerValue <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch
-   fmt.<span style="color:#00f">Println</span>(integerValue) <span style="color:#408080;font-style:italic">// Output: 12
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">12</span> }()
+</span></span><span style="display:flex;"><span>   integerValue <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch
+</span></span><span style="display:flex;"><span>   fmt.<span style="color:#00f">Println</span>(integerValue) <span style="color:#408080;font-style:italic">// Output: 12
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><ul>
 <li>The <code>&lt;-ch</code> operation blocks until another goroutine sends a value to <code>ch</code>.</li>
 </ul>
 <h4 id="example-of-blocking-send">Example of Blocking Send:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) }()
-   ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span>
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) }()
+</span></span><span style="display:flex;"><span>   ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>The <code>ch &lt;- 42</code> operation blocks until another goroutine is ready to receive the value.</li>
 </ul>
 <h3 id="non-blocking-operations">Non-Blocking Operations</h3>
 <p>To prevent blocking, you can use the <code>default</code> case in a <code>select</code> statement.</p>
 <h4 id="example-of-non-blocking-receive">Example of Non-Blocking Receive:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span> }()
-   <span style="color:#008000;font-weight:bold">select</span> {
-   <span style="color:#008000;font-weight:bold">case</span> value <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch:
-       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Value received:&#34;</span>, value)
-   <span style="color:#008000;font-weight:bold">default</span>:
-       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;No value received&#34;</span>)
-   }
-}
-<span style="color:#408080;font-style:italic">// Output: No value received
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>   ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() { ch <span style="color:#666">&lt;-</span> <span style="color:#666">42</span> }()
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">case</span> value <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch:
+</span></span><span style="display:flex;"><span>       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Value received:&#34;</span>, value)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;No value received&#34;</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Output: No value received
+</span></span></span></code></pre></div><ul>
 <li>If no value is available on <code>ch</code>, the <code>default</code> case executes immediately.</li>
 </ul>
 <h2 id="timeouts-in-select">Timeouts in <code>select</code></h2>
 <p>Timeouts are essential for preventing your program from waiting indefinitely for a channel operation. You can use the <code>time.After()</code> function to implement timeouts.</p>
 <h4 id="example-of-timeout-handling">Example of Timeout Handling:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-   taskChannel <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>, <span style="color:#666">1</span>)
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
-       taskChannel <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Task completed&#34;</span>
-   }()
-   <span style="color:#008000;font-weight:bold">select</span> {
-   <span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>taskChannel:
-       fmt.<span style="color:#00f">Println</span>(msg)
-   <span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>time.<span style="color:#00f">After</span>(<span style="color:#666">1</span> <span style="color:#666">*</span> time.Second):
-       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Timeout: Task took too long&#34;</span>)
-   }
-}
-<span style="color:#408080;font-style:italic">// Output: Timeout: Task took too long
-</span></code></pre></div><h3 id="how-it-works">How It Works:</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>   taskChannel <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>, <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
+</span></span><span style="display:flex;"><span>       taskChannel <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Task completed&#34;</span>
+</span></span><span style="display:flex;"><span>   }()
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>taskChannel:
+</span></span><span style="display:flex;"><span>       fmt.<span style="color:#00f">Println</span>(msg)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>time.<span style="color:#00f">After</span>(<span style="color:#666">1</span> <span style="color:#666">*</span> time.Second):
+</span></span><span style="display:flex;"><span>       fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Timeout: Task took too long&#34;</span>)
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Output: Timeout: Task took too long
+</span></span></span></code></pre></div><h3 id="how-it-works">How It Works:</h3>
 <ul>
 <li><code>time.After(d)</code> returns a channel that sends the current time after duration <code>d</code>.</li>
 <li>If the channel operation takes longer than the timeout, the timeout case executes.</li>
@@ -197,32 +197,32 @@
 <h2 id="default-case-in-select">Default Case in <code>select</code></h2>
 <p>The <code>default</code> case ensures that your program doesn’t block when no channels are ready. It’s particularly useful for implementing non-blocking patterns.</p>
 <h4 id="example-of-default-case">Example of Default Case:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-   channelOne <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-   channelTwo <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
-       channelOne <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channelOne&#34;</span>
-   }()
-   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">1</span> <span style="color:#666">*</span> time.Second)
-       channelTwo <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channelTwo&#34;</span>
-   }()
-   <span style="color:#008000;font-weight:bold">for</span> {
-       <span style="color:#008000;font-weight:bold">select</span> {
-       <span style="color:#008000;font-weight:bold">case</span> messageOne <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channelOne:
-           fmt.<span style="color:#00f">Println</span>(messageOne)
-           <span style="color:#008000;font-weight:bold">return</span>
-       <span style="color:#008000;font-weight:bold">case</span> messageTwo <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channelTwo:
-           fmt.<span style="color:#00f">Println</span>(messageTwo)
-           <span style="color:#008000;font-weight:bold">return</span>
-       <span style="color:#008000;font-weight:bold">default</span>:
-           fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Waiting for the messages...&#34;</span>)
-           time.<span style="color:#00f">Sleep</span>(<span style="color:#666">500</span> <span style="color:#666">*</span> time.Millisecond)
-       }
-   }
-}
-</code></pre></div><h3 id="behavior">Behavior:</h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>   channelOne <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>   channelTwo <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
+</span></span><span style="display:flex;"><span>       channelOne <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channelOne&#34;</span>
+</span></span><span style="display:flex;"><span>   }()
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>       time.<span style="color:#00f">Sleep</span>(<span style="color:#666">1</span> <span style="color:#666">*</span> time.Second)
+</span></span><span style="display:flex;"><span>       channelTwo <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channelTwo&#34;</span>
+</span></span><span style="display:flex;"><span>   }()
+</span></span><span style="display:flex;"><span>   <span style="color:#008000;font-weight:bold">for</span> {
+</span></span><span style="display:flex;"><span>       <span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>       <span style="color:#008000;font-weight:bold">case</span> messageOne <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channelOne:
+</span></span><span style="display:flex;"><span>           fmt.<span style="color:#00f">Println</span>(messageOne)
+</span></span><span style="display:flex;"><span>           <span style="color:#008000;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#008000;font-weight:bold">case</span> messageTwo <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>channelTwo:
+</span></span><span style="display:flex;"><span>           fmt.<span style="color:#00f">Println</span>(messageTwo)
+</span></span><span style="display:flex;"><span>           <span style="color:#008000;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#008000;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>           fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Waiting for the messages...&#34;</span>)
+</span></span><span style="display:flex;"><span>           time.<span style="color:#00f">Sleep</span>(<span style="color:#666">500</span> <span style="color:#666">*</span> time.Millisecond)
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="behavior">Behavior:</h3>
 <ul>
 <li>Prints &ldquo;Waiting for the messages&hellip;&rdquo; repeatedly until one of the channels sends data.</li>
 <li>Once data is received, it processes the message and exits.</li>
@@ -274,7 +274,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -292,7 +292,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

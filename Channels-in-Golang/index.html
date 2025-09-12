@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
   <p>Go&rsquo;s concurrency model is one of its standout features, and <strong>channels</strong> are at the heart of it. Channels allow <strong>goroutines</strong> (lightweight threads) to communicate and synchronize their execution. In this guide, we&rsquo;ll explore channels in detail, including their types, operations, use cases, and internal workings.</p>
@@ -110,9 +110,9 @@
 <ul>
 <li><strong>Syntax</strong>: <code>chan T</code> (where <code>T</code> is the type of data the channel will carry, e.g., <code>chan int</code> for integers).</li>
 <li><strong>Creation</strong>: Channels are created using the <code>make</code> function:
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Unbuffered channel
-</span><span style="color:#408080;font-style:italic"></span>ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">5</span>) <span style="color:#408080;font-style:italic">// Buffered channel with capacity 5
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>) <span style="color:#408080;font-style:italic">// Unbuffered channel
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">5</span>) <span style="color:#408080;font-style:italic">// Buffered channel with capacity 5
+</span></span></span></code></pre></div></li>
 </ul>
 <h3 id="key-characteristics"><strong>Key Characteristics</strong></h3>
 <ul>
@@ -131,20 +131,20 @@
 </li>
 </ul>
 <h4 id="example">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-<span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>) <span style="color:#408080;font-style:italic">// Unbuffered channel
-</span><span style="color:#408080;font-style:italic"></span>
-    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-        ch <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Hello from goroutine!&#34;</span> <span style="color:#408080;font-style:italic">// Send blocks until someone receives
-</span><span style="color:#408080;font-style:italic"></span>    }()
-
-    msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch <span style="color:#408080;font-style:italic">// Receive blocks until someone sends
-</span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(msg)
-}
-</code></pre></div><h3 id="2-buffered-channels"><strong>2. Buffered Channels</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>) <span style="color:#408080;font-style:italic">// Unbuffered channel
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>        ch <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Hello from goroutine!&#34;</span> <span style="color:#408080;font-style:italic">// Send blocks until someone receives
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    }()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch <span style="color:#408080;font-style:italic">// Receive blocks until someone sends
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(msg)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-buffered-channels"><strong>2. Buffered Channels</strong></h3>
 <p>A <strong>buffered channel</strong> has a predefined capacity to hold values. It allows the sender to proceed without waiting for an immediate receiver, as long as the buffer isn&rsquo;t full.</p>
 <ul>
 <li><strong>Behavior</strong>:
@@ -155,145 +155,145 @@
 </li>
 </ul>
 <h4 id="example-1">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-<span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">2</span>) <span style="color:#408080;font-style:italic">// Buffered channel with capacity 2
-</span><span style="color:#408080;font-style:italic"></span>
-    ch <span style="color:#666">&lt;-</span> <span style="color:#666">10</span> <span style="color:#408080;font-style:italic">// Add to buffer
-</span><span style="color:#408080;font-style:italic"></span>    ch <span style="color:#666">&lt;-</span> <span style="color:#666">20</span> <span style="color:#408080;font-style:italic">// Add to buffer
-</span><span style="color:#408080;font-style:italic"></span>
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// Retrieve from buffer: 10
-</span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// Retrieve from buffer: 20
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><h2 id="channel-operations"><strong>Channel Operations</strong></h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">2</span>) <span style="color:#408080;font-style:italic">// Buffered channel with capacity 2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">&lt;-</span> <span style="color:#666">10</span> <span style="color:#408080;font-style:italic">// Add to buffer
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    ch <span style="color:#666">&lt;-</span> <span style="color:#666">20</span> <span style="color:#408080;font-style:italic">// Add to buffer
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// Retrieve from buffer: 10
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// Retrieve from buffer: 20
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="channel-operations"><strong>Channel Operations</strong></h2>
 <h3 id="1-sending-data"><strong>1. Sending Data</strong></h3>
 <p>To send data into a channel, use the <code>&lt;-</code> operator:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch <span style="color:#666">&lt;-</span> value
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>ch <span style="color:#666">&lt;-</span> value
+</span></span></code></pre></div><ul>
 <li>Blocks if the channel is unbuffered or if the buffer is full.</li>
 </ul>
 <h3 id="2-receiving-data"><strong>2. Receiving Data</strong></h3>
 <p>To receive data from a channel, use the <code>&lt;-</code> operator:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">value <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>value <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch
+</span></span></code></pre></div><ul>
 <li>Blocks if the channel is empty.</li>
 </ul>
 <h3 id="3-closing-a-channel"><strong>3. Closing a Channel</strong></h3>
 <p>Closing a channel signals that no more values will be sent:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000">close</span>(ch)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000">close</span>(ch)
+</span></span></code></pre></div><ul>
 <li>Attempting to send on a closed channel causes a panic.</li>
 <li>Receiving from a closed channel returns the zero value of the channel&rsquo;s type.</li>
 </ul>
 <h4 id="example-2">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">package</span> main
-<span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">3</span>)
-
-    ch <span style="color:#666">&lt;-</span> <span style="color:#666">1</span>
-    ch <span style="color:#666">&lt;-</span> <span style="color:#666">2</span>
-    <span style="color:#008000">close</span>(ch)
-
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 1
-</span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 2
-</span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 0 (zero value, channel is closed)
-</span><span style="color:#408080;font-style:italic"></span>}
-</code></pre></div><h2 id="unidirectional-channels"><strong>Unidirectional Channels</strong></h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, <span style="color:#666">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">&lt;-</span> <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">&lt;-</span> <span style="color:#666">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">close</span>(ch)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#666">&lt;-</span>ch) <span style="color:#408080;font-style:italic">// 0 (zero value, channel is closed)
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="unidirectional-channels"><strong>Unidirectional Channels</strong></h2>
 <p>Go supports <strong>unidirectional channels</strong>, which restrict the direction of data flow:</p>
 <ul>
 <li><strong>Send-only</strong>: <code>chan&lt;- T</code></li>
 <li><strong>Receive-only</strong>: <code>&lt;-chan T</code></li>
 </ul>
 <h4 id="example-3">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">producer</span>(out <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>) {
-    <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">5</span>; i<span style="color:#666">++</span> {
-        out <span style="color:#666">&lt;-</span> i
-    }
-    <span style="color:#008000">close</span>(out)
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">consumer</span>(in <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>) {
-    <span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> in {
-        fmt.<span style="color:#00f">Println</span>(val)
-    }
-}
-
-<span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
-    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
-    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">producer</span>(ch)
-    <span style="color:#00f">consumer</span>(ch)
-}
-</code></pre></div><h2 id="use-cases-of-channels"><strong>Use Cases of Channels</strong></h2>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">producer</span>(out <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">5</span>; i<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>        out <span style="color:#666">&lt;-</span> i
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">close</span>(out)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">consumer</span>(in <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> in {
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#00f">Println</span>(val)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>    ch <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">go</span> <span style="color:#00f">producer</span>(ch)
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">consumer</span>(ch)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="use-cases-of-channels"><strong>Use Cases of Channels</strong></h2>
 <h3 id="1-synchronization"><strong>1. Synchronization</strong></h3>
 <p>Channels ensure that goroutines wait for each other at specific points.</p>
 <h4 id="example-4">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">done <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">bool</span>)
-
-<span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Work done!&#34;</span>)
-    done <span style="color:#666">&lt;-</span> <span style="color:#008000;font-weight:bold">true</span>
-}()
-
-<span style="color:#666">&lt;-</span>done <span style="color:#408080;font-style:italic">// Wait for the signal
-</span></code></pre></div><h3 id="2-data-transfer"><strong>2. Data Transfer</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>done <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">bool</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Work done!&#34;</span>)
+</span></span><span style="display:flex;"><span>    done <span style="color:#666">&lt;-</span> <span style="color:#008000;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">&lt;-</span>done <span style="color:#408080;font-style:italic">// Wait for the signal
+</span></span></span></code></pre></div><h3 id="2-data-transfer"><strong>2. Data Transfer</strong></h3>
 <p>Channels safely pass data between goroutines.</p>
 <h3 id="3-pipelines"><strong>3. Pipelines</strong></h3>
 <p>Connect multiple goroutines where the output of one serves as the input to another.</p>
 <h4 id="example-5">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">multiplyByTwo</span>(in <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, out <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>) {
-    <span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> in {
-        out <span style="color:#666">&lt;-</span> val <span style="color:#666">*</span> <span style="color:#666">2</span>
-    }
-    <span style="color:#008000">close</span>(out)
-}
-</code></pre></div><h3 id="4-concurrency-control"><strong>4. Concurrency Control</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">multiplyByTwo</span>(in <span style="color:#666">&lt;-</span><span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">int</span>, out <span style="color:#008000;font-weight:bold">chan</span><span style="color:#666">&lt;-</span> <span style="color:#b00040">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> val <span style="color:#666">:=</span> <span style="color:#008000;font-weight:bold">range</span> in {
+</span></span><span style="display:flex;"><span>        out <span style="color:#666">&lt;-</span> val <span style="color:#666">*</span> <span style="color:#666">2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#008000">close</span>(out)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-concurrency-control"><strong>4. Concurrency Control</strong></h3>
 <p>Limit the number of active goroutines.</p>
 <h3 id="5-cancellation"><strong>5. Cancellation</strong></h3>
 <p>Signal goroutines to stop their work.</p>
 <h4 id="example-6">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">stop <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">bool</span>)
-
-<span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-    <span style="color:#008000;font-weight:bold">for</span> {
-        <span style="color:#008000;font-weight:bold">select</span> {
-        <span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>stop:
-            fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Stopping...&#34;</span>)
-            <span style="color:#008000;font-weight:bold">return</span>
-        <span style="color:#008000;font-weight:bold">default</span>:
-            fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Working...&#34;</span>)
-        }
-    }
-}()
-
-time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
-stop <span style="color:#666">&lt;-</span> <span style="color:#008000;font-weight:bold">true</span>
-</code></pre></div><h3 id="6-multiplexing"><strong>6. Multiplexing</strong></h3>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>stop <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">bool</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">for</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">case</span> <span style="color:#666">&lt;-</span>stop:
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Stopping...&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#008000;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Working...&#34;</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
+</span></span><span style="display:flex;"><span>stop <span style="color:#666">&lt;-</span> <span style="color:#008000;font-weight:bold">true</span>
+</span></span></code></pre></div><h3 id="6-multiplexing"><strong>6. Multiplexing</strong></h3>
 <p>Listen to multiple channels simultaneously using the <code>select</code> statement.</p>
 <h4 id="example-7">Example:</h4>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
-
-<span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-    time.<span style="color:#00f">Sleep</span>(time.Second)
-    ch1 <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channel 1&#34;</span>
-}()
-
-<span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
-    time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
-    ch2 <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channel 2&#34;</span>
-}()
-
-<span style="color:#008000;font-weight:bold">select</span> {
-<span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch1:
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received:&#34;</span>, msg)
-<span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch2:
-    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received:&#34;</span>, msg)
-}
-</code></pre></div><p><a href="/Understanding-the-select-Statement-in-Go/">Understanding the select Statement in Go</a></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>ch1 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<span style="color:#008000;font-weight:bold">chan</span> <span style="color:#b00040">string</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    time.<span style="color:#00f">Sleep</span>(time.Second)
+</span></span><span style="display:flex;"><span>    ch1 <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channel 1&#34;</span>
+</span></span><span style="display:flex;"><span>}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">go</span> <span style="color:#008000;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    time.<span style="color:#00f">Sleep</span>(<span style="color:#666">2</span> <span style="color:#666">*</span> time.Second)
+</span></span><span style="display:flex;"><span>    ch2 <span style="color:#666">&lt;-</span> <span style="color:#ba2121">&#34;Message from channel 2&#34;</span>
+</span></span><span style="display:flex;"><span>}()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch1:
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received:&#34;</span>, msg)
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">case</span> msg <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>ch2:
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Received:&#34;</span>, msg)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="/Understanding-the-select-Statement-in-Go/">Understanding the select Statement in Go</a></p>
 <h2 id="memory-internals-of-channels"><strong>Memory Internals of Channels</strong></h2>
 <ul>
 <li>
@@ -326,7 +326,7 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
         
         
       
-      <a href="https://programmercave.com/tags/Go/">Go</a>, <a href="https://programmercave.com/tags/Interview-Questions/">Interview-Questions</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Interview-Questions/&#34;&gt;Interview-Questions&lt;/a&gt;
     </div>
   
 
@@ -344,7 +344,7 @@ ch2 <span style="color:#666">:=</span> <span style="color:#008000">make</span>(<
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

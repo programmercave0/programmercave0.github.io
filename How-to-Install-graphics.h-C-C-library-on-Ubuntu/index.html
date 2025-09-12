@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -103,7 +103,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Graphics/">Graphics</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Ubuntu/">Ubuntu</a>, <a href="https://programmercave.com/tags/Linux/">Linux</a>, <a href="https://programmercave.com/tags/HowTo/">HowTo</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Graphics/&#34;&gt;Graphics&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Ubuntu/&#34;&gt;Ubuntu&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Linux/&#34;&gt;Linux&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/HowTo/&#34;&gt;HowTo&lt;/a&gt;
     </div>
   
   <p>In this post we are going to install <code>graphics.h</code> library on Ubuntu and to use it with <code>gcc</code> or <code>g++</code> compiler. <code>graphics.h</code> provides access to a simple graphics library that makes it possible to draw lines, rectangles, ovals, arcs, polygons, images, and strings on a graphical window. To know about functions in <code>graphic.h</code> library in C/C++ visit <a href="https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1126/materials/cppdoc/graphics.html">here</a>.</p>
@@ -111,24 +111,24 @@
 <ol>
 <li>
 <p>First we need to add the <em>Universe</em> repository because some packages are not available in main repository.</p>
-<pre><code>sudo add-apt-repository universe
+<pre tabindex="0"><code>sudo add-apt-repository universe
 sudo apt-get update
 </code></pre></li>
 <li>
 <p>Now we will install build-essential and some additional packages.<!-- raw HTML omitted -->
 <strong>For versions prior to 18.4</strong></p>
-<pre><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 \
+<pre tabindex="0"><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 \
 guile-1.8-dev libsdl1.2debian libart-2.0-dev libaudiofile-dev \
 libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev \
 libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev \
 libslang2-dev libasound2 libasound2-dev build-essential
 </code></pre><p><strong>For 18.04</strong> we need to add repositories of <code>xenial</code> in <code>sources.list</code>.</p>
-<pre><code>sudo nano /etc/apt/sources.list
+<pre tabindex="0"><code>sudo nano /etc/apt/sources.list
 </code></pre><p>Now add these lines</p>
-<pre><code>deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
+<pre tabindex="0"><code>deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 </code></pre><p>Run <code>sudo apt-get update</code> and then install packages using</p>
-<pre><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-2.0 \
+<pre tabindex="0"><code>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-2.0 \
 guile-2.0-dev libsdl1.2debian libart-2.0-dev libaudiofile-dev \
 libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev \
 libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev \
@@ -140,7 +140,7 @@ libslang2-dev libasound2 libasound2-dev
 </li>
 <li>
 <p>Go to the extracted folder and run following commands.</p>
-<pre><code>./configure
+<pre tabindex="0"><code>./configure
 make
 sudo make install
 sudo cp /usr/local/lib/libgraph.* /usr/lib
@@ -177,7 +177,7 @@ initgraph(&amp;gd, &amp;gm, NULL);
         
         
       
-      <a href="https://programmercave.com/tags/Graphics/">Graphics</a>, <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Ubuntu/">Ubuntu</a>, <a href="https://programmercave.com/tags/Linux/">Linux</a>, <a href="https://programmercave.com/tags/HowTo/">HowTo</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Graphics/&#34;&gt;Graphics&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Ubuntu/&#34;&gt;Ubuntu&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Linux/&#34;&gt;Linux&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/HowTo/&#34;&gt;HowTo&lt;/a&gt;
     </div>
   
 
@@ -195,7 +195,7 @@ initgraph(&amp;gd, &amp;gm, NULL);
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

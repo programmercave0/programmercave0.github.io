@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -91,7 +91,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
   <h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
@@ -105,11 +105,11 @@
 <li>All the subclasses of <code>Bird</code> have to implement this method. A penguin cannot fly, yet we have added a <code>fly()</code> method to the <code>Penguin</code> class.</li>
 <li>In the above methods, we are trying to force a contract on a class which does not follow it.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#666">&lt;</span>Bird<span style="color:#666">&gt;</span> birds <span style="color:#666">=</span> List<span style="color:#666">.</span><span style="color:#7d9029">of</span><span style="color:#666">(</span><span style="color:#008000;font-weight:bold">new</span> Eagle<span style="color:#666">(),</span> <span style="color:#008000;font-weight:bold">new</span> Penguin<span style="color:#666">(),</span> <span style="color:#008000;font-weight:bold">new</span> Parrot<span style="color:#666">());</span>
-<span style="color:#008000;font-weight:bold">for</span> <span style="color:#666">(</span>Bird bird <span style="color:#666">:</span> birds<span style="color:#666">)</span> <span style="color:#666">{</span>
-    bird<span style="color:#666">.</span><span style="color:#7d9029">fly</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>Bird<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>birds<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>List.<span style="color:#7d9029">of</span>(<span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>Eagle(),<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>Penguin(),<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>Parrot());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">for</span><span style="color:#bbb"> </span>(Bird<span style="color:#bbb"> </span>bird<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>birds)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>bird.<span style="color:#7d9029">fly</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>This is a violation of the Liskov Substitution Principle.</li>
 <li>if we have a <code>Bird</code> object, we should be able to replace it with an instance of its subclasses without altering the correctness of the program.</li>
 <li>In our case, we cannot replace a <code>Bird</code> object with a <code>Penguin</code> object because the <code>Penguin</code> object requires special handling.</li>
@@ -150,11 +150,11 @@
 <li>If we have a fat interface, we will have to implement all the methods in the interface even if we don’t use them.</li>
 <li>Let us take the example of our <code>Bird</code> class. To not tie the behaviour to the class hierarchy, we created an interface <code>Flyable</code> and implemented it in the <code>Eagle</code> and <code>Parrot</code> classes.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Flyable</span> <span style="color:#666">{</span>
-    <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">();</span>
-    <span style="color:#b00040">void</span> <span style="color:#00f">makeSound</span><span style="color:#666">();</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">Flyable</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">makeSound</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>Along with the <code>fly()</code> method, we also have the <code>makeSound()</code> method in the <code>Flyable</code> interface. This is because the <code>Eagle</code> and <code>Parrot</code> classes both make sounds when they fly.</li>
 <li>But what if we have a class that implements the <code>Flyable</code> interface? The class does not make a sound when it flies.</li>
 <li>This is a violation of the interface segregation principle. We should not have the <code>makeSound()</code> method in the <code>Flyable</code> interface.</li>
@@ -167,63 +167,63 @@
 <li>To achieve that, you need to introduce an abstraction that decouples the high-level and low-level modules from each other.</li>
 <li>Our <code>Bird</code> class looks pretty neat now. We have separated the behaviour into different lean interfaces which are implemented by the classes that need them. When we add new sub-classes we identify an issue. For birds that have the same behaviour, we have to implement the same behaviour multiple times.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span> <span style="color:#008000;font-weight:bold">implements</span> Flyable <span style="color:#666">{</span>
-    <span style="color:#a2f">@Override</span>
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-        System<span style="color:#666">.</span><span style="color:#7d9029">out</span><span style="color:#666">.</span><span style="color:#7d9029">println</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;Eagle is gliding&#34;</span><span style="color:#666">);</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
-
-<span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Sparrow</span> <span style="color:#008000;font-weight:bold">implements</span> Flyable <span style="color:#666">{</span>
-    <span style="color:#a2f">@Override</span>
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-        System<span style="color:#666">.</span><span style="color:#7d9029">out</span><span style="color:#666">.</span><span style="color:#7d9029">println</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;Sparrow is gliding&#34;</span><span style="color:#666">);</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>Flyable<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#7d9029">out</span>.<span style="color:#7d9029">println</span>(<span style="color:#ba2121">&#34;Eagle is gliding&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Sparrow</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>Flyable<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#7d9029">out</span>.<span style="color:#7d9029">println</span>(<span style="color:#ba2121">&#34;Sparrow is gliding&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>The above can be solved by adding a default method to the <code>Flyable</code> interface. This way, we can avoid code duplication. But which method should be the default implementation? What if in future we add more birds that have the same behaviour? We will have to change the default implementation or either duplicate the code.</li>
 <li>Instead of default implementations, let us abstract the common behaviours to a separate helper classes. We will create a <code>GlidingBehaviour</code> class and a <code>FlappingBehaviour</code> class. The <code>Eagle</code> and <code>Sparrow</code> classes will implement the <code>Flyable</code> interface and use the <code>GlidingBehaviour</code> class. The <code>Parrot</code> class will implement the <code>Flyable</code> interface and use the <code>FlappingBehaviour</code> class.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#008000;font-weight:bold">public</span> <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span> <span style="color:#008000;font-weight:bold">implements</span> Flyable <span style="color:#666">{</span>
-    <span style="color:#008000;font-weight:bold">private</span> GlidingBehaviour glidingBehaviour<span style="color:#666">;</span>
-
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">Eagle</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">glidingBehaviour</span> <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> GlidingBehaviour<span style="color:#666">();</span>
-    <span style="color:#666">}</span>
-
-    <span style="color:#a2f">@Override</span>
-    <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-        glidingBehaviour<span style="color:#666">.</span><span style="color:#7d9029">fly</span><span style="color:#666">();</span>
-    <span style="color:#666">}</span>
-<span style="color:#666">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>Flyable<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>GlidingBehaviour<span style="color:#bbb"> </span>glidingBehaviour;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00f">Eagle</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">glidingBehaviour</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>GlidingBehaviour();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>glidingBehaviour.<span style="color:#7d9029">fly</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
 <li>Now we have a problem. The <code>Eagle</code> class is tightly coupled to the <code>GlidingBehaviour</code> class. If we want to change the behaviour of the <code>Eagle</code> class, we will have to open the Eagle class to change the behaviour. This is a violation of the dependency inversion principle. We should not depend on concrete classes. We should depend on abstractions.</li>
 <li>Naturally, we rely on interfaces as the abstraction. We create a new interface <code>FlyingBehaviour</code> and implement it in the <code>GlidingBehaviour</code> and <code>FlappingBehaviour</code> classes. The <code>Eagle</code> class will now depend on the <code>FlyingBehaviour</code> interface.</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">FlyingBehaviour</span><span style="color:#666">{</span>
-        <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span>
-    <span style="color:#666">}</span>
-    <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">GlidingBehaviour</span> <span style="color:#008000;font-weight:bold">implements</span> FlyingBehaviour<span style="color:#666">{</span>
-        <span style="color:#a2f">@Override</span>
-        <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-            System<span style="color:#666">.</span><span style="color:#7d9029">out</span><span style="color:#666">.</span><span style="color:#7d9029">println</span><span style="color:#666">(</span><span style="color:#ba2121">&#34;Eagle is gliding&#34;</span><span style="color:#666">);</span>
-        <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
-    <span style="color:#666">...</span>
-
-    <span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span> <span style="color:#008000;font-weight:bold">implements</span> Flyable <span style="color:#666">{</span>
-        <span style="color:#008000;font-weight:bold">private</span> FlyingBehaviour flyingBehaviour<span style="color:#666">;</span>
-
-        <span style="color:#008000;font-weight:bold">public</span> <span style="color:#00f">Eagle</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-            <span style="color:#008000;font-weight:bold">this</span><span style="color:#666">.</span><span style="color:#7d9029">flyingBehaviour</span> <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> GlidingBehaviour<span style="color:#666">();</span>
-        <span style="color:#666">}</span>
-
-        <span style="color:#a2f">@Override</span>
-        <span style="color:#008000;font-weight:bold">public</span> <span style="color:#b00040">void</span> <span style="color:#00f">fly</span><span style="color:#666">()</span> <span style="color:#666">{</span>
-            flyingBehaviour<span style="color:#666">.</span><span style="color:#7d9029">fly</span><span style="color:#666">();</span>
-        <span style="color:#666">}</span>
-    <span style="color:#666">}</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">interface</span> <span style="color:#00f;font-weight:bold">FlyingBehaviour</span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">GlidingBehaviour</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>FlyingBehaviour{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#7d9029">out</span>.<span style="color:#7d9029">println</span>(<span style="color:#ba2121">&#34;Eagle is gliding&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">class</span> <span style="color:#00f;font-weight:bold">Eagle</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">implements</span><span style="color:#bbb"> </span>Flyable<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">private</span><span style="color:#bbb"> </span>FlyingBehaviour<span style="color:#bbb"> </span>flyingBehaviour;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#00f">Eagle</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#008000;font-weight:bold">this</span>.<span style="color:#7d9029">flyingBehaviour</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">new</span><span style="color:#bbb"> </span>GlidingBehaviour();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#a2f">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#008000;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#b00040">void</span><span style="color:#bbb"> </span><span style="color:#00f">fly</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>flyingBehaviour.<span style="color:#7d9029">fly</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><blockquote>
 <p>These are my notes from the Low-Level Design (LLD) course I took at Scaler.</p>
 </blockquote>
 <blockquote>
@@ -243,7 +243,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/System-Design/">System-Design</a>, <a href="https://programmercave.com/tags/Software-Engineering/">Software-Engineering</a>
+      &lt;a href=&#34;https://programmercave.com/tags/System-Design/&#34;&gt;System-Design&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Software-Engineering/&#34;&gt;Software-Engineering&lt;/a&gt;
     </div>
   
 
@@ -261,7 +261,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

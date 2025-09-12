@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -95,7 +95,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/PostgreSQL/">PostgreSQL</a>, <a href="https://programmercave.com/tags/SQL/">SQL</a>, <a href="https://programmercave.com/tags/DataBase/">DataBase</a>
+      &lt;a href=&#34;https://programmercave.com/tags/PostgreSQL/&#34;&gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/SQL/&#34;&gt;SQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/DataBase/&#34;&gt;DataBase&lt;/a&gt;
     </div>
   
   <h2 id="introduction">Introduction</h2>
@@ -104,7 +104,7 @@
 <h2 id="understanding-the-original-table-structure">Understanding the Original Table Structure</h2>
 <p>Let&rsquo;s begin by examining the original table described in the prompt. This table captures the login activity of individuals on a social media platform, and each entry represents a login event for a specific person, including the timestamp of the login. The initial schema of this table is as follows:</p>
 <h3 id="original-schema">Original Schema</h3>
-<pre><code>| id | person_id |     login_timestamp     |
+<pre tabindex="0"><code>| id | person_id |     login_timestamp     |
 |----|-----------|-------------------------|
 | 1  | 101       | 2023-08-08 09:30:00 UTC |
 | 2  | 101       | 2023-08-08 15:45:00 UTC |
@@ -124,7 +124,7 @@
 <h3 id="1-summarization-for-analytics">1. <strong>Summarization for Analytics</strong></h3>
 <p>By altering the schema, we can transition from tracking individual login events to a more concise representation of daily login activity. The updated schema will count the total logins for each day:</p>
 <h3 id="updated-schema">Updated Schema</h3>
-<pre><code>| id | person_id |  login_date  | total_logins |
+<pre tabindex="0"><code>| id | person_id |  login_date  | total_logins |
 |----|-----------|--------------|--------------|
 | 1  | 101       | 2023-08-08   | 2            |
 | 2  | 102       | 2023-08-08   | 1            |
@@ -141,30 +141,30 @@
 <ol>
 <li><strong>Create a Temporary Table for Aggregated Data</strong></li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">CREATE</span> <span style="color:#008000;font-weight:bold">TEMPORARY</span> <span style="color:#008000;font-weight:bold">TABLE</span> tmp_daily_login_summary <span style="color:#008000;font-weight:bold">AS</span>
-<span style="color:#008000;font-weight:bold">SELECT</span>
-    person_id,
-    <span style="color:#008000">DATE</span>(login_timestamp) <span style="color:#008000;font-weight:bold">AS</span> login_date,
-    <span style="color:#008000;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>) <span style="color:#008000;font-weight:bold">AS</span> total_logins
-<span style="color:#008000;font-weight:bold">FROM</span> login_activity
-<span style="color:#008000;font-weight:bold">GROUP</span> <span style="color:#008000;font-weight:bold">BY</span> person_id, <span style="color:#008000">DATE</span>(login_timestamp);
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">CREATE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TEMPORARY</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TABLE</span><span style="color:#bbb"> </span>tmp_daily_login_summary<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>person_id,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000">DATE</span>(login_timestamp)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span>login_date,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#008000;font-weight:bold">COUNT</span>(<span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">AS</span><span style="color:#bbb"> </span>total_logins<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FROM</span><span style="color:#bbb"> </span>login_activity<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">GROUP</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">BY</span><span style="color:#bbb"> </span>person_id,<span style="color:#bbb"> </span><span style="color:#008000">DATE</span>(login_timestamp);<span style="color:#bbb">
+</span></span></span></code></pre></div><ol start="2">
 <li><strong>Delete Rows from the Original Table</strong></li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">DELETE</span> <span style="color:#008000;font-weight:bold">FROM</span> login_activity;
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">DELETE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">FROM</span><span style="color:#bbb"> </span>login_activity;<span style="color:#bbb">
+</span></span></span></code></pre></div><ol start="3">
 <li><strong>Insert Aggregated Values Back into the Original Table</strong></li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">INSERT</span> <span style="color:#008000;font-weight:bold">INTO</span> login_activity (person_id, login_timestamp)
-<span style="color:#008000;font-weight:bold">SELECT</span>
-    person_id,
-    login_date
-<span style="color:#008000;font-weight:bold">FROM</span> tmp_daily_login_summary;
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">INSERT</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">INTO</span><span style="color:#bbb"> </span>login_activity<span style="color:#bbb"> </span>(person_id,<span style="color:#bbb"> </span>login_timestamp)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">SELECT</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>person_id,<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>login_date<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#008000;font-weight:bold">FROM</span><span style="color:#bbb"> </span>tmp_daily_login_summary;<span style="color:#bbb">
+</span></span></span></code></pre></div><ol start="4">
 <li><strong>Drop the Temporary Table</strong></li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#008000;font-weight:bold">DROP</span> <span style="color:#008000;font-weight:bold">TEMPORARY</span> <span style="color:#008000;font-weight:bold">TABLE</span> <span style="color:#008000;font-weight:bold">IF</span> <span style="color:#008000;font-weight:bold">EXISTS</span> tmp_daily_login_summary;
-</code></pre></div><p>This transformation optimizes the representation of daily login activity, making it more efficient for analysis, reporting, and maintaining a structured database for social media user engagement data.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">DROP</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TEMPORARY</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">TABLE</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">IF</span><span style="color:#bbb"> </span><span style="color:#008000;font-weight:bold">EXISTS</span><span style="color:#bbb"> </span>tmp_daily_login_summary;<span style="color:#bbb">
+</span></span></span></code></pre></div><p>This transformation optimizes the representation of daily login activity, making it more efficient for analysis, reporting, and maintaining a structured database for social media user engagement data.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Adapting the database schema to the evolving needs of a product is a crucial aspect of efficient data management. The ability to modify the schema while retaining valuable data ensures that the database remains relevant and adaptable. In the case of tracking login activity on a social media platform, aggregating data into a daily login summary provides valuable insights that can drive decision-making and enhance user engagement.</p>
 
@@ -185,7 +185,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/PostgreSQL/">PostgreSQL</a>, <a href="https://programmercave.com/tags/SQL/">SQL</a>, <a href="https://programmercave.com/tags/DataBase/">DataBase</a>
+      &lt;a href=&#34;https://programmercave.com/tags/PostgreSQL/&#34;&gt;PostgreSQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/SQL/&#34;&gt;SQL&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/DataBase/&#34;&gt;DataBase&lt;/a&gt;
     </div>
   
 
@@ -203,7 +203,7 @@
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 

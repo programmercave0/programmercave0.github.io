@@ -16,7 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.81.0" />
+  <meta name="generator" content="Hugo 0.123.7">
   
   
       
@@ -99,7 +99,7 @@
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/CodeForces/">CodeForces</a>, <a href="https://programmercave.com/tags/Dynamic-Programming/">Dynamic-Programming</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CodeForces/&#34;&gt;CodeForces&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Dynamic-Programming/&#34;&gt;Dynamic-Programming&lt;/a&gt;
     </div>
   
   <!-- raw HTML omitted -->
@@ -115,83 +115,81 @@
 <ol>
 <li>
 <p>Initialize three integer variables: <code>current_earning</code>, <code>final_count</code>, and <code>local_count</code>. <code>current_earning</code> should be set to the first element of the <code>earnings</code> vector, <code>final_count</code> should be set to 1, and <code>local_count</code> should be set to 1.</p>
-<pre><code>int current_earning = earnings[0]; // stores highest earning of non-decreasing subsegment
+<pre tabindex="0"><code>int current_earning = earnings[0]; // stores highest earning of non-decreasing subsegment
 int final_count = 1; // stores length of longest non-decreasing subsegment
 int local_count = 1; // stores length of current subsegment in process
-</code></pre><p>``</p>
-</li>
+</code></pre></li>
 <li>
 <p>Iterate over the <code>earnings</code> vector, starting at the second element (index 1). For each element <code>earnings[i]</code>, do the following:</p>
 <p>a. If <code>earnings[i] &gt; current_earning</code>, increment <code>local_count</code> by 1 and set <code>current_earning</code> to <code>earnings[i]</code>.</p>
 <p>b. If <code>earnings[i] &lt;= current_earning</code>, set <code>local_count</code> to 1 and set <code>current_earning</code> to <code>earnings[i]</code>.</p>
 <p>c. If <code>local_count &gt; final_count</code>, set <code>final_count</code> to <code>local_count</code>.</p>
-<pre><code>for (int i = 1; i &lt; n; i++) 
+<pre tabindex="0"><code>for (int i = 1; i &lt; n; i++) 
 {
-    if (earnings[i] &gt; current_earning) 
-    {
-        // if current earning is greater than previous earning, increment local count by 1
-        local_count++;
-        current_earning = earnings[i];
-    } 
-    else 
-    {
-        // if current earning is not greater than previous earning, reset local count to 1
-        local_count = 1;
-        current_earning = earnings[i];
-    }
+	if (earnings[i] &gt; current_earning) 
+	{
+  		// if current earning is greater than previous earning, increment local count by 1
+  		local_count++;
+  		current_earning = earnings[i];
+	} 
+	else 
+	{
+  		// if current earning is not greater than previous earning, reset local count to 1
+  		local_count = 1;
+  		current_earning = earnings[i];
+	}
 
-    // update final count if local count is greater than final count
-    if (local_count &gt; final_count) 
-    {
-        final_count = local_count;
-    }
+	// update final count if local count is greater than final count
+	if (local_count &gt; final_count) 
+	{
+  		final_count = local_count;
+	}
 }
-</code></pre><p>``</p>
-</li>
+</code></pre></li>
 <li>
 <p>After the loop finishes, final_count will contain the length of the maximum increasing subsegment.
 <!-- raw HTML omitted --></p>
 </li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
-</span><span style="color:#bc7a00"></span>
-<span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
-{
-	<span style="color:#b00040">int</span> n;
-	std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> n;
-
-	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> earnings(n);
-
-	<span style="color:#b00040">int</span> current_earning <span style="color:#666">=</span> earnings[<span style="color:#666">0</span>]; <span style="color:#408080;font-style:italic">// stores highest earning of non-decreasing subsegment
-</span><span style="color:#408080;font-style:italic"></span> 	<span style="color:#b00040">int</span> final_count <span style="color:#666">=</span> <span style="color:#666">1</span>; <span style="color:#408080;font-style:italic">// stores length of longest non-decreasing subsegment
-</span><span style="color:#408080;font-style:italic"></span>  	<span style="color:#b00040">int</span> local_count <span style="color:#666">=</span> <span style="color:#666">1</span>; <span style="color:#408080;font-style:italic">// stores length of current subsegment in process
-</span><span style="color:#408080;font-style:italic"></span>
-	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) 
-	{
-    	<span style="color:#008000;font-weight:bold">if</span> (earnings[i] <span style="color:#666">&gt;</span> current_earning) 
-    	{
-      		<span style="color:#408080;font-style:italic">// if current earning is greater than previous earning, increment local count by 1
-</span><span style="color:#408080;font-style:italic"></span>      		local_count<span style="color:#666">++</span>;
-      		current_earning <span style="color:#666">=</span> earnings[i];
-    	} 
-    	<span style="color:#008000;font-weight:bold">else</span> 
-    	{
-      		<span style="color:#408080;font-style:italic">// if current earning is not greater than previous earning, reset local count to 1
-</span><span style="color:#408080;font-style:italic"></span>      		local_count <span style="color:#666">=</span> <span style="color:#666">1</span>;
-      		current_earning <span style="color:#666">=</span> earnings[i];
-    	}
-
-    	<span style="color:#408080;font-style:italic">// update final count if local count is greater than final count
-</span><span style="color:#408080;font-style:italic"></span>    	<span style="color:#008000;font-weight:bold">if</span> (local_count <span style="color:#666">&gt;</span> final_count) 
-    	{
-      		final_count <span style="color:#666">=</span> local_count;
-    	}
-	}
-	std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> final_count <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
-}
-</code></pre></div><p>Check out this on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Codeforces/Kefa_and_first_steps.cpp">Github</a></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;iostream&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00">#include</span> <span style="color:#bc7a00">&lt;vector&gt;</span><span style="color:#bc7a00">
+</span></span></span><span style="display:flex;"><span><span style="color:#bc7a00"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b00040">int</span> <span style="color:#00f">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#b00040">int</span> n;
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>cin <span style="color:#666">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>vector<span style="color:#666">&lt;</span><span style="color:#b00040">int</span><span style="color:#666">&gt;</span> earnings(n);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b00040">int</span> current_earning <span style="color:#666">=</span> earnings[<span style="color:#666">0</span>]; <span style="color:#408080;font-style:italic">// stores highest earning of non-decreasing subsegment
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span> 	<span style="color:#b00040">int</span> final_count <span style="color:#666">=</span> <span style="color:#666">1</span>; <span style="color:#408080;font-style:italic">// stores length of longest non-decreasing subsegment
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>  	<span style="color:#b00040">int</span> local_count <span style="color:#666">=</span> <span style="color:#666">1</span>; <span style="color:#408080;font-style:italic">// stores length of current subsegment in process
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#008000;font-weight:bold">for</span> (<span style="color:#b00040">int</span> i <span style="color:#666">=</span> <span style="color:#666">1</span>; i <span style="color:#666">&lt;</span> n; i<span style="color:#666">++</span>) 
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>    	<span style="color:#008000;font-weight:bold">if</span> (earnings[i] <span style="color:#666">&gt;</span> current_earning) 
+</span></span><span style="display:flex;"><span>    	{
+</span></span><span style="display:flex;"><span>      		<span style="color:#408080;font-style:italic">// if current earning is greater than previous earning, increment local count by 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>      		local_count<span style="color:#666">++</span>;
+</span></span><span style="display:flex;"><span>      		current_earning <span style="color:#666">=</span> earnings[i];
+</span></span><span style="display:flex;"><span>    	} 
+</span></span><span style="display:flex;"><span>    	<span style="color:#008000;font-weight:bold">else</span> 
+</span></span><span style="display:flex;"><span>    	{
+</span></span><span style="display:flex;"><span>      		<span style="color:#408080;font-style:italic">// if current earning is not greater than previous earning, reset local count to 1
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>      		local_count <span style="color:#666">=</span> <span style="color:#666">1</span>;
+</span></span><span style="display:flex;"><span>      		current_earning <span style="color:#666">=</span> earnings[i];
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#408080;font-style:italic">// update final count if local count is greater than final count
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>    	<span style="color:#008000;font-weight:bold">if</span> (local_count <span style="color:#666">&gt;</span> final_count) 
+</span></span><span style="display:flex;"><span>    	{
+</span></span><span style="display:flex;"><span>      		final_count <span style="color:#666">=</span> local_count;
+</span></span><span style="display:flex;"><span>    	}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	std<span style="color:#666">::</span>cout <span style="color:#666">&lt;&lt;</span> final_count <span style="color:#666">&lt;&lt;</span> <span style="color:#ba2121">&#34;</span><span style="color:#b62;font-weight:bold">\n</span><span style="color:#ba2121">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Check out this on <a href="https://github.com/abhiabhi0/Competitive-Programming/blob/master/Codeforces/Kefa_and_first_steps.cpp">Github</a></p>
 <p>If you have a different solution for finding the length of the maximum increasing subsegment in a given sequence, please share it in the comments below.</p>
 
   
@@ -215,7 +213,7 @@ int local_count = 1; // stores length of current subsegment in process
         
         
       
-      <a href="https://programmercave.com/tags/Cpp/">Cpp</a>, <a href="https://programmercave.com/tags/Competitive-Programming/">Competitive-Programming</a>, <a href="https://programmercave.com/tags/CodeForces/">CodeForces</a>, <a href="https://programmercave.com/tags/Dynamic-Programming/">Dynamic-Programming</a>
+      &lt;a href=&#34;https://programmercave.com/tags/Cpp/&#34;&gt;Cpp&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Competitive-Programming/&#34;&gt;Competitive-Programming&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/CodeForces/&#34;&gt;CodeForces&lt;/a&gt;, &lt;a href=&#34;https://programmercave.com/tags/Dynamic-Programming/&#34;&gt;Dynamic-Programming&lt;/a&gt;
     </div>
   
 
@@ -233,7 +231,7 @@ int local_count = 1; // stores length of current subsegment in process
     <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
     Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
     
-    <a href="https://programmercave.com" class="fa fa-home"></a>
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
 
     <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
 
