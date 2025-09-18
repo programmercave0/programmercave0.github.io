@@ -6,8 +6,29 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang - Data Structures - Concurrency with Maps</title>
+      <link>https://programmercave.com/Golang-Data-Structures-Concurrency-with-Maps/</link>
+      <pubDate>Wed, 17 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-Concurrency-with-Maps/</guid>
+      <description>Introduction A critical point to understand about Go&amp;rsquo;s built-in map type is that it is not safe for concurrent use. If one goroutine is writing to a map while another is reading from or writing to it, you will get a fatal runtime error. This is a common source of bugs in concurrent Go programs.&#xA;The Problem: Race Conditions Consider this simple program:&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) func main() { m := make(map[int]int) // Goroutine 1: Writes to the map go func() { for i := 0; ; i++ { m[i] = i } }() // Goroutine 2: Reads from the map go func() { for i := 0; ; i++ { _ = m[i] } }() // Let it run for a bit time.</description>
+    </item>
+    <item>
+      <title>Golang - Data Structures - Map Internals and Performance</title>
+      <link>https://programmercave.com/Golang-Data-Structures-Map-Internals-and-Performance/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-Map-Internals-and-Performance/</guid>
+      <description>Introduction For senior engineers, a surface-level understanding of maps isn&amp;rsquo;t enough. Interviews will often probe your knowledge of the underlying implementation to assess your ability to reason about performance and concurrency.&#xA;How a Go Map Works: The Hash Table A Go map is implemented as a hash table. When you add a key-value pair, the following happens:&#xA;Hashing: The key is passed through a hashing function, which produces a single number (a hash).</description>
+    </item>
+    <item>
+      <title>Golang - Data Structures - Maps In-Depth</title>
+      <link>https://programmercave.com/Golang-Data-Structures-Maps-In-Depth/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-Maps-In-Depth/</guid>
+      <description>Introduction A map in Go is a powerful, built-in data structure that associates keys of one type with values of another. It is an unordered collection, and it provides fast lookups, additions, and deletions. Maps are one of the most commonly used data structures in Go.&#xA;Analogy: Think of a map as a dictionary or a phone book. You look up a word (the key) to find its definition (the value).</description>
+    </item>
     <item>
       <title>Golang - Data Structures - Mutability in Arrays vs. Slices</title>
       <link>https://programmercave.com/Golang-Data-Structures-Mutability-in-Arrays-vs-Slices/</link>
