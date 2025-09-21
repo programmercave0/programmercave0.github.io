@@ -6,8 +6,29 @@
     <description>Recent content in Go on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://programmercave.com/tags/Go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang - Data Structures - Struct Tags and Reflection</title>
+      <link>https://programmercave.com/Golang-Data-Structures-Struct-Tags-and-Reflection/</link>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-Struct-Tags-and-Reflection/</guid>
+      <description>Introduction Struct tags are small pieces of metadata that you can attach to the fields of a struct. They are just strings, but they provide a way to give instructions to other Go packages that inspect your structs at runtime.&#xA;The most common use for struct tags is to control how your data is encoded to or decoded from formats like JSON, XML, or database records. This is achieved through a mechanism called reflection.</description>
+    </item>
+    <item>
+      <title>Golang - Data Structures - The Empty Struct</title>
+      <link>https://programmercave.com/Golang-Data-Structures-The-Empty-Struct/</link>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-The-Empty-Struct/</guid>
+      <description>Introduction The empty struct, written as struct{}, is a struct with no fields. It is a peculiar but surprisingly useful tool in Go. Its power comes from one key property: it consumes zero memory.&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;unsafe&amp;#34; ) func main() { var s struct{} fmt.Println(&amp;#34;Size of empty struct:&amp;#34;, unsafe.Sizeof(s)) // Output: 0 } Because all instances of an empty struct are identical and have no data, the Go compiler can optimize them to not consume any memory.</description>
+    </item>
+    <item>
+      <title>Golang - Data Structures - Structs</title>
+      <link>https://programmercave.com/Golang-Data-Structures-Structs/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Data-Structures-Structs/</guid>
+      <description>Introduction A struct is a composite data type that groups together zero or more fields of arbitrary types into a single unit. If you&amp;rsquo;re coming from another language, you can think of a struct as a lightweight class (without methods attached directly to it), a record, or a struct from C.&#xA;Structs are the primary way you create complex, custom data types in Go. They are fundamental to organizing and representing data.</description>
+    </item>
     <item>
       <title>Golang - Data Structures - Concurrency with Maps</title>
       <link>https://programmercave.com/Golang-Data-Structures-Concurrency-with-Maps/</link>
