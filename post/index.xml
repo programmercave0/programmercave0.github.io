@@ -6,8 +6,43 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang - Memory - Memory Leaks</title>
+      <link>https://programmercave.com/Golang-Memory-Memory-Leaks/</link>
+      <pubDate>Tue, 23 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Memory-Memory-Leaks/</guid>
+      <description>Introduction Even though Go has a garbage collector, it is still possible to have memory leaks. A memory leak in Go doesn&amp;rsquo;t mean the GC is broken; it means you have accidentally kept a reference to an object that you no longer need, preventing the GC from reclaiming its memory.&#xA;Analogy: A memory leak is like putting a box in a long-term storage unit and then forgetting you have the key.</description>
+    </item>
+    <item>
+      <title>Golang - Memory - Pointer Performance and unsafe Package</title>
+      <link>https://programmercave.com/Golang-Memory-Pointer-Performance-and-unsafe-Package/</link>
+      <pubDate>Tue, 23 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Memory-Pointer-Performance-and-unsafe-Package/</guid>
+      <description>Introduction For experienced Go engineers, understanding the nuances of pointer performance and the capabilities of the unsafe package is crucial. While Go abstracts away many low-level details, knowing what&amp;rsquo;s happening under the hood helps in writing highly optimized code and diagnosing complex issues.&#xA;Pointer Performance Considerations In most cases, the performance difference between passing a value and passing a pointer is negligible. The Go compiler is highly optimized. However, there are general guidelines:</description>
+    </item>
+    <item>
+      <title>Golang - Memory - Garbage Collector Explained</title>
+      <link>https://programmercave.com/Golang-Memory-Garbage-Collector-Explained/</link>
+      <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Memory-Garbage-Collector-Explained/</guid>
+      <description>Introduction Go provides automatic memory management, which means you don&amp;rsquo;t have to manually free the memory you allocate. This is the job of the Garbage Collector (GC). The Go GC is a highly sophisticated piece of engineering designed to have a minimal impact on your application&amp;rsquo;s performance.&#xA;Analogy: Think of the GC as a team of diligent, efficient cleaners working in the &amp;ldquo;heap&amp;rdquo; warehouse. Their job is to periodically walk through the warehouse, identify all the boxes that are no longer labeled for use by any part of the factory (your program), and haul them away to make space for new ones.</description>
+    </item>
+    <item>
+      <title>Golang - Memory - Stack vs Heap</title>
+      <link>https://programmercave.com/Golang-Memory-Stack-vs-Heap/</link>
+      <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Memory-Stack-vs-Heap/</guid>
+      <description>Introduction Go manages memory for you, but understanding how it does this is key to writing efficient, high-performance code. Every value in your program is stored in one of two places: the stack or the heap.&#xA;The Stack: Fast, Simple, and Temporary The stack is a simple, highly efficient region of memory used for function calls and their local variables.&#xA;Analogy: Think of the stack as a stack of plates.</description>
+    </item>
+    <item>
+      <title>Golang - Memory - Pointers Explained</title>
+      <link>https://programmercave.com/Golang-Memory-Pointers-Explained/</link>
+      <pubDate>Sun, 21 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Memory-Pointers-Explained/</guid>
+      <description>Introduction A pointer is a variable that stores the memory address of another variable. Instead of holding a value like 5 or &amp;quot;hello&amp;quot;, it holds the location where that value lives in your computer&amp;rsquo;s memory.&#xA;Analogy: Think of a variable as a house with a specific address.&#xA;A normal variable (var x int = 10) is like knowing what&amp;rsquo;s inside the house (the value 10). A pointer (var p *int = &amp;amp;x) is like having a piece of paper with the address of the house written on it.</description>
+    </item>
     <item>
       <title>Golang - Data Structures - Struct Tags and Reflection</title>
       <link>https://programmercave.com/Golang-Data-Structures-Struct-Tags-and-Reflection/</link>
