@@ -3,21 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://programmercave.com/tags/Go/</loc>
-    <lastmod>2025-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Best-Practices/</loc>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Common-Interfaces/</loc>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/post/</loc>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/</loc>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/tags/</loc>
+    <lastmod>2025-09-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Composition-and-Embedding/</loc>
+    <lastmod>2025-09-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Type-Assertions-and-Type-Switches/</loc>
+    <lastmod>2025-09-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Interface-Values-and-the-nil-Trap/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-Interfaces-Explained/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://programmercave.com/Golang-Interfaces-The-Empty-Interface-and-any/</loc>
+    <lastmod>2025-09-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Golang-Memory-Memory-Leaks/</loc>
     <lastmod>2025-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Golang-Memory-Pointer-Performance-and-unsafe-Package/</loc>
-    <lastmod>2025-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/post/</loc>
-    <lastmod>2025-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/</loc>
-    <lastmod>2025-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://programmercave.com/tags/</loc>
     <lastmod>2025-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://programmercave.com/Golang-Memory-Garbage-Collector-Explained/</loc>

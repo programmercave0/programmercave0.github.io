@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGYYYX4F59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LGYYYX4F59');
+  </script>
+
+  <!-- Bidvertiser2098189 -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.123.7">
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Introduction Go does not have classes or inheritance in the traditional object-oriented sense. Instead, it favours a simpler and more flexible approach to code reuse and building complex types: composition.
+The guiding principle is “Composition over Inheritance.” Instead of a type being another type (inheritance), a type has another type (composition).
+1. Composition (The “Has-A” Relationship) This is the most basic form of composition. You simply include one struct as a field within another.">
+  <meta name="keywords" content="Go, programming, language,, Golang, speed,, compiled, languages,, concurrency, in, Go,, goroutines,, Go, garbage, collection,, high-performance, applications,, Go, interview, preparation,, native, compilation,, modern, hardware, optimization,, fast, compile, times,, efficient, coding, practices,, Golang, features">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Golang - Interfaces - Composition and Embedding | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Golang - Interfaces - Composition and Embedding</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2025-09-25
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
+    </div>
+  
+  <h3 id="introduction">Introduction</h3>
+<p>Go does not have classes or inheritance in the traditional object-oriented sense. Instead, it favours a simpler and more flexible approach to code reuse and building complex types: <strong>composition</strong>.</p>
+<p>The guiding principle is <strong>&ldquo;Composition over Inheritance.&rdquo;</strong> Instead of a type <em>being</em> another type (inheritance), a type <em>has</em> another type (composition).</p>
+<hr>
+<h3 id="1-composition-the-has-a-relationship">1. Composition (The &ldquo;Has-A&rdquo; Relationship)</h3>
+<p>This is the most basic form of composition. You simply include one struct as a field within another.</p>
+<p><strong>Analogy:</strong> A <code>Car</code> doesn&rsquo;t <em>inherit</em> from an <code>Engine</code>; a <code>Car</code> <em>has an</em> <code>Engine</code>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Engine <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Horsepower <span style="color:#b00040">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (e <span style="color:#666">*</span>Engine) <span style="color:#00f">Start</span>() {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Engine started.&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Car <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Make   <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Model  <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>	Engine Engine 
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// The Car &#34;has an&#34; Engine
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	myCar <span style="color:#666">:=</span> Car{
+</span></span><span style="display:flex;"><span>		Make:  <span style="color:#ba2121">&#34;Ford&#34;</span>,
+</span></span><span style="display:flex;"><span>		Model: <span style="color:#ba2121">&#34;Mustang&#34;</span>,
+</span></span><span style="display:flex;"><span>		Engine: Engine{
+</span></span><span style="display:flex;"><span>			Horsepower: <span style="color:#666">450</span>,
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// To access the engine&#39;s fields or methods, you go through the `Engine` field.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	fmt.<span style="color:#00f">Printf</span>(<span style="color:#ba2121">&#34;My %s %s has %d HP.\n&#34;</span>, myCar.Make, myCar.Model, myCar.Engine.Horsepower)
+</span></span><span style="display:flex;"><span>	myCar.Engine.<span style="color:#00f">Start</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is simple, explicit, and easy to understand.</p>
+<hr>
+<h3 id="2-embedding-gos-inheritance">2. Embedding (Go&rsquo;s &ldquo;Inheritance&rdquo;)</h3>
+<p>Embedding is a special, more convenient form of composition. When you embed a type, its fields and methods are <strong>promoted</strong> to the containing struct, so you can access them directly without going through the embedded type&rsquo;s field name.</p>
+<p>You embed a type by declaring it in a struct without giving it a field name. The type&rsquo;s name is used implicitly.</p>
+<p><strong>Analogy:</strong> Embedding is like hiring a <strong>specialist contractor</strong>. If you hire a <code>Manager</code> for your <code>Team</code>, you can give instructions directly to the <code>Manager</code> (<code>team.Manage()</code>), and it feels like the <code>Team</code> itself has that skill.</p>
+<h4 id="a-struct-embedding">a) Struct Embedding</h4>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">import</span> <span style="color:#ba2121">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Report <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Content <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (r <span style="color:#666">*</span>Report) <span style="color:#00f">Generate</span>() {
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Generating report:&#34;</span>, r.Content)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> FinancialReport <span style="color:#008000;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Report <span style="color:#408080;font-style:italic">// Embed the Report struct
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	Amount <span style="color:#b00040">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">main</span>() {
+</span></span><span style="display:flex;"><span>	finReport <span style="color:#666">:=</span> FinancialReport{
+</span></span><span style="display:flex;"><span>		Report: Report{Content: <span style="color:#ba2121">&#34;Q1 Earnings&#34;</span>},
+</span></span><span style="display:flex;"><span>		Amount: <span style="color:#666">100000.0</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// Because `Report` is embedded, its fields and methods are &#34;promoted&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	<span style="color:#408080;font-style:italic">// You can access them directly on `FinancialReport`.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	fmt.<span style="color:#00f">Println</span>(finReport.Content) <span style="color:#408080;font-style:italic">// Instead of finReport.Report.Content
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	finReport.<span style="color:#00f">Generate</span>()           <span style="color:#408080;font-style:italic">// Instead of finReport.Report.Generate()
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#408080;font-style:italic">// You can still access the embedded struct explicitly if needed.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>	finReport.Report.Content = <span style="color:#ba2121">&#34;Q2 Earnings&#34;</span>
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00f">Println</span>(finReport.Content)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This gives you the convenience of inheritance-like syntax, but it&rsquo;s still composition under the hood.</p>
+<p><strong>Method &ldquo;Overriding&rdquo;:</strong> Go doesn&rsquo;t have overriding, but if the outer struct defines a method with the same name as an embedded one, the outer method will be promoted. The embedded method is still accessible via the explicit field name.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (fr <span style="color:#666">*</span>FinancialReport) <span style="color:#00f">Generate</span>() {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00f">Println</span>(<span style="color:#ba2121">&#34;Generating FINANCIAL report:&#34;</span>, fr.Content)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// finReport.Generate() now calls the FinancialReport&#39;s method.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// finReport.Report.Generate() would call the original embedded method.
+</span></span></span></code></pre></div><h4 id="b-interface-embedding">b) Interface Embedding</h4>
+<p>You can also embed interfaces within other interfaces. This is a powerful way to build up larger contracts from smaller, reusable pieces.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// A small, focused interface
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Reader <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Read</span>(p []<span style="color:#b00040">byte</span>) (n <span style="color:#b00040">int</span>, err <span style="color:#b00040">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Another small, focused interface
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Writer <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Write</span>(p []<span style="color:#b00040">byte</span>) (n <span style="color:#b00040">int</span>, err <span style="color:#b00040">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// A larger interface composed by embedding smaller ones.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// A type must satisfy both Read() and Write() to be a ReadWriter.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> ReadWriter <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    Reader
+</span></span><span style="display:flex;"><span>    Writer
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is used extensively in the Go standard library (e.g., <code>io.ReadWriter</code>).</p>
+<hr>
+<h3 id="key-takeaways-for-interviews">Key Takeaways for Interviews</h3>
+<ul>
+<li><strong>Go&rsquo;s Philosophy:</strong> Go prefers composition over inheritance.</li>
+<li><strong>Composition vs. Embedding:</strong> Composition is the general &ldquo;has-a&rdquo; relationship (<code>Car</code> has an <code>Engine</code>). Embedding is a special kind of composition that promotes the fields and methods of the embedded type for convenience.</li>
+<li><strong>No True Inheritance:</strong> Embedding is not inheritance. There is no &ldquo;is-a&rdquo; relationship in the classical OOP sense. A <code>FinancialReport</code> <em>is not</em> a <code>Report</code>; it <em>contains</em> a <code>Report</code>.</li>
+<li><strong>Benefits:</strong> This approach avoids the &ldquo;fragile base class&rdquo; problem and the complex hierarchies that can arise from deep inheritance chains, leading to more flexible and maintainable code.</li>
+</ul>
+
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
+    </div>
+  
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+  <h3>Promotions:</h3>
+    <p><b><a href="https://atmanamviddhi.in/" target="_blank">Atmanam Viddhi</a>:</b> Visit <a href="https://atmanamviddhi.in/" target="_blank">Atmanam Viddhi</a> to embark on a journey of self-discovery and appreciation. This platform offers daily wisdom from timeless philosophical texts, guiding you to cultivate gratitude and affirm your divine nature. By writing down your gratitude and affirmations, you'll connect with your inner self and unlock a path to profound personal growth and spiritual awakening. Join the community today and start transforming your life with the power of reflection and affirmation!</p>  
+
+    <p><b><a href="https://lovable.dev/?via=programmercave" target="_blank">Lovable</a>:</b> Tired of coding? <a href="https://lovable.dev/?via=programmercave" target="_blank">Lovable</a> is your AI-powered full-stack engineer! Go from idea to fully functional app in minutes. Perfect for founders, designers, and product teams. Try it now!</p>
+
+    <p><b><a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a>:</b> Master system design with <a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a>, the ultimate resource for cracking interviews and building scalable systems! Their comprehensive courses simplify complex concepts using visual aids, real-world examples, and structured lessons, making learning engaging and effective. Whether you're a beginner or an experienced engineer, <a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a> equips you with the skills top tech companies demand. Gain in-depth knowledge of distributed systems, microservices, and high-level architecture to excel in your career. Don't just prepare—ace your system design interviews with confidence! 🚀 Start learning today and take your skills to the next level</p>
+
+    <p><b><a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a>:</b> Unlock your coding potential with <a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a>, the ultimate EdTech platform for aspiring developers! Whether you're a beginner or looking to advance, <a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a> offers top-tier courses like Namaste React, Namaste Node.js, and Frontend System Design—all designed for self-paced, project-based learning. Learn from industry experts, build real-world projects, and stay ahead with the latest tech trends. Join a thriving community of learners and take your skills to the next level. Start your journey today and open the door to endless career opportunities. Level up with NamasteDev—where learning meets innovation! 🚀🔥</p>
+
+    <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
+    Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
+    
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2025 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'G-LGYYYX4F59', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+
+  <script type="text/javascript">
+    var infolinks_pid = 3210490;
+    var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGYYYX4F59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LGYYYX4F59');
+  </script>
+
+  <!-- Bidvertiser2098189 -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.123.7">
+  
+  
+      
+  
+  
+  
+  <meta name="description" content="Introduction How you design and use interfaces can have a significant impact on the quality, flexibility, and maintainability of your Go code. The Go community has developed a set of idiomatic best practices for working with interfaces.
+1. Prefer Small, Focused Interfaces The single most important rule of interface design in Go is to keep interfaces small. An interface should typically have only one or two methods. This is the essence of the “I” in the SOLID principles (Interface Segregation Principle).">
+  <meta name="keywords" content="Go, programming, language,, Golang, speed,, compiled, languages,, concurrency, in, Go,, goroutines,, Go, garbage, collection,, high-performance, applications,, Go, interview, preparation,, native, compilation,, modern, hardware, optimization,, fast, compile, times,, efficient, coding, practices,, Golang, features">
+  <link rel="stylesheet" href="https://programmercave.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://programmercave.com/css/cayman.ea0e967413f3851071cc8ace3621bc4205fe8fa79b2abe3d7bf94ff2841f0d47.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+  <title>Golang - Interfaces - Best Practices | programmerCave</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    programmerCave
+  </h1>
+  <nav>
+    
+    
+      
+      
+      
+      <a href="/" class="btn">Home</a>
+    
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      <a href="/index.xml" class="btn">RSS</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>Golang - Interfaces - Best Practices</h1>
+  <div>
+    
+    <strong>Publish date: </strong>2025-09-26
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
+    </div>
+  
+  <h3 id="introduction">Introduction</h3>
+<p>How you design and use interfaces can have a significant impact on the quality, flexibility, and maintainability of your Go code. The Go community has developed a set of idiomatic best practices for working with interfaces.</p>
+<hr>
+<h3 id="1-prefer-small-focused-interfaces">1. Prefer Small, Focused Interfaces</h3>
+<p>The single most important rule of interface design in Go is to <strong>keep interfaces small</strong>. An interface should typically have only one or two methods. This is the essence of the &ldquo;I&rdquo; in the SOLID principles (Interface Segregation Principle).</p>
+<p>The <code>io.Reader</code> and <code>io.Writer</code> interfaces are the canonical examples of this. They each have only one method, which makes them incredibly versatile and easy to implement.</p>
+<p><strong>Why are small interfaces better?</strong></p>
+<ul>
+<li><strong>Easier to Satisfy:</strong> A type only needs to implement one or two methods to satisfy the interface, making it easy to adapt new types to your code.</li>
+<li><strong>More Reusable:</strong> A function that accepts a small interface is more reusable because it asks for the minimum behaviour it needs.</li>
+<li><strong>Clearer Intent:</strong> A small interface clearly documents the exact behaviour a function requires.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// BAD: A large, monolithic interface
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Animal <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Eat</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Sleep</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Walk</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Fly</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Swim</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// GOOD: Small, composable interfaces
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Eater <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Eat</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Walker <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Walk</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> Flyer <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Fly</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// A function should only ask for what it needs.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// This function doesn&#39;t care if the animal can fly or swim.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">takeForAWalk</span>(w Walker) {
+</span></span><span style="display:flex;"><span>    w.<span style="color:#00f">Walk</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h3 id="2-accept-interfaces-return-structs">2. &ldquo;Accept Interfaces, Return Structs&rdquo;</h3>
+<p>This is a famous and highly valuable Go proverb.</p>
+<h4 id="a-accept-interfaces">a) Accept Interfaces</h4>
+<p>When writing a function, the parameters it accepts should be interfaces whenever possible. This makes the function more general and decoupled from specific implementations.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// This function can open a door from any type that knows how to `Unlock`.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// It doesn&#39;t need to know if it&#39;s a `CarKey`, a `HouseKey`, or a `DigitalKeycard`.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Unlocker <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Unlock</span>() <span style="color:#b00040">error</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">openDoor</span>(u Unlocker) {
+</span></span><span style="display:flex;"><span>    u.<span style="color:#00f">Unlock</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div><h4 id="b-return-structs">b) Return Structs</h4>
+<p>When a function creates and returns a value, it should typically return a concrete type (like a pointer to a struct).</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// This function returns a concrete type, not an interface.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">NewCarKey</span>() <span style="color:#666">*</span>CarKey {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#666">&amp;</span>CarKey{<span style="color:#666">...</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Why?</strong></p>
+<ul>
+<li><strong>Flexibility for the Caller:</strong> The caller receives a concrete type with all of its fields and methods available. They are not limited to the small subset of methods defined by an interface.</li>
+<li><strong>Avoids Unnecessary Abstraction:</strong> Returning an interface can hide useful information and force the caller to use a type assertion if they need access to the concrete type&rsquo;s full capabilities.</li>
+<li><strong>The caller can always assign the concrete type to an interface variable if they wish.</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// The caller gets a concrete *CarKey...
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>key <span style="color:#666">:=</span> <span style="color:#00f">NewCarKey</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// ...and can choose to store it in an interface variable if that&#39;s all they need.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">var</span> unlocker Unlocker = key
+</span></span><span style="display:flex;"><span><span style="color:#00f">openDoor</span>(unlocker)
+</span></span></code></pre></div><p>This pattern provides the maximum flexibility to the consumer of your API.</p>
+<hr>
+<h3 id="3-define-interfaces-where-they-are-used">3. Define Interfaces Where They Are Used</h3>
+<p>In many object-oriented languages, it&rsquo;s common to define interfaces in the same package as the types that implement them.</p>
+<p>In Go, the idiomatic approach is often to <strong>define an interface in the package that <em>uses</em> it</strong>, not the package that implements it.</p>
+<p><strong>Example:</strong>
+Imagine you have a <code>user</code> package and a <code>storage</code> package. The <code>storage</code> package needs to save users.</p>
+<ul>
+<li>
+<p><strong>The <code>storage</code> package (the consumer) defines the interface it needs:</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// in package storage
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">package</span> storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// Storable is the interface this package needs to be able to save something.
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">type</span> Storable <span style="color:#008000;font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">ID</span>() <span style="color:#b00040">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">Data</span>() []<span style="color:#b00040">byte</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> <span style="color:#00f">Save</span>(s Storable) <span style="color:#b00040">error</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#408080;font-style:italic">// ... logic to save the data ...
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>The <code>user</code> package (the producer) implements the interface:</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#408080;font-style:italic">// in package user
+</span></span></span><span style="display:flex;"><span><span style="color:#408080;font-style:italic"></span><span style="color:#008000;font-weight:bold">package</span> user
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">type</span> User <span style="color:#008000;font-weight:bold">struct</span> { <span style="color:#666">...</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (u <span style="color:#666">*</span>User) <span style="color:#00f">ID</span>() <span style="color:#b00040">string</span> { <span style="color:#666">...</span> }
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">func</span> (u <span style="color:#666">*</span>User) <span style="color:#00f">Data</span>() []<span style="color:#b00040">byte</span> { <span style="color:#666">...</span> }
+</span></span></code></pre></div></li>
+</ul>
+<p><strong>Why is this better?</strong></p>
+<ul>
+<li><strong>No Dependency:</strong> The <code>user</code> package does not need to import the <code>storage</code> package. This avoids circular dependencies and keeps your code decoupled. The <code>storage</code> package can save <em>any</em> type from <em>any</em> package, as long as it satisfies the <code>Storable</code> contract.</li>
+<li><strong>Clearer API:</strong> The <code>storage</code> package&rsquo;s API is self-documenting. It clearly states, &ldquo;I can work with anything that looks like a <code>Storable</code>.&rdquo;</li>
+</ul>
+
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+      &lt;a href=&#34;https://programmercave.com/tags/Go/&#34;&gt;Go&lt;/a&gt;
+    </div>
+  
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+  <h3>Promotions:</h3>
+    <p><b><a href="https://atmanamviddhi.in/" target="_blank">Atmanam Viddhi</a>:</b> Visit <a href="https://atmanamviddhi.in/" target="_blank">Atmanam Viddhi</a> to embark on a journey of self-discovery and appreciation. This platform offers daily wisdom from timeless philosophical texts, guiding you to cultivate gratitude and affirm your divine nature. By writing down your gratitude and affirmations, you'll connect with your inner self and unlock a path to profound personal growth and spiritual awakening. Join the community today and start transforming your life with the power of reflection and affirmation!</p>  
+
+    <p><b><a href="https://lovable.dev/?via=programmercave" target="_blank">Lovable</a>:</b> Tired of coding? <a href="https://lovable.dev/?via=programmercave" target="_blank">Lovable</a> is your AI-powered full-stack engineer! Go from idea to fully functional app in minutes. Perfect for founders, designers, and product teams. Try it now!</p>
+
+    <p><b><a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a>:</b> Master system design with <a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a>, the ultimate resource for cracking interviews and building scalable systems! Their comprehensive courses simplify complex concepts using visual aids, real-world examples, and structured lessons, making learning engaging and effective. Whether you're a beginner or an experienced engineer, <a href="https://bytebytego.com?fpr=programmercave" target="_blank">ByteByteGo</a> equips you with the skills top tech companies demand. Gain in-depth knowledge of distributed systems, microservices, and high-level architecture to excel in your career. Don't just prepare—ace your system design interviews with confidence! 🚀 Start learning today and take your skills to the next level</p>
+
+    <p><b><a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a>:</b> Unlock your coding potential with <a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a>, the ultimate EdTech platform for aspiring developers! Whether you're a beginner or looking to advance, <a href="https://namastedev.com?_aff=1738041847176" target="_blank">NamasteDev</a> offers top-tier courses like Namaste React, Namaste Node.js, and Frontend System Design—all designed for self-paced, project-based learning. Learn from industry experts, build real-world projects, and stay ahead with the latest tech trends. Join a thriving community of learners and take your skills to the next level. Start your journey today and open the door to endless career opportunities. Level up with NamasteDev—where learning meets innovation! 🚀🔥</p>
+
+    <p><b><a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler Academy</a>:</b> Elevate your tech career with <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a>! Join a community dedicated to transforming careers in technology. With over 15,000 successful career transitions and partnerships with 900+ placement partners, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> offers tailored learning experiences that can help you become part of the top 1% in the tech industry. <br>
+    Explore a variety of programs, participate in live classes, and gain access to valuable resources designed to enhance your skills. Whether you're looking to advance in your current role or pivot to a new career, <a href="https://www.scaler.com?unlock_code=MAIL575E" target="_blank">Scaler</a> provides the support and guidance you need to succeed. Don't miss out—book your free live class today!</p> 
+    
+    <a href="https://programmercave.com/" class="fa fa-home"></a>
+
+    <a href="https://www.facebook.com/programmercave" class="fab fa-facebook"></a>
+
+    <a href="https://github.com/abhiabhi0" class="fab fa-github"></a>
+
+    <a href="https://twitter.com/programmercave" class="fab fa-twitter"></a>
+
+    <a href="https://medium.com/@programmercave0" class="fab fa-medium"></a>
+
+    <a href="https://www.instagram.com/programmercave" class="fab fa-instagram"></a>
+
+    <a href="https://t.me/programmercave" class="fab fa-telegram"></a>
+
+    <a href="https://www.youtube.com/channel/UCGpGM7FBgVm7Cmuo6OrUYGQ" class="fab fa-youtube"></a>
+
+    <p>Copyright © 2025 programmerCave</p>  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'G-LGYYYX4F59', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+
+  <script type="text/javascript">
+    var infolinks_pid = 3210490;
+    var infolinks_wsid = 0;
+    </script>
+    <script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+</body>
+</html>

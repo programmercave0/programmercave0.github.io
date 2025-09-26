@@ -6,8 +6,57 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang - Interfaces - Best Practices</title>
+      <link>https://programmercave.com/Golang-Interfaces-Best-Practices/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Best-Practices/</guid>
+      <description>Introduction How you design and use interfaces can have a significant impact on the quality, flexibility, and maintainability of your Go code. The Go community has developed a set of idiomatic best practices for working with interfaces.&#xA;1. Prefer Small, Focused Interfaces The single most important rule of interface design in Go is to keep interfaces small. An interface should typically have only one or two methods. This is the essence of the &amp;ldquo;I&amp;rdquo; in the SOLID principles (Interface Segregation Principle).</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - Common Interfaces (io.Reader, io.Writer)</title>
+      <link>https://programmercave.com/Golang-Interfaces-Common-Interfaces/</link>
+      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Common-Interfaces/</guid>
+      <description>Introduction The io.Reader and io.Writer interfaces are arguably two of the most important and widely used interfaces in the entire Go standard library. They are the fundamental building blocks for I/O operations, providing a simple, powerful abstraction for reading from and writing to streams of data.&#xA;Analogy:&#xA;io.Reader is a water tap. You don&amp;rsquo;t care if the water is coming from a city reservoir, a well, or a rain barrel. You just care that you can open the tap and Read water from it.</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - Composition and Embedding</title>
+      <link>https://programmercave.com/Golang-Interfaces-Composition-and-Embedding/</link>
+      <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Composition-and-Embedding/</guid>
+      <description>Introduction Go does not have classes or inheritance in the traditional object-oriented sense. Instead, it favours a simpler and more flexible approach to code reuse and building complex types: composition.&#xA;The guiding principle is &amp;ldquo;Composition over Inheritance.&amp;rdquo; Instead of a type being another type (inheritance), a type has another type (composition).&#xA;1. Composition (The &amp;ldquo;Has-A&amp;rdquo; Relationship) This is the most basic form of composition. You simply include one struct as a field within another.</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - Type Assertions and Type Switches</title>
+      <link>https://programmercave.com/Golang-Interfaces-Type-Assertions-and-Type-Switches/</link>
+      <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Type-Assertions-and-Type-Switches/</guid>
+      <description>Introduction When you have a value stored in an interface variable, the compiler only knows about the methods defined by the interface. To access the underlying concrete type or its specific fields and methods, you need a way to get it back. This is done with type assertions and type switches.&#xA;1. Type Assertion A type assertion is an operation that checks the concrete type of an interface value and extracts it.</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - Interface Values and the nil Trap</title>
+      <link>https://programmercave.com/Golang-Interfaces-Interface-Values-and-the-nil-Trap/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Interface-Values-and-the-nil-Trap/</guid>
+      <description>Introduction This is one of the most famous &amp;ldquo;gotchas&amp;rdquo; in Go and a classic interview question for assessing a deeper understanding of interfaces. To understand the trap, you first need to know what an interface value looks like in memory.&#xA;The Structure of an Interface Value Think of an interface variable not as a single thing, but as a box containing two pieces of information:&#xA;Type: A label that says, &amp;ldquo;Here&amp;rsquo;s the kind of thing I&amp;rsquo;m holding.</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - Interfaces Explained</title>
+      <link>https://programmercave.com/Golang-Interfaces-Interfaces-Explained/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-Interfaces-Explained/</guid>
+      <description>Introduction An interface in Go is a type that defines a set of method signatures. It&amp;rsquo;s a contract that specifies what a type can do. If a type provides definitions for all the methods in an interface, it is said to satisfy that interface.&#xA;Analogy: Think of an interface as a job description.&#xA;The job description for a Writer might say, &amp;ldquo;Must be able to Write(data []byte).&amp;rdquo; Any person (or type) that has this exact skill (method) can perform the job of a Writer.</description>
+    </item>
+    <item>
+      <title>Golang - Interfaces - The Empty Interface and any</title>
+      <link>https://programmercave.com/Golang-Interfaces-The-Empty-Interface-and-any/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Interfaces-The-Empty-Interface-and-any/</guid>
+      <description>Introduction The empty interface is an interface that has zero methods. It is written as interface{}.&#xA;Since every concrete type has zero or more methods, every type satisfies the empty interface. This means you can store a value of any type in a variable of type interface{}.&#xA;In Go 1.18 and later, any was introduced as an alias for interface{}. You should prefer using any in modern Go code as it is more readable and concise.</description>
+    </item>
     <item>
       <title>Golang - Memory - Memory Leaks</title>
       <link>https://programmercave.com/Golang-Memory-Memory-Leaks/</link>
