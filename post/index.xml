@@ -6,8 +6,43 @@
     <description>Recent content in Posts on programmerCave</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://programmercave.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang - Concurrency - Concurrency vs Parallelism</title>
+      <link>https://programmercave.com/Golang-Concurrency-Concurrency-vs-Parallelism/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Concurrency-Concurrency-vs-Parallelism/</guid>
+      <description>The Core Idea: What&amp;rsquo;s the Difference? Imagine you&amp;rsquo;re a chef in a kitchen.&#xA;Concurrency is like juggling multiple tasks. You start cooking the soup, then while it simmers, you chop vegetables for the salad. You switch between tasks, making progress on all of them. You&amp;rsquo;re handling multiple things at once, but not necessarily doing them at the exact same instant. Parallelism is like having multiple chefs in the kitchen. One chef is making the soup, and at the same time, another chef is making the salad.</description>
+    </item>
+    <item>
+      <title>Golang - Concurrency - Goroutines and Channels Fundamentals</title>
+      <link>https://programmercave.com/Golang-Concurrency-Goroutines-and-Channels-Fundamentals/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Concurrency-Goroutines-and-Channels-Fundamentals/</guid>
+      <description>Go was designed from the ground up for concurrency, and its approach is a major reason for its popularity. The model is built on two simple but powerful concepts: goroutines and channels.&#xA;The core philosophy is: &amp;ldquo;Don&amp;rsquo;t communicate by sharing memory; instead, share memory by communicating.&amp;rdquo;&#xA;1. Goroutines: Lightweight Threads A goroutine is an independently executing function that runs concurrently with other code. You can think of it as a very lightweight thread, but it&amp;rsquo;s managed by the Go runtime, not the OS.</description>
+    </item>
+    <item>
+      <title>Golang - Concurrency - Goroutines vs Threads</title>
+      <link>https://programmercave.com/Golang-Concurrency-Goroutines-vs-Threads/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Concurrency-Goroutines-vs-Threads/</guid>
+      <description>This is a fundamental concept in Go and a very common interview question. Understanding the difference shows you grasp why Go is so powerful for concurrent applications.&#xA;The Core Distinction: Who&amp;rsquo;s in Charge? OS Threads: Managed by the Operating System (OS). The OS kernel decides when to start, stop, and switch threads. It&amp;rsquo;s a heavyweight, system-level operation. Goroutines: Managed by the Go Runtime. The Go runtime has its own scheduler that runs inside your application.</description>
+    </item>
+    <item>
+      <title>Golang - Concurrency - What is a Goroutine</title>
+      <link>https://programmercave.com/Golang-Concurrency-What-is-a-Goroutine/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Concurrency-What-is-a-Goroutine/</guid>
+      <description>The Elevator Pitch: What&amp;rsquo;s a Goroutine? A goroutine is a lightweight &amp;ldquo;thread&amp;rdquo; managed by the Go runtime. Think of it as a function that can run concurrently (alongside) other functions.&#xA;The magic is in the go keyword. When you put go in front of a function call, you&amp;rsquo;re telling Go: &amp;ldquo;Run this function in the background, and don&amp;rsquo;t wait for it to finish. Just move on to the next line of code.</description>
+    </item>
+    <item>
+      <title>Golang - Concurrency - What is Concurrency</title>
+      <link>https://programmercave.com/Golang-Concurrency-What-is-Concurrency/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://programmercave.com/Golang-Concurrency-What-is-Concurrency/</guid>
+      <description>The Core Idea: Doing Multiple Things at Once Concurrency means dealing with multiple tasks at the same time. It doesn&amp;rsquo;t necessarily mean they are executing at the same instant, but rather that their execution is interleaved, allowing you to make progress on all of them.&#xA;Analogy: A Chef in the Kitchen&#xA;Imagine a chef cooking a meal with multiple dishes:&#xA;Put a pot of water on the stove to boil for pasta.</description>
+    </item>
     <item>
       <title>Golang - Interfaces - Best Practices</title>
       <link>https://programmercave.com/Golang-Interfaces-Best-Practices/</link>
